@@ -704,6 +704,24 @@ Standard examples of nonassociative Moufang loops are the unit octonions with mu
   If $(Q,\cdot)$ is an NK loop, then it is an automorphic Moufang loop \cite{KepkaKinyonPhillips}.
 \end{fct}
 
+\subsection{Partitions}
+
+\begin{dfn}
+  Let $A$ be a set, a \emph{partition} of $A$ is $\mathcal{C}\subset\mathcal{P}(A)$ such that
+  \begin{align*}
+    \bigcup \mathcal{C} &= A\\
+    A\cap B &= \emptyset\quad \forall A, B\in\mathcal{C}
+  \end{align*}
+\end{dfn}
+
+\begin{dfn}
+  The elements of a partition are called \emph{blocks}.
+\end{dfn}
+
+\begin{dfn}
+  A partition is \emph{uniform} if all blocks have the same size.
+\end{dfn}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Power graphs of Moufang loops}
@@ -892,7 +910,7 @@ We will now handle the case $p = 2$. In what follows, let $M$ be a nonassociativ
 
     Let $M$ be a Moufang loop of order $2^n$ with a unique element of order $2$. Then there exists $S\leq M$ with $|S| = 2^{n - 1}$ by Proposition \ref{gen-facts}. By the inductive hypothesis, $S$ contains an element $x_0$ of order $2^{n - 3}$.
 
-	First assume there exists $y\in M\setminus \langle x_0 \rangle$ with $yx_0 = x_0 y$. Then $\langle x_0, y\rangle$ is a cyclic group strictly larger than $\langle x_0\rangle$. Thus $\langle x_0, y\rangle$ contains an element of order at least $2^{n - 2}$. Hence we can assume without loss of generality that $x_0 y = yx_0^{-1}$ and $|y| = 4$ for all $y\in M\setminus \langle x_0 \rangle$ since $|x_0| > 4$.
+	First assume there exists $y\in M- \langle x_0 \rangle$ with $yx_0 = x_0 y$. Then $\langle x_0, y\rangle$ is a cyclic group strictly larger than $\langle x_0\rangle$. Thus $\langle x_0, y\rangle$ contains an element of order at least $2^{n - 2}$. Hence we can assume without loss of generality that $x_0 y = yx_0^{-1}$ and $|y| = 4$ for all $y\in M\setminus \langle x_0 \rangle$ since $|x_0| > 4$.
 
 	Note that if $\langle x_0\rangle$ is properly contained in a cyclic subgroup of $M$, then the proof is complete. The following lemmas show that $\langle x_0\rangle$ must be contained in such a subgroup. Thus $M$ contains an element of order $2^{n - 2}$ and thus an associative subgroup of index $2$.
 \end{proof}
@@ -948,7 +966,7 @@ With the above lemmas we can now prove Theorem \ref{moufangDesc}.
 \begin{proof}
 	Let $M$ be a Moufang loop with a unique subloop of order $p$ for each prime divisor $p$ of $|M|$. By Proposition \ref{not2power}, we have that if $|M|$ is not a power of $2$, then $M$ is a cyclic group. So assume that $|M| = 2^n$ for some $n$. If $M$ is associative, then it is either cyclic or generalized quaternion by the result for groups. So assume that $M$ is not associative.
 
-    By Proposition \ref{index2subloop}, $M$ has an associative index $2$ subloop $S$. By the result for groups $S$ is either cyclic or generalized quaternion. If $S$ is cyclic, say $S = \langle s\rangle$, then $M = \langle s, x\rangle$ for $x\notin S$ since $S$ is an index $2$ subloop. But then M is associative by diassociativity, hence we can assume that $S$ is generalized quaternion. Let $u\in M\setminus S$ be given and $\{u_1, u_2\}$ be a generating set for $S$. Then $u\notin S = \langle u_1, u_2\rangle$, $u^2 \in Z(M) \subseteq N(\langle u^2, S\rangle)$ and $S\unlhd M$, so $u^{-1}Su = S$. Thus the hypotheses of Theorem \ref{thm-chein} are satisfied. Hence $M$ is isomorphic to $M(Q_{4n}, 2)$ and the proof is complete.
+    By Proposition \ref{index2subloop}, $M$ has an associative index $2$ subloop $S$. By the result for groups $S$ is either cyclic or generalized quaternion. If $S$ is cyclic, say $S = \langle s\rangle$, then $M = \langle s, x\rangle$ for $x\notin S$ since $S$ is an index $2$ subloop. But then M is associative by diassociativity, hence we can assume that $S$ is generalized quaternion. Let $u\in M- S$ be given and $\{u_1, u_2\}$ be a generating set for $S$. Then $u\notin S = \langle u_1, u_2\rangle$, $u^2 \in Z(M) \subseteq N(\langle u^2, S\rangle)$ and $S\unlhd M$, so $u^{-1}Su = S$. Thus the hypotheses of Theorem \ref{thm-chein} are satisfied. Hence $M$ is isomorphic to $M(Q_{4n}, 2)$ and the proof is complete.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2344,17 +2362,22 @@ We will now present some further results dealing providing sufficient conditions
 \end{thm}
 
 \begin{proof}
-  \begin{alignat*}{2}
-    R_{u, v}(R_{x, y}(z)) &= R_{u, v}(R_{x, y}(R_{u, v}(z)\cdot R_{u, v}(z)\ldv z)) &&\\
-    &= R_{u, v}(R_{x,y}(R_{u,v}(z)\cdot R_{x, y}(R_{u,v}(z)\ldv z))) &&\text{ since $R_{x, y}$ is an automorphism}\\
-    &= R_{u, v}(R_{x, y}(R_{u, v}(z))\cdot (R_{u, v}(z)\ldv z)) &&\\
-    &\text{ since $R_{u, v}(z)\ldv z$ is in the associator subloop and thus the left nucleus} &&\\
-    &= R_{u, v}([R_{u, v}(z), x, y]R_{u, v}(z)\cdot (R_{u, v}(z)\ldv z)) &&\text{ definition of $[\cdot, \cdot, \cdot]$}\\
-    &= R_{u, v}([R_{u, v}(z), x, y]\cdot R_{u, v}(z)(R_{u,v}(z)\ldv z)) &&\text{ associators in left nucleus}\\
+  \begin{align*}
+    R_{u, v}(R_{x, y}(z)) &= R_{u, v}(R_{x, y}(R_{u, v}(z)\cdot R_{u, v}(z)\ldv z))\\
+    &= R_{u, v}(R_{x,y}(R_{u,v}(z)\cdot R_{x, y}(R_{u,v}(z)\ldv z)))\\
+    &\text{ since $R_{x, y}$ is an automorphism}\\
+    &= R_{u, v}(R_{x, y}(R_{u, v}(z))\cdot (R_{u, v}(z)\ldv z))\\
+    &\text{ since $R_{u, v}(z)\ldv z$ is in the associator subloop and thus the left nucleus}\\
+    &= R_{u, v}([R_{u, v}(z), x, y]R_{u, v}(z)\cdot (R_{u, v}(z)\ldv z))\\
+    & \text{ definition of $[\cdot, \cdot, \cdot]$}\\
+    &= R_{u, v}([R_{u, v}(z), x, y]\cdot R_{u, v}(z)(R_{u,v}(z)\ldv z))\\
+    &\text{ associators in left nucleus}\\
     &= R_{u, v}([R_{u, v}(z), x, y]z) &&\\
-    &= [R_{u, v}(z), x, y]R_{u, v}(z) &&\text{ $R_{u, v}$ is an automorphism}\\
-    &= R_{x, y}(R_{u, v}(z)) &&\text{ definition of $[\cdot, \cdot, \cdot]$}
-  \end{alignat*}
+    &= [R_{u, v}(z), x, y]R_{u, v}(z)\\
+    &\text{ $R_{u, v}$ is an automorphism}\\
+    &= R_{x, y}(R_{u, v}(z))\\
+    &\text{ definition of $[\cdot, \cdot, \cdot]$}
+  \end{align*}
 \end{proof}
 
 Below is a right automorphic loop with center $\{1,2\}$, so $Q/\{1,2\}$ is an abelian group (being of order 4). It is not an RCC loop. This shows that a right automorphic in which all associators lie in left nucleus need not be RCC. Thus the previous result is not a statement solely about RCC loops.
@@ -2466,13 +2489,19 @@ Theorem \ref{right-aut} does not directly extend to arbitrary loops. The followi
 
 \section{Introduction}
 
-It has been shown that Lagrange's Theorem holds in Moufang loops \cite{LG}. However, the proof relies on the classification of finite simple Moufang loops, which in turn relies on the classification of finite simple groups. The proof of Lagrange's Theorem for groups is much simpler because it uses the fact that cosets of a subgroup partition the group. In general, the cosets of a subloop of a Moufang loop need not partition the loop. However, based on extensive computational evidence (all Moufang loops of orders $\leq 64$, $81$, and $243$ checked \cite{LOOPS}) we make the following conjecture:
+It has been shown that Lagrange's Theorem holds in Moufang loops \cite{LG}. However, the proof relies on the classification of finite simple Moufang loops, which in turn relies on the classification of finite simple groups. The proof of Lagrange's Theorem for groups is much simpler because it uses the fact that cosets of a subgroup are a uniform partition of the group. In general, the cosets of a subloop of a Moufang loop need not partition the loop. However, based on extensive computational evidence (all Moufang loops of orders $\leq 64$, $81$, and $243$ checked \cite{LOOPS}) we make the following conjecture:
 
 \begin{cnj}
   Let $M$ be a Moufang loop, $S \leq M$ and $\mathcal{S}$ the family of all left cosets of $S$. Then there exists $A\subset S$ such that $A$ is a partition of $M$.
 \end{cnj}
 
-That is, in Moufang loops there is always a subset of the family of all left cosets of a subloop which do partition the loop. Proving this conjecture would provide a proof of Lagrange's Theorem for Moufang loops very similar to that for groups. In particular, such a proof would be direct in the sense that it would not rely on the classification of finite simple Moufang loops. While we were ultimately unsuccessful in this endeavor, we were able to prove some interesting intermediate results which are presented here.
+That is, in Moufang loops there is always a subset of the family of all left cosets of a subloop which do partition the loop. Proving this conjecture would provide a proof of Lagrange's Theorem for Moufang loops very similar to that for groups. In particular, such a proof would be direct in the sense that it would not rely on the classification of finite simple Moufang loops. We were ultimately unsuccessful, but each of our attempts did yield results which are interesting in their own rights.
+
+We will begin by attempting to directly construct such a uniform partition of cosets directly by proving results on the intersections of distinct cosets and the existence of disjoint cosets. When this approach does not prove fruitful we will try other approaches to proving Lagrange's Theorem for Moufang loops directly by constructing a partition of the loop with each block having order a multiple of the order of the subloop.
+
+We will first define an equivalence relation on $Q$ analogous to the natural equivalence relation of coset membership in groups. This has the advantage of providing us with a partition of $Q$, meaning we would need only show that each block of the partition has order a multiple of the order of the subloop.
+
+Finally, we will consider orbits of the relative left multiplication groups of $S$ in $Q$. These orbits are a different generalization of the definition of cosets in groups to the context of loops. This strategy again has the advantage of providing us with a partition of the loop, reducing the problem to that of showing that the order of each orbit is a multiple of the order of the subloop.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -2611,7 +2640,7 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
 \end{proof}
 
 \begin{lem}\label{lem-q-part}
-  Let $Q$ be a Moufang loop, let $S\leq Q$, and let $a\in Q\setminus S$ satisfy $a^2\in S$. The following are equivalent.
+  Let $Q$ be a Moufang loop, let $S\leq Q$, and let $a\in Q- S$ satisfy $a^2\in S$. The following are equivalent.
   \begin{enumerate}
     \item $Q = S\cup Sa$;
     \item For every $x\in Q$, if $x\not\in S$, then $Sx\cap Sa\neq \emptyset$.
@@ -2619,15 +2648,15 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
 \end{lem}
 
 \begin{proof}
-  Assume (1) holds and assume $x\in Q\setminus S$. Then $x\in Sx\cap Sa$, and so $Sx\cap Sa\neq\emptyset$.
+  Assume (1) holds and assume $x\in Q- S$. Then $x\in Sx\cap Sa$, and so $Sx\cap Sa\neq\emptyset$.
   
-  Conversely, assume (2) holds. Then for each $u\in Q\setminus S$, there exists $u'\in Su\cap Sa$, and so $u'u^{-1}, u'a^{-1}, u(u')^{-1}, a(u')^{-1}\in S$. Let $x\in Q\setminus S$ be given.
+  Conversely, assume (2) holds. Then for each $u\in Q- S$, there exists $u'\in Su\cap Sa$, and so $u'u^{-1}, u'a^{-1}, u(u')^{-1}, a(u')^{-1}\in S$. Let $x\in Q\setminus S$ be given.
   
-  For all $y\in Q\setminus S$, we have
+  For all $y\in Q- S$, we have
   \begin{equation}\label{Eqn:chap5-1}
   (y'a^{-1}\cdot x'a^{-1})^{-1}\cdot y'y^{-1}\in S\,.
   \end{equation}
-  Set $y = a^2(x')^{-1}a$ and suppose $y\in Q\setminus S$. 
+  Set $y = a^2(x')^{-1}a$ and suppose $y\in Q- S$. 
   We have
   \begin{alignat*}{2}
   y'y^{-1}
@@ -2645,7 +2674,7 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
   a^{-1}x'\in S\,.
   \end{equation}
   
-  Next, for all $y\in Q\setminus S$, we have
+  Next, for all $y\in Q- S$, we have
   \begin{equation}\label{Eqn:chap5-3}
   y(y')^{-1}\cdot (y'a^{-1}\cdot x'x^{-1})\in S\,.
   \end{equation}
@@ -2662,12 +2691,12 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
   Finally, by \eqref{Eqn:chap5-2}, \eqref{Eqn:chap5-4} and the IP, we obtain $ax\in S$. Thus $x\in a^{-1}S$
   and so $x^{-1}\in Sa$. 
   
-  We have proven that for all $x\in Q\setminus S$, $x^{-1}\in Sa$. Since $x\in Q\setminus S$ implies $x^{-1}\in Q\setminus S$, we conclude that for all $x\in Q\setminus S$, $x\in Sa$. It follows that
+  We have proven that for all $x\in Q- S$, $x^{-1}\in Sa$. Since $x\in Q\setminus S$ implies $x^{-1}\in Q\setminus S$, we conclude that for all $x\in Q\setminus S$, $x\in Sa$. It follows that
   $Q= S\cup Sa$, that is, (1) holds.
 \end{proof}
 
 \begin{prp}
-  Let $Q$ be a Moufang loop, $S < Q$, and assume there exists $a\in Q\setminus S$ such that $S\cup Sa \subsetneq Q$. Then there exists $b\in Q$ such that $Sb\cap S = Sb\cap Sa = \emptyset$.
+  Let $Q$ be a Moufang loop, $S < Q$, and assume there exists $a\in Q- S$ such that $S\cup Sa \subsetneq Q$. Then there exists $b\in Q$ such that $Sb\cap S = Sb\cap Sa = \emptyset$.
 \end{prp}
 
 \begin{proof}
@@ -2715,7 +2744,7 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
 We freely use commutativity and diassociativity in what follows, especially in calculations of the form $(xy)^2 = x^2 y^2$.
 
 \begin{lem}\label{lem-comMoufang}
-  Let $Q$ be a commutative Moufang loop, $S < Q$, and assume there exists $a,b\in Q\setminus S$ such that $a^2,b^2\in S$ and $Sa\cap Sb=\emptyset$. The following are equivalent:
+  Let $Q$ be a commutative Moufang loop, $S < Q$, and assume there exists $a,b\in Q- S$ such that $a^2,b^2\in S$ and $Sa\cap Sb=\emptyset$. The following are equivalent:
   \begin{enumerate}
     \item $Q = S\cup Sa\cup Sb$, 
     \item For all $x\in Q$, if $x\not\in S$, then $Sx\cap (Sa\cup Sb)\neq \emptyset$
@@ -2724,17 +2753,17 @@ We freely use commutativity and diassociativity in what follows, especially in c
 \end{lem}
 
 \begin{proof}
-  Assume (1) holds and let $x\in Q\setminus S$ be given. Then $Sx\cap S = \emptyset$. By (1), $Sx\cap (Sa\cup Sb)\neq \emptyset$. Thus (2) holds.
+  Assume (1) holds and let $x\in Q- S$ be given. Then $Sx\cap S = \emptyset$. By (1), $Sx\cap (Sa\cup Sb)\neq \emptyset$. Thus (2) holds.
   
-  Conversely, assume (2) holds and let $x\in Q\setminus S$ be given. Then there exists $x'\in Sx\cap (Sa\cup Sb)$. Thus $x'x^{-1}\in S$ and $x'a^{-1}\in S$ or $x'b^{-1}\in S$.
+  Conversely, assume (2) holds and let $x\in Q- S$ be given. Then there exists $x'\in Sx\cap (Sa\cup Sb)$. Thus $x'x^{-1}\in S$ and $x'a^{-1}\in S$ or $x'b^{-1}\in S$.
   
   If $x'a^{-1}\in S$, then $(x')^2 a^{-2} = (x'a^{-1})^2\in S$, and so $(x')^2\in S$ since $a^2\in S$. Similarly, if $x'a^{-1}\in S$, then $(x')^2\in S$ since $b^2\in S$. In either case, we shown that $(x')^2\in S$.
   
-  Now since $x'x^{-1}\in S$, we have $(x')^2 x^{-2} = (x'x^{-1})^2\in S$, and thus $x^{-2}\in S$ since $(x')^2\in S$. We have shown that for all $x\in Q\setminus S$, we have $x^2\in S$. On the other hand, this is also true for all $x\in S$. Therefore for all $x\in Q$, $x^2\in S$. By Lemma \ref{lem-squaresNormal} $S$ is a normal subloop of $Q$ and hence the cosets of $S$ partition $Q$. Since there are no cosets disjoint from $S$, $Sa$ and $Sb$, we must have $S\cup Sa\cup Sb = Q$. Therefore (1) holds and we have also established the additional assertion.
+  Now since $x'x^{-1}\in S$, we have $(x')^2 x^{-2} = (x'x^{-1})^2\in S$, and thus $x^{-2}\in S$ since $(x')^2\in S$. We have shown that for all $x\in Q - S$, we have $x^2\in S$. On the other hand, this is also true for all $x\in S$. Therefore for all $x\in Q$, $x^2\in S$. By Lemma \ref{lem-squaresNormal} $S$ is a normal subloop of $Q$ and hence the cosets of $S$ partition $Q$. Since there are no cosets disjoint from $S$, $Sa$ and $Sb$, we must have $S\cup Sa\cup Sb = Q$. Therefore (1) holds and we have also established the initial assertion.
 \end{proof}
 
 \begin{prp}
-  Let $Q$ be a commutative Moufang loop, $S < Q$, and assume there exists $a,b\in Q\setminus S$ such that $a^2,b^2\in S$, $Sa\cap Sb=\emptyset$ and $S\cup Sa\cup Sb \subsetneq Q$. Then there exists $c\in Q$ such that $Sc\cap S = Sc\cap Sa = Sc\cap Sb = \emptyset$.
+  Let $Q$ be a commutative Moufang loop, $S < Q$, and assume there exists $a,b\in Q- S$ such that $a^2,b^2\in S$, $Sa\cap Sb=\emptyset$ and $S\cup Sa\cup Sb \subsetneq Q$. Then there exists $c\in Q$ such that $Sc\cap S = Sc\cap Sa = Sc\cap Sb = \emptyset$.
 \end{prp}
 
 \begin{proof}
@@ -2744,7 +2773,7 @@ We freely use commutativity and diassociativity in what follows, especially in c
 
 \section{An Equivalence Relation}
 
-We previously attempted to partition the loop by sets known to have size a multiple of that of the subloop. We will now instead start with a partition of the loop and attempt to show that the blocks have size a multiple of that of of the subloop.
+We previously attempted to partition the loop by sets known to have order a multiple of that of the subloop. We will now instead start with a partition of the loop and attempt to show that its blocks have orders multiples of that of the subloop. We will see that this approach does not work, but the result is still of some interest.
 
 \begin{prp}
   For an IP loop $Q$, $H\leq Q$ the relation $\sim_H$ defined by $x\sim_H y$ iff $xy^{-1} \in H$ and $H(yx^{-1})\cdot x = Hy$ is an equivalence relation.
@@ -2810,14 +2839,18 @@ Note that it is possible that all equivalence classes other than the subloop its
 Having been unable to prove Lagrange's Theorem for Moufang loops directly using cosets we will now try another approach.
 
 \begin{dfn}
-  Let $Q$ be a loop, $S\leq Q$ and recall that $\mlt_L(Q) = \langle L_x : x\in Q\rangle$. We then define the \emph{left multiplication group of $S$ in $Q$} as 
+  Let $Q$ be a loop, $S\leq Q$ and recall that $\mlt_L(Q) = \langle L_x : x\in Q\rangle$. We then define the \emph{relative left multiplication group of $S$ in $Q$} as 
   \[\mlt_L(Q; S) = \langle L_x : x\in S\rangle \leq \mlt_L(Q)\]
   Note that left translations in $\mlt_L(Q; S)$ act on all of $Q$, so $\mlt_L(Q; S)\neq \mlt_L(S)$.
 \end{dfn}
 
 For a group $G$ with $S\leq G$ the orbits of $\mlt_L(G; S)$ are precisely the right cosets of $S$ in $G$. This observation suggests that perhaps in Moufang loops the proper generalization of cosets to use to prove Lagrange's Theorem directly is orbits of $\mlt_L(Q; S)$. 
 
-The orbits of $\mlt_L(Q; S)$ partition $Q$ so we would need to show that the order of orbits of $\mlt_L(Q; S)$ are multiples of the order of $S$. We were not able to prove this result, but we were able to show that if it holds in simple Moufang loops $M$, then it holds in all Moufang loops. Additionally, we were able to show that the order of orbits of $\mlt_L(Q; S)$ are multiples of $\frac{|\mlt_L(Q; S)}{\inn_L(Q)}$.
+The orbits of $\mlt_L(Q; S)$ partition $Q$ so we would need to show that the orders of orbits of $\mlt_L(Q; S)$ are multiples of the order of $S$. We were not able to prove this result, but we were able to show that if it holds in simple Moufang loops $M$, then it holds in all Moufang loops. Additionally, we were able to show that the order of orbits of $\mlt_L(Q; S)$ are multiples of $\frac{|\mlt_L(Q; S)}{\inn_L(Q)}$.
+
+\begin{dfn}
+  Let $S\ldv Q$ be the set of orbits of $\mlt_L(Q; S)$ on the set $Q$.
+\end{dfn}
 
 \begin{dfn}
   The \emph{action matrix} of $x\in Q$, $R_{S\ldv Q}(x)$, is the transition matrix of a Markov chain on the state space of orbits of $\mlt_L(Q; S)$ where the probability of transition from orbit $X$ to orbit $Y$ is
@@ -2828,13 +2861,13 @@ The orbits of $\mlt_L(Q; S)$ partition $Q$ so we would need to show that the ord
 Informally, for fixed $x\in Q$ this Markov chain represents applying $R_x$ to an orbit $X$ of $\mlt_L(Q; S)$ and considering the probability that a randomly chosen element is sent to the orbit $Y$.
 
 \begin{prp}
-  Suppose that $R_{P\ldv Q}(x) = R_{P\ldv Q}(y)$, then $x$ and $y$ lie in the same orbit of $\mlt_L(Q; P)$.
+  Suppose that $R_{S\ldv Q}(x) = R_{S\ldv Q}(y)$, then $x$ and $y$ lie in the same orbit of $\mlt_L(Q; S)$.
 \end{prp}
 
 \begin{proof}
-  Let $Q$ be a loop $P\leq Q$. Let $x, y\in Q$ such that $R_{P\ldv Q}(x) = R_{P\ldv Q}(y)$. Suppose that $X$ is the orbit of $\mlt_L(Q; P)$ containing $x$.
+  Let $Q$ be a loop $S\leq Q$. Let $x, y\in Q$ such that $R_{S\ldv Q}(x) = R_{S\ldv Q}(y)$. Suppose that $X$ is the orbit of $\mlt_L(Q; S)$ containing $x$.
 
-  Since $R_{P\ldv Q}(x) = R_{P\ldv Q}(y)$ we have that $|P\cap R^{-1}(y)(X)| = |P\cap R^{-1}(x)(X)| \geq 1$ by Theorem 4.1 in \cite{Smith}. So there exists $p\in P$ such that $py \in X$. By our choice of $X$ there exists $\phi\in\mlt_L(Q; P)$ such that $py = \phi(x)$. But then $y = L_p^{-1}(\phi(x))$ and thus $x, y$ lie in the same orbit of $\mlt_L(Q; P)$.
+  Since $R_{S\ldv Q}(x) = R_{S\ldv Q}(y)$ we have that $|S\cap R^{-1}(y)(X)| = |S\cap R^{-1}(x)(X)| \geq 1$ by Theorem 4.1 in \cite{Smith}. So there exists $p\in S$ such that $py \in X$. By our choice of $X$ there exists $\phi\in\mlt_L(Q; S)$ such that $py = \phi(x)$. But then $y = L_p^{-1}(\phi(x))$ and thus $x, y$ lie in the same orbit of $\mlt_L(Q; S)$.
 \end{proof}
 
 \begin{dfn}
@@ -2842,33 +2875,33 @@ Informally, for fixed $x\in Q$ this Markov chain represents applying $R_x$ to an
 \end{dfn}
 
 \begin{prp}
-  The partition of $Q$ into orbits of $\mlt_L(Q; P)$ is uniform iff all action matrices are doubly stochastic.
+  The partition of $Q$ into orbits of $\mlt_L(Q; S)$ is uniform iff all action matrices are doubly stochastic.
 \end{prp}
 
 \begin{proof}
-  Let $s_Y(x)$ be the sum of entries in the column corresponding to $Y$ in the matrix $R_{P\ldv Q}(x)$. Note that
-  \[s_Y(x) = \sum_{Z\in P\ldv Q} \frac{|R_x^{-1}(Y)\cap Z|}{|Z|}\] and since $P\ldv Q$ is a partition of $Q$ and $R_x$ is a permutation of $Q$ we have
-  \[|Y| = \sum_{Z\in P\ldv Q} |R_x^{-1}(Y)\cap Z|.\]
+  Let $s_Y(x)$ be the sum of entries in the column corresponding to $Y$ in the matrix $R_{S\ldv Q}(x)$. Note that
+  \[s_Y(x) = \sum_{Z\in S\ldv Q} \frac{|R_x^{-1}(Y)\cap Z|}{|Z|}\] and since $S\ldv Q$ is a partition of $Q$ and $R_x$ is a permutation of $Q$ we have
+  \[|Y| = \sum_{Z\in S\ldv Q} |R_x^{-1}(Y)\cap Z|.\]
 
-  Suppose first that all action matrices are doubly stochastic and let $x\in Q$ be given. Suppose that $X$ is the orbit of $\mlt_L(Q; P)$ containing $x$. From the previous proposition the entry corresponding to row $P$ and column $X$ is a $1$. Since $R_{P\ldv Q}(x)$ is doubly stochastic the remaining entries in this column are $0$. Thus $s_Y(x) = \sum_{Z\in P\ldv Q} \frac{|R_x^{-1}(X)\cap Z|}{|Z|} = \frac{|R_x^{-1}(X)\cap P|}{|P|} = 1$ and $|X| = \sum_{Z\in P\ldv Q} |R_x^{-1}(X)\cap Z| = |R_x^{-1}(X)\cap P| = |P|$. So for all $X\in P\ldv Q$ $|X| = |P|$ and the partition is uniform.
+  Suppose first that all action matrices are doubly stochastic and let $x\in Q$ be given. Suppose that $X$ is the orbit of $\mlt_L(Q; S)$ containing $x$. From the previous proposition the entry corresponding to row $S$ and column $X$ is a $1$. Since $R_{S\ldv Q}(x)$ is doubly stochastic the remaining entries in this column are $0$. Thus $s_Y(x) = \sum_{Z\in S\ldv Q} \frac{|R_x^{-1}(X)\cap Z|}{|Z|} = \frac{|R_x^{-1}(X)\cap S|}{|S|} = 1$ and $|X| = \sum_{Z\in S\ldv Q} |R_x^{-1}(X)\cap Z| = |R_x^{-1}(X)\cap S| = |S|$. So for all $X\in S\ldv Q$ $|X| = |S|$ and the partition is uniform.
 
-  Now suppose that the partition $P\ldv Q$ is uniform and let $x\in Q$, $Y\in P\ldv Q$ be given. We will show that $s_Y(x) = 1$. Consider
+  Now suppose that the partition $S\ldv Q$ is uniform and let $x\in Q$, $Y\in S\ldv Q$ be given. We will show that $s_Y(x) = 1$. Consider
   \begin{alignat*}{2}
-    |Y| &= \sum_{Z\in P\ldv Q} |R_x^{-1}(Y)\cap Z| &&\text{ from the above}\\
+    |Y| &= \sum_{Z\in S\ldv Q} |R_x^{-1}(Y)\cap Z| &&\text{ from the above}\\
     &\text{Dividing by $|Y|$ we have} &&\\
-    1 &= \sum_{Z\in P\ldv Q} \frac{|R_x^{-1}(Y)\cap Z|}{|Y|} &&\\
-    &= \sum_{Z\in P\ldv Q} \frac{|R_x^{-1}(Y)\cap Z|}{|Z|} &&\text{ since the partition is uniform}\\
+    1 &= \sum_{Z\in S\ldv Q} \frac{|R_x^{-1}(Y)\cap Z|}{|Y|} &&\\
+    &= \sum_{Z\in S\ldv Q} \frac{|R_x^{-1}(Y)\cap Z|}{|Z|} &&\text{ since the partition is uniform}\\
     &= s_Y(x) &&\text{ by definition}
   \end{alignat*}
-  Thus $s_Y(x) = 1$, so $R_{P\ldv Q}(x)$ is doubly stochastic for all $x\in Q$.
+  Thus $s_Y(x) = 1$, so $R_{S\ldv Q}(x)$ is doubly stochastic for all $x\in Q$.
 \end{proof}
 
 \begin{prp}
-  If there is a Moufang loop $Q$ with subloop $P$ and an orbit $X$ of $\mlt_L(Q; P)$ such that $|P|$ does not divide $|X|$, then there is such a simple Moufang loop.
+  If there is a Moufang loop $Q$ with subloop $S$ and an orbit $X$ of $\mlt_L(Q; S)$ such that $|S|$ does not divide $|X|$, then there is such a simple Moufang loop.
 \end{prp}
 
 \begin{proof}
-  Note that $|P|$ fails to divide $|X|$ iff every representation of $X$ as a union of cosets contains at least $2$ with nontrivial intersection. This passes directly to the quotient loop.
+  Note that $|S|$ fails to divide $|X|$ iff every representation of $X$ as a union of cosets contains at least $2$ with nontrivial intersection. This passes directly to the quotient loop.
 \end{proof}
 
 \begin{prp}
@@ -2898,6 +2931,16 @@ Thus $\stb_G(x)$ is isomorphic to some subloop of $\inn_L(Q)$ and in particular 
 \chapter{Universally and semi-universally flexible loops}
 
 \section{Introduction}
+
+We refer the reader to the introduction of this dissertation for definitions of flexibility and isotope.. In this chapter we will be concerned with loops which are universally flexible and semi-universally flexible.
+
+\begin{dfn}
+  A loop $(Q, \cdot)$ is \emph{universally flexible} (UF) if all of its isotopes are flexible.
+\end{dfn}
+
+\begin{dfn}
+  A loop $(Q, \cdot)$ is \emph{semi-universally flexible} (SUF) if all of its left and right isotopes are flexible.
+\end{dfn}
 
 It was shown in \cite{SUF} that every SUF IP loop is diassociative. It is conjectured that there exists a SUF IP loop which is not Moufang, meaning that this result is not simply a consequence of Moufang's Theorem. However, no such example has yet been found. Our attempt to construct such an example is described below.
 
@@ -2993,12 +3036,11 @@ Given the extent of loops checked we conjecture the following:
   Let $Q$ be an SUF IP loop which is also a central extension of a Moufang loop by a cyclic group, then $Q$ is a Moufang loop.
 \end{cnj}
 
-\section{An SUF loop which is not middle Bol}
-
+\section{A UF loop which is not middle Bol}
 
 It had been conjectured that all universally flexible loops are middle Bol. The central extension approach did allow us to construct a UF loop which is not middle Bol. The multiplication table of such a loop is below, it is a central extension of a middle Bol loop of order 16 by $\ZZZ_2$. The central extension structure can clearly be seen in the multiplication table, $K\times \{0\}$ is the upper left quadrant.
 
-In particular, this loop is universally flexible and does not have the AAIP and thus is not middle Bol. Further, it is commutative and has the semiautomorphic inverse property $(xyx)^{-1} = x^{-1} y^{-1} x^{-1}$.
+In particular, this loop is universally flexible and does not have the AAIP and thus is not middle Bol. Further, it is commutative and has the semiautomorphic inverse property $(xyx)^{-1} = x^{-1} y^{-1} x^{-1}$. Further, one of its isotopes has the AAIP, but being an isotope is UF and not middle Bol.
 
 \begin{table}[H]
   \resizebox{\textwidth}{!}{%
@@ -3039,7 +3081,7 @@ In particular, this loop is universally flexible and does not have the AAIP and 
   32& 32& 31& 22& 21& 28& 27& 26& 25& 18& 17& 30& 29& 19& 20& 23& 24& 10&  9&  7&  8&  4&  3& 15& 16& 14& 13&  2&  1& 12& 11&  6&  5 \\
   \hline
   \end{tabular}}
-  \caption{A loop which is SUF and not middle Bol}
+  \caption{A loop which is UF and not middle Bol}
   \label{suf-notMBol}
 \end{table}
 
@@ -3057,7 +3099,7 @@ There has been some work in describing properties of the power graph of a group 
 
 There are several outstanding problems regarding para-F quasigroups. The first is the lack of a human readable proof that para-F quasigroups are affine over Moufang loops. An example of a para-F quasigroup which is not paramedial is also still needed.
 
-There is another generalization of medial quasigroups which we have not considered above, the trimedial quasigroups. The relation of trimedial quasigroups to other varieties is shown in figure \ref{trimedial-diag} \cite{trimedial}. It seems that the variety of quasigroups defined by the (*) identities in section \ref{sec-can-identities} may be the correct defining identities for the analogous triparamedial quasigroups \cite{trimedial}. To formalize this would require proving exactly where the variety defined by (*) lies in relation to the other identities. If it is the case that the variety defined by (*) is the triparamedial quasigroups the next step would be to prove a similar linearity result for this variety.
+There is another generalization of medial quasigroups which we have not considered above, the trimedial quasigroups. The relation of trimedial quasigroups to other varieties is shown in figure \ref{trimedial-diag} \cite{trimedial}. It seems that the variety of quasigroups defined by the (*) identities in section \ref{sec-can-identities} may be the analogous triparamedial quasigroups \cite{trimedial}. To formalize this would require proving that a quasigroup satisfies (*) if and only if it is triparamedial. Another natural next step would be to attempt to prove a linearity result for the triparamedial quasigroups.
 
 \begin{figure}[H]
   \centering
@@ -3074,7 +3116,7 @@ There is another generalization of medial quasigroups which we have not consider
     \node (paramedial) [draw, right = .5cm of medial]
       {\makecell{\textbf{Paramedial}\\ $ax\cdot yb = bx\cdot ya$}};
     \node (triparamedial) [draw, below = 2cm of paramedial]
-      {\makecell{\textbf{Triparamedial}\\ ?}};
+      {\makecell{\textbf{Triparamedial}\\ all $3$-generated\\ subquasigroups paramedial}};
     \node (semiparamedial) [draw, below = 2cm of triparamedial]
       {\makecell{\textbf{Semiparamedial}\\ $xx\cdot yz = zx\cdot yx$\\ and \\ $zy\cdot xx = xy\cdot xz$}};
     \node (para-f) [draw, below right = 2cm and .5cm of triparamedial]
@@ -3104,7 +3146,7 @@ The question we set out to answer here, namely "for any subloop of a Moufang loo
 
 The first open question to address here is whether there exists an SUF loop which is not UF. We conjecture that such a loop does exist, but we have thus far been unable to construct one.
 
-There is also the remaining question of whether SUF and IP implies Moufang. As above, it is conjectured that there is an SUF IP loop which is not Moufang, but none has yet been constructed.
+There is also the remaining question of whether SUF and IP implies Moufang. As above, it is conjectured that there is an SUF IP loop which is not Moufang, but none has yet been constructed. Not that an affirmative answer to the first question would provide an affirmative answer to this question as it is known \cite{SUF} that a UF IP loop must be Moufang.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
