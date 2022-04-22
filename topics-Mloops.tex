@@ -2112,10 +2112,10 @@ We will now show that if $Q/\nuc(Q)$ is an abelian group, then the classical and
 
 \begin{proof}
   Let $x, y, z\in Q$ be given and consider
-  \begin{align*}
-    x\rdv(L_{x, [y, z]}([y, z]\ldv 0)) &= x\rdv([y, z]\ldv 0)\text{ since $[y, z]\in\nuc(Q)$}\\
-    &= x\rdv [z, y]\text{ by lemma \ref{lem-1}.}
-  \end{align*}
+  \begin{alignat*}{2}
+    x\rdv(L_{x, [y, z]}([y, z]\ldv 0)) &= x\rdv([y, z]\ldv 0) &&\text{ since $[y, z]\in\nuc(Q)$}\\
+    &= x\rdv [z, y] &&\text{ by lemma \ref{lem-1}.}
+  \end{alignat*}
 
   But on the other hand we have that
   \begin{align*}
@@ -2137,15 +2137,15 @@ We will now show that if $Q/\nuc(Q)$ is an abelian group, then the classical and
   We will first show that $[H, H]\subseteq [H, H]_C$. Let $x, y\in H$ be given. Then $[x, y] = T_x(y)\rdv y = T_x(y)\rdv T_1(y) \in [H, H]_C$. Thus $[H, H]_C$ contains all generators of $[H, H]$ and $[H, H]\subseteq [H, H]_C$.
 
   We will now show that $[H, H]_C\subseteq [H, H]$. Let $u_1, v_1, u_2, v_2, a\in Q$ such that $u_1\rdv v_1, u_2\rdv v_2, a\in H$ be given. Note that $L_{u_1, u_2}(a) = L_{v_1, v_2}(a) = R_{u_1, u_2}(a) = R_{v_1, v_2}(a) = 1$ since $a\in H\subseteq \nuc(Q)$. So we need only consider $T\in\mathcal{W}$. Consider
-  \begin{align*}
-    T_{u_1}(a)\rdv T_{v_1}(a) &= ([u_1, a]\cdot a)\rdv ([v_1, a]\cdot a)\\
-    &= [u_1, a](a\rdv([v_1, a]\cdot a))\text{ since $[u_1, a]\in\nuc(Q)$}\\
-    &= [u_1, a]((a\rdv a)(1\rdv[v_1, a]))\text{ since $[v_1, a]\in\nuc(Q)$}\\
-    &= [u_1, a](1\rdv [v_1, a])\\
-    &= [u_1, a]\rdv [v_1, a]\text{ by lemma \ref{lem-2}}\\
-    &= [u_1, a]\cdot [a, v_1]\text{ by lemma \ref{lem-3}}\\
+  \begin{alignat*}{2}
+    T_{u_1}(a)\rdv T_{v_1}(a) &= ([u_1, a]\cdot a)\rdv ([v_1, a]\cdot a) &&\\
+    &= [u_1, a](a\rdv([v_1, a]\cdot a)) &&\text{ since $[u_1, a]\in\nuc(Q)$}\\
+    &= [u_1, a]((a\rdv a)(1\rdv[v_1, a])) &&\text{ since $[v_1, a]\in\nuc(Q)$}\\
+    &= [u_1, a](1\rdv [v_1, a]) &&\\
+    &= [u_1, a]\rdv [v_1, a] &&\text{ by lemma \ref{lem-2}}\\
+    &= [u_1, a]\cdot [a, v_1] &&\text{ by lemma \ref{lem-3}}\\
     &\in [H, H]
-  \end{align*}
+  \end{alignat*}
   So $[H, H]_C\subseteq [H, H]$ and $[H, H]_C = [H, H]$. Thus the derived series are equal by induction.
 \end{proof}
 
@@ -2247,70 +2247,70 @@ Now define
   First note that all 6 of the associators defined above lie in the associator subloop, which is a subloop of the nucleus by assumption. Further by \cite{PACC} lemma 2.6 these associators commute. We will show that the generators of $\inn^*(Q)$ commute.
 
   Consider
-  \begin{align*}
-    M_{x, y}(M_{u, v}(z)) &= M_{x, y}([v, z, u]_{M'}\cdot z)\\
-    &= [v, z, u]_{M'}\cdot M_{x, y}(z)\text{ by corollary \ref{cor-M}}\\
-    &= [v, z, u]_{M'}\cdot [y, z, x]_{M'}z\\
-    &= [y, z, x]_{M'}\cdot [v, z, u]_{M'}z\text{ as noted above}\\
-    &= [y, z, x]_{M'}\cdot M_{u, v}(z)\\
-    &= M_{u, v}([y, z, x]_{M'}z)\text{ by corollary \ref{cor-M}}\\
+  \begin{alignat*}{2}
+    M_{x, y}(M_{u, v}(z)) &= M_{x, y}([v, z, u]_{M'}\cdot z) &&\\
+    &= [v, z, u]_{M'}\cdot M_{x, y}(z) &&\text{ by corollary \ref{cor-M}}\\
+    &= [v, z, u]_{M'}\cdot [y, z, x]_{M'}z &&\\
+    &= [y, z, x]_{M'}\cdot [v, z, u]_{M'}z &&\text{ as noted above}\\
+    &= [y, z, x]_{M'}\cdot M_{u, v}(z) &&\\
+    &= M_{u, v}([y, z, x]_{M'}z) &&\text{ by corollary \ref{cor-M}}\\
     &= M_{u, v}(M_{x, y}(z))
-  \end{align*}
+  \end{alignat*}
 
   Further
-  \begin{align*}
-    L_{x, y}(M_{u, v}(z)) &= L_{x, y}(z[v, z, u]_M)\\
-    &= L_{x, y}(z)\cdot [v, z, u]_M\text{ by lemma \ref{lem-LR}}\\
-    &= [x, y, z]_{L'}z \cdot [v, z, u]_M\\
-    &= [x, y, z]_{L'} \cdot z[v, z, u]_M\\
-    &= [x, y, z]_{L'} \cdot M_{u, v}(z)\\
-    &= M_{u, v}([x, y, z]_{L'} z)\text{ by corollary \ref{cor-M}}\\
-    &= M_{u, v}(L_{x, y}(z))
-  \end{align*}
+  \begin{alignat*}{2}
+    L_{x, y}(M_{u, v}(z)) &= L_{x, y}(z[v, z, u]_M) &&\\
+    &= L_{x, y}(z)\cdot [v, z, u]_M &&\text{ by lemma \ref{lem-LR}}\\
+    &= [x, y, z]_{L'}z \cdot [v, z, u]_M &&\\
+    &= [x, y, z]_{L'} \cdot z[v, z, u]_M &&\\
+    &= [x, y, z]_{L'} \cdot M_{u, v}(z) &&\\
+    &= M_{u, v}([x, y, z]_{L'} z) &&\text{ by corollary \ref{cor-M}}\\
+    &= M_{u, v}(L_{x, y}(z)) &&
+  \end{alignat*}
 
   Next consider
-  \begin{align*}
-    R_{x, y}(M_{u, v}(z)) &= R_{x, y}([v, z, u]_{M'}z)\\
-    &= [v, z, u]_{M'}\cdot R_{x, y}(z)\text{ by lemma \ref{lem-LR}}\\
-    &= [v, z, u]_{M'}\cdot [z, y, x]_{R'}z\\
-    &= [z, y, x]_{R'}\cdot [v, z, u]_{M'}z\\
-    &= [z, y, x]_{R'}\cdot M_{u, v}(z)\\
-    &= M_{u, v}([z, y, x]_{R'}z)\text{ by corollary \ref{cor-M}}\\
-    &= M_{u, v}(R_{x, y}(z))
-  \end{align*}
+  \begin{alignat*}{2}
+    R_{x, y}(M_{u, v}(z)) &= R_{x, y}([v, z, u]_{M'}z) &&\\
+    &= [v, z, u]_{M'}\cdot R_{x, y}(z) &&\text{ by lemma \ref{lem-LR}}\\
+    &= [v, z, u]_{M'}\cdot [z, y, x]_{R'}z &&\\
+    &= [z, y, x]_{R'}\cdot [v, z, u]_{M'}z &&\\
+    &= [z, y, x]_{R'}\cdot M_{u, v}(z) &&\\
+    &= M_{u, v}([z, y, x]_{R'}z) &&\text{ by corollary \ref{cor-M}}\\
+    &= M_{u, v}(R_{x, y}(z)) &&
+  \end{alignat*}
 
   Now consider
-  \begin{align*}
-    L_{x, y}(R_{u, v}(z)) &= L_{x, y}(z[z, v, u]_R)\\
-    &= L_{x, y}(z)\cdot [z, v, u]_R\text{ by lemma \ref{lem-LR}}\\
-    &= [x, y, z]_{L'}z\cdot [z, v, u]_R\\
-    &= [x, y, z]_{L'} \cdot z[z, v, u]_R\\
-    &= [x, y, z]_{L'}\cdot R_{u, v}(z)\\
-    &= R_{u, v}([x, y, z]_{L'}z)\text{ by lemma \ref{lem-LR}}\\
-    &= R_{u, v}(L_{x, y}(z))
-  \end{align*}
+  \begin{alignat*}{2}
+    L_{x, y}(R_{u, v}(z)) &= L_{x, y}(z[z, v, u]_R) &&\\
+    &= L_{x, y}(z)\cdot [z, v, u]_R &&\text{ by lemma \ref{lem-LR}}\\
+    &= [x, y, z]_{L'}z\cdot [z, v, u]_R &&\\
+    &= [x, y, z]_{L'} \cdot z[z, v, u]_R &&\\
+    &= [x, y, z]_{L'}\cdot R_{u, v}(z) &&\\
+    &= R_{u, v}([x, y, z]_{L'}z) &&\text{ by lemma \ref{lem-LR}}\\
+    &= R_{u, v}(L_{x, y}(z)) &&
+  \end{alignat*}
 
   Next
-  \begin{align*}
-    L_{x, y}(L_{u, v}(z)) &= L_{x, y}(z[u, v, z]_L)\\
-    &= L_{x, y}(z)\cdot [u, v, z]_L\text{ by lemma \ref{lem-LR}}\\
-    &= z[x, y, z]_L\cdot [u, v, z]_L\\
-    &= z[u, v, z]_L\cdot [x, y, z]_L\\
-    &= L_{u, v}(z)\cdot [x, y, z]_L\\
-    &= L_{u, v}(z[x, y, z]_L)\text{ by lemma \ref{lem-LR}}\\
-    &= L_{u, v}(L_{x, y}(z))
-  \end{align*}
+  \begin{alignat*}{2}
+    L_{x, y}(L_{u, v}(z)) &= L_{x, y}(z[u, v, z]_L) &&\\
+    &= L_{x, y}(z)\cdot [u, v, z]_L &&\text{ by lemma \ref{lem-LR}}\\
+    &= z[x, y, z]_L\cdot [u, v, z]_L &&\\
+    &= z[u, v, z]_L\cdot [x, y, z]_L &&\\
+    &= L_{u, v}(z)\cdot [x, y, z]_L &&\\
+    &= L_{u, v}(z[x, y, z]_L) &&\text{ by lemma \ref{lem-LR}}\\
+    &= L_{u, v}(L_{x, y}(z)) &&
+  \end{alignat*}
 
   Finally
-  \begin{align*}
-    R_{x, y}(R_{u, v}(z)) &= R_{x, y}([z, v, u]_{R'}z)\\
-    &= [z, v, u]_{R'}\cdot R_{x, y}(z)\text{ by lemma \ref{lem-LR}}\\
-    &= [z, v, u]_{R'}\cdot [z, y, x]_{R'}z\\
-    &= [z, y, x]_{R'}\cdot [z, v, u]_{R'}z\\
-    &= [z, y, x]_{R'}\cdot R_{u, v}(z)\\
-    &= R_{u, v}([z, y, x]_{R'}z)\text{ by lemma \ref{lem-LR}}\\
-    &= R_{u, v}(R_{x, y}(z))
-  \end{align*}
+  \begin{alignat*}{2}
+    R_{x, y}(R_{u, v}(z)) &= R_{x, y}([z, v, u]_{R'}z) &&\\
+    &= [z, v, u]_{R'}\cdot R_{x, y}(z) &&\text{ by lemma \ref{lem-LR}}\\
+    &= [z, v, u]_{R'}\cdot [z, y, x]_{R'}z &&\\
+    &= [z, y, x]_{R'}\cdot [z, v, u]_{R'}z &&\\
+    &= [z, y, x]_{R'}\cdot R_{u, v}(z) &&\\
+    &= R_{u, v}([z, y, x]_{R'}z) &&\text{ by lemma \ref{lem-LR}}\\
+    &= R_{u, v}(R_{x, y}(z)) &&
+  \end{alignat*}
 
   Thus all the generators of $\inn^*(Q)$ commute and $\inn^*(Q)$ is an abelian group.
 \end{proof}
@@ -2344,17 +2344,17 @@ We will now present some further results dealing providing sufficient conditions
 \end{thm}
 
 \begin{proof}
-  \begin{align*}
-    R_{u, v}(R_{x, y}(z)) &= R_{u, v}(R_{x, y}(R_{u, v}(z)\cdot R_{u, v}(z)\ldv z))\\
-    &= R_{u, v}(R_{x,y}(R_{u,v}(z)\cdot R_{x, y}(R_{u,v}(z)\ldv z)))\text{ since $R_{x, y}$ is an automorphism}\\
-    &= R_{u, v}(R_{x, y}(R_{u, v}(z))\cdot (R_{u, v}(z)\ldv z))\\
-      &\text{ since $R_{u, v}(z)\ldv z$ is in the associator subloop and thus the left nucleus}\\
-    &= R_{u, v}([R_{u, v}(z), x, y]R_{u, v}(z)\cdot (R_{u, v}(z)\ldv z))\text{ definition of $[\cdot, \cdot, \cdot]$}\\
-    &= R_{u, v}([R_{u, v}(z), x, y]\cdot R_{u, v}(z)(R_{u,v}(z)\ldv z))\text{ associators in left nucleus}\\
-    &= R_{u, v}([R_{u, v}(z), x, y]z)\\
-    &= [R_{u, v}(z), x, y]R_{u, v}(z)\text{ $R_{u, v}$ is an automorphism}\\
-    &= R_{x, y}(R_{u, v}(z))\text{ definition of $[\cdot, \cdot, \cdot]$}
-  \end{align*}
+  \begin{alignat*}{2}
+    R_{u, v}(R_{x, y}(z)) &= R_{u, v}(R_{x, y}(R_{u, v}(z)\cdot R_{u, v}(z)\ldv z)) &&\\
+    &= R_{u, v}(R_{x,y}(R_{u,v}(z)\cdot R_{x, y}(R_{u,v}(z)\ldv z))) &&\text{ since $R_{x, y}$ is an automorphism}\\
+    &= R_{u, v}(R_{x, y}(R_{u, v}(z))\cdot (R_{u, v}(z)\ldv z)) &&\\
+    &\text{ since $R_{u, v}(z)\ldv z$ is in the associator subloop and thus the left nucleus} &&\\
+    &= R_{u, v}([R_{u, v}(z), x, y]R_{u, v}(z)\cdot (R_{u, v}(z)\ldv z)) &&\text{ definition of $[\cdot, \cdot, \cdot]$}\\
+    &= R_{u, v}([R_{u, v}(z), x, y]\cdot R_{u, v}(z)(R_{u,v}(z)\ldv z)) &&\text{ associators in left nucleus}\\
+    &= R_{u, v}([R_{u, v}(z), x, y]z) &&\\
+    &= [R_{u, v}(z), x, y]R_{u, v}(z) &&\text{ $R_{u, v}$ is an automorphism}\\
+    &= R_{x, y}(R_{u, v}(z)) &&\text{ definition of $[\cdot, \cdot, \cdot]$}
+  \end{alignat*}
 \end{proof}
 
 Below is a right automorphic loop with center $\{1,2\}$, so $Q/\{1,2\}$ is an abelian group (being of order 4). It is not an RCC loop. This shows that a right automorphic in which all associators lie in left nucleus need not be RCC. Thus the previous result is not a statement solely about RCC loops.
@@ -2384,15 +2384,15 @@ Below is a right automorphic loop with center $\{1,2\}$, so $Q/\{1,2\}$ is an ab
 
 \begin{proof}
   Note that since we assume all associators are in the left nucleus and commutant we are free to use whichever associator we choose. For this proof define the associator to be $[x,y,z] = R_{x,y}(z)/z$ and let $x, y, z, u, w\in Q$ be given. Then
-  \begin{align*}
-    R_{x,y}(R_{z,u}(w)) &= R_{x,y}([z,u,w] w)\\
-    &= [z,u,w] R_{x,y}(w)\text{ associators in $\nuc_l(Q)$}\\
-    &= [z,u,w] [x,y,w]\cdot w\\
-    &= [x,y,w] [z,u,w] \cdot w\text{ associators in commutant}\\
-    &= [x,y,w] R_{z,u}(w)\\
-    &= R_{z,u}([x,y,w] w)\text{ associators in $\nuc_l(Q)$}\\
-    &= R_{z,u}(R_{x,y}(w))
-  \end{align*}
+  \begin{alignat*}{2}
+    R_{x,y}(R_{z,u}(w)) &= R_{x,y}([z,u,w] w) &&\\
+    &= [z,u,w] R_{x,y}(w) &&\text{ associators in $\nuc_l(Q)$}\\
+    &= [z,u,w] [x,y,w]\cdot w &&\\
+    &= [x,y,w] [z,u,w] \cdot w &&\text{ associators in commutant}\\
+    &= [x,y,w] R_{z,u}(w) &&\\
+    &= R_{z,u}([x,y,w] w) &&\text{ associators in $\nuc_l(Q)$}\\
+    &= R_{z,u}(R_{x,y}(w)) &&
+  \end{alignat*}
   Thus $R_{x, y}R_{z, u} = R_{z, u}R_{x, y}$ and $\inn_R(Q)$ is abelian.
 \end{proof}
 
