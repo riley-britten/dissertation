@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: topics-Mloops.aux
+The style file: unsrt.bst
+Database file #1: topics-Mloops.bib
+Warning--empty journal in genQuat
+Warning--empty year in genQuat
+Warning--empty journal in univAlg
+You've used 40 entries,
+            1791 wiz_defined-function locations,
+            690 strings with 7325 characters,
+and the built_in function-call counts, 7093 in all, are:
+= -- 627
+> -- 306
+< -- 0
++ -- 120
+- -- 80
+* -- 371
+:= -- 1200
+add.period$ -- 122
+call.type$ -- 40
+change.case$ -- 31
+chr.to.int$ -- 0
+cite$ -- 43
+duplicate$ -- 344
+empty$ -- 725
+format.name$ -- 80
+if$ -- 1561
+int.to.chr$ -- 0
+int.to.str$ -- 40
+missing$ -- 47
+newline$ -- 203
+num.names$ -- 40
+pop$ -- 120
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 136
+stack$ -- 0
+substring$ -- 288
+swap$ -- 38
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 3
+while$ -- 64
+width$ -- 42
+write$ -- 421
+(There were 3 warnings)

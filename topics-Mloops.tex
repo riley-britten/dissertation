@@ -1,0 +1,3594 @@
+%\documentclass[12pt,draft]{report}
+\documentclass[12pt]{report}
+
+\usepackage{draftwatermark}
+\SetWatermarkText{Draft}
+\SetWatermarkScale{1}
+\SetWatermarkColor[gray]{0.9}
+% FONTS
+\usepackage{times}
+
+% SYMBOLS
+\usepackage{amssymb, xfrac, verbatim, framed, xcolor, amsthm, hyperref, bbding, amsmath, accents, siunitx}
+%\usepackage[export]{adjustbox}
+%\usepackage{footmisc}
+\usepackage[capitalise,noabbrev]{cleveref}
+
+% For displaying prover9 proofs
+\usepackage{listings}
+\lstset{
+  basicstyle=\footnotesize,
+  xleftmargin=.5in,
+  xrightmargin=.5in,
+  breaklines=true,
+  breakatwhitespace=true,
+  postbreak=\mbox{$\hookrightarrow$\space}
+}
+
+% SUBFIGURE STUFF
+\usepackage{subfigure}
+
+% Tikz stuff
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{makecell}
+\usepackage{bbm}
+\usepackage{float}
+
+% keep floats from moving all over the place ( using \FloatBarrier )
+% Basically, latex moves figures around for you and it may push forward to a place you don't expect.
+% /FloatBarrier will NOT allow a figure to move past it. So, if it would otherwise have moved the figure past the barrier,
+% instead the figure will appear AT the barrier.
+\usepackage{placeins}
+
+% If you use many-lined display math (in particular this is easy to do with {align*} environment), this allows
+% LaTeX to put a page break in the middle of the set of equations or whatever, in case it's huge.
+\allowdisplaybreaks
+
+
+% MARGINS (from DU style guide)
+\usepackage[left=1.5in, right=1in, top=1in, bottom=1in, includefoot]{geometry}
+% % > > > > - - - - - - - - - - - IMPORTANT - - - - - - - - - - - - - < < < < % %
+% You should uncomment the line below (use showframe package) until you're ready for your final copy.
+% This will put lines on the page to show you whether your stuff sticks out past margins.
+\usepackage{showframe} % SHOW MARGINS
+
+
+
+% NO ORPHANS AND WIDOWS (from DU style guide)
+\usepackage[all]{nowidow}
+\widowpenalty=10000
+\clubpenalty=10000
+
+% DOUBLE SPACING
+% why is this required? Well, it's required.
+\usepackage[doublespacing]{setspace}
+
+% CHAPTER FORMATTING
+\usepackage{titlesec}
+
+\titlespacing{\chapter}{0pt}{*0}{0pt}
+\titlespacing{\section}{0pt}{*0}{0pt}
+\titlespacing{\subsection}{0pt}{*0}{5pt}
+
+\titleformat
+{\chapter}% command
+{\normalfont\large\bfseries\centering\vspace{-1.5cm}\vspace{1.25in}}% total ~2 inches from top of page, with 1inch top margin
+%{\normalfont\normalsize\centering\vspace{-1.5cm}\vspace{1.25in}}% total ~2 inches from top of page, with 1inch top margin
+%{\normalfont\normalsize\centering\vspace{1in}}
+%{\normalfont\normalsize\centering\vspace{-.9cm}}%\vspace{1.25in}}
+{Chapter \ \thechapter:}% label
+{10pt}% sep (separation)
+{}{}% before/after command
+
+% SECTION FORMATTING
+\titleformat
+{\section}% command
+{\normalfont\normalsize\bfseries}% format
+{\thesection}% label
+{10pt}% sep (separation)
+{}{}% before/after command
+
+\titleformat
+{\subsection}% command
+[runin]
+{\normalfont\normalsize\bfseries}% format
+{\thesubsection}% label
+{10pt}% sep (separation)
+{}[.]% before/after command
+
+% TABLE OF CONTENTS FORMATTING
+\usepackage[subfigure]{tocloft}
+\setlength{\cftbeforechapskip}{10pt}
+\setlength{\cftbeforesecskip}{-8pt}
+\setlength{\cftbeforesubsecskip}{-8pt}
+\renewcommand{\contentsname}{\vspace{-2.6cm}\normalfont\normalsize\hfill TABLE OF CONTENTS\hfill}
+\renewcommand{\cftaftertoctitle}{\hfill \\ \vspace{-2cm}}
+
+% LIST OF FIGURES FORMATTING
+\renewcommand{\listfigurename}{\newpage\normalfont\normalsize\hfill LIST OF FIGURES\hfill}
+\renewcommand{\listtablename}{\newpage\normalfont\normalsize\hfill LIST OF TABLES\hfill}
+\renewcommand\cftfigafterpnum{\vskip-8pt\par}
+\renewcommand\cfttabafterpnum{\vskip-5pt\par}
+\renewcommand{\cftafterloftitle}{\hfill \\ \vspace{-2cm}}
+
+
+\hypersetup{
+    linktocpage,
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=teal
+}
+
+\setlength\parindent{20pt}
+
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+
+%Hyphenation
+\lefthyphenmin=3
+  %FOOTNOTE SPACING
+\setlength{\footnotesep}{\baselineskip}
+
+
+% THEOREM ENVIRONMENTS AND NUMBERING
+\theoremstyle{definition}
+\newtheorem{invariant}{Invariant}
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{fct}[thm]{Fact}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prp}[thm]{Proposition}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{cnj}[thm]{Conjecture}
+
+% Remarks not numbered
+\newtheorem*{rmk}{Remark}
+
+% SYMBOLS AND COMMANDS I USE FREQUENTLY
+\usepackage{amsfonts,bbm,proof,amssymb,stmaryrd,arydshln}
+%\usepackage{ PUT STYLE FILE}
+
+% definitions
+\newcommand{\inv}{^{-1}}            % inverse
+\newcommand{\ldv}{\backslash}       % left division
+\newcommand{\rdv}{/}                % right division
+\newcommand{\aut}{\mathrm{Aut}}     % Automorphism group
+\newcommand{\id}{\mathrm{id}}       % identity mapping
+\newcommand{\mlt}{\text{Mlt}}       % multiplication group
+\newcommand{\sym}{\text{Sym}}       % symmetric group
+\newcommand{\nuc}{\text{Nuc}}       % nucleus
+\newcommand{\inn}{\text{Inn}}       % inner mapping group
+\newcommand{\stb}{\text{Stab}}		  % stabilizer
+\newcommand{\orb}{\text{Orb}}		    % orbit
+\newcommand{\Exp}{\text{Exp}}       % exponent
+\newcommand{\LCM}{\text{LCM}}       % least common multiple
+\newcommand{\PPP}{\mathsf{P}}
+\newcommand{\ZZZ}{\mathbb{Z}}
+\newcommand{\NNN}{\mathbb{N}}
+
+
+%\setlength{\parskip}{1.5em}
+
+
+\begin{document}
+
+% DU Requires front matter to be in roman numerals
+\pagenumbering{roman}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TITLE PAGE
+\begin{titlepage}
+	\vspace*{\fill}
+	\centering
+	{\normalsize
+            	{Topics in Moufang Loops and Related Quasigroups} \\
+
+		\vspace{1cm}
+            	\rule{0.2\linewidth}{0.5pt} \\
+		\vspace{5mm}
+
+            	{A Dissertation} \\ \vspace{3mm}
+            	{Presented to} \\ \vspace{3mm}
+            	{the Faculty of Natural Sciences and Mathematics}\\ \vspace{3mm}
+		%{of Engineering and Computer Science} \\ \vspace{3mm}
+            	{University of Denver} \\
+
+		\vspace{1cm}
+            	\rule{0.2\linewidth}{0.5pt} \\
+		\vspace{5mm}
+
+            	{In Partial Fulfillment} \\ \vspace{3mm}
+            	{of the Requirements for the Degree} \\ \vspace{3mm}
+            	{Doctor of Philosophy} \\
+
+		\vspace{1cm}
+            	\rule{0.2\linewidth}{0.5pt} \\
+		\vspace{5mm}
+
+            	{by} \\ \vspace{3mm}
+            	{Nicholas Britten} \\ \vspace{3mm}
+            	{Month/Year of Graduation} \\ \vspace{3mm}
+            	{Advisor: Dr.\ Kinyon}
+	}
+	\vspace*{\fill}
+\end{titlepage}
+% END TITLE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Title page has no number, but DU wants the next page to be page "ii", not page "i".
+% hooray!
+\addtocounter{page}{1}
+
+% FRONT MATTER
+\newpage % to allow roman numbering to continue before this
+
+
+% ABSTRACT
+\noindent
+\vspace{-3mm}Author: Riley Britten\\
+\vspace{-3mm}Title: Topics in Moufang Loops and Related Quasigroups\\
+\vspace{-3mm}Advisor: Michael Kinyon, Ph.D.\\
+Degree Date: \\
+
+\centerline{ABSTRACT}
+We will begin by discussing power graphs of Moufang loops. We are able to show that as in groups the directed power graph of a Moufang loop is uniquely determined by the undirected power graph. In the process of proving this result we define the generalized octonion loops, a variety of Moufang loops which behave analogously to the generalized quaternion groups. We proceed to investigate para-F quasigroups, a variety of quasigroups which we show are antilinear over Moufang loops. We briefly depart from the context of Moufang loops to discuss solvability in general loops. We then prove some results on the cosets of subloops of Moufang loops. Finally, we investigate generalizations of the variety of Moufang loops, the varieties of universally and semi-universally flexible loops.
+\newpage
+
+% ACKNOWLEDGEMENTS
+\centerline{ACKNOWLEDGEMENTS}
+
+
+%Acknowledgements here!
+\newpage
+
+% TABLE OF CONTENTS
+\tableofcontents
+
+% LIST OF TABLES
+\listoftables
+
+% LIST OF FIGURES
+\listoffigures
+% % > > > > - - - - - - - - - - - IMPORTANT - - - - - - - - - - - - - < < < < % %
+% In your figures, if you want to change how the figure is referred to in the list of figures, put a caption this way:
+%
+%              \caption[ListOfFigures Name Of The Figure]{This is the actual caption appearing in the figure.}
+
+
+\newpage % to make list of figures be numbered with the front-matter lowercase roman numerals
+
+\pagenumbering{arabic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CHAPTER	-	INTRODUCTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Introduction}
+
+\section{Overview}
+
+In this dissertation we will investigate Moufang loops and quasigroups related to them. In particular, we will attempt to transfer results from group theory to the context of Moufang loops and provide structural descriptions of varieties of quasigroups related to Moufang loops.
+
+Our first major result will be the extension of a result on the power graphs of groups to Moufang loops. Namely, the undirected power graph of a groups uniquely determines the directed power graph. We were able to show that the same result holds for Moufang loops. In the process we describe a class of loops, which we have termed the generalized octonion loops, and prove several results showing that they behave analogously to the generalized quaternion groups.
+
+We will next investigate a variety of quasigroups related to Moufang loops, that we have termed para-F quasigroups. The variety of medial quasigroups has been extensively studied and has two natural generalizations: F-quasigroups and semimedial quasigroups. The variety of paramedial quasigroups is defined analogously to the variety of medial quasigroups and has also been generalized to semiparamedial quasigroups, the analogue of semimedial quasigroups. We argue that our definition of para-F quasigroups is the correct analogue to F-quasigroups and prove analogous results to those that have been shown for medial, paramedial, semimedial, semiparamedial, and F-quasigroups.
+
+We will then depart from the setting of Moufang loops to investigate definitions of solvability for general loops. The definition of solvability for groups is relatively easy to work with being based solely on subgroups generated by certain elements. It is well known that the definition of solvability for groups coincides with the definition arising from universal algebra. We are able to find a sufficient condition under which this result extends to loops. Namely, the definitions of solvability coincide if $Q/\nuc(Q)$ is an abelian group. Additionally, we are able to prove some results for loops $Q$ such that $Q/\nuc(Q)$ is a group.
+
+The proof of the Lagrange theorem for groups relies on the fact that cosets of a subgroup partition the group. While it is known that the Lagrange theorem holds in Moufang loops the proof relies on the classification of finite simple Moufang loops and does not explicitly construct a partition of the loop. We attempted to adapt the proof of the Lagrange theorem for groups to the context of Moufang loops by constructing a partition of the loop by cosets or orbits of the relative left multiplication group. We were ultimately unsuccessful in this endeavor, but were able to prove some intermediate results on the cosets of subloops of Moufang loops.
+
+Finally, we will investigate another variety of loops closely related to Moufang loops, the semi-universally flexible (SUF) loops. Our goal was to construct a loop which is SUF and has the inverse property but is not Moufang. We were ultimately unsuccessful, but were able to negatively answer a conjecture that all universally flexible loops are middle Bol.
+
+\section{Definitions and basic results}
+
+While we intuitively think of quasigroups and loops as being generalizations of groups, a formal definition arises much more naturally by considering these objects as specific varieties of magmas. So we will begin by defining magmas and proceed by discussing successively more specific varieties.
+
+\subsection{Magmas}
+
+\begin{dfn}
+  A \emph{magma} is a set $Q$ along with a single binary operation $\cdot: Q\times Q\to Q$.
+\end{dfn}
+
+\begin{dfn}
+  The \emph{multiplication table} of a magma $(Q, \cdot)$ is the table labeled with magma elements $x_i$ such that the entry at position $(i, j)$ in the table is $x_i\cdot x_j$.
+\end{dfn}
+
+We use juxtaposition to denote the operation in a magma whenever convenient, and to avoid excessive parentheses, juxtaposition binds more tightly than the explicit operation, \emph{e.g.}, $x\cdot yz$ denotes $x\cdot (y\cdot z)$.
+
+\begin{dfn}
+  For a magma $Q$ and $x\in Q$ we define the \emph{translation maps} $L_x, R_x:Q\to Q$ by
+  \begin{align*}
+    L_x(y) &= x\cdot y\\
+    R_x(y) &= y\cdot x
+  \end{align*}
+\end{dfn}
+
+\subsection{Quasigroups}
+
+\begin{dfn}
+  A \emph{quasigroup} $(Q, \cdot)$ is a magma such that $L_x, R_x$ are bijections for all $x\in Q$.
+\end{dfn}
+
+\begin{dfn}
+  A \emph{Latin square} is an $n$x$n$ table with entries $x_1, \ldots, x_n$ such that each $x_i$ appears exactly once in each row and each column.
+\end{dfn}
+
+Considering only finite quasigroups we have the following characterization:
+
+\begin{dfn}
+  A \emph{finite quasigroup} $(Q, \cdot)$ is a magma whose multiplication table is a Latin square.
+\end{dfn}
+
+It is frequently convenient to use infix notation for the inverses of the translation maps, so we will also use the following equivalent definition of a quasigroup:
+
+\begin{dfn}
+  A \emph{quasigroup} is a set $Q$ along with three binary operations $\cdot, \ldv, \rdv:Q\times Q\to Q$ satisfying:
+  \begin{align*}
+    &(x\rdv y)\cdot y = x, &(x\cdot y)\rdv y = x\\
+    &x\cdot (x\ldv y) = y, &x\ldv (x\cdot y) = y
+  \end{align*}
+\end{dfn}
+
+Intuitively, we can also think of quasigroups as being groups without associativity. This intuition is formalized by the following result:
+
+\begin{fct}
+  Let $(Q, \cdot)$ be a quasigroup which is also associative. Then $(Q, \cdot)$ is a group.
+\end{fct}
+
+ Standard references for quasigroup theory are \cite{Belousov,Bruck,Pf,Shcherbacov,Smith}.
+
+\subsection{Loops}
+
+\begin{dfn}
+  A \emph{loop} $(Q, \cdot, \ldv, \rdv, 1)$ is a quasigroup $(Q, \cdot, \ldv, \rdv)$ with an element $1\in Q$ satisfying:
+  \[1\cdot x = x, \quad x\cdot 1 = x\]
+\end{dfn}
+
+Basic references for loop theory are \cite{Bel}, \cite{Bruck}, \cite{Pf}. Any uncited facts in the discussion that follows can be found in these references.
+
+\subsection{Multiplication groups}
+
+\begin{dfn}
+  Let $(Q, \cdot)$ be a quasigroup. The \emph{left multiplication group} of $Q$ is
+  \[\mlt_L(Q) = \langle L_x : x\in Q\rangle\].
+\end{dfn}
+
+The right multiplication group, $\mlt_R(Q)$ is defined dually.
+
+\begin{dfn}
+  Let $(Q, \cdot)$ be a quasigroup. The \emph{multiplication group} of $Q$ is
+  \[\mlt(Q) = \langle L_x, R_x : x\in Q\rangle\].
+\end{dfn}
+
+\begin{dfn}
+  Let $(Q, \cdot, 1)$ be a loop. The \emph{left inner mapping group} of $Q$ is
+  \[\inn_L(Q) = \{f\in \mlt_L(Q) : f(1) = 1\}\]
+\end{dfn}
+
+The right inner mapping group is defined dually.
+
+\begin{dfn}
+  Let $(Q, \cdot, 1)$ be a loop. The \emph{inner mapping group} of $Q$ is
+  \[\inn(Q) = \{f\in\mlt(Q) : f(1) = 1\}\]
+  Elements of $\inn(Q)$ are called \emph{inner mappings}.
+\end{dfn}
+
+\begin{fct}
+  Each inner mapping group is a subgroup of the corresponding multiplication group.
+\end{fct}
+
+\begin{fct}
+  If $(Q, \cdot, 1)$ is a group, then $\inn(Q)$ is precisely the inner automorphism group of $Q$.
+\end{fct}
+
+\begin{dfn}
+  Let $(Q, \cdot)$ be a loop for all $x, y\in Q$ we define $L_{x, y}, R_{x, y}, T_x: Q\to Q$ by:
+  \begin{align*}
+    L_{x, y}(z) &= (xy)\ldv(x\cdot yz)\\
+    R_{x, y}(z) &= (zx\cdot y)\rdv(xy)\\
+    M_{x, y}(z) &= (y\ldv(yz\cdot x))\rdv x\\
+    T_x(z) &= (xz)\rdv x
+  \end{align*}
+\end{dfn}
+
+\begin{fct}
+  $L_{x, y}, R_{x, y}, T_x\in \inn(Q)$. Further
+  \[\inn(Q) = \langle L_{x, y}, R_{x, y}, T_x : x, y\in Q\rangle\]
+  \[\inn_L(Q) = \langle L_{x, y} : x, y\in Q\rangle\] and
+  \[\inn_R(Q) = \langle R_{x, y} : x, y\in Q\rangle\]
+\end{fct}
+
+\subsection{Quotient loops}
+
+\begin{dfn}
+  Let $(Q, \cdot)$ be a loop and $S\leq Q$. Then $S$ is a \emph{normal subloop} of $Q$ ($S\unlhd Q$) iff
+  \[\varphi(S) = S\quad\forall\varphi\in \inn(Q)\]
+\end{dfn}
+
+\begin{dfn}
+  Let $(Q, \cdot)$ be a loop with normal subloop $S$. Then the \emph{quotient loop} $Q/S$ is the loop with underlying set $\{qS : q\in S\}$, operation $xS\cdot yS = (x\cdot y) S$, and identity element $1S = S$.
+\end{dfn}
+
+\begin{fct}
+  The requirement that $S$ be normal in the preceding definition ensures that $Q/S$ is a loop with a well-defined operation.
+\end{fct}
+
+\subsection{Homotopy and isotopy}
+
+\begin{dfn}
+  Let $(Q, \cdot)$, $(P, +)$ be magmas. A \emph{homomorphism} is a map $f: Q\to P$ satisfying:
+  \[f(x) + f(y) = f(x\cdot y)\]
+\end{dfn}
+
+\begin{dfn}
+  A bijective homomorphism is an \emph{isomorphism}.
+\end{dfn}
+
+\begin{dfn}
+  Let $(Q, \cdot)$, $(P, +)$ be magmas. A \emph{homotopy} is a triple of maps $(\alpha, \beta, \gamma): Q\to P$ satisfying: 
+  \[\alpha(x) + \beta(y) = \gamma(x\cdot y)\]
+  for all $x, y\in Q$.
+\end{dfn}
+
+Homotopy generalizes homomorphism in the following sense:
+
+\begin{fct}
+Let $(Q, \cdot)$, $(P, +)$ be magmas and $f: Q\to P$ be a homomorphism. Then $(f, f, f)$ is a homotopy.
+\end{fct}
+
+\begin{dfn}
+  A homotopy in which each of $\alpha, \beta, \gamma$ is a bijection is an \emph{isotopy}.
+\end{dfn}
+
+\begin{fct}
+  For a finite quasigroup an isotopy is equivalent to permuting rows of the multiplication table by $\alpha$, permuting columns of the multiplication table by $\beta$, and relabeling elements by $\gamma$.
+\end{fct}
+
+As above, isotopy is a generalization of isomorphism. In the context of groups isotopy and isomorphism are the same concept as shown in the following result: 
+
+\begin{fct}
+  Suppose that $(G, \cdot)$, $(H, +)$ are groups and $(\alpha, \beta, \gamma): G\to H$ is an isotopy. Then $(G, \cdot)$, $(H, +)$ are isomorphic \cite{Bruck}.
+\end{fct}
+
+\begin{fct}
+  Let $(Q, \cdot)$ be a quasigroup, $(P, +)$ be a magma, and $(\alpha, \beta, \gamma): (Q, \cdot)\to (P, +)$ be an isotopy. Then $(P, +)$ is a quasigroup \cite{Bruck}.
+\end{fct}
+
+\begin{dfn}
+  $(Q, \cdot)$ and $(P, +)$ are said to be \emph{istotopic} if there exists an isotopy from $Q$ to $P$. Quasigroups isotopic to $Q$ are said to be \emph{isotopes} of $Q$.
+\end{dfn}
+
+\begin{dfn}
+  Note that not all isotopes of a loop need be loops. Isotopes which happen to be loops are called \emph{loop isotopes}.
+\end{dfn}
+
+\begin{dfn}
+  Let $(Q, \cdot)$ be a quasigroup. An isotope of $(Q, \cdot)$ is \emph{principal} if it has the same underlying set.
+\end{dfn}
+
+\begin{fct}
+  Let $(Q, \cdot)$ be a quasigroup, then up to isomorphism all principal loop isotopes of $(Q, \cdot)$ are of the form $(Q, +)$, where
+  \[x + y = (x\rdv a)\cdot (b\ldv y)\]
+  for fixed $a, b\in Q$\cite{Bruck}.
+\end{fct}
+
+\begin{fct}
+  Let $(Q, \cdot)$ be a magma with an isotope $(P, *)$. Then there exists $+:Q\times Q\to Q$ such that $(Q, +)$ is isomorphic to $(P, *)$ \cite{Bruck}.
+\end{fct}
+
+\begin{rmk}
+  Note that together the preceding results tell us that up to isomorphism all loop isotopes of $(Q, \cdot)$ are of the form $(Q, +)$, where $x + y = (x\rdv a)\cdot (b\ldv y)$ for fixed $a, b\in Q$.
+\end{rmk}
+
+\begin{dfn}
+  Let $(Q, \cdot)$ be a quasigroup, a \emph{left isotope} of $(Q, \cdot)$ is $(Q, +)$ with
+  \[x + y = (x\rdv a)\cdot y\]
+  for fixed $a\in Q$.
+\end{dfn}
+
+Right isotope is defined dually.
+
+\begin{dfn}
+  A property of a quasigroup $(Q, \cdot)$ is \emph{universal} if it holds in all isotopes of $Q$.
+\end{dfn}
+
+\begin{dfn}
+  A property of a loop $Q$ is \emph{semi-universal} if it holds in all left and right isotopes of $(Q, \cdot)$.
+\end{dfn}
+
+\subsection{Linearity}
+
+\begin{dfn}
+  A quasigroup $(Q, \cdot)$ is \emph{linear over} a loop $(Q, +)$ if there exist $f, g\in \aut(Q, +), c\in Q$ such that
+  \[x\cdot y = f(x) + (g(y) + c)\]
+  for all $x, y\in Q$.
+\end{dfn}
+
+As the following result shows, being linear over a loop is a stronger property than being isotopic to a loop.
+
+\begin{prp}\label{prp-linear-iso}
+  Suppose that $(Q, \cdot)$ is linear over $(Q, +)$. Then $(Q, +)$ is an isotope of $(Q, \cdot)$.
+\end{prp}
+
+\begin{proof}
+  Suppose that $x\cdot y = (f(x) + g(y)) + c$ for all $x, y\in Q$, where $f, g\in \aut(Q, +)$, $c\in Q$. Let $\gamma = \id$, $\alpha(x) = f(x)$, and $\beta(x) = g(x) + c$. It is immediate that $\alpha, \beta, \gamma$ are bijections. Let $x, y\in Q$ be given, then
+  \begin{align*}
+    \alpha(x) + \beta(y) &= f(x) + (g(y) + c)\\
+    &= x\cdot y\text{ by assumption}\\
+    &= \gamma(x\cdot y)
+  \end{align*}
+  Thus $(\alpha, \beta, \gamma)$ is an isotopy and $(Q, +)$ is an isotope of $(Q, \cdot)$.
+\end{proof}
+
+\subsection{Inverse properties}
+
+\begin{dfn}
+  A loop $(Q, \cdot)$ has the \emph{left inverse property} (LIP) if there exists a bijection $\lambda: Q\to Q$ such that for all $x, y\in Q$
+  \[\lambda(x)\cdot xy = y\]
+\end{dfn}
+
+\begin{dfn}
+  Similarly, a loop $(Q, \cdot)$ has the \emph{right inverse property} (RIP) if there exists a bijection $\gamma: Q\to Q$ such that for all $x, y\in Q$
+  \[xy\cdot \gamma(y) = x\]
+\end{dfn}
+
+\begin{dfn}
+  A loop $(Q, \cdot)$ which has both the left and right inverse properties is said to be an \emph{inverse property loop} (IP loop).
+\end{dfn}
+
+When working with IP loops we will frequently use the inversion map ${}^{-1}:Q\to Q$, where $x^{-1} = \lambda(x) = \gamma(x)$, instead of the left and right divisions.
+
+\begin{dfn}
+  A loop $(Q, \cdot, {}^{-1})$ has the \emph{automorphic inverse property} (AIP) if the following equation holds for all $x, y\in Q$
+  \[(x\cdot y)^{-1} = x^{-1}\cdot y^{-1}\]
+\end{dfn}
+
+\begin{dfn}
+  A loop $(Q, \cdot, {}^{-1})$ has the \emph{antiautomorphic inverse property} (AAIP) if the following equation holds for all $x, y\in Q$
+  \[(x\cdot y)^{-1} = y^{-1}\cdot x^{-1}\]
+\end{dfn}
+
+\begin{fct}
+  All IP loops have the AAIP.
+\end{fct}
+
+\subsection{Automorphic loops}
+
+\begin{dfn}
+  A loop $(Q, \cdot, 1)$ is \emph{left automorphic} if
+  \[\phi(x\cdot y) = \phi(x)\cdot \phi(y)\quad \forall \phi\in\inn_L(Q), x, y\in Q\]
+\end{dfn}
+
+Right automorphic is defined dually.
+
+\begin{dfn}
+  A loop $(Q, \cdot, 1)$ is \emph{automorphic} if
+  \[\phi(x\cdot y) = \phi(x)\cdot \phi(y)\quad \forall \phi\in\inn(Q), x, y,\in Q\]
+\end{dfn}
+
+\begin{rmk}
+  Note that $\phi$ is a bijection for all $\phi\in\inn(Q)$, so a loop is (left/right) automorphic if and only if all (left/right) inner mappings are automorphisms.
+\end{rmk}
+
+\subsection{Conjugacy closed loops}
+
+\begin{dfn}
+  A loop $(Q, \cdot, 1)$ is \emph{left conjugacy closed} (LCC) if it satisfies
+  \[z\cdot yx = ((zy)\rdv z)\cdot zx\]
+\end{dfn}
+
+Right conjugacy closed (RCC) is defined dually.
+
+\begin{fct}
+  A loop is left (right) conjugacy closed iff the set of left translations is closed under conjugation \cite{PACC}.
+\end{fct}
+
+\begin{dfn}
+  A loop $(Q, \cdot, 1)$ is \emph{conjugacy closed} if it is both left and right conjugacy closed
+\end{dfn}
+
+\subsection{Bol loops}
+
+\begin{dfn}
+  A loop $(Q, \cdot)$ is \emph{left Bol} if the following identity holds for all $x, y, z\in Q$
+  \[x\cdot (y\cdot xz) = (x\cdot yx)\cdot z\]
+\end{dfn}
+
+\begin{fct}
+  $(Q, \cdot)$ is left Bol iff it is universally LIP \cite{SUF}.
+\end{fct}
+
+Right Bol loops are defined dually and have a dual characterization.
+
+\begin{dfn}
+  A loop $(Q, \cdot)$ is \emph{middle Bol} if the following identity holds for all $x, y, z\in Q$
+  \[x\cdot (yz\ldv x) = (x\rdv z)\cdot (y\ldv x)\]
+\end{dfn}
+
+\begin{fct}
+  A loop $(Q, \cdot)$ is middle Bol iff it is universally AAIP \cite{SUF}.
+\end{fct}
+
+\subsection{Generalizations of associativity}
+
+\begin{dfn}
+  An \emph{power associative loop} is a loop $(Q, \cdot)$ having the property that $\langle x\rangle$ is a group for all $x\in Q$.
+\end{dfn}
+
+\begin{dfn}
+  A \emph{diassociative loop} is a loop $(Q, \cdot)$ having the property that $\langle x, y\rangle$ is a group for all $x, y\in Q$.
+\end{dfn}
+
+\begin{dfn}
+  A loop $(Q, \cdot)$ is \emph{flexible} if the following identity holds for all $x, y\in Q$
+  \[xy\cdot x = x\cdot yx\]
+\end{dfn}
+
+\begin{dfn}
+  A loop $(Q, \cdot)$ is \emph{left alternative} if the following identity holds for all $x, y\in Q$
+  \[x\cdot xy = xx\cdot y\]
+\end{dfn}
+
+Right alternative is defined dually.
+
+\begin{dfn}
+  A loop $(Q, \cdot)$ is \emph{alternative} if it is both left and right alternative.
+\end{dfn}
+
+\subsection{Moufang loops}
+
+\begin{dfn}
+  A \emph{Moufang loop} is a loop which is both left and right Bol.
+\end{dfn}
+
+Equivalently, a Moufang loop is a loop satisfying any (and hence all) of the Moufang identities:
+  \begin{align*}
+    z\cdot(x \cdot zy) &= (zx\cdot z)\cdot y\\
+    x\cdot(z \cdot yz) &= (xz\cdot y)\cdot z\\
+    zx\cdot yz &= (z\cdot xy)\cdot z\\
+    zx\cdot yz &= z\cdot(xy\cdot z).
+  \end{align*}
+
+Standard examples of nonassociative Moufang loops are the unit octonions with multiplication and the sphere $S^7$ with octonion multiplication.
+
+\begin{fct}
+  All Moufang loops are IP loops \cite{Moufang}.
+\end{fct}
+
+\begin{fct}
+  All Moufang loops are diassociative \cite{Moufang}.
+\end{fct}
+
+\begin{fct}
+  All Moufang loops have the Lagrange property \cite{LG}. 
+\end{fct}
+
+\begin{dfn}
+  Let $(Q,\cdot)$ be a loop, the \emph{Moufang center} of $Q$ is
+  \[K(Q) = \{a\in Q : (a + a) + (x + y) = (a + x) + (a + y),\forall x, y\in Q\}\]\cite{KepkaKinyonPhillips}
+\end{dfn}
+
+\begin{fct}
+  The Moufang center of any loop $(Q, \cdot)$ is a commutative Moufang subloop of $Q$ \cite{Bruck}
+\end{fct}
+
+\begin{dfn}
+  An \emph{NK-loop} is a loop $(Q, \cdot)$ such that for all $a\in Q$ there exists $n\in \nuc(Q)$, $k$ in the Moufang center of $Q$ such that
+  \[a = n \cdot k\]
+  \cite{KepkaKinyonPhillips}.
+\end{dfn}
+
+\begin{fct}
+  If $(Q,\cdot)$ is an NK loop, then it is an automorphic Moufang loop \cite{KepkaKinyonPhillips}.
+\end{fct}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Power graphs of Moufang loops}
+
+\section{Introduction}
+
+Power graphs of both groups and semigroups have been widely studied, for example in \cite{EPG}, \cite{PG}, \cite{PGII}, \cite{Tor}, \cite{Feng}, \cite{Mog}, \cite{Panda}. While the power graph of a quasigroup can be defined analogously to that of a group, power graphs of quasigroups and loops have thus far been little studied. In this paper we begin transferring results on the power graphs of groups to the context of loops by addressing a question posed by Peter Cameron: if two Moufang loops have isomorphic undirected power graphs, must they have isomorphic directed power graphs? In \cite{PGII} Cameron shows that two groups with isomorphic undirected power graphs must have isomorphic directed power graphs. We are able to extend that result to Moufang loops in our main theorem:
+
+\begin{thm}\label{mainThm}
+  Moufang loops with isomorphic undirected power graphs have isomorphic directed power graphs.
+\end{thm}
+
+Cameron's proof in \cite{PGII} relied on handling groups with multiple vertices connected to all others in the power graph separately. Groups with such power graphs are either cyclic or generalized quaternion. We take a similar approach here. In generalizing to Moufang loops, a third type of loop with such a power graph arises; we have termed these \textit{generalized octonion loops}. 
+
+\begin{thm}\label{moufangDesc2}
+  A Moufang $p$-loop $M$ with a unique subloop of order $p$ is either a cyclic group, a generalized quaternion group, or a generalized octonion loop. These last two only occur when $p = 2$.
+\end{thm}
+
+We will investigate the structure of generalized octonion loops, yielding the following equivalent characterizations of such loops:
+
+\begin{thm}\label{genOct}
+  For a finite nonassociative Moufang loop $M$, the following are equivalent.
+  \begin{itemize}
+    \item every associative, commutative subloop of $M$ is cyclic;
+    \item $M$ is isomorphic to the result of applying Chein's construction to a generalized quaternion group;
+    \item $M$ is isomorphic to a subloop of the unit octonions generated by $\{e^{\frac{i\pi}{n}}, j, e_5\}$;
+    \item $M$ is a finite Moufang $2$-loop with a unique element of order $2$;
+    \item $M$ is a $p$-loop with a unique subloop of order $p$
+  \end{itemize}
+\end{thm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Preliminaries}
+
+\subsection{Generalized quaternion groups}
+
+In the process of proving Theorem \ref{mainThm} we will investigate a class of loops which behave analogously to the generalized quaternion groups. We recall some results on generalized quaternion groups to illustrate this similarity here.
+
+\begin{dfn}
+  The generalized quaternion groups are given by the presentation:
+  \[Q_{4n} = \langle a, b : a^n = b^2, a^{2n} = 1, b^{-1}ab = a^{-1}\rangle\]
+\end{dfn}
+
+\begin{fct}\label{fct:genQuat}
+  Let $G$ be a group which is not cyclic. Then the following are equivalent:
+  \begin{itemize}
+    \item $G$ is generalized quaternion.
+    \item $G$ is isomorphic to $\langle e^{\frac{i\pi}{n}}, j\rangle$ as a subgroup of the unit quaternions for some $n$ \cite{Brown}.
+    \item $G$ is a finite $p$ group in which every subgroup is cyclic \cite{Cartan}.
+    \item $G$ is a finite $p$ group with a unique subloop of order $2$ \cite{Brown}.
+  \end{itemize}
+\end{fct}
+
+\begin{rmk}
+  A direct result of fact \ref{fct:genQuat} is: \emph{A finite $p$-group with a unique subloop of order $p$ is either cyclic or generalized quaternion}. We will show that this result extends very naturally to Moufang loops.
+\end{rmk}
+
+\begin{fct}\label{fct:genQuat-rep}
+  Let $Q_{4n} = \langle a, b : a^n = b^2, a^{2n} = 1, b^{-1}ab = a^{-1}\rangle$. Then every element $x \in Q_{4n}$ can be written uniquely as $x = a^k$ or $x = a^k b$ for some $k\in\NNN$ \cite{genQuat}.
+\end{fct}
+
+\subsection{Moufang loops}
+
+We now present some fundamental results on Moufang loops which we will need in later sections.
+
+\begin{thm}[Moufang's Theorem]
+  Suppose that $M$ is a Moufang loop and $x, y, z\in M$ are such that $x\cdot yz = xy\cdot z$. Then $\langle x, y, z\rangle$ is a group.
+\end{thm}
+
+\begin{prp}\label{gen-facts}
+	Let $M$ be a finite Moufang loop. Then
+    \begin{itemize}
+        \item $M$ has the inverse property.
+
+        \item $M$ is diassociative (and thus power-associative).
+
+        \item For all $x, y\in M$, $\langle x, y\rangle$ is a group \cite{Moufang}.
+
+  	    \item For all $x\in M$, $|x|$ divides $|M|$.
+
+        \item Suppose that $|M| = p^k$ for $p$ prime, $k\in\ZZZ^+$. Then there exists $S\leq M$ with $|S| = p^{k - 1}$.
+    \end{itemize}
+\end{prp}
+
+Regarding the last statement, note that the center of a Moufang $p$-loop is nontrivial \cite{2-loops} \cite{Glau}. So an inductive argument identical to that used to prove the last result for groups will also prove the existence of such a subloop.
+
+\subsection{Power graphs}
+
+To maintain generality, in what follows let $\textbf{A} = (A, \cdot)$ be a magma with $\cdot$ a power-associative binary operation.
+
+\begin{dfn}
+	The \textit{directed power graph} of \textbf{A} is the directed graph with vertex set $A$ and an edge $x\to y$ if and only if $x^k = y$ for some $k\in\mathbb{Z}$.
+\end{dfn}
+
+\begin{dfn}
+	The \textit{undirected power graph} of \textbf{A} is the graph with vertex set $A$ and an edge between $x$ and $y$ if and only if $x^k = y$ for some $k\in \mathbb{Z}$ or $y^k = x$ for some $k\in\mathbb{Z}$.
+\end{dfn}
+
+So the undirected power graph of \textbf{A} is the underlying undirected graph of the directed power graph of \textbf{A}. In the remainder of this paper, \textit{power graph} will refer to the undirected power graph unless otherwise specified.
+
+Recall that a group in which every commutative subgroup is cyclic is either cyclic or generalized quaternion \cite{Cartan}. We will use the following definition for generalized octonion loops in the interest of closely following this characterization of generalized quaternion groups. In {\S}4 we will see that there are several alternate characterizations of generalized octonion loops.
+
+\begin{dfn}
+	Let $M$ be a nonassociative Moufang $p$-loop such that every associative commutative subloop of $M$ is cyclic, then we call $M$ a \textit{generalized octonion loop}.
+\end{dfn}
+
+\subsection{Chein's construction}
+
+\begin{thm}\label{cnst-chein}
+  Let $G$ be a group. For $1\neq c\in Z(G)$ and $u$ an indeterminate. Define $(M, \cdot)$ by $M = G\cup Gu$ and
+  \begin{align*}
+    g\cdot h &= gh\\
+    g\cdot (hu) &= (hg)u\\
+    gu\cdot h &= (gh^{-1})u\\
+    gu\cdot hu &= ch^{-1}g
+  \end{align*}
+  for all $g, h\in G$. Then $M$ is a Moufang loop \cite{Chein}. Further, $M$ is associative if and only if $G$ is abelian \cite{Chein}.
+\end{thm}
+
+Throughout the paper we will denote loops arising from this construction by $M(G, 2)$, where $G$ is the underlying group. We will show that generalized octonion loops are precisely the loops $M(Q_{4n}, 2)$, where $Q_{4n}$ is a generalized quaternion group.
+
+\begin{thm}\label{thm-chein}
+  Suppose that $M$ is a finite Moufang loop with a set of generators $\{u, u_1, \ldots, u_n\}$ such that
+  \begin{itemize}
+    \item $u\notin G = \langle u_1,\ldots, u_n\rangle$,
+    \item $u^2\in N(\langle, u^2, G\rangle)$,
+    \item conjugation by $u$ maps $G$ into itself.
+  \end{itemize}
+  Let $k$ be the smallest positive integer such that $u^k\in G$. Then
+  \begin{itemize}
+    \item each element of $M$ can be expressed uniquely as $gu^\alpha$ where $g\in G$ and $0\leq \alpha < k$; and
+    \item multiplication of elements of $M$ is given by
+    \[(g_1u^\alpha)(g_2u^\beta) = [\theta^{-\beta}(\theta^\beta(g_1)\theta^{\beta - \alpha}(g_2))g_0^\epsilon]u^\rho\]
+  \end{itemize}
+  where
+  \[\theta(g) = u^{-1}gu,\: g_0 = u^k\in G,\: \epsilon = \frac{\alpha + \beta}{k},\text{ and } \rho = \alpha + \beta - \epsilon k\] \cite{Chein}.
+\end{thm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Moufang $p$-loops with a unique subloop of order $p$}
+
+We will begin by classifying Moufang $p$-loops $M$ with a unique subloop of order $p$. In the proof of Theorem \ref{mainThm}, we will handle such loops separately. Note that every nontrivial subloop of a Moufang loop of order $p^n$ with a unique subloop of order $p$ also has a unique subloop of order $p$.
+
+\begin{thm}\label{moufangDesc}
+    A Moufang $p$-loop $M$ with a unique subloop of order $p$ is either a cyclic group, a generalized quaternion group, or $M(Q_{4n}, 2)$. These last two only occur when $p = 2$.
+\end{thm}
+
+We will first handle the simpler case that $p$ is an odd prime.
+
+\begin{lem}\label{lem-burnside}
+  Let $G$ be a group of order $p^n$, $p > 2$ prime with a unique subloop of order $p^s$ for some $1 < s < n$. Then $G$ is cyclic \cite{Burnside}
+\end{lem}
+
+\begin{lem}\label{not2power}
+	Let $M$ be a Moufang loop of order $p^n$ for some prime $p > 2$ and $n\in\mathbb{N}$ such that $M$ has a unique subloop of order $p$. Then $M$ is a cyclic group.
+\end{lem}
+
+\begin{proof}
+    Let $x, y, z\in M$ be given. If $\langle x, y\rangle = M$, then $M$ is a group by diassociativity and we are done by the result for groups \cite{Burnside}. Otherwise $\langle x, y\rangle \subsetneq M$ must be a $p$-group with a unique subgroup of order $p$ and thus cyclic by Lemma \ref{lem-burnside}. Say $\langle x, y\rangle = \langle g\rangle$ and $x = g^i$, $y = g^j$. Then $x\cdot yz = g^i \cdot g^j z = g^{i + j}z = xy\cdot z$ by diassociativity. Hence in either case $M$ is a group and thus cyclic by Lemma \ref{lem-burnside}.
+\end{proof}
+
+We will now handle the case $p = 2$. In what follows, let $M$ be a nonassociative Moufang loop of order $2^n$ with a unique subloop of order $2$.
+
+\begin{lem}\label{order-lem}
+	For all $x, y\in M$ exactly one of the following holds:
+  \begin{itemize}
+    \item $xy = yx$,
+    \item $xy = y^{-1}x$ and $|x| = 4$,
+    \item $xy = yx^{-1}$ and $|y| = 4$,
+    \item $|x| = |y| = 4$.
+  \end{itemize}
+\end{lem}
+
+\begin{proof}
+	If $\langle x, y\rangle$ is cyclic, then $xy = yx$, so assume that $G = \langle x, y\rangle = \langle a, b | a^{2n} = b^4 = 1, ab = ba^{-1}\rangle$ is generalized quaternion. All elements of $G$ can be written in the form $a^i b$ or $a^i$ for some $i\in\mathbb{N}$. If $x = a^i$, $y = a^j$, then $xy = yx$. If $x = a^i b$, $y = a^j b$, then $x^2 = a^i b a^i b = b a^{-i} a^i b = b^2$ and similarly $y^2 = b^2$, thus $|x| = |y| = 4$. If $x = a^i$, $y = a^j b$, then $xy = a^i a^j b = a^j b a^{-i} = yx^{-1}$. Finally, if $x = a^i b$, $y = a^j b$, then $xy = a^i b a^j = a^{-j} a^i b = y^{-1} x$.
+\end{proof}
+
+\begin{lem}\label{index2subloop}
+	If $|M| = 2^n$, then $M$ has an element of order at least $2^{n - 2}$ and thus an associative subloop of index $2$.
+\end{lem}
+
+\begin{proof}
+    We will proceed by induction, taking $|M| = 64 = 2^6$ as our base case. The case of $n = 64$ follows from the classification of Moufang loops of order $64$ in \cite{64and81}. The result for Moufang loops of order $2^n$, $n < 6$ follows from the classification of Moufang loops of order $< 64$ in \cite{Chein} \cite{Goodaire}.
+
+    Let $M$ be a Moufang loop of order $2^n$ with a unique element of order $2$. Then there exists $S\leq M$ with $|S| = 2^{n - 1}$ by Proposition \ref{gen-facts}. By the inductive hypothesis, $S$ contains an element $x_0$ of order $2^{n - 3}$.
+
+	First assume there exists $y\in M\setminus \langle x_0 \rangle$ with $yx_0 = x_0 y$. Then $\langle x_0, y\rangle$ is a cyclic group strictly larger than $\langle x_0\rangle$. Thus $\langle x_0, y\rangle$ contains an element of order at least $2^{n - 2}$. Hence we can assume without loss of generality that $x_0 y = yx_0^{-1}$ and $|y| = 4$ for all $y\in M\setminus \langle x_0 \rangle$ since $|x_0| > 4$.
+
+	Note that if $\langle x_0\rangle$ is properly contained in a cyclic subgroup of $M$, then the proof is complete. The following lemmas show that $\langle x_0\rangle$ must be contained in such a subgroup. Thus $M$ contains an element of order $2^{n - 2}$ and thus an associative subgroup of index $2$.
+\end{proof}
+
+As above, let $x_0\in M$ be the element of order $2^{n - 3}$.
+
+\begin{lem}
+	If $\langle x_0\rangle$ is not properly contained in a cyclic subgroup of $M$, then $\langle x_0\rangle$ is normal in $M$.
+\end{lem}
+
+\begin{proof}
+	Let $\varphi$ be an inner mapping and set $u = \varphi(x_0)$. Inner mappings preserve powers, so $|\langle u\rangle| = |\langle x_0\rangle| > 4$. By Lemma \ref{order-lem}, we conclude that $xu = ux$, that is, $\langle x_0,u\rangle = \langle z\rangle$ for some $z$. By assumption $\langle x_0\rangle = \langle z\rangle$, hence $u$ must be a power of $x$, that is, $\varphi(x_0) = x_0^i$ for some $i$. Thus for all $j$, $\varphi(x_0^j) = x_0^{ij}$, that is, $\varphi[\langle x_0\rangle]= \langle x_0\rangle$. Since $\varphi$ is an arbitrary inner mapping, $\langle x_0\rangle$ is normal in $M$.
+\end{proof}
+
+\begin{lem}
+	$\langle x_0 \rangle$ is properly contained in a cyclic subgroup of $M$.
+\end{lem}
+
+\begin{proof}
+	Suppose toward a contradiction that $\langle x_0\rangle$ is not contained in a cyclic subgroup. Then $\langle x_0\rangle$ is normal in $M$ from the preceding lemma. Note that $M/\langle x_0\rangle\cong \mathbb{Z}_2^3$ since every element has order at most $2$.
+
+	Choose $a, b\in M$ such that $a, b\notin\langle x_0\rangle$ and $a\langle x_0\rangle \neq b\langle x_0\rangle$. Let $d = ab$. Then $d\langle x_0\rangle$ is distinct from $\langle x_0\rangle, a\langle x_0\rangle$, and $b\langle x_0\rangle$. Further, $b\langle x_0\rangle d\langle x_0\rangle = a\langle x_0\rangle$. Thus
+	\begin{align*}
+	ab &= d\\
+    bd &= ax_0^i\text{ for some $i$}\\
+    a\cdot (ax_0^i \cdot d^{-1}) &= d\\
+    \end{align*}
+
+    Hence
+    \begin{align*}
+    ax_0^i \cdot d^{-1} &= a^{-1}d\\
+    &= a^3 d\\
+    &= aa^2 d\\
+    &= ad^2\cdot d\text{, since $a^2 = d^2 =$ unique element of order 2}\\
+    &= ad^3\\
+    &= ad^{-1}\\
+    \end{align*}
+
+    Thus $ax_0^i \cdot d^{-1} = ad^{-1}$ and $x_0^i = 1$ after canceling $d^{-1}$ and $a$.
+
+	So $ab = d$ and $bd = a$ and $b\cdot ab = a$. Then
+	\begin{align*}
+	ab\cdot \langle x_0\rangle &= (b\cdot ab)a\cdot \langle x_0\rangle\\
+	&= (ab)^2\cdot \langle x_0\rangle\\
+	&= \langle x_0\rangle\text{ since all squares are contained in $\langle x_0\rangle$}
+	\end{align*}
+
+	But this last contradicts that $a\langle x_0\rangle \neq b\langle x_0\rangle$. This contradicts our assumption that $\langle x_0\rangle$ is not properly contained in a cyclic subgroup. Thus $\langle x_0\rangle$ must be properly contained in a cyclic subgroup and $M$ must contain an element of order $2^{n - 2}$.
+\end{proof}
+
+With the above lemmas we can now prove Theorem \ref{moufangDesc}.
+
+\begin{proof}
+	Let $M$ be a Moufang loop with a unique subloop of order $p$ for each prime divisor $p$ of $|M|$. By Proposition \ref{not2power}, we have that if $|M|$ is not a power of $2$, then $M$ is a cyclic group. So assume that $|M| = 2^n$ for some $n$. If $M$ is associative, then it is either cyclic or generalized quaternion by the result for groups. So assume that $M$ is not associative.
+
+    By Proposition \ref{index2subloop}, $M$ has an associative index $2$ subloop $S$. By the result for groups $S$ is either cyclic or generalized quaternion. If $S$ is cyclic, say $S = \langle s\rangle$, then $M = \langle s, x\rangle$ for $x\notin S$ since $S$ is an index $2$ subloop. But then M is associative by diassociativity, hence we can assume that $S$ is generalized quaternion. Let $u\in M\setminus S$ be given and $\{u_1, u_2\}$ be a generating set for $S$. Then $u\notin S = \langle u_1, u_2\rangle$, $u^2 \in Z(M) \subseteq N(\langle u^2, S\rangle)$ and $S\unlhd M$, so $u^{-1}Su = S$. Thus the hypotheses of Theorem \ref{thm-chein} are satisfied. Hence $M$ is isomorphic to $M(Q_{4n}, 2)$ and the proof is complete.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Generalized octonion loops}
+
+To make the Theorem \ref{moufangDesc} more closely follow the result for groups we will investigate the loops $M(Q_{4n}, 2)$, which turn out to be precisely the generalized octonion loops. We will show that they behave analogously to generalized quaternion groups.
+
+\begin{thm}\label{doubling}
+    A Moufang loop $M$ is a generalized octonion loop if and only if it is isomorphic to $M(Q_{4n}, 2)$.
+\end{thm}
+
+\begin{proof}
+	Let $M$ be a generalized octonion loop. Note that every associative subloop of $M$ is either cyclic or generalized quaternion since a finite $p$-group with every abelian subgroup cyclic is either cyclic or generalized quaternion \cite{Cartan}.
+
+	We will show first that $p = 2$. Suppose toward a contradiction that $p\neq 2$. Then every associative subloop of $M$ is cyclic. Let $x, y, z\in M$ be given. Then $\langle x, y\rangle$ is associative and thus cyclic, so there exists $x_0\in M$ such that $x_0^i = x$, $x_0^j = y$. But then $x\cdot yz = x_0^i\cdot x_0^jz = x_0^{i + j}\cdot z = xy\cdot z$ by diassociativity. Thus $M$ is associative by Moufang's Theorem and thus a cyclic group. But this contradicts our assumption that $M$ is nonassociative, hence we must have that $p = 2$.
+
+	Thus $M$ is a nonassociative Moufang $2$-loop. By Theorem \ref{moufangDesc} it is sufficient to show that $M$ has a unique element of order $2$. Let $x, y\in M$ be given. Then $\langle x, y\rangle$ is either a cyclic $2$-group or generalized quaternion and in either case contains a unique element, $c$, of order $2$. Thus there exists $c\in M$ with $|c| = 2$. Suppose that $d\in M$ is another element of order $2$ and consider $\langle c, d\rangle$, which is again either a cyclic $2$-group or generalized quaternion and thus contains a unique element of order $2$. Hence $c = d$ and $M$ contains a unique element of order $2$. Thus $M$ is isomorphic to $M(Q_{4n}, 2)$ for some $n$.
+
+    Now let $M$ be the loop $M(Q_{4n}, 2)$. It is shown in \cite{Chein} that $M$ is a nonassociative Moufang loop. So every associative subloop of $M$ is either cyclic or generalized quaternion and thus every commutative and associative subloop of $M$ is cyclic. Thus $M$ is generalized octonion.
+\end{proof}
+
+\begin{lem}
+  $M(Q_{4n}, 2)$ contains a unique element of order $2$.
+\end{lem}
+
+\begin{proof}
+  Let $c$ be the unique element of order $2$ in $Q_{4n}$. Suppose that $x$ is another element of order $2$ in $M$. Since $x\neq c$ and $c$ is unique in $G$ we must have that $x = gu$ for some $g\in G$. But then $x^2 = (gu)^2 = c g^{-1}g = c\neq 1$. Thus $|x| > 2$ and $c$ is the unique element of order $2$ in $M$.
+\end{proof}
+
+\begin{thm}
+	A nonassociative Moufang loop is generalized octonion if and only if it has order a power of $2$ and a unique element of order $2$.
+\end{thm}
+
+\begin{proof}
+	Using the characterization of generalized octonion loops in Theorem \ref{doubling} it is clear that all such loops have order a power of $2$. By the preceding lemma all such loops have a unique element of order $2$. The converse follows immediately from Theorem \ref{moufangDesc}.
+\end{proof}
+
+\begin{thm}
+	$M$ is a generalized octonion loop if and only if it is isomorphic to a subloop of the unit octonions generated by $\{e^{\frac{e_2\pi}{n}}, e_3, e_5\}$ for some $n\in\NNN$.
+\end{thm}
+
+\begin{proof}
+    Let $M = \langle e^{\frac{e_2\pi}{n}}, e_3, e_5\rangle$ and note that $M$ is nonassociative. We will use Theorem 1 in \cite{Chein} to show that this is precisely $M(Q_{4n}, 2)$, taking the presentation $Q_{4n}  = \langle e^{\frac{e_2\pi}{n}}, e_3\rangle$. First note that $e_5\notin Q_{4n}$. Further, $e_5^2 = -1\in N(\langle -1, Q_{4n}\rangle)$. Finally
+	\[e_5 e_3 e_5^{-1} = (e^{\frac{e_2\pi}{n}})^{-1}\in Q_{4n}\]
+    Thus $Q_{4n}$ is closed under conjugation by $e_5$ and by Theorem \ref{thm-chein}, $M$ is precisely $M(Q_{4n}, 2)$. We showed in Theorem \ref{doubling} that this is the same as $M$ being a generalized octonion loop.
+
+	Since there is a unique nonassociative generalized octonion loop of each possible order, the above shows that any generalized octonion loop is isomorphic to such a subloop of the unit octonions.
+\end{proof}
+
+The above results complete the proof of Theorem \ref{genOct}. Note that with the above results, we can restate Theorem \ref{moufangDesc} as:
+
+\begin{thm}
+	A Moufang $p$-loop $M$ with a unique subloop of order $p$ is either a cyclic group, a generalized quaternion group, or a generalized octonion loop. These last two only occur when $p = 2$.
+\end{thm}
+
+Recall that the generalized quaternion group of order $4n$ can be presented as $Q_{4n} = \langle a, b | a^n = b^2, a^{2n} = 1, b^{-1}ab = a^{-1}\rangle$. Viewing the generalized octonion loop of order $16$ as $M(Q_8, 2)$ with this presentation yields the power graph of $O_{16}$ presented above. Note that the non-identity vertex $a^2$ is connected to all other vertices. The fact that generalized octonion loops are the only nonassociative Moufang loops with this feature is the primary reason we are interested in generalized octonion loops in the context of power graphs.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+  \node (a) at (0, 0){$a$};
+  \node (a3) [below = 1cm of a]{$a^3$};
+  \node (a2) [right = 1cm of a]{$a^2$};
+  \node (1)  [right = 1cm of a3]{$1$};
+  \node (a3b) [above right = 1cm and 1cm of a2]{$a^3b$};
+  \node (ab) [right = 1.5cm of a2]{$ab$};
+  \node (a2b)[right = 1.5cm of 1]{$a^2b$};
+  \node (b) [below right = 1cm and 1cm of 1]{$b$};
+  
+  \node (u) [below left = 1cm and .5cm of 1]{$u$};
+  \node (au)[above left = .5cm and 1cm of a]{$au$};
+  \node (a3u) [below left = .5cm and 1cm of a3]{$a^3 u$};
+  \node (a2u) [above left = 1cm and .5cm of a2]{$a^2u$};
+  \node (a3bu) [right = .8cm of a3b]{$(a^3b)u$};
+  \node (abu) [above right = .3cm and 1cm of ab]{$(ab)u$};
+  \node (a2bu) [below right = .3cm and 1cm of a2b]{$(a^2b)u$};
+  \node (bu) [right = .8cm of b]{$bu$};
+  
+  \draw 	(a) -- (a3)
+  (a) -- (1)
+  (a) -- (a2)
+  (a3) -- (a2)
+  (a3) -- (a2)
+  (a3) -- (1)
+  (a2) -- (a3b)
+  (a2) -- (a2b)
+  (a2) -- (ab)
+  (a2) -- (b)
+  (a2) -- (1)
+  (a3b) -- (1)
+  (a3b) -- (ab)
+  (ab) -- (1)
+  (a2b) -- (1)
+  (a2b) -- (b)
+  (b) -- (1)
+  
+  (u) -- (a2)
+  (u) -- (1)
+  
+  (a3u) -- (a2)
+  (a3u) -- (1)
+  
+  (au) -- (a2)
+  (au) -- (1)
+  
+  (a2u) -- (a2)
+  (a2u) -- (1)
+  
+  (a3bu) -- (a2)
+  (a3bu) -- (1)
+  
+  (abu) -- (a2)
+  (abu) -- (1)
+  
+  (a2bu) -- (a2)
+  (a2bu) -- (1)
+  
+  (bu) -- (a2)
+  (bu) -- (1);
+  \end{tikzpicture}
+  \caption{The (undirected) power graph of $O_{16}$}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Undirected power graphs determine directed} \label{gen-oct}
+
+With Theorem \ref{moufangDesc2} at our disposal we can now translate the argument in \cite{PGII} to the Moufang case to show that two Moufang loops with isomorphic undirected power graphs must have isomorphic directed power graphs. As in \cite{PGII} the proof is split into two cases depending on whether the identity vertex is the only one connected to all other vertices. In what follows, let $M$ be a Moufang loop with power graph $\Gamma$.
+
+\subsection{Non-identity vertex connected to all others}\label{multi-vert}
+
+\begin{lem}\label{connectedVertex}
+  Suppose that $x\in M$ with $x\neq 1$ and $x$ connected to all other vertices in $\Gamma$ and $p$ is a prime divisor of $\Exp(M)$. Then $M$ has a unique subgroup $P$ of order $p$ and $P = \langle x^n \rangle$ for some $n$.
+\end{lem}
+
+\begin{proof}
+  Let $|x^p| = k$ and $y\in M$ such that $|y| = p$ be given. Since $x$ and $y$ are connected in $\Gamma$, either $x$ is a power of $y$ or $y$ is a power of $x$. Suppose that $y^i = x$ where $1\leq i < p$ without loss of generality. Then $(p, i) = 1$ and there exists $j\in\mathbb{N}$ such that $(y^i)^j = y = x^j$. Thus every element of $Q$ of order $p$ is a power of $x$.
+
+  Further $1 = y^p = x^{jp} = (x^p)^j$ and so $k\mid j$. Thus $y = x^j = (x^k)^m$ for some $m\in \mathbb{N}$. So every element of order $p$ is contained in $\langle x^k\rangle$, a cyclic subgroup of order $p$.
+\end{proof}
+
+Thus if the power graph of a Moufang $p$-loop $M$ has a non-identity vertex connected to all others, then $M$ is either cyclic, generalized quaternion or generalized octonion by Theorem \ref{moufangDesc2}. We now handle the case that $M$ does not have prime power order.
+
+\begin{lem}
+  Suppose that $x\in M$ with $x\neq 1$ and $x$ connected to all other vertices in the power graph of $M$ and $|M|$ is not a prime power. Then $M$ is a cyclic group.
+\end{lem}
+
+\begin{proof}
+  Since $M$ is not a $p$-loop $\Exp(M)$ is not a prime power \cite{64and81}. As in the proof of lemma \ref{connectedVertex} $|x|$ is divisible by every prime divisor of $\Exp(M)$. Since $\Exp(M)$ has at least two distinct prime factors so does $|x|$ and for all $y\in M$ with $|y|$ a prime power we have that $y$ is a power of $x$. Let $z\in M$ such that $|z|$ is not a prime power be given. If $z$ is a power of $x$ then we are done. We will show that $z$ must be a power of $x$.
+
+  Suppose toward a contradiction that $z$ is not a power of $x$. Then $x = z^k$ for some $k$. Say $|z| = p_0^{i_0}\cdots p_m^{i_m}$, where this is a factorization into distinct primes and $m\geq 1$. Then $z^{p_1^{i_1}\cdots p_m^{i_m}}, \ldots, z^{p_0^{i_0}\cdots p_{m - 1}^{i_{m - 1}}}$ are all powers of $x$ as elements of $M$ with prime power order. Thus $p_0^{i_0}, \ldots, p_m^{i_m} | |x|$ and $|z| | |x|$. Then $|x| = |z^k| = \frac{|z|}{\gcd(k, |z|)}$ and $|x| = |z|$. But then $|\langle x\rangle| = |\langle z\rangle|$ while $\langle x\rangle \subsetneq \langle z\rangle$, a contradiction since $|x|$ is finite.
+
+  Hence every element of $M$ is a power of $x$ and $M = \langle x\rangle$ is a cyclic group.
+\end{proof}
+
+  Note that if $|M|$ is not a power of $2$, then $M$ is a cyclic group and there is nothing to prove. So suppose that $|M|$ is a power of $2$. Recall that the power graph of a cyclic $p$-group is complete \cite{Ivy}. If the largest complete subgraph in $\Gamma$ has order $2^{n - 2}$, then $M$ cannot be cyclic or generalized quaternion, since both of these have complete subgraphs of order at least $2^{n - 1}$ in their power graphs. So in this case $M$ must be generalized octonion. Similarly, if the largest complete subgraph in $\Gamma$ has order $2^{n - 1}$, then $M$ must be generalized quaternion. Finally, if $\Gamma$ is complete, then $M$ is cyclic.
+
+  The above shows that if the power graph of $M$ has a non-identity vertex connected to all others, then we can identify $M$ up to isomorphism. So in this case the undirected power graph determines the directed power graph up to isomorphism. We will next handle the case that the power graph of $M$ has no such vertex.
+
+\subsection{Only identity connected to all others}
+
+  Note that we have shown that if there is a non-identity vertex connected to all others in $\Gamma$, then $M$ is either cyclic, generalized quaternion, or generalized octonion. In each of these cases the directed power graph is determined by the undirected power graph. So proceeding we will assume that $M$ is not cyclic, generalized quaternion, or generalized octonion, and so the only vertex connected to all others in $\Gamma$ is the identity.
+
+In \cite{PGII} the proof that the undirected power graph of a group with only the identity vertex connected to all others determines the directed power graph only required power associativity, the inverse property, and the element-wise Lagrange property. Since these properties all hold in Moufang loops the proof in \cite{PGII} shows that the undirected power graph of a Moufang loop in which only the identity vertex is connected to all others determines the directed power graph. This completes the proof of Theorem \ref{mainThm}. We present an outline of the proof in \cite{PGII} here for completeness.
+
+\begin{proof}
+  Define two equivalence relations on $M$:
+    \[x\equiv y\text{ iff the closed neighborhoods of $x$ and $y$ coincide}\]
+    \[x\approx y\text{ iff }\langle x\rangle = \langle y\rangle\]
+
+  There are several key observations about these relations:
+  \begin{itemize}
+    \item Elements of $\equiv$-classes are indistinguishable up to graph isomorphism.
+    \item In the directed power graph there are bidirectional arrows between elements of the same $\approx$-class.
+    \item Between two $\approx$-classes either there are no connections or all arrows go the same way.
+    \item A $\approx$-class has size $\phi(n)$, where $n$ is the order of its elements and $\phi$ is the Euler $\phi$ function.
+  \end{itemize}
+  The proof proceeds by showing that each $\equiv$-class is a disjoint union of $\approx$-classes of known sizes. Since elements of $\equiv$-classes are indistinguishable up to graph isomorphism we can then partition $\equiv$-classes into $\approx$-classes arbitrarily. But $\equiv$-classes can be recognized with only the undirected power graph, so this reduces the problem to that of deciding which direction arrows between $\approx$-classes point. This is handled by noticing that if two $\approx$-classes have different sizes, then arrows point from the larger to the smaller. If two $\approx$-classes have the same size, then $\phi(m) = \phi(n)$, where $m, n$ are the orders of elements in the respective classes. But this only occurs for $\phi$ when either $m = n$ or $2m = n$ for $m$ odd. If $m = n$ the classes cannot be joined. In the other case exactly one class is connected to a non-identity singleton class and arrows go from this class to the other. Thus directions of arrows can be determined using only information from the undirected power graph and the undirected power graph determines the directed.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Para-F quasigroups}
+
+\section{Introduction}\label{para-f-intro}
+
+It has been shown that medial quasigroups are linear over abelian groups and similar results have been shown for semimedial and F-quasigroups. Similarly, paramedial quasigroups have been show to be linear over abelian groups and a similar result has been shown for semiparamedial quasigroups. Our goal in this chapter will be to find the correct definition of para-F quasigroups and prove an analogous linearity result. We will proceed by investigating candidate defining identities for para-F quasigroups, showing that para-F quasigroups are linear over Moufang loops, and finally proving a result analogous to the linearity of F-quasigroups.
+
+\subsection{Medial and F-quasigroups}
+
+We will first present the definitions and linearity results for medial, semimedial, F, paramedial, and semiparamedial quasigroups.
+
+\begin{dfn}
+  A quasigroup $(Q, \cdot)$ is said to be a \emph{medial quasigroup} (or entropic quasigroup) if the following identity holds for all $x, y, u, v\in Q$:
+  \[xy\cdot uv = xu\cdot yv\]
+\end{dfn}
+
+\begin{thm}[Bruck-Murdoch-Toyoda]
+  Every medial quasigroup $(Q, \cdot)$ is linear over an abelian group $(Q, +)$ with the linearity given by
+  \[x\cdot y = \varphi(x) + \psi(y) + a\]
+  where $\varphi\psi = \psi\varphi$ \cite{SP}.
+\end{thm}
+
+\begin{dfn}
+  A quasigroup $(Q, \cdot)$ is said to be a \emph{semimedial quasigroup} if the following identities hold for all $x, y, z\in Q$:
+  \begin{align*}
+    xx\cdot yz &= xy\cdot xz\\
+    zy\cdot xx &= zx\cdot yx
+  \end{align*}
+\end{dfn}
+
+\begin{thm}(Barnes, Kinyon)
+  Every semimedial quasigroup $(Q, \cdot)$ is linear over a commutative Moufang loop $(Q, +)$ with the linearity given by
+  \[x\cdot y = \varphi(x) + (\psi(y) + c)\]
+  where $\varphi\psi = \psi\varphi$ \cite{BK-isotopes}.
+\end{thm}
+
+\begin{dfn}
+  A quasigroup $(Q, \cdot)$ is said to be an \emph{F-quasigroup} if the following identities hold for all $x, y, z \in Q$:
+  \begin{align*}
+    x\cdot yz &= xy\cdot (x\ldv x)z\\
+    zy\cdot x &= z(x\rdv x) \cdot yx
+  \end{align*}
+\end{dfn}
+
+\begin{thm}(Kepka, Kinyon, Phillips)
+  Every F-quasigroup $(Q, \cdot)$ is linear over an NK-loop $(Q, +)$ with the linearity given by
+  \[x\cdot y = \varphi(x) + \psi(y) + e\]
+  where $\varphi\psi = \psi\varphi$ \cite{KepkaKinyonPhillips} and $e\in Z(Q, +)$.
+\end{thm}
+
+Note that since $e$ is in the center, and thus the nucleus, we can omit parentheses from the equation describing the linearity.
+
+\begin{dfn}
+  A quasigroup $(Q, \cdot)$ is said to be a \emph{paramedial quasigroup} if the following identity holds for all $x, y, u, v\in Q$:
+  \[xy\cdot uv = vy\cdot ux\]
+\end{dfn}
+
+\begin{thm}[Kepka-N\v{e}mec]
+  Every paramedial quasigroup $(Q, \cdot)$ is linear over an abelian group $(Q, +)$ with the linearity given by
+  \[x\cdot y = \varphi(x) + \psi(y) + g\]
+  where $\varphi\varphi = \psi\psi$ \cite{SP}.
+\end{thm}
+
+\begin{dfn}
+  A quasigroup $(Q, \cdot)$ is said to be a \emph{semiparamedial quasigroup} if the following identities hold for all $x, y, z\in Q$:
+  \begin{align*}
+    xx\cdot yz &= zx\cdot yx\\
+    zy\cdot xx &= xy\cdot xz
+  \end{align*}
+\end{dfn}
+
+\begin{thm}[Barnes, Kinyon]
+  Every semiparamedial quasigroup $(Q, \cdot)$ is linear over a commutative Moufang loop $(Q, +)$ with the linearity given by
+  \[x\cdot y = \varphi(x) + (\psi(y) + e)\]
+  where $\varphi\varphi = \psi\psi$ \cite{BK-isotopes}.
+\end{thm}
+
+The relation between these varieties is shown below.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node (medial) [draw]
+      {\makecell{\textbf{Medial}\\ $xa\cdot by = xb\cdot ay$}};
+    \node (semimedial) [draw, below left = 2cm and 1cm of medial]
+      {\makecell{\textbf{Semimedial}\\ $xx\cdot yz = xy\cdot xz$\\ and \\ $zy\cdot xx = zx\cdot yx$}};
+    \node (f-quasigroups) [draw, below = 2cm of medial]
+      {\makecell{\textbf{F-quasigroups}\\ $x\cdot yz = xy\cdot (x\ldv x)z$\\ and \\ $zy\cdot x = z(x\rdv x)\cdot yx$}};
+
+    \node (paramedial) [draw, right = 2cm of medial]
+      {\makecell{\textbf{Paramedial}\\ $ax\cdot yb = bx\cdot ya$}};
+    \node (semiparamedial) [draw, below = 2cm of paramedial]
+      {\makecell{\textbf{Semiparamedial}\\ $xx\cdot yz = zx\cdot yx$\\ and \\ $zy\cdot xx = xy\cdot xz$}};
+    \node (para-f) [draw, below right = 2cm and 1cm of paramedial]
+      {\makecell{\textbf{Para-F}\\?}};
+
+    \draw[-{Latex[scale=2]}] (medial) -- (semimedial);
+    \draw[-{Latex[scale=2]}] (medial) -- (f-quasigroups);
+
+    \draw[-{Latex[scale=2]}](paramedial) -- (semiparamedial);
+    \draw[-{Latex[scale=2]}](paramedial) -- (para-f);
+  \end{tikzpicture}
+  \caption{Generalizations of medial and paramedial}
+  \label{medial-para}
+\end{figure}
+
+\subsection{Candidates for para-F}\label{sec-can-identities}
+
+As suggested by the above diagram we expect there to be a variety arising by weakening the paramedial identity in an analogous way to how the medial identity is weakened to define F-quasigroups. There are two natural ways to weaken the paramedial identity, we will show that each yields a distinct variety. We will now present these varieties and argue that one is the correct definition of para-F.
+
+The first analogue is:
+\begin{align*}
+  x\cdot yz &= z(x\ldv x)\cdot yx\\
+  zy\cdot x &= xy\cdot (x\rdv x)z
+\end{align*}
+We will call quasigroups satisfying these identities quasigroups of type (*).
+
+The other analogue is:
+\begin{align*}
+  x\cdot yz &= zx\cdot y(x\rdv x)\\
+  zy\cdot x &= (x\ldv x)y\cdot xz
+\end{align*}
+We will call quasigroups satisfying these identities quasigroups of type (**).
+
+\begin{prp}\label{can1}
+  Let $Q$ be a quasigroup of type (*), then $Q$ is semiparamedial and of type (**). 
+\end{prp}
+
+\begin{proof}
+  This result was proved using Prover9 \cite{Prover9}. The proof can be found in appendix \ref{appendix:can1}.
+\end{proof}
+
+This result indicates that the (*) identities are too strong to be an analogue of the F-quasigroup identities. We will take the (**) identities as our defining para-F identities.
+
+\begin{prp}\label{semipara+paraF}
+  Let $Q$ be a quasigroup that is both semiparamedial and of type (**), then $Q$ is of type (*).
+\end{prp}
+
+\begin{proof}
+  This result was proved using Prover9 \cite{Prover9}. The proof can be found in appendix \ref{appendix:semipara+paraF}.
+\end{proof}
+
+\subsection{Para-F quasigroups}
+
+\begin{dfn}
+  A quasigroup $(Q,\cdot)$ is said to be a \emph{para-F quasigroup} if the following identities hold for all $x,y,z\in Q$:
+  \begin{align}
+    x\cdot yz &= zx\cdot y(x\rdv x)\,,  \label{eq:pF1}  \tag{P1} \\
+    zy\cdot x &= (x\ldv x)y\cdot xz\,.  \label{eq:pF2}  \tag{P2}
+  \end{align}
+\end{dfn}
+
+We will call a quasigroup satisfying only equation \ref{eq:pF1} \emph{left para-F} and a quasigroup satisfying only equation \ref{eq:pF2} \emph{right para-F}. The following quasigroup is left para-F, but not right para-F. Since these identities are dual this demonstrates that neither implies the other.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c | c c c c c c c c}
+    $\cdot$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+    \hline \hline
+    0 & 1& 0& 4& 2& 5& 3& 7& 6\\
+	  1 & 3& 2& 1& 7& 0& 6& 5& 4\\
+	  2 & 0& 6& 2& 3& 4& 5& 1& 7\\
+	  3 & 2& 4& 7& 6& 1& 0& 3& 5\\
+	  4 & 5& 3& 0& 1& 6& 7& 4& 2\\
+	  5 & 7& 1& 5& 4& 3& 2& 6& 0\\
+	  6 & 4& 5& 6& 0& 7& 1& 2& 3\\
+	  7 & 6& 7& 3& 5& 2& 4& 0& 1
+  \end{tabular}
+  \caption{A quasigroup which is left but not right para-F}
+\end{table}
+
+As we will show later in this chapter, para-F quasigroups are antilinear over Moufang loops. We will use this antilinearity to explicitly construct a para-F quasigroup which is not a semiparamedial, semimedial, nor F-quasigroup. Let $D_8 = \langle a, b | a^4 = b^2 = 1, bab^{-1} = a^{-1}\rangle$ and define $\phi, \psi : D_8\to D_8$ by $\phi(ab) = \psi(ab) = a^3 b$, $\phi(a^3 b) = \psi(a^3 b) = ab$ and $\phi, \psi$ fix all other elements of $D_8$. Then $\phi, \psi$ are antiautomorphisms of $D_8$. Define a quasigroup $(Q, +)$ by
+\[x + y = \phi(x) \cdot \psi(y) \cdot a^2\]
+where $\cdot$ is the operation in $D_8$. This quasigroup is para-F but not semiparamedial, semimedial or F. Its multiplication table is below. Note that $(Q, +)$ is also neither medial nor paramedial since it is neither semimedial nor semiparamedial.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c | c c c c c c c c}
+    $+$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+    \hline \hline
+    1& 4& 6& 7& 1& 5& 2& 3& 8\\
+    2& 6& 4& 8& 2& 3& 1& 5& 7\\
+    3& 7& 5& 1& 3& 2& 8& 4& 6\\
+    4& 1& 2& 3& 4& 8& 6& 7& 5\\
+    5& 5& 7& 6& 8& 4& 3& 2& 1\\
+    6& 2& 1& 5& 6& 7& 4& 8& 3\\
+    7& 3& 8& 4& 7& 6& 5& 1& 2\\
+    8& 8& 3& 2& 5& 1& 7& 6& 4 
+  \end{tabular}
+  \caption{A quasigroup which is para-F but not F, paramedial, nor semimedial}
+\end{table}
+
+Note that all of the varieties of loops in diagram \ref{medial-para}, with the exception of para-F quasigroups, have been shown to be linear over varieties of loops. Our goal in this chapter will be to prove an analogous result for para-F quasigroups. We will first show that as in the case of F-quasigroups, all loop isotopes of para-F quasigroups are Moufang. First note that Moufang loops are isotopically invariant, so we need only show that every para-F quasigroup has a Moufang loop isotope.
+
+\section{Loop isotopes are Moufang}
+
+In what follows let $(Q, \cdot)$ be a para-F quasigroup and $x, y, z\in Q$ be universally quantified. We will now prove a series of lemmas which will allow us to prove Theorem \ref{thm-iso-moufang}.
+
+\begin{lem}\label{lem-divs}
+  $(x\rdv y)\ldv x = y$ for all $x, y\in Q$.
+\end{lem}
+
+\begin{proof}
+  Substituting $x \mapsfrom x/y$ into the loop identity $x\ldv(xy) = y$ we have $(x/y)\ldv((x/y)\cdot y) = y$ and so $(x/y)\ldv x = y$.
+\end{proof}
+
+\begin{lem}\label{M-15}
+  $(z\cdot((y\ldv y)\ldv x))\cdot y = x\cdot yz$ for all $x, y, z\in Q$.
+\end{lem}
+
+\begin{proof}
+  Substituting $y \mapsfrom (y\ldv y)\ldv x$ and $x \mapsfrom y$ in the para-F identity $(x\ldv x)y \cdot xz = zy\cdot x$ we have that
+  \begin{align*}
+    (z\cdot ((y\ldv y)\ldv x))\cdot y &= ((y\ldv y)\cdot((y\ldv y)\ldv x))\cdot yz\\
+    &= x\cdot yz
+  \end{align*}
+  So $x\cdot yz = (z\cdot ((y\ldv y)\ldv x))\cdot y$ for all $x, y, z\in Q$.
+\end{proof}
+
+\begin{lem}\label{M-23}
+  $(((x\ldv x)\cdot y)\cdot z)/x = (x\ldv z)\cdot y$
+\end{lem}
+
+\begin{proof}
+  Substituting $z \mapsfrom x\ldv z$ into the para-F identity $((x\ldv x)\cdot y)\cdot(x\cdot z) = (z\cdot y)\cdot x$ we have
+  \begin{align*}
+    ((x\ldv x)\cdot y)\cdot (x\cdot (x\ldv z)) &= ((x\ldv z)\cdot y)\cdot x\\
+    ((x\ldv x)\cdot y)\cdot z &= ((x\ldv z)\cdot y)\cdot x\\
+    (((x\ldv x)\cdot y)\cdot z)/x &= (((x\ldv z)\cdot y)\cdot x)/x\\
+    (((x\ldv x)\cdot y)\cdot z)/x &= (x\ldv z)\cdot y
+  \end{align*}
+
+  So $(((x\ldv x)\cdot y)\cdot z)/x = (x\ldv z)\cdot y$ for all $x, y, z\in Q$.
+\end{proof}
+
+\begin{lem}\label{M-25}
+  $x\ldv(y\cdot z) = (z/(x/y))\cdot(y/y)$ for all $x, y, z\in Q$.
+\end{lem}
+
+\begin{proof}
+  Note that
+  \begin{align*}
+    (x\cdot y)\cdot(z\cdot(y/y)) &= y\cdot (z\cdot x)\\
+    (x\cdot y)\ldv ((x\cdot y)\cdot(z\cdot(y/y))) &= (x\cdot y)\ldv(y\cdot (z\cdot x))\\
+    z\cdot (y/y) &= (x\cdot y)\ldv(y\cdot (z\cdot x))
+  \end{align*}
+  Substituting $x \mapsfrom x/y$ into the above we have
+  \begin{align*}
+    z\cdot(y/y) &= ((x/y)\cdot y)\ldv (y\cdot (z\cdot (x/y)))\\
+    z\cdot (y/y) &= x\ldv (y\cdot (z\cdot (x/y)))
+  \end{align*}
+  Substituting $z \mapsfrom z/(x/y)$ into the above we have
+  \begin{align*}
+    (z/(x/y))\cdot(y/y) &= x\ldv(y\cdot ((z/(x/y))\cdot (x/y)))\\
+    (z/(x/y))\cdot(y/y) &= x\ldv(y\cdot z)
+  \end{align*}
+  Thus $x\ldv(y\cdot z) = (z/(x/y))\cdot (y/y)$ for all $x, y, z\in Q$.
+\end{proof}
+
+\begin{lem}\label{M-27}
+  $(x\cdot y)/z = ((z/(y/y))\ldv y)\cdot x$ for all $x, y, z\in Q$.
+\end{lem}
+
+\begin{proof}
+  Note that
+  \begin{align*}
+    (x\cdot y)\cdot (z\cdot(y/y)) &= y\cdot (z\cdot x)\\
+    ((x\cdot y)\cdot (z\cdot(y/y)))/(z\cdot(y/y)) &= (y\cdot (z\cdot x))/(z\cdot(y/y))\\
+    x\cdot y &= (y\cdot (z\cdot x))/(z\cdot(y/y))
+  \end{align*}
+  Substituting $x \mapsfrom z\ldv y$, $y \mapsfrom x$ into the above we have
+  \begin{align*}
+    (z\ldv y)\cdot x &= (x\cdot (z\cdot (z\ldv y)))/(z\cdot(y/y))\\
+    (z\ldv y)\cdot x &= (x\cdot y)/(z\cdot(y/y))
+  \end{align*}
+  Substituting $z \mapsfrom z/(y/y)$ into the above we have
+  \begin{align*}
+    ((z/(y/y))\ldv y)\cdot x &= (x\cdot y)/((z/(y/y))\cdot (y/y))\\
+    ((z/(y/y))\ldv y)\cdot x &= (x\cdot y)/z
+  \end{align*}
+  So $(x\cdot y)/z = ((z/(y/y))\ldv y)\cdot x$ for all $x, y, z\in Q$.
+\end{proof}
+
+\begin{lem}\label{M-30}
+  $(x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) = z\cdot((y\ldv y)\ldv x)$ for all $x, y, z\in Q$.
+\end{lem}
+
+\begin{proof}
+  By lemma \ref{M-15} we have
+  \begin{align*}
+    (x\cdot ((y\ldv y)\ldv z))\cdot y &= z\cdot(y\cdot x)\\
+    ((x\cdot ((y\ldv y)\ldv z))\cdot y)/y &= (z\cdot(y\cdot x))/y\\
+    x\cdot((y\ldv y)\ldv z) &= (z\cdot(y\cdot x))/y
+  \end{align*}
+  Call this last line $\dagger$. Substituting $x \mapsfrom x/x$, $z \mapsfrom z\cdot x$ into (*) we have that
+  \begin{align*}
+    (x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) &= ((z\cdot x)\cdot (y\cdot (x/x)))/y\\
+    (x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) &= (x\cdot(y\cdot z))/y
+  \end{align*}
+  Applying $\dagger$ to the right hand side above we have that $(x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) = z\cdot((y\ldv y)\ldv x)$.
+\end{proof}
+
+\begin{lem}\label{M-36}
+  $(x\ldv x)\ldv((y\cdot x)/z) = (x\ldv z)\ldv y$.
+\end{lem}
+
+\begin{proof}
+  From the para-F identities we have that
+  \begin{align*}
+    ((x\ldv x)\cdot y)\cdot (x\cdot (x\ldv z)) &= ((x\ldv z)\cdot y)\cdot x\\
+    ((x\ldv x)\cdot y)\cdot z &= ((x\ldv z)\cdot y)\cdot x\\
+    &\text{ substituting $y \mapsfrom (x\ldv z)\ldv y$}\\
+    ((x\ldv x)\cdot ((x\ldv z)\ldv y))\cdot z &= ((x\ldv z)\cdot ((x\ldv z)\ldv y))\cdot x\\
+    ((x\ldv x)\cdot ((x\ldv z)\ldv y))\cdot z &=  y\cdot x\\
+    (((x\ldv x)\cdot ((x\ldv z)\ldv y))\cdot z)/z &=  (y\cdot x)/z\\
+    ((x\ldv x)\cdot ((x\ldv z)\ldv y)) &=  (y\cdot x)/z\\
+    (x\ldv x)\ldv(((x\ldv x)\cdot ((x\ldv z)\ldv y))) &=  (x\ldv x)\ldv((y\cdot x)/z)\\
+    (x\ldv z)\ldv y &= (x\ldv x)\ldv((y\cdot x)/z)
+  \end{align*}
+  Thus $(x\ldv z)\ldv y = (x\ldv x)\ldv((y\cdot x)/z)$ for all $x, y, z\in Q$.
+\end{proof}
+
+\begin{lem}\label{M-38}
+  $(x/(y/y))\ldv (z\cdot(x\ldv x)) = x\ldv(z\cdot (y/y))$
+\end{lem}
+
+\begin{proof}
+  By lemma \ref{M-27} we have
+  \begin{align*}
+    ((z/(x/x))\ldv y)\cdot x &= (x\cdot y)/z\\
+    (((z/(x/x))\ldv y)\cdot x)/x &= ((x\cdot y)/z)/x\\
+    (z/(x/x))\ldv y &= ((x\cdot y)/z)/x
+  \end{align*}
+  Call this last line $\dagger$.
+
+  By lemma \ref{M-23} we have that $(((x\ldv x)\cdot y)\cdot z)/x = (x\ldv z)\cdot y$. Substituting $y \mapsfrom x$, $x \mapsfrom z$, $z \mapsfrom y\cdot (x/x)$ we have
+  \begin{align*}
+    (((z\ldv z)\cdot x)\cdot (y\cdot(x/x)))/z &= (z\ldv (y\cdot (x/x)))\cdot x\\
+    x\cdot (y\cdot(z\ldv z))/z &= (z\ldv(y\cdot(x/x)))\cdot x\text{ from the para-F identities}\\
+    (x\cdot (y\cdot(z\ldv z))/z)/x &= ((z\ldv(y\cdot(x/x)))\cdot x)/x\\
+    (x\cdot (y\cdot(z\ldv z))/z)/x &= z\ldv(y\cdot(x/x))\\
+    (z/(x\rdv x))\ldv(y\cdot(z\ldv z)) &= z\ldv(y\cdot (x/x))\text{ by $\dagger$}
+  \end{align*}
+  Thus $(x/(y/y))\ldv (z\cdot(x\ldv x)) = x\ldv(z\cdot (y/y))$ for all $x, y, z\in Q$.
+\end{proof}
+
+\begin{prp}\label{BI}
+  \[((x\ldv x)\cdot ((y/x)\ldv x))\cdot z = x\cdot (y\ldv(x\cdot z))\]
+  for all $x, y, z\in Q$.
+\end{prp}
+
+\begin{proof}
+  Substituting $x \mapsfrom z$, $y \mapsfrom (y\ldv y)\ldv x$, $z \mapsfrom y$ in lemma \ref{M-23} we have
+  \begin{align*}
+    (z\ldv y)\cdot ((y\ldv y)\ldv x) &= (((z\ldv z)\cdot((y\ldv y)\ldv x)\cdot y))/z \\
+    &= (x\cdot(y\cdot(z\ldv z)))/z\text{ by lemma \ref{M-15}}
+  \end{align*}
+  Call this identity (I).
+
+  From lemma \ref{M-27} with $z = z\cdot(x\ldv x)$ we have
+  \begin{align*}
+    ((x/(y/y))\ldv(z\cdot(x\ldv x)))\cdot y &= (y\cdot(z\cdot(x\ldv x)))/x\\
+    &= (x\ldv z)\cdot ((z\ldv z)\ldv y)\text{ by (I)}
+  \end{align*}
+  Call this identity (II).
+
+  But from lemma \ref{M-38} we have
+  \begin{align*}
+    (x/(z/z))\ldv(y\cdot(x\ldv x)) &= x\ldv(y\cdot (z/z))\\
+    ((x/(z/z))\ldv(y\cdot(x\ldv x)))\cdot z &= (x\ldv(y\cdot (z/z)))\cdot z\\
+    (x\ldv y)\cdot((y\ldv y)\ldv z) &= (x\ldv(y\cdot(z/z)))\cdot z\text{ by (II)}
+  \end{align*}
+  Call this last line (III)
+
+  Then from lemma \ref{M-27} we have
+  \begin{align*}
+    ((x/(y/y))\ldv (z\cdot(y/y))) \cdot y &= (y\cdot (z\cdot(y/y)))/x\\
+    ((x/(y/y))\ldv z)\cdot ((z\ldv z)\ldv y) &= (y\cdot (z\cdot (y/y)))/x\text{ from (III)}
+  \end{align*}
+  Call this last line (IV)
+
+  Substituting $z \mapsfrom (z/(x/x))\ldv y$ in lemma \ref{M-30} we have
+  \begin{align*}
+    (x/x)\cdot((y\ldv y)\ldv(((z/(x/x))\ldv y)\cdot x)) &= ((z/(x/x))\ldv y)\cdot ((y\ldv y)\ldv x)\\
+    (x/x)\cdot((y\ldv y)\ldv(((z/(x/x))\ldv y)\cdot x)) &= (x\cdot (y\cdot (x/x)))/z\text{ from (IV)}\\
+    (x/x)\cdot((y\ldv y)\ldv((x\cdot y)/z)) &= (x\cdot(y\cdot (x/x)))/z\text{ from lemma \ref{M-27}}\\
+    (x/x)\cdot((y\ldv z)\ldv x) &= (x\cdot(y\cdot (x/x)))/z\text{ from lemma \ref{M-36}}\\
+    ((x/x)\cdot((y\ldv z)\ldv x))\cdot z &= ((x\cdot(y\cdot (x/x)))/z)\cdot z\\
+    ((x/x)\cdot((y\ldv z)\ldv x))\cdot z &= x\cdot(y\cdot (x/x))\\
+    &\text{ substituting $y \mapsfrom z/y$ we have}\\
+    ((x/x)\cdot (((z/y)\ldv z)\ldv x))\cdot z &= x\cdot ((z/y)\cdot (x/x))\\
+    ((x/x)\cdot (y\ldv x))\cdot z &= x\cdot ((z/y)\cdot (x/x))\text{ using that $(z/y)\ldv z = y$}
+  \end{align*}
+  Call this last line (V)
+
+  Now consider
+  \begin{align*}
+    x\cdot((y/(z/u))\cdot (u/u)) &= x\cdot((y/(z/u))\cdot (u/u))\\
+    x\cdot(z\ldv (u\cdot y)) &= x\cdot((y/(z/u))\cdot (u/u))\text{ from lemma \ref{M-25}}\\
+    x\cdot(y\ldv (x\cdot z)) &= x\cdot((z/(y/x))\cdot (x/x))\text{ renaming variables}\\
+    x\cdot(y\ldv (x\cdot z)) &= ((x/x)\cdot((y/x)\ldv x))\cdot z\text{ from (V)}
+  \end{align*}
+  So $x\cdot(y\ldv (x\cdot z)) = ((x/x)\cdot((y/x)\ldv x))\cdot z$ for all $x, y, z\in Q$.
+\end{proof}
+
+\begin{prp}\label{BI-dual}
+  \[z\cdot((x\rdv(x\ldv y))\cdot (x\rdv x)) = ((z\cdot x)\rdv y)\cdot x\]
+  for all $x, y, z\in Q$.
+\end{prp}
+
+\begin{proof}
+  The defining identity of para-F quasigroups is symmetric, so this result follows from proposition \ref{BI} by symmetry.
+\end{proof}
+
+\begin{lem}\label{bol-char}
+  A loop $(Q, +, 1)$ is left Bol iff for all $x, y\in Q$ there exists $u \in Q$ such that 
+  \[L_x L_y L_x = L_u\] \cite{BK-isotopes}.
+\end{lem}
+
+This result was shown in \cite{BK-isotopes} and was likely known previously. We present a proof here to make this chapter self contained.
+
+\begin{proof}
+  Suppose first that for all $x, y \in Q$ there exists $u\in Q$ such that $L_x L_y L_x = L_u$. Applying both sides of this equation to $1$ we see that $u = x + (y + x)$. Thus
+  \begin{align*}
+    x + (y + (x + z)) &= L_x L_y L_x(z)\\
+    &= L_u(z)\\
+    &= L_{x + (y + x)}(z)\\
+    &= (x + (y + x)) + z
+  \end{align*}
+  Thus $(Q, +)$ is left Bol.
+
+  Conversely, if $Q$ is left Bol then letting $u = x + (y + x)$ we have $L_x L_y L_x = L_{x + (y + x)} = L_u$ from the defining identity.
+\end{proof}
+
+\begin{prp}\label{iso-char}
+  All loop isotopes of a quasigroup $(Q, \cdot)$ are left Bol iff for all $x, y\in Q$ there exists $u\in Q$ such that
+  \[L_{x} L_{y}^{-1} L_x = L_u\].
+\end{prp}
+
+This result was proved in \cite{BK-isotopes}. We present a proof here to make this chapter self contained.
+
+\begin{proof}
+ All translations in this proof will be with respect to the quasigroup operation $\cdot$. Let $(Q, +)$ be a principal loop isotope of $(Q, \cdot)$, where $x + y = (x\rdv a)\cdot (b\ldv y)$. Suppose first that for all $x, y\in Q$ there exists $u\in Q$ such that $L_x L_y^{-1} L_x = L_u$. Note that $L_u$ is a bijection, so for all $x, y\in Q$ there exists $u\in Q$ such that $L_x^{-1  }L_yL_x^{-1} = L_u^{-1}$. Consider
+  \begin{align*}
+    x + (y + (x + z)) &= (x\rdv a) \cdot (b\ldv (y + (x + z)))\\
+    &= (x\rdv a)\cdot (b\ldv((y\rdv a)\cdot (b\ldv(x + z))))\\
+    &= (x\rdv a)\cdot (b\ldv((y\rdv a)\cdot (b\ldv((x\rdv a)\cdot (b\ldv z)))))\\
+    &= (x\rdv a)\cdot L_b^{-1} L_{y\rdv a} L_b^{-1}((x\rdv a)\cdot (b\ldv z))\\
+    &= (x\rdv a)\cdot L_{u_1}^{-1}((x\rdv a)\cdot (b\ldv z))\text{ for some $u_1\in Q$}\\
+    &= L_{x\rdv a}L_{u_1}^{-1}L_{x\rdv a}(b\ldv z)\\
+    &= L_{u_2}(b\ldv z)\\
+    &= u_2 a + z
+  \end{align*}
+  Thus by lemma \ref{bol-char} $(Q, +)$ is a left Bol loop and all loop isotopes of $(Q, \cdot)$ are left Bol.
+
+  Now suppose that all loop isotopes of $(Q, \cdot)$ are left Bol and let $(Q, +)$ have the operation $v + w = v\cdot (y\ldv w)$. Then for all $x, y, z\in Q$ we have
+  \begin{align*}
+    x + (y + (x + z)) &= (x + (y + x)) + z\\
+    x\cdot (y\ldv (y\cdot (y\ldv (x\cdot (y\ldv z))))) &= (x + (y + x)) + z\\
+    x\cdot (y\ldv (x\cdot (y\ldv z))) &= (x + (y + x))\cdot (y\ldv z)\\
+    x\cdot (y\ldv (x\cdot z)) &= (x + (y + x))\cdot z\text{ $z\mapsfrom yz$}\\
+    L_x L_y^{-1} L_x (z) &= L_{x + (y + x)}(z)\\
+    L_x L_y^{-1} L_x &= L_u
+  \end{align*}
+  So for all $x, y\in Q$ there exists $u\in Q$ such that $L_x L_y^{-1} L_x = L_u$ and the proof is complete.
+\end{proof}
+
+\begin{cor}\label{iso-char-dual}
+  All loop isotopes of a quasigroup $(Q, \cdot)$ are right Bol iff for all $x, y\in Q$ there exists $u\in Q$ such that
+  \[R_x R_y^{-1} R_x = R_u\]
+\end{cor}
+
+\begin{proof}
+  Dual to proposition \ref{iso-char}.
+\end{proof}
+
+\begin{thm}\label{thm-iso-moufang}
+  Every loop isotope of a para-F quasigroup is Moufang.
+\end{thm}
+
+\begin{proof}
+  Note that proposition \ref{BI} shows that in a para-F quasigroup $(Q, \cdot)$ we have that for all $x, y\in Q$ there exists $u\in Q$ such that $L_x L_y^{-1} L_x = L_u$. Thus by proposition \ref{iso-char} all loop isotopes of a para-F quasigroup are left Bol. Dually, by propositions \ref{BI-dual} and \ref{iso-char-dual} we have that all loop isotopes of a para-F quasigroup are right Bol. Thus all loop isotopes of a para-F quasigroup are Moufang. 
+\end{proof}
+
+\section{Para-F quasigroups are antilinear over Moufang loops}
+
+While para-F quasigroups are not linear over loops in general, they are antilinear over Moufang loops, which is an analogous property.
+
+\begin{dfn}
+  A quasigroup $(Q, \cdot)$ is \emph{antilinear} over a loop $(Q, +)$ if there exists $f, g$ antiautomorphisms of $(Q, +)$, $c\in Q$ such that
+  \[x\cdot y = f(x) + (g(y) + c)\]
+  for all $x, y\in Q$.
+\end{dfn}
+
+With this result we can prove an analogue to the linearity results in section \ref{para-f-intro} for para-F quasigroups.
+
+\begin{thm}\label{thm-para-f}
+  Every para-F quasigroup $(Q, \cdot)$ is antilinear over a Moufang loop $(Q, +)$ with the antilinearity given by
+  \[x\cdot y = \varphi(x) + \psi(y) + c\] 
+  where $c\in Z((Q, +))$ and $\varphi, \psi$ are antiautomorphisms.
+\end{thm}
+
+\begin{proof}
+  This result was proved using Prover9. We will present an outline of the proof here.
+  Suppose that $(Q, \cdot)$ is a para-F quasigroup and for all $u\in Q$ define:
+  \[x +_u y = (x\rdv(u\ldv u))\cdot ((u\rdv u)\ldv y)\]
+  From Theorem \ref{thm-iso-moufang} we have that $(Q, +_u)$ is a Moufang loop with identity $1_u = (u\rdv u)\cdot (u\ldv u)$ for all $u\in Q$. Expressing $\cdot$ in terms of $+_u$  we have that
+  \begin{align*}
+    x +_u y &= (x\rdv(u\ldv u))\cdot ((u\rdv u)\ldv y)\\
+    x\cdot y &= x(u\ldv u) +_u (u\rdv u)y\\
+    x\cdot y &= (f_u(x) +_u A_u) +_u (B_u +_u g_u(y))
+  \end{align*}
+  Set
+  \begin{align*}
+    f_u(x) &= x(u\ldv u) -_u 1_u(u\ldv u)\\
+    g_u(y) &= -_u(u\rdv u)1_u +_u (u\rdv u)y\\
+    A_u &= 1_u(u\ldv u)\\
+    B_u &= (u\rdv u) 1_u
+  \end{align*}
+    So that $f_u(1_u) = g_u(1_u) = 1_u$. We define $C_u = A_u + B_u$ and use Prover9 to prove the following sequence of results:
+\begin{enumerate}
+  \item $1_{u\cdot u} = C_u$
+  \item $A_u, B_u, C_u$ are in the commutant of $(Q, +_u)$
+  \item $(x +_x y) +_x z = x +_x (y +_x z)$
+  \item $A_u, B_u\in\nuc(Q, +_u)$
+  \item $A_u +_y x = x +_y A_u$
+  \item $B_u +_y x = x +_y B_u$
+  \item $1_u +_y x = x +_y 1_u$
+  \item $f_y(x) +_y f_y(z) = f_y(z +_y x)$
+  \item $g_y(x) +_y g_y(z) = g_y(z +_y x)$
+\end{enumerate}
+
+  Thus
+  \[x\cdot y = f(x) + C + g(y)\]
+  where $C\in Z(Q, +)$ and $f, g$ are antiautomorphisms.
+
+  Note that steps 5, 6, and 7 above make use of our approach of considering all loop isotopes of $(Q, \cdot)$ of the form $(Q, +_u)$ simultaneously. These steps seem to be key in allowing Prover9 to find proofs of 8 and 9.
+\end{proof}
+
+With this result all of the varieties of quasigroups in diagram \ref{para-f-diag} have been shown to be linear or antilinear over varieties of Moufang loops.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node (medial) [draw]
+      {\makecell{\textbf{Medial}\\ $xa\cdot by = xb\cdot ay$}};
+    \node (semimedial) [draw, below left = 2cm and 1cm of medial]
+      {\makecell{\textbf{Semimedial}\\ $xx\cdot yz = xy\cdot xz$\\ and \\ $zy\cdot xx = zx\cdot yx$}};
+    \node (f-quasigroups) [draw, below = 2cm of medial]
+      {\makecell{\textbf{F-quasigroups}\\ $x\cdot yz = xy\cdot (x\ldv x)z$\\ and \\ $zy\cdot x = z(x\rdv x)\cdot yx$}};
+
+    \node (paramedial) [draw, right = .3cm of medial]
+      {\makecell{\textbf{Paramedial}\\ $ax\cdot yb = bx\cdot ya$}};
+    \node (semiparamedial) [draw, below = 2cm of paramedial]
+      {\makecell{\textbf{Semiparamedial}\\ $xx\cdot yz = zx\cdot yx$\\ and \\ $zy\cdot xx = xy\cdot xz$}};
+    \node (para-f) [draw, below right = 2cm and .5cm of paramedial]
+      {\makecell{\textbf{Para-F}\\ $x\cdot yz = zx\cdot y(x\rdv x)$\\ and \\ $zy\cdot x = (x\ldv x)y\cdot xz$}};
+
+    \draw[-{Latex[scale=2]}] (medial) -- (semimedial);
+    \draw[-{Latex[scale=2]}] (medial) -- (f-quasigroups);
+
+    \draw[-{Latex[scale=2]}](paramedial) -- (semiparamedial);
+    \draw[-{Latex[scale=2]}](paramedial) -- (para-f);
+  \end{tikzpicture}
+  \caption{Generalizations of medial and paramedial with para-F}
+  \label{para-f-diag}
+\end{figure}
+
+\section{Para-FG quasigroups}
+
+It is shown in \cite{FG} that the collection of F-quasigroups which are isotopic to groups (called \emph{FG-quasigroups}) form a variety characterized by two identities. We will now show that a similar result holds for para-F quasigroups.
+
+\begin{dfn}
+  A \emph{para-FG quasigroup} is a para-F quasigroup which is isotopic to a group.
+\end{dfn}
+
+Note that all loop isotopes of a para-FG quasigroup must be groups.
+
+\begin{thm}\label{thm-para-FG}
+  A quasigroup is para-FG iff it satisfies the following two identities
+  \begin{align*}
+    (x\rdv x)y\cdot zu &= uy\cdot z(x\rdv x)\label{id-fg1} \tag{FG1}\\
+    xy\cdot z(u\ldv u) &= (u\ldv u)y\cdot zx\label{id-fg2} \tag{FG2}
+  \end{align*}
+\end{thm}
+
+\begin{lem}\label{lem-33}
+  Let $(Q, \cdot)$ be a quasigroup satisfying \ref{id-fg1} and \ref{id-fg2}. Then $(Q, \cdot)$ satisfies
+  \[y(x\rdv((y\ldv y)\ldv z)) = z\ldv(xy)\]
+\end{lem}
+
+\begin{proof}
+  By \ref{id-fg2} we have $(x\ldv x)y\cdot zu = uy\cdot z(x\ldv x)$. Consider
+  \begin{alignat*}{2}
+    (x\ldv x)y\cdot xz &= zy\cdot x &&\text{ substituting $u\mapsfrom z, z\mapsfrom x$}\\
+    x\cdot yz &= z((y\ldv y)\ldv x)\cdot y &&\text{ substituting $y\mapsfrom (y\ldv y)\ldv x, x\mapsfrom y$}\\
+    z\cdot y(x\rdv((y\ldv y)\ldv z)) &= xy &&\text{ substituting $x\mapsfrom z, z\mapsfrom x\rdv((y\ldv y)\ldv z)$}\\
+    y(x\rdv((y\ldv y)\ldv z)) &= z\ldv(xy) &&\text{ left dividing by z}
+  \end{alignat*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-34}
+  Let $(Q, \cdot)$ be a quasigroup satisfying \ref{id-fg1} and \ref{id-fg2}. Then $(Q, \cdot)$ satisfies
+  \[x\ldv y = (z\rdv (y\rdv x))\cdot ((y\rdv (u\ldv(xz)))\rdv x)\]
+\end{lem}
+
+\begin{proof}
+  By \ref{id-fg1} we have $(x\rdv x)y\cdot zu = uy \cdot z(x\rdv x)$. Consider
+  \begin{alignat*}{2}
+    x\cdot yz &= zx\cdot y(x\rdv x) &&\text{ substituting $y\mapsfrom x$, $z\mapsfrom y$, $u\mapsfrom z$}\\
+    (zx)\ldv (x\cdot yz) &= y(x\rdv x) &&\text{ left dividing by $zx$}\\
+    x\ldv(y\cdot z(x\rdv y)) &= z(y\rdv y) &&\text{ substituting $z\mapsfrom x\rdv y, x\mapsfrom y, y\mapsfrom z$}\\
+    x\ldv (yz) &= (z\rdv(x\rdv y))\cdot (y\rdv y) &&\text{ substituting $z\mapsfrom z\rdv(x\rdv y)$}\label{id-1} \tag{I}\\
+  \end{alignat*}
+  Again using \ref{id-fg1} we have
+  \begin{alignat*}{2}
+    x\cdot yz &= zx\cdot y(x\rdv x) &&\text{ substituting $y\mapsfrom x, z\mapsfrom y, u\mapsfrom z$}\\
+    z\cdot y(x\rdv z) &= x\cdot y(z\rdv z) &&\text{ substituting $z\mapsfrom y, y\mapsfrom z, x\mapsfrom x\rdv z$}\\
+    z\ldv (x\cdot y(z\rdv z)) &= y(x\rdv z) &&\text{ left dividing by $z$}\\
+    x\ldv y &= z\cdot ((y\rdv(z\cdot (x\rdv x)))\rdv x) &&\text{ substituting $z\mapsfrom x, y\mapsfrom z, x\mapsfrom y\rdv (z\cdot (x\rdv x))$}\\
+    x\ldv y &= (z\rdv(y\rdv x))\cdot ((y\rdv((z\rdv(y\rdv x))\cdot (x\rdv x)))\rdv x) &&\text{ substituting $z\mapsfrom z\rdv (u\rdv x)$}\\
+    x\ldv y &= (z\rdv (y\rdv x))\cdot ((y\rdv (u\ldv(xz)))\rdv x) &&\text{ by \ref{id-1}}
+  \end{alignat*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-40}
+  Let $(Q, \cdot)$ be a quasigroup satisfying \ref{id-fg1} and \ref{id-fg2}. Then $(Q, \cdot)$ satisfies
+  \[((xy)\rdv (z\rdv z))\cdot u = x\cdot ((yz)\rdv (u\ldv z))\]
+\end{lem}
+
+\begin{proof}
+  From \ref{id-fg1} we have
+  \begin{alignat*}{2}
+    x\cdot yz &= zx\cdot y(x\rdv x) &&\text{ substituting $y\mapsfrom x, z\mapsfrom y, u\mapsfrom z$}\label{id-13} \tag{I}\\
+    z\cdot y(x\rdv z) &= x\cdot y(z\rdv z) &&\text{ substituting $x\mapsfrom z, z\mapsfrom x\rdv z$} \label{id-17} \tag{II}\\
+    (x\rdv x)y \cdot zu &= x\cdot z((uy)\rdv x) &&\text{ applying \ref{id-17} to \ref{id-fg1}} \label{id-24} \tag{III}
+  \end{alignat*}
+  Further
+  \begin{alignat*}{2}
+    xy\cdot z &= y\cdot (z\rdv(y\rdv y))x &&\text{ substituting $x\mapsfrom y, y\mapsfrom z\rdv(y\rdv y), z\mapsfrom x$ in \ref{id-13}}\\
+    y(x\rdv z) &= z\ldv(x\cdot y(z\rdv z)) &&\text{ left dividing by $z$ in \ref{id-17}}\\
+    x\ldv((x\rdv x)y\cdot z) &= (z\rdv(y\rdv y))\cdot (y\rdv x) &&\text{ from the preceding two lines}\\
+    x\ldv(x\cdot y((zu)\rdv x)) &= ((yz)\rdv (u\rdv u))\cdot (u\rdv x) &&\text{ from \ref{id-24}}\\
+    y\cdot ((zu)\rdv x) &= ((yz)\rdv (u\rdv u))\cdot (u\rdv x) &&\\
+    x\cdot ((yz)\rdv (u\ldv z)) &= ((xy)\rdv (z\rdv z))\cdot u &&\text{ substituting $x\mapsfrom u\ldv z, y\mapsfrom x, z\mapsfrom y, u\mapsfrom z$}
+  \end{alignat*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-groupiso}
+  Let $(Q,\cdot)$ be a quasigroup satisfying \ref{id-fg1} and \ref{id-fg2}. Then $(Q, \cdot)$ satisfies
+  \[z\cdot (y\ldv ((u\rdv w)\cdot x)) = ((z\cdot (y\ldv u))\rdv w)\cdot x\]
+\end{lem}
+
+\begin{proof}
+  By \ref{id-fg1} we have $(x\rdv x)y\cdot zu = uy \cdot z(x\rdv x)$. Consider
+  \begin{align*}
+    x\cdot yz &= (z\cdot ((u\rdv u)\ldv x))\cdot y(u\rdv u)\\
+    &\text{ substituting $x\mapsfrom u, y\mapsfrom (u\rdv u)\ldv x, z\mapsfrom y, u\mapsfrom z$}\\
+    (z\cdot ((u\rdv u)\ldv x))\cdot y(u\rdv u) &= x\cdot yz\\
+    (x\cdot((y\rdv y)\ldv z))\cdot u &= z\cdot (u\rdv(y\rdv y))x\\
+    &\text{ substituting $z\mapsfrom x, x\mapsfrom z, u\mapsfrom y, y\mapsfrom u\rdv(y\rdv y)$}\label{id-35} \tag{I}\\
+    x\cdot ((y\rdv y)\ldv z) &= (z\cdot (u\rdv (y\rdv y))x)\rdv u\text{ right dividing by $u$}\\
+    (z\cdot (u\rdv (y\rdv y))x)\rdv u &= x\cdot ((y\rdv y)\ldv z)\\
+    (x\cdot (u\rdv (y\rdv y))((z\rdv (y\ldv (yu)))\rdv y))\rdv u &= ((z\rdv (y\ldv (yu)))\rdv y)\cdot ((y\rdv y)\ldv x)\\
+    &\text{ substituting $z\mapsfrom x, x\mapsfrom (z\rdv (y\ldv(yu)))\rdv y$}\\
+    (x\cdot (y\ldv z))\rdv u &= ((z\rdv (y\ldv (yu)))\rdv y)\cdot ((y\rdv y)\ldv x)\text{ by Lemma \ref{lem-34}}\\
+    (x\cdot (y\ldv z))\rdv u &= ((z\rdv u)\rdv y)\cdot ((y\rdv y)\ldv x)\label{id-43} \tag{II}
+  \end{align*}
+  Call this last line $\dagger$. Note that by \ref{id-fg2} we have $(x\ldv x)y\cdot zu = uy\cdot z(x\ldv x)$. Consider
+  \begin{alignat*}{2}
+    (x\ldv x)y\cdot xz &= zy\cdot x &&\text{ substituting $u\mapsfrom z, z\mapsfrom x$}\\
+    (x\ldv x)((y\rdv y)\ldv z)\cdot x((u\rdv w)\rdv y) &= ((u\rdv w)\rdv y)((y\rdv y)\ldv z)\cdot x &&\\
+    &\text{ substituting $y\mapsfrom (y\rdv y)\ldv z, z\mapsfrom (u\rdv w)\rdv y$}\\
+    (x\ldv x)((y\rdv y)\ldv z)\cdot x((u\rdv w)\rdv y) &= ((z\cdot (y\ldv u))\rdv w)\cdot x &&\text{ by \ref{id-43}}\\
+    z\cdot (((x\cdot ((u\rdv w)\rdv y))\rdv (y\rdv y))\cdot (x\ldv x)) &= ((z\cdot (y\ldv u))\rdv w)\cdot x &&\text{ by \ref{id-35}}\\
+    z\cdot (x\cdot ((((u\rdv w)\rdv y)\cdot y)\rdv ((x\ldv x)\ldv y))) &= ((z\cdot (y\ldv u))\rdv w)\cdot x &&\text{ by Lemma \ref{lem-40}}\\
+    z\cdot (x\cdot ((u\rdv w)\rdv ((x\ldv x)\ldv y))) &= ((z\cdot (y\ldv u))\rdv w)\cdot x &&\\
+    z\cdot (y\ldv ((u\rdv w)\cdot x)) &= ((z\cdot (y\ldv u))\rdv w)\cdot x &&\text{ by Lemma \ref{lem-33}}
+  \end{alignat*}
+\end{proof}
+
+In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define $x +_{u, v} y = (x\rdv u) \cdot (v\ldv y)$.
+
+\begin{lem}\label{lem-30}
+  $(Q, \cdot)$ satisfies
+  \[x\cdot (y\ldv (z +_{w, y} u)) = (x\cdot (y\ldv z)) +_{w, y} y\]
+\end{lem}
+
+\begin{proof}
+  Consider
+  \begin{alignat*}{2}
+    (xw +_{w, y} z) +_{w, y} u &= xw +_{w, y} (z +_{w, y} u) &&\text{ by associativity of $+_{w, y}$}\\
+    (x\cdot (y\ldv z)) +_{w, y} u &= x\cdot (y\ldv (z +_{w, y} u)) &&\text{ by definition of $+_{w, y}$}
+  \end{alignat*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-33ii}
+  $(Q, \cdot)$ satisfies
+  \[x\cdot (y +_{x\rdv x, u} z) = (u\ldv z)x\cdot y\]
+\end{lem}
+
+\begin{proof}
+  Since $Q$ is para-F we have
+  \begin{alignat*}{2}
+    xy\cdot z(y\ldv y) &= y\cdot zx\\
+    xy\cdot z &= y\cdot (z\rdv(y\rdv y))x &&\text{ substituting $z\mapsfrom z\rdv(y\rdv y)$}\\
+    (u\ldv z)x\cdot y &= x\cdot (y +_{x\rdv x, u} z) &&\text{ substituting $x\mapsfrom u\ldv z, y\mapsfrom x, x\mapsfrom y$}
+  \end{alignat*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-34ii}
+  $(Q, \cdot)$ satisfies
+  \[(xy)\rdv (yz) = (y\ldv y)\cdot (z\ldv x)\]
+\end{lem}
+
+\begin{proof}
+  Since $(Q, \cdot)$ is para-F we have
+  \begin{alignat*}{2}
+    (x\ldv x)y\cdot xz &= zy\cdot x &&\\
+    (x\ldv x)\cdot y &= (zy\cdot x)\rdv (xz) &&\text{ right dividing by $xz$}\\
+    (y\ldv y)\cdot (z\ldv x) &= (xy)\rdv(yz) &&\text{ substituting $x\mapsfrom y, y\mapsfrom z\ldv x$}
+  \end{alignat*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-38}
+  $(Q,\cdot)$ satisfies
+  \[(z\rdv(x\rdv x))\ldv y = ((xy)\rdv z)\rdv x\]
+\end{lem}
+
+\begin{proof}
+  From the proof of Lemma \ref{lem-33ii} we have
+  \begin{alignat*}{2}
+    x\cdot (y\rdv(x\rdv x))z &= zx\cdot y &&\\
+    xy &= ((z\rdv(x\rdv x))\ldv y)x \cdot z &&\text{ substituting $y\mapsfrom z, z\mapsfrom (z\rdv(x\rdv x))\ldv y$}\\
+    (xy)\rdv z &= ((z\rdv(x\rdv x))\ldv y)\cdot x &&\text{ right dividing by $z$}\\
+    ((xy)\rdv z)\rdv x &= (z\rdv(x\rdv x))\ldv y &&\text{ right dividing by $x$}
+  \end{alignat*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-42}
+  $(Q, \cdot)$ satisfies
+  \[x +_{z, v_6} (v_5 +_{w, (u +_{w, v_6} v_5)\rdv w} z) = x +_{z, u\rdv w} y\] 
+\end{lem}
+
+\begin{proof}
+  Consider
+  \begin{alignat*}{2}
+    x +_{z, u} (y +_{z, u} w) &= (x +_{z, u} y) +_{z, u} w &&\\
+    x +_{z, u} (y +_{z, u} uw) &= ((x +_{z, u} y)\rdv z)\cdot w &&\text{ substituting $w\mapsfrom uw$}\\
+    x +_{z, u} ((y\rdv z)\cdot w) &= ((x +_{z, u} y)\rdv z)\cdot w &&\\
+    x +_{z, u} ((y\rdv z) \cdot (((x +_{z, u} y)\rdv z)\ldv w)) &= w &&\text{ substituting $w\mapsfrom ((x +_{z, u} y)\rdv z)\ldv w$}\\
+    x +_{z, u} (y +_{z, (x +_{z, u} y)\rdv z} w) &= w &&\label{id-40} \tag{I}
+  \end{alignat*}
+  Further
+  \begin{alignat*}{2}
+    x +_{y, z} u &= (x\rdv y)\cdot (z\ldv u) &&\\
+    (x\rdv y)\ldv(x +_{y, z} u) &= z\ldv u &&\text{ left dividing by $x\rdv y$}\\
+    x +_{y, w\rdv v_5} (w +_{v_5, z} u) &= (x\rdv y)\cdot (z\ldv u) &&\text{ by definition of $+_{w, v_5}$}\\
+    x +_{y, w\rdv v_5} (w +_{v_5, z} u) &= x +_{y, z} u &&\\
+    x +_{z, v_6} (v_5 +_{w, (u +_{w, v_6} v_5)\rdv w} z) &= x +_{z, u\rdv w} y &&\text{ by \ref{id-40}}
+  \end{alignat*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-49}
+  $(Q, \cdot)$ satisfies
+  \[x +_{z\ldv(uw), z} y = x +_{w, u} y\]
+\end{lem}
+
+\begin{proof}
+  Consider
+  \begin{align*}
+    x +_{z\ldv(uw), z} y &= (x\rdv (z\ldv (uw)))\cdot (z\ldv y)\\
+    &= (x\rdv w)\cdot (u\ldv y)\text{ substituting $z\mapsfrom u$}\\
+    &= x +_{w, u} y
+  \end{align*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-identities}
+  $(Q, \cdot)$ satisfies \ref{id-fg2}.
+\end{lem}
+
+\begin{proof}
+  From \ref{id-40} in the proof of Lemma \ref{lem-42} we have
+  \begin{alignat*}{2}
+    x +_{u, w} (y +_{u, (x +_{u, w} y)\rdv u} z) &= z &&\\
+    (x\cdot (y\ldv u)) +_{v_5, y} (w +_{v_5, (u +_{v_5, y} z)\rdv v_5} z) &= x\cdot (y\ldv z) &&\text{ applying the above to Lemma \ref{lem-30}}\\
+    (x\cdot (y\ldv u)) +_{v_5, u\rdv v_5} z &= x\cdot (y\ldv z) &&\text{ by Lemma \ref{lem-42}}\\
+    x +_{z, u\rdv z} y &= (x\rdv(w\ldv u))\cdot (w\ldv y) &&\\
+    &\text{substituting $x\mapsfrom x\rdv(w\ldv u), y\mapsfrom w, z\mapsfrom y, v_5\mapsfrom z$} &&\\
+    x +_{z, u\rdv z} y &= x +_{w\ldv u, w} y &&\\
+    ((w\rdv(x\rdv x))\ldv z)x \cdot y &= x\cdot (y +_{u\ldv w, u} z) &&\\
+    &\text{ applying the above to Lemma \ref{lem-33}} &&\\
+    (((x\cdot z)\rdv w)\rdv x)x\cdot y &= x\cdot (y +_{u\ldv w, u} z) &&\text{ by Lemma \ref{lem-38}}\\
+    ((x\cdot z)\rdv w)\cdot y &= x\cdot (y +_{u\ldv w, u} z) &&\\
+    (z\ldv z)(w\ldv x)\cdot y &= x\cdot (y +_{u\ldv(z\cdot w), u} z) &&\text{ by Lemma \ref{lem-34}}\\
+    (x\ldv x)(y\ldv z)\cdot u &= z\cdot (u +_{y, x} x) &&\text{ by Lemma \ref{lem-49}}\\
+    (x\ldv x)y\cdot z &= uy\cdot (z +_{u, x} x) &&\\
+    &\text{ substituting $y\mapsfrom u, z\mapsfrom uy, u\mapsfrom z$} &&\\
+    (x\ldv x)y\cdot zu &= uy\cdot z(x\ldv x) &&
+  \end{alignat*}
+  So $(Q, \cdot)$ satisfies \ref{id-fg2} and the proof is complete.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm-para-FG}]
+  First suppose that $(Q, \cdot)$ satisfies \ref{id-fg1} and \ref{id-fg2}. It is immediate that $(Q, \cdot)$ is para-F. Further, by Lemma \ref{lem-groupiso} we have
+  \begin{align*}
+    z\cdot (y\ldv ((u\rdv y)\cdot x)) &= ((z\cdot (y\ldv u))\rdv y)\cdot x\\
+    zy +_{y, y} (u\rdv y)x &= ((zy +_{y, y} u)\rdv y) \cdot x\\
+    zy +_{y, y} (u +_{y, y} yx) &= (zy +_{y, y} u) +_{y, y} yx
+  \end{align*}
+  Thus $(Q, +_{y, y})$ is a group and $(Q, \cdot)$ is a para-FG quasigroup.
+
+  Now suppose that $(Q, \cdot)$ is a para-FG quasigroup. Lemma \ref{lem-identities} shows that $(Q, \cdot)$ satisfies \ref{id-fg2}. The proof that $(Q, \cdot)$ satisfies \ref{id-fg1} is dual. So $(Q, \cdot)$ is a para-FG quasigroup iff it satisfies \ref{id-fg1} and \ref{id-fg2}.
+\end{proof}
+
+\begin{thm}
+  Every para-FG quasigroup $(Q, \cdot)$ is antilinear over a group $(Q, +)$ with the antilinearity given by
+  \[x\cdot y = f(x) + g(y) + c\]
+  where $f, g$ are antiautmorphisms of $(Q, +)$ and $c\in Z((Q, +))$.
+\end{thm}
+
+\begin{proof}
+  Let $(Q, \cdot)$ be a para-FG quasigroup. Then by Theorem \ref{thm-para-f} there exists a Moufang loop $(Q, +)$, antiautomorphisms $f, g: (Q, +)\to (Q, +)$, and $c\in Z(Q)$ such that
+  \[x\cdot y = f(x) + (g(y) + c)\].
+  By an analogous proof to that of Proposition \ref{prp-linear-iso} $(Q, \cdot)$ is isotopic to $(Q, +)$. But $(Q, \cdot)$ is a para-FG quasigroup and so isotopic to some group $(Q, *)$. But then $(Q, *)$ and $(Q, +)$ are isotopic and $(Q, +)$ must be a group. Thus $(Q, \cdot)$ is antilinear over a group $(Q, +)$ as desired.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Solvability for loops}
+
+\section{Introduction}
+
+Many properties from universal algebra have equivalent definitions specific to the context of groups. This leads to the natural question: under what conditions can these group definitions be extended to loops? In particular, we will be interested in the definitions of nilpotence and solvability for groups.
+
+\begin{dfn}
+  Let $A$ be a universal algebra. $\phi\subseteq A\times A$ is a \emph{congruence} on $A$ iff
+  \begin{enumerate}
+    \item $\phi$ is an equivalence relation.
+    \item For each $n$-ary operation $f$ of $A$ $a_1 \phi a_1'\ldots a_n\phi a_n'$ implies $f(a_1, \ldots, a_n)\phi f(a_1', \ldots a_n')$.
+  \end{enumerate}
+\end{dfn}
+
+\begin{dfn}
+  Let $G$ be a group and $N\leq G$. $N$ is \emph{normal} in $G$ ($N\unlhd G$) iff $xNx^{-1} = N$ for all $x\in G$.
+\end{dfn}
+
+\begin{rmk}
+  The only non-trivial inner mappings of a group $G$ are $T_x$ for $x\in G$, so this is a special case of the definition of a normal subloop.
+\end{rmk}
+
+\begin{fct}
+  Let $G$ be a group, then:
+  \begin{enumerate}
+    \item For every congruence $\phi$ on $G$ there exists $N\unlhd G$ such that $x\phi y$ iff $xy^{-1}\in N$.
+    \item For $N\unlhd G$ the relation $x\phi y$ iff $xy^{-1}\in N$ is a congruence \cite{univAlg} 
+  \end{enumerate}
+\end{fct}
+
+We now present some universal algebraic definitions and their equivalent definitions in the context of groups. We will closely follow the definitions given in \cite{ComTheory} for the universal algebraic definitions.
+
+\begin{dfn}
+  Let $A$ be a universal algebra and $\alpha, \beta, \delta$ be congruences on $A$. Then $\alpha$ \emph{centralizes} $\beta$ \emph{over} $\delta$ if for every $(n + 1)$-ary term operation $t$, every pair $a\alpha b$ and every $u_1\beta v_1, \ldots, u_n \beta v_n$ we have
+  \[t(a, u_1, \ldots, u_n) \delta t(a, v_1, \ldots, v_n)\text{ implies } t(b, u_1, \ldots, u_n)\delta t(b, v_1, \ldots v_n)\]
+\end{dfn}
+
+\begin{dfn}
+  Let $A$ be a universal algebra and $\alpha, \beta$ be congruences on $A$. Then the \emph{congruence (universal algebraic) commutator} of $\alpha$ and $\beta$ is $[\alpha, \beta]_C = \delta$, where $\delta$ is the smallest congruence such that $\alpha$ centralizes $\beta$ over $\delta$. 
+
+  Smallest here is in terms of the lattice of congruences of $A$ with largest element $1_A = A\times A$ and smallest element $0_A = \{(a, a) : a\in A\}$.
+\end{dfn}
+
+\begin{dfn}
+  Let $G$ be a group and $H, K\unlhd G$. Then the \emph{classical (group theoretic) commutator} of $H$ and $K$ is $[H, K] = \langle [x, y] : x\in H, y\in K\rangle$.
+\end{dfn}
+
+\begin{dfn}
+  An algebra $A$ is \emph{(congruence) nilpotent} if $\gamma_{(n)} = 0_A$ for some $n$, where
+  \[\gamma_{(0)} = 1_A,\quad \gamma_{(i + 1)} = [\gamma_{(i)}, 1_A]_C\].
+\end{dfn}
+
+\begin{dfn}
+  A loop $L$ with identity $1$ is \emph{(classically) nilpotent} if $L_n = \{1\}$ for some $n$, where
+  \[L_0 = L,\quad L_{i + 1} = [L_i, L]\].
+\end{dfn}
+
+\begin{dfn}
+  An algebra $A$ is \emph{(congruence) solvable} if $\gamma^{(n)} = 0_A$ for some $n$, where
+  \[\gamma^{(0)} = 1_A,\quad \gamma^{(i + 1)} = [\gamma^{(i)}, \gamma^{(i)}]_C\].
+\end{dfn}
+
+\begin{dfn}
+  A loop $L$ with identity $1$ is \emph{(classically) solvable} if $L^n = \{1\}$ for some $n$, where
+  \[L^0 = L,\quad L^{i + 1} = [L^i, L^i]\].
+\end{dfn}
+
+\begin{fct}
+  Classical and congruence normality, nilpotency, and solvability coincide in groups \cite{ComTheory}.
+\end{fct}
+
+\begin{fct}
+  Classical and congruence nilpotency coincide in loops \cite{ComTheory}.
+\end{fct}
+
+\begin{fct}
+  Classical and congruence solvability do not coincide in loops. \cite{ComTheory}.
+\end{fct}
+
+Our goal in this chapter will be to find conditions under which these definitions of solvability do coincide for loops. The main result of this chapter is the following theorem providing a sufficient condition for classical and congruence solvability degrees to coincide: 
+
+\begin{thm}
+  If $Q/\nuc(Q)$ is an abelian group, then classical and congruence solvability degrees of $Q$ coincide.
+\end{thm}
+
+Weakening our assumption on $Q$ we are no longer able to show that classical and congruence solvability degrees coincide, but we do obtain the following result about $\inn^*(Q)$:
+
+\begin{thm}
+  If $Q/\nuc(Q)$ is a group, then $\inn^*(Q)$ is abelian.
+\end{thm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{$Q/\nuc(Q)$ an abelian group}
+\label{sec:nucVar}
+
+We will now show that if $Q/\nuc(Q)$ is an abelian group, then the classical and congruence definitions of solvability coincide. Denote the classical commutator of two normal subloops $A, B\unlhd Q$ by $[A, B]$ and the congruence commutator by $[A, B]_C$.
+
+\begin{lem}\label{lem-1}
+  Let Q be a loop such that $Q/\nuc(Q)$ is an abelian group. Then for all $x, y\in Q$ we have that $[x, y]\ldv 1 = [y, x]$.
+\end{lem}
+
+\begin{proof}
+  Let $x, y\in Q$ be given and consider
+  \begin{align*}
+    L_{xy, [x, y]} ([x, y]\ldv 1) &= (xy\cdot [x, y])\ldv(xy\cdot ([x, y]\cdot([x, y]\ldv 1)))\\
+    &= (xy\cdot [x, y])\ldv (xy))\\
+    &= (xy\cdot ((xy)\ldv (yx)))\ldv (xy)\\
+    &= (yx)\ldv (xy)\\
+    &= [y, x]
+  \end{align*}
+
+  But on the other hand since $[x, y]\in\nuc(Q)$ we have that
+  \begin{align*}
+    L_{xy, [x, y]}([x, y]\ldv 1) &= (xy\cdot [x, y])\ldv (xy\cdot ([x, y]\cdot([x, y]\ldv 1)))\\
+    &= (xy\cdot [x, y])\ldv ((xy\cdot [x, y])\cdot ([x, y]\ldv 1))\\
+    &= [x, y]\ldv 1
+  \end{align*}
+  Thus $[x, y]\ldv 1 = [y, x]$.
+\end{proof}
+
+\begin{lem}\label{lem-2}
+  Let $Q$ be a loop such that $Q/\nuc(Q)$ is an abelian group. Then for all $u, v, a\in Q$ we have $[u, a]\cdot(1\rdv [v, a]) = [u, a]\rdv [v, a]$.
+\end{lem}
+
+\begin{proof}
+  Let $u, v, a\in Q$ be given and note that $[u, a], [v, a]\in\nuc(Q)$ since $Q'\subseteq \nuc(Q)$. Then
+  \begin{align*}
+    [u, a] &= [u, a]\\
+    [u, a]\cdot 1 &= [u, a]\\
+    [u, a]\cdot (1\rdv [v, a])[v, a] &= [u, a]\\
+    [u, a](1\rdv [v, a])\cdot [v, a] &= [u, a]\text{ since $[u, a]\in\nuc(Q) $}\\
+    [u, a](1\rdv [v, a]) &= [u, a]\rdv[v,a]
+  \end{align*}
+  as desired.
+\end{proof}
+
+\begin{lem}\label{lem-3}
+  Let $Q$ be a loop such that $Q/\nuc(Q)$ is an abelian group. Then $x\cdot [y, z] = x\rdv [z, y]$ for all $x, y, z\in Q$.
+\end{lem}
+
+\begin{proof}
+  Let $x, y, z\in Q$ be given and consider
+  \begin{align*}
+    x\rdv(L_{x, [y, z]}([y, z]\ldv 0)) &= x\rdv([y, z]\ldv 0)\text{ since $[y, z]\in\nuc(Q)$}\\
+    &= x\rdv [z, y]\text{ by lemma \ref{lem-1}.}
+  \end{align*}
+
+  But on the other hand we have that
+  \begin{align*}
+    x\rdv(L_{x, [y, z]}([y, z]\ldv 1)) &= x\rdv((x\cdot [y, z])\ldv (x\cdot ([y, z]\cdot([y, z]\ldv 1))))\\
+    &= x\rdv((x\cdot [y, z])\ldv x)\\
+    &= x\cdot [y, z]
+  \end{align*}
+  Thus $x\rdv[z, y] = x\cdot [y, z]$.
+\end{proof}
+
+\begin{thm}
+  Let $Q$ be a loop such that $Q/\nuc(Q)$ is an abelian group. Then classical and congruence solvability degrees of $Q$ coincide.
+\end{thm}
+
+\begin{proof}
+  We will show by induction that the derived series are equal. First note that $[Q, Q]_C = [Q, Q]$ so our base case holds \cite{ComTheory}. We will show that given $H\unlhd Q$ with $H\subseteq [Q, Q]$ we have that $[H, H] = [H, H]_C$ to complete the proof.
+  From \cite{ComTheory} and \cite{BK-inner} we have that $[H, H]_C = Ng(W_{\bar{u}}(a)/W_{\bar{v}}(b) : W\in\mathcal{W}, a, u/v\in H)$, where $\mathcal{W}$ is a generating set for $\inn(Q)$. We will take $\mathcal{W} = \{T_x, L_{x, y}, R_{x, y} : x, y\in Q\}$ as our generating set. Further, from \cite{PACC} we have that $T_x(y) = [x, y]\cdot y$. Finally, since $Q\rdv\nuc(Q)$ is an abelian group we have that $[Q, Q]\subseteq \nuc(Q)$ and in particular all commutators are in the nucleus.
+
+  We will first show that $[H, H]\subseteq [H, H]_C$. Let $x, y\in H$ be given. Then $[x, y] = T_x(y)\rdv y = T_x(y)\rdv T_1(y) \in [H, H]_C$. Thus $[H, H]_C$ contains all generators of $[H, H]$ and $[H, H]\subseteq [H, H]_C$.
+
+  We will now show that $[H, H]_C\subseteq [H, H]$. Let $u_1, v_1, u_2, v_2, a\in Q$ such that $u_1\rdv v_1, u_2\rdv v_2, a\in H$ be given. Note that $L_{u_1, u_2}(a) = L_{v_1, v_2}(a) = R_{u_1, u_2}(a) = R_{v_1, v_2}(a) = 1$ since $a\in H\subseteq \nuc(Q)$. So we need only consider $T\in\mathcal{W}$. Consider
+  \begin{align*}
+    T_{u_1}(a)\rdv T_{v_1}(a) &= ([u_1, a]\cdot a)\rdv ([v_1, a]\cdot a)\\
+    &= [u_1, a](a\rdv([v_1, a]\cdot a))\text{ since $[u_1, a]\in\nuc(Q)$}\\
+    &= [u_1, a]((a\rdv a)(1\rdv[v_1, a]))\text{ since $[v_1, a]\in\nuc(Q)$}\\
+    &= [u_1, a](1\rdv [v_1, a])\\
+    &= [u_1, a]\rdv [v_1, a]\text{ by lemma \ref{lem-2}}\\
+    &= [u_1, a]\cdot [a, v_1]\text{ by lemma \ref{lem-3}}\\
+    &\in [H, H]
+  \end{align*}
+  So $[H, H]_C\subseteq [H, H]$ and $[H, H]_C = [H, H]$. Thus the derived series are equal by induction.
+\end{proof}
+
+\section{$Q/\nuc(Q)$ a group}
+\label{sec:innMappings}
+
+Define $\inn^*(Q) = \langle L_{x, y}, R_{x, y}, M_{x, y} | x, y\in Q\rangle$. Intuitively inner mappings measure the failure of elements to associate or commute, where $M, L, R$ measure associativity and $T$ measures commutativity. With this intuition, the group $\inn^*(Q)$ is the group of all inner mappings measuring associativity.
+
+Define
+  \begin{align*}
+    [x, y, z]_R &= x\ldv R_{z, y}(x)\\
+    [x, y, z]_L &= z\ldv L_{x, y}(z)\\
+    [x, y, z]_M &= y\ldv M_{z, x}(y)
+  \end{align*}
+
+Note that we could analogously define $[x, z]_T = z\ldv T_y(z)$ and recover the standard commutator. In what follows let $(Q, \cdot, 1)$ be a loop and $x, y, z\in Q$ be arbitrary.
+
+\begin{lem}\label{lem-LR}
+  For any $n\in\nuc(Q)$ $L_{x, y}(zn) = L_{x, y}(z)\cdot n$ and $R_{x, y}(nz) = n\cdot R_{x, y}(z)$.
+\end{lem}
+
+\begin{proof}
+  These are both immediate from the fact that $n\in\nuc(Q)$ and the definitions of $L_{x, y}, R_{x, y}$.
+\end{proof}
+
+We will follow the argument proving lemma 4.2 in \cite{DiaCC} to show that $[x, y, nz]_M = [x, y, z]_M$ for any $n\in\nuc(Q)$.
+\begin{lem}\label{lem-M1}
+  $[nx, y, z]_M = [x, y, z]_M$ for $n\in\nuc(Q)$.
+\end{lem}
+
+\begin{proof}
+  This is immediate from the fact that $n\in\nuc(Q)$ and the definition of $[x, y, z]_M$.
+\end{proof}
+
+\begin{lem}\label{lem-M2}
+  $[yn, z, x]_M = [y, nz, x]_M$ for $n\in\nuc(Q)$.
+\end{lem}
+
+\begin{proof}
+  First note that $M_{x, y}(z)\ldv(y\ldv(yz\cdot x) = x$ by Lemma \ref{lem-divs} . Further $(n\ldv a)\rdv(b\ldv a) = n\ldv b$ since $n\in\nuc(Q)$. So
+  \begin{align*}
+    (n\ldv (y\ldv(yz\cdot x)))\rdv x &= (n\ldv (y\ldv(yz\cdot x)))\rdv(M_{x, y}(z)\ldv (y\ldv(yz\cdot x)))\\
+    &= n\ldv M_{x, y}(z)
+  \end{align*}
+  Thus $(n\ldv (y\ldv(yz\cdot x)))\rdv x = n\ldv M_{x, y}(z)$, call this $\dagger$.
+
+  Further, since $n\in \nuc(Q)$ we have that $M_{x, yn}(z) = ((yn)\ldv((yn\cdot z)\cdot x))\rdv x = ((yn)\ldv((y\cdot nz)\cdot x))\rdv x$. Then
+  \begin{align*}
+    M_{x, yn}(z) &= ((yn)\ldv((y\cdot nz)\cdot x))\rdv x\\
+    &= (n\ldv(y\ldv((y\cdot nz)\cdot x)))\rdv x
+  \end{align*}
+  But by $\dagger$ we have that
+  \begin{align*}
+    M_{x, yn}(z) &= (n\ldv(y\ldv((y\cdot nz)\cdot x)))\rdv x\\
+    &= n\ldv M_{x, y}(nz)
+  \end{align*}
+  So
+  \begin{align*}
+    z\ldv M_{x, yn}(z) &= z\ldv(n\ldv M_{x, y}(nz))\\
+    z\ldv M_{x, yn}(z) &= (nz)\ldv M_{x, y}(nz)\text{ since $n\in\nuc(Q)$}\\
+    [yn, z, x]_M &= [y, nz, x]_M
+  \end{align*}
+\end{proof}
+
+\begin{lem}\label{lem-M3}
+  If $\nuc(Q)$ is normal in $Q$, then $[y, nz, x]_M = [y, z, x]_M$.
+\end{lem}
+
+\begin{proof}
+  This is immediate from the preceding two lemmas and the fact that since $\nuc(Q)\unlhd Q$ we have $yn = n'y$ for some $n'\in\nuc(Q)$.
+\end{proof}
+
+\begin{cor}\label{cor-M}
+  If $Q/\nuc(Q)$ is a group, then $M_{x, y}(nz) = n\cdot M_{x, y}(z)$ for $n\in\nuc(Q)$
+\end{cor}
+
+\begin{proof}
+  Consider
+  \begin{align*}
+    M_{x, y}(nz) &= nz\cdot [y, nz, x]_M\\
+    &= nz\cdot [y, z, x]_M\text{ by lemma \ref{lem-M3}}\\
+    &= n\cdot z[y, z, x]_M\\
+    &= n\cdot M_{x, y}(z)
+  \end{align*}
+\end{proof}
+
+Now define
+  \begin{align*}
+    [x, y, z]_{R'} &= R_{z, y}(x)\rdv x\\
+    [x, y, z]_{L'} &= L_{x, y}(z)\rdv z\\
+    [x, y, z]_{M'} &= M_{z, x}(y)\rdv y
+  \end{align*}
+
+\begin{thm}\label{inn*}
+  If $Q/\nuc(Q)$ is a group, then $\inn^*(Q)$ is abelian.
+\end{thm}
+
+\begin{proof}
+  First note that all 6 of the associators defined above lie in the associator subloop, which is a subloop of the nucleus by assumption. Further by \cite{PACC} lemma 2.6 these associators commute. We will show that the generators of $\inn^*(Q)$ commute.
+
+  Consider
+  \begin{align*}
+    M_{x, y}(M_{u, v}(z)) &= M_{x, y}([v, z, u]_{M'}\cdot z)\\
+    &= [v, z, u]_{M'}\cdot M_{x, y}(z)\text{ by corollary \ref{cor-M}}\\
+    &= [v, z, u]_{M'}\cdot [y, z, x]_{M'}z\\
+    &= [y, z, x]_{M'}\cdot [v, z, u]_{M'}z\text{ as noted above}\\
+    &= [y, z, x]_{M'}\cdot M_{u, v}(z)\\
+    &= M_{u, v}([y, z, x]_{M'}z)\text{ by corollary \ref{cor-M}}\\
+    &= M_{u, v}(M_{x, y}(z))
+  \end{align*}
+
+  Further
+  \begin{align*}
+    L_{x, y}(M_{u, v}(z)) &= L_{x, y}(z[v, z, u]_M)\\
+    &= L_{x, y}(z)\cdot [v, z, u]_M\text{ by lemma \ref{lem-LR}}\\
+    &= [x, y, z]_{L'}z \cdot [v, z, u]_M\\
+    &= [x, y, z]_{L'} \cdot z[v, z, u]_M\\
+    &= [x, y, z]_{L'} \cdot M_{u, v}(z)\\
+    &= M_{u, v}([x, y, z]_{L'} z)\text{ by corollary \ref{cor-M}}\\
+    &= M_{u, v}(L_{x, y}(z))
+  \end{align*}
+
+  Next consider
+  \begin{align*}
+    R_{x, y}(M_{u, v}(z)) &= R_{x, y}([v, z, u]_{M'}z)\\
+    &= [v, z, u]_{M'}\cdot R_{x, y}(z)\text{ by lemma \ref{lem-LR}}\\
+    &= [v, z, u]_{M'}\cdot [z, y, x]_{R'}z\\
+    &= [z, y, x]_{R'}\cdot [v, z, u]_{M'}z\\
+    &= [z, y, x]_{R'}\cdot M_{u, v}(z)\\
+    &= M_{u, v}([z, y, x]_{R'}z)\text{ by corollary \ref{cor-M}}\\
+    &= M_{u, v}(R_{x, y}(z))
+  \end{align*}
+
+  Now consider
+  \begin{align*}
+    L_{x, y}(R_{u, v}(z)) &= L_{x, y}(z[z, v, u]_R)\\
+    &= L_{x, y}(z)\cdot [z, v, u]_R\text{ by lemma \ref{lem-LR}}\\
+    &= [x, y, z]_{L'}z\cdot [z, v, u]_R\\
+    &= [x, y, z]_{L'} \cdot z[z, v, u]_R\\
+    &= [x, y, z]_{L'}\cdot R_{u, v}(z)\\
+    &= R_{u, v}([x, y, z]_{L'}z)\text{ by lemma \ref{lem-LR}}\\
+    &= R_{u, v}(L_{x, y}(z))
+  \end{align*}
+
+  Next
+  \begin{align*}
+    L_{x, y}(L_{u, v}(z)) &= L_{x, y}(z[u, v, z]_L)\\
+    &= L_{x, y}(z)\cdot [u, v, z]_L\text{ by lemma \ref{lem-LR}}\\
+    &= z[x, y, z]_L\cdot [u, v, z]_L\\
+    &= z[u, v, z]_L\cdot [x, y, z]_L\\
+    &= L_{u, v}(z)\cdot [x, y, z]_L\\
+    &= L_{u, v}(z[x, y, z]_L)\text{ by lemma \ref{lem-LR}}\\
+    &= L_{u, v}(L_{x, y}(z))
+  \end{align*}
+
+  Finally
+  \begin{align*}
+    R_{x, y}(R_{u, v}(z)) &= R_{x, y}([z, v, u]_{R'}z)\\
+    &= [z, v, u]_{R'}\cdot R_{x, y}(z)\text{ by lemma \ref{lem-LR}}\\
+    &= [z, v, u]_{R'}\cdot [z, y, x]_{R'}z\\
+    &= [z, y, x]_{R'}\cdot [z, v, u]_{R'}z\\
+    &= [z, y, x]_{R'}\cdot R_{u, v}(z)\\
+    &= R_{u, v}([z, y, x]_{R'}z)\text{ by lemma \ref{lem-LR}}\\
+    &= R_{u, v}(R_{x, y}(z))
+  \end{align*}
+
+  Thus all the generators of $\inn^*(Q)$ commute and $\inn^*(Q)$ is an abelian group.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Further results}
+
+We will now present some further results dealing providing sufficient conditions for right inner mappings to commute.
+
+\subsection{Inverses preserved by right inner mappings}
+
+\begin{dfn}
+  Let $(Q, \cdot, 1)$ be a loop. A map $\phi: Q\to Q$ \emph{preserves inverses} if
+  \[\phi(0\rdv x) = 0\rdv \phi(x)\]
+  for all $x\in Q$.
+\end{dfn}
+
+\begin{thm}\label{thm:right-inv}
+  Let $Q$ be a loop such that right inner mappings preserve inverses and suppose that associators are in the left and middle nuclei. Then right inner mappings commute.
+\end{thm}
+
+\begin{proof}
+  This result was proved using Prover9 \cite{Prover9}. The proof can be found in appendix \ref{appendix:right-inv}.
+\end{proof}
+
+\subsection{Right automorphic}
+
+\begin{thm}\label{right-aut}
+  Let $Q$ be a right automorphic loop and suppose that associators are in the left nucleus. Then right inner mappings commute.
+\end{thm}
+
+\begin{proof}
+  \begin{align*}
+    R_{u, v}(R_{x, y}(z)) &= R_{u, v}(R_{x, y}(R_{u, v}(z)\cdot R_{u, v}(z)\ldv z))\\
+    &= R_{u, v}(R_{x,y}(R_{u,v}(z)\cdot R_{x, y}(R_{u,v}(z)\ldv z)))\text{ since $R_{x, y}$ is an automorphism}\\
+    &= R_{u, v}(R_{x, y}(R_{u, v}(z))\cdot (R_{u, v}(z)\ldv z))\\
+      &\text{ since $R_{u, v}(z)\ldv z$ is in the associator subloop and thus the left nucleus}\\
+    &= R_{u, v}([R_{u, v}(z), x, y]R_{u, v}(z)\cdot (R_{u, v}(z)\ldv z))\text{ definition of $[\cdot, \cdot, \cdot]$}\\
+    &= R_{u, v}([R_{u, v}(z), x, y]\cdot R_{u, v}(z)(R_{u,v}(z)\ldv z))\text{ associators in left nucleus}\\
+    &= R_{u, v}([R_{u, v}(z), x, y]z)\\
+    &= [R_{u, v}(z), x, y]R_{u, v}(z)\text{ $R_{u, v}$ is an automorphism}\\
+    &= R_{x, y}(R_{u, v}(z))\text{ definition of $[\cdot, \cdot, \cdot]$}
+  \end{align*}
+\end{proof}
+
+Below is a right automorphic loop with center $\{1,2\}$, so $Q/\{1,2\}$ is an abelian group (being of order 4). It is not an RCC loop. This shows that a right automorphic in which all associators lie in left nucleus need not be RCC. Thus the previous result is not a statement solely about RCC loops.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c | c c c c c c c c}
+    & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+    \hline \hline
+    1 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+    2 & 2 & 1 & 4 & 3 & 6 & 5 & 8 & 7\\
+    3 & 3 & 4 & 1 & 2 & 7 & 8 & 5 & 6\\
+    4 & 4 & 3 & 2 & 1 & 8 & 7 & 6 & 5\\
+    5 & 5 & 6 & 7 & 8 & 1 & 2 & 3 & 4\\
+    6 & 6 & 5 & 8 & 7 & 2 & 1 & 4 & 3\\
+    7 & 7 & 8 & 5 & 6 & 4 & 3 & 2 & 1\\
+    8 & 8 & 7 & 6 & 5 & 3 & 4 & 1 & 2
+  \end{tabular}
+  \caption{$Q/Z(Q)$ an abelian group and $Q$ not RCC}
+\end{table}
+
+\subsection{Left nucleus and commutant}
+
+\begin{thm}
+  Suppose that all associators are in the left nucleus and the commutant. Then right inner mappings commute.
+\end{thm}
+
+\begin{proof}
+  Note that since we assume all associators are in the left nucleus and commutant we are free to use whichever associator we choose. For this proof define the associator to be $[x,y,z] = R_{x,y}(z)/z$ and let $x, y, z, u, w\in Q$ be given. Then
+  \begin{align*}
+    R_{x,y}(R_{z,u}(w)) &= R_{x,y}([z,u,w] w)\\
+    &= [z,u,w] R_{x,y}(w)\text{ associators in $\nuc_l(Q)$}\\
+    &= [z,u,w] [x,y,w]\cdot w\\
+    &= [x,y,w] [z,u,w] \cdot w\text{ associators in commutant}\\
+    &= [x,y,w] R_{z,u}(w)\\
+    &= R_{z,u}([x,y,w] w)\text{ associators in $\nuc_l(Q)$}\\
+    &= R_{z,u}(R_{x,y}(w))
+  \end{align*}
+  Thus $R_{x, y}R_{z, u} = R_{z, u}R_{x, y}$ and $\inn_R(Q)$ is abelian.
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Counterexamples}
+
+\subsection{$\inn(Q)$}
+Theorem \ref{inn*} does not directly extend to all of $\inn(Q)$. The following is the CC loop of order 6 (there is only one) and in any CC loop $Q/\nuc(Q)$ is an abelian group. But in this loop the T's do not commute with the R's and in particular $\inn^*(Q)$ is not abelian.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c | c c c c c c}
+    & 0 & 1 & 2 & 3 & 4 & 5\\
+    \hline\hline
+    0 & 0 & 1 & 2 & 3 & 4 & 5\\
+    1 & 1 & 2 & 3 & 5 & 0 & 4\\
+    2 & 2 & 4 & 5 & 1 & 3 & 0\\
+    3 & 3 & 0 & 4 & 2 & 5 & 1\\
+    4 & 4 & 5 & 1 & 0 & 2 & 3\\
+    5 & 5 & 3 & 0 & 4 & 1 & 2
+  \end{tabular}
+  \caption{$Q/\nuc(Q)$ an abelian group but $R_{x, y} T_z \neq T_z R_{x, y}$}
+\end{table}
+
+$R_{1, 1}(T_1 (1)) = 3$, while $T_1(R_{1, 1}(1)) = 4$. There is an example in the same loop of T's not commuting with each other as well.
+
+
+\subsection{Left and middle nuclei}
+
+Theorem \ref{right-aut} does not directly extend to arbitrary loops. The following is a loop with in which the left and middle nuclei coincide, are normal, and are isomorphic to $S_3$. The factor by the left (equivalently middle) nucleus is $Z_4$, so every associator and commutator is in the left and middle nuclei. However, the right inner mapping group is $S_3 \times S_3 \times S_3$. So associators and commutators in left and middle nuclei is not sufficient for right inner mappings to commute.
+
+\begin{table}[H]
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{c | c c c c c c c c c c c c c c c c c c c c c c c c|}
+     $\cdot$ & 1& 2& 3& 4& 5& 6& 7& 8& 9& 10& 11& 12& 13& 14& 15& 16& 17& 18& 19& 20& 21& 22& 23& 24\\
+     \hline\hline
+     1& 1&  2&  3&  4&  5&  6&  7&  8&  9& 10& 11& 12& 13& 14& 15& 16& 17& 18& 19& 20& 21& 22& 23& 24 \\
+     2& 2&  1&  4&  3&  6&  5&  8&  7& 10&  9& 12& 11& 14& 13& 16& 15& 18& 17& 20& 19& 22& 21& 24& 23 \\
+     3&  3&  5&  1&  6&  2&  4&  9& 11&  7& 12&  8& 10& 15& 17& 13& 18& 14& 16& 21& 23& 19& 24& 20& 22 \\
+     4&  4&  6&  2&  5&  1&  3& 10& 12&  8& 11&  7&  9& 16& 18& 14& 17& 13& 15& 22& 24& 20& 23& 19& 21 \\
+     5&  5&  3&  6&  1&  4&  2& 11&  9& 12&  7& 10&  8& 17& 15& 18& 13& 16& 14& 23& 21& 24& 19& 22& 20 \\
+     6&  6&  4&  5&  2&  3&  1& 12& 10& 11&  8&  9&  7& 18& 16& 17& 14& 15& 13& 24& 22& 23& 20& 21& 19 \\
+     7&  7&  8&  9& 10& 11& 12& 19& 20& 21& 22& 23& 24&  1&  2&  3&  4&  5&  6& 13& 14& 15& 16& 17& 18 \\
+     8&  8&  7& 10&  9& 12& 11& 20& 19& 22& 21& 24& 23&  2&  1&  4&  3&  6&  5& 14& 13& 16& 15& 18& 17 \\
+     9&  9& 11&  7& 12&  8& 10& 21& 23& 19& 24& 20& 22&  3&  5&  1&  6&  2&  4& 15& 17& 13& 18& 14& 16 \\
+     10& 10& 12&  8& 11&  7&  9& 22& 24& 20& 23& 19& 21&  4&  6&  2&  5&  1&  3& 16& 18& 14& 17& 13& 15 \\
+     11& 11&  9& 12&  7& 10&  8& 23& 21& 24& 19& 22& 20&  5&  3&  6&  1&  4&  2& 17& 15& 18& 13& 16& 14 \\
+     12& 12& 10& 11&  8&  9&  7& 24& 22& 23& 20& 21& 19&  6&  4&  5&  2&  3&  1& 18& 16& 17& 14& 15& 13 \\
+     13& 13& 14& 15& 16& 17& 18&  1&  2&  3&  4&  5&  6& 19& 20& 21& 22& 23& 24&  7&  8&  9& 10& 11& 12 \\
+     14& 14& 13& 16& 15& 18& 17&  2&  1&  4&  3&  6&  5& 20& 19& 22& 21& 24& 23&  8&  7& 10&  9& 12& 11 \\
+     15& 15& 17& 13& 18& 14& 16&  3&  5&  1&  6&  2&  4& 21& 23& 19& 24& 20& 22&  9& 11&  7& 12&  8& 10 \\
+     16& 16& 18& 14& 17& 13& 15&  4&  6&  2&  5&  1&  3& 22& 24& 20& 23& 19& 21& 10& 12&  8& 11&  7&  9 \\
+     17& 17& 15& 18& 13& 16& 14&  5&  3&  6&  1&  4&  2& 23& 21& 24& 19& 22& 20& 11&  9& 12&  7& 10&  8 \\
+     18& 18& 16& 17& 14& 15& 13&  6&  4&  5&  2&  3&  1& 24& 22& 23& 20& 21& 19& 12& 10& 11&  8&  9&  7 \\
+     19& 19& 20& 21& 22& 23& 24& 13& 14& 15& 16& 17& 18&  7&  8&  9& 10& 11& 12&  2&  1&  5&  6&  3&  4 \\
+     20& 20& 19& 22& 21& 24& 23& 14& 13& 16& 15& 18& 17&  8&  7& 10&  9& 12& 11&  1&  2&  6&  5&  4&  3 \\
+     21& 21& 23& 19& 24& 20& 22& 15& 17& 13& 18& 14& 16&  9& 11&  7& 12&  8& 10&  5&  3&  2&  4&  1&  6 \\
+     22& 22& 24& 20& 23& 19& 21& 16& 18& 14& 17& 13& 15& 10& 12&  8& 11&  7&  9&  6&  4&  1&  3&  2&  5 \\
+     23& 23& 21& 24& 19& 22& 20& 17& 15& 18& 13& 16& 14& 11&  9& 12&  7& 10&  8&  3&  5&  4&  2&  6&  1 \\
+     24& 24& 22& 23& 20& 21& 19& 18& 16& 17& 14& 15& 13& 12& 10& 11&  8&  9&  7&  4&  6&  3&  1&  5&  2 \\
+     \hline
+    \end{tabular}}
+  \caption{Associators and commutators in left and middle nuclei but $\inn_R$ not abelian}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Cosets in Moufang loops}
+
+\section{Introduction}
+
+It has been shown that the Lagrange's Theorem holds in Moufang loops \cite{LG}. However, the proof relies on the classification of finite simple Moufang loops, which in turn relies on the classification of finite simple groups. The proof of the Lagrange theorem for groups is much simpler because it uses the fact that cosets of a subgroup partition the group. In general, the cosets of a subloop of a Moufang loop need not partition the loop. However, based on extensive computational evidence (all Moufang loops of orders $\leq 64$, $81$, and $243$ checked \cite{LOOPS}) we make the following conjecture:
+
+\begin{cnj}
+  Let $M$ be a Moufang loop, $S \leq M$ and $\mathcal{S}$ the family of all left cosets of $S$. Then there exists $A\subset S$ such that $A$ is a partition of $M$.
+\end{cnj}
+
+That is, in Moufang loops there is always a subset of the family of all left cosets of a subloop which do partition the loop. Proving this conjecture would provide a proof of the Lagrange theorem for Moufang loops very similar to that for groups. In particular, such a proof would be direct in the sense that it would not rely on the classification of finite simple Moufang loops. While we were ultimately unsuccessful in this endeavor, we were able to prove some interesting intermediate results which are presented here.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Coset intersections}
+
+\subsection{A first Approach}
+
+Let $G$ be a group with $S\leq G$ and $x\in xS\cap yS$. Since left cosets of $S$ partition $G$, it is immediate that $xS = yS$ and $x^{-1}(xS\cap yS) = x^{-1}xS = S\leq G$. So in particular, $x^{-1}(xS \cap yS) \leq Q$. The question of whether this result can be extended to Moufang loops, that is: "If $Q$ is Moufang and $x\in xS\cap yS$, is $x^{-1}(xS\cap yS)$ a subloop of $S$?" was posed in \cite{incidence}. We are able to provide a negative answer:\\ 
+  Let 
+  \begin{align*}
+    Q &= \text{MoufangLoop}(48, 2)\text{ in the GAP LOOPS package},\\
+    S &= \{1,4,8,16,25,28,32,40\},\\
+    x &= 3,\\
+    y &= 27
+  \end{align*}
+  Then $x\in yS$ (and so $x\in xS\cap yS$), but $x^{-1}(xS\cap yS)$ is not a subloop of $S$. In fact the subloop generated by $x^{-1}(xS\cap yS)$ is all of $Q$.
+
+Further, there is in general no translation of $xS\cap yS$ which is a subloop. Let $Q$ be the Moufang loop in the table below, 
+  \begin{align*}
+    S &= \{1, 2, 3, 5, 13, 14, 15, 17\},\\
+    X &= 4S\cap 6S = \{16, 18, 19, 21\}
+  \end{align*}
+Then $S\leq Q$ but there is no $x\in Q$ such that $xX\leq Q$.
+
+\begin{table}[H]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{c | c c c c c c c c c c c c c c c c c c c c c c c c|}
+    $\cdot$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24\\
+    \hline \hline
+     1& 1&  2&  3&  4&  5&  6&  7&  8&  9& 10& 11& 12& 13& 14& 15& 16& 17& 18& 19& 20& 21& 22& 23& 24 \\
+     2& 2&  1&  5&  6&  3&  4&  9& 10&  7&  8& 12& 11& 17& 15& 14& 24& 13& 23& 22& 21& 20& 19& 18& 16 \\
+     3& 3&  5&  1&  7&  2&  9&  4& 11&  6& 12&  8& 10& 15& 17& 13& 19& 14& 21& 16& 23& 18& 24& 20& 22 \\
+     4& 4& 10&  7&  8& 12&  2& 11&  1&  5&  6&  3&  9& 16& 18& 19& 20& 21& 22& 23& 13& 24& 14& 15& 17 \\
+     5& 5&  3&  2&  9&  1&  7&  6& 12&  4& 11& 10&  8& 14& 13& 17& 22& 15& 20& 24& 18& 23& 16& 21& 19 \\
+     6& 6&  8&  9& 10& 11&  1& 12&  2&  3&  4&  5&  7& 21& 19& 18& 17& 16& 15& 14& 24& 13& 23& 22& 20 \\
+     7& 7& 12&  4& 11& 10&  5&  8&  3&  2&  9&  1&  6& 19& 21& 16& 23& 18& 24& 20& 15& 22& 17& 13& 14 \\
+     8& 8&  6& 11&  1&  9& 10&  3&  4& 12&  2&  7&  5& 20& 22& 23& 13& 24& 14& 15& 16& 17& 18& 19& 21 \\
+     9& 9& 11&  6& 12&  8&  3& 10&  5&  1&  7&  2&  4& 18& 16& 21& 14& 19& 13& 17& 22& 15& 20& 24& 23 \\
+    10& 10&  4& 12&  2&  7&  8&  5&  6& 11&  1&  9&  3& 24& 23& 22& 21& 20& 19& 18& 17& 16& 15& 14& 13 \\
+    11& 11&  9&  8&  3&  6& 12&  1&  7& 10&  5&  4&  2& 23& 24& 20& 15& 22& 17& 13& 19& 14& 21& 16& 18 \\
+    12& 12&  7& 10&  5&  4& 11&  2&  9&  8&  3&  6&  1& 22& 20& 24& 18& 23& 16& 21& 14& 19& 13& 17& 15 \\
+    13& 13& 17& 15& 20& 14& 21& 23& 16& 18& 24& 19& 22&  1&  5&  3&  8&  2&  9& 11&  4&  6& 12&  7& 10 \\
+    14& 14& 15& 17& 22& 13& 19& 24& 18& 16& 23& 21& 20&  5&  1&  2&  9&  3&  8&  6& 12& 11&  4& 10&  7 \\
+    15& 15& 14& 13& 23& 17& 18& 20& 19& 21& 22& 16& 24&  3&  2&  1& 11&  5&  6&  8&  7&  9& 10&  4& 12 \\
+    16& 16& 24& 19& 13& 22& 17& 15& 20& 14& 21& 23& 18&  4&  9&  7&  1&  6& 12&  3&  8& 10&  5& 11&  2 \\
+    17& 17& 13& 14& 24& 15& 16& 22& 21& 19& 20& 18& 23&  2&  3&  5&  6&  1& 11&  9& 10&  8&  7& 12&  4 \\
+    18& 18& 23& 21& 14& 20& 15& 17& 22& 13& 19& 24& 16&  9&  4&  6& 12&  7&  1& 10&  5&  3&  8&  2& 11 \\
+    19& 19& 22& 16& 15& 24& 14& 13& 23& 17& 18& 20& 21&  7&  6&  4&  3&  9& 10&  1& 11& 12&  2&  8&  5 \\
+    20& 20& 21& 23& 16& 18& 24& 19& 13& 22& 17& 15& 14&  8& 12& 11&  4& 10&  5&  7&  1&  2&  9&  3&  6 \\
+    21& 21& 20& 18& 17& 23& 13& 14& 24& 15& 16& 22& 19&  6&  7&  9& 10&  4&  3& 12&  2&  1& 11&  5&  8 \\
+    22& 22& 19& 24& 18& 16& 23& 21& 14& 20& 15& 17& 13& 12&  8& 10&  5& 11&  4&  2&  9&  7&  1&  6&  3 \\
+    23& 23& 18& 20& 19& 21& 22& 16& 15& 24& 14& 13& 17& 11& 10&  8&  7& 12&  2&  4&  3&  5&  6&  1&  9 \\
+    24& 24& 16& 22& 21& 19& 20& 18& 17& 23& 13& 14& 15& 10& 11& 12&  2&  8&  7&  5&  6&  4&  3&  9&  1 \\
+    \hline
+  \end{tabular}}
+  \caption{Moufang loop with an intersection of cosets which cannot be translated to a subloop}
+\end{table}
+
+\subsection{An iterative approach}
+
+Our next approach was to attempt to iteratively construct a set of cosets partitioning the loop. The following series of lemmas provide restrictions on the intersections of distinct cosets and guarantee the existence of cosets disjoint from given sets.
+
+\begin{lem}\label{tech-cosets}
+  Let $Q$ be a Moufang loop. Then for all $x, y, z\in Q$ 
+  \[xy\cdot (z\cdot xy) = x\cdot (yz\cdot xy)\]
+\end{lem}
+
+\begin{proof}
+  Let $x, y, z\in Q$ be given and consider
+  \begin{align*}
+    xy\cdot (z\cdot xy) &= (xy\cdot (z\cdot xy))y^{-1}\cdot y\\
+    &= ((xy\cdot z)\cdot xy)y^{-1}\cdot y &\text{ since $Q$ is diassociative}\\
+    &= (xy \cdot (z \cdot (xy \cdot y^{-1})))\cdot y &\text{ since $Q$ is Moufang}\\
+    &= (xy \cdot zx)\cdot y\\
+    &= x(yz\cdot x)\cdot y &\text{ since $Q$ is Moufang}\\
+    &= (x\cdot yz)x\cdot y &\text{ since $Q$ is diassociative}\\
+    &= x\cdot (yz\cdot xy) &\text{ since $Q$ is Moufang}\\
+  \end{align*}
+  So $xy\cdot(z\cdot xy) = x\cdot(yz\cdot xy)$ as desired.
+\end{proof}
+
+\begin{prp}
+  Let $Q$ be a Moufang loop with $S\leq Q$. If $x\in Sy\cap Sz$ with $y\neq z$, then $xy^{-1}\cdot z\in Sy\cap Sz$. Further $x\neq xy^{-1}\cdot z$.
+\end{prp}
+
+This result tells us that cosets in a Moufang loop cannot intersect in a single element. If two cosets have nontrivial intersection, then the intersection must contain at least two distinct elements.
+
+\begin{proof}
+  Note that $(yx^{-1})\cdot (xz^{-1})(yx^{-1})\in S$ since $xy^{-1}, xz^{-1}\in S$ and $S$ is closed under inversion. Then
+  \begin{align*}
+    y\cdot(x^{-1}\cdot xz^{-1})(yx^{-1})&\in S\text{ by Lemma \ref{tech-cosets}}\\
+    y\cdot z^{-1}(yx^{-1}) &\in S\\
+    (y\cdot z^{-1}(yx^{-1}))^{-1} &\in S\\
+    (xy^{-1})z\cdot y^{-1}\in S
+  \end{align*}
+  Thus $xy^{-1}\cdot z\in Sy$. Further $xy^{-1}\in S$, so $xy^{-1}\cdot z \in Sz$. So $xy^{-1}\cdot z\in Sy\cap Sz$ as desired.
+
+  Finally, note that if $x = xy^{-1}\cdot z $, then $xz^{-1} = xy^{-1}$ and $y = z $, a contradiction. So $x\neq xy^{-1}\cdot z$.
+\end{proof}
+
+\begin{prp}\label{power-cosets}
+  Let $Q$ be a Moufang loop, $S\leq Q$, and $x\in Q$ such that $x^k$ is the least power of $x$ contained in $S$. Then $S, Sx, Sx^2, \ldots, Sx^{k - 1}$ are disjoint cosets of $S$.
+\end{prp}
+
+\begin{proof}
+  Suppose toward a contradiction that $y\in Sx^i\cap Sx^j$ for some $i < j < k$. Then there exist $s, s'\in S$ such that $sx^i = s'x^j$. So
+  \begin{align*}
+    sx^i &= s'x^j\\
+    s &= s'x^j\cdot x^{-i} &\text{ since $Q$ is an IP loop}\\
+    s &= s'x^{j - i} &\text{ since $Q$ is diassociative}\\
+    (s')^{-1}s &= x^{j - i}
+  \end{align*}
+  But $S$ is a subloop, so in particular $x^{j - i}\in S$. But this contradicts our assumption that $x^k$ is the least power of $x$ contained in $S$. Thus $S, Sx, \ldots, Sx^{k - 1}$ are disjoint.
+\end{proof}
+
+
+\begin{lem}\label{tech-coset-int}
+  Let $Q$ be a Moufang loop and $x,y,z\in Q$ be given. Then
+  \[
+  (u(yz)^{-1}\cdot x^{-1})(xy\cdot z(yu)^{-1}) = y^{-1}\,.
+  \]
+  \end{lem}
+  %
+  \begin{proof}
+  We have 
+  \begin{alignat*}{2}
+  xy\cdot z(yu)^{-1}
+      &= (xy\cdot z(yu)^{-1})y\cdot y^{-1}            && \text{ by the IP} \\
+      &= x(yz\cdot (yu)^{-1}y)\cdot y^{-1}            && \text{ since }Q\text{ is Moufang} \\
+      &= x(yz\cdot (u^{-1}y^{-1}\cdot y))\cdot y^{-1} && \text{ by the IP} \\
+      &= x(yz\cdot u^{-1})\cdot y^{-1}                && \text{ by the IP} \\
+      &= (u(yz)^{-1}\cdot x^{-1})^{-1}\cdot y^{-1}    && \text{ by the IP.}
+  \end{alignat*}
+  Multiplying both sides on the left by $u(yz)^{-1}\cdot x^{-1}$ and using the IP, we have the desired result.
+\end{proof}
+
+\begin{lem}\label{lem-q-part}
+  Let $Q$ be a Moufang loop, let $S\leq Q$, and let $a\in Q\setminus S$ satisfy $a^2\in S$. The following are equivalent.
+  \begin{enumerate}
+    \item $Q = S\cup Sa$;
+    \item For every $x\in Q$, if $x\not\in S$, then $Sx\cap Sa\neq \emptyset$.
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  Assume (1) holds and assume $x\in Q\setminus S$. Then $x\in Sx\cap Sa$, and so $Sx\cap Sa\neq\emptyset$.
+  
+  Conversely, assume (2) holds. Then for each $u\in Q\setminus S$, there exists $u'\in Su\cap Sa$, and so $u'u^{-1}, u'a^{-1}, u(u')^{-1}, a(u')^{-1}\in S$. Let $x\in Q\setminus S$ be given.
+  
+  For all $y\in Q\setminus S$, we have
+  \begin{equation}\label{Eqn:chap5-1}
+  (y'a^{-1}\cdot x'a^{-1})^{-1}\cdot y'y^{-1}\in S\,.
+  \end{equation}
+  Set $y = a^2(x')^{-1}a$ and suppose $y\in Q\setminus S$. 
+  We have
+  \begin{alignat*}{2}
+  y'y^{-1}
+      &= y'(a^2(x')^{-1}a)^{-1}               && \\
+      &= y'(a^{-1}x'a^{-2})                   && \text{ by the IP} \\
+      &= y'(a^{-1}\cdot x'a^{-1}\cdot a^{-1}) && \text{ by diassociativity} \\
+      &= (y'a^{-1}\cdot x'a^{-1})a^{-1}       && \text{ since }Q\text{ is Moufang.}
+  \end{alignat*}
+  Thus by \eqref{Eqn:chap5-1} and the IP,
+  \[
+  (y'a^{-1}\cdot x'a^{-1})^{-1}\cdot (y'a^{-1}\cdot x'a^{-1})a^{-1} = a^{-1}\in S\,.
+  \]
+  This contradicts the assumption that $a\not\in S$, and so we must have $a^2(x')^{-1}a\in S$. Since $a^2\in S$ and hence $a^{-2}\in S$, we use the IP again to get $(x')^{-1}a\in S$. Therefore
+  \begin{equation}\label{Eqn:chap5-2}
+  a^{-1}x'\in S\,.
+  \end{equation}
+  
+  Next, for all $y\in Q\setminus S$, we have
+  \begin{equation}\label{Eqn:chap5-3}
+  y(y')^{-1}\cdot (y'a^{-1}\cdot x'x^{-1})\in S\,.
+  \end{equation}
+  Set $y = ax\cdot (a^{-1}x')^{-1}$. If $y\not\in S$, then using \eqref{Eqn:chap5-3} and the IP, we have
+  \[
+  (ax\cdot (a^{-1}x')^{-1})(y')^{-1}\cdot (y'a^{-1}\cdot x'(a^{-1}\cdot ax)^{-1})\in S\,.
+  \]
+  By Lemma \ref{tech-coset-int} this implies $a^{-1}\in S$, and so $a\in S$. This is a contradiction, and so we must
+  have
+  \begin{equation}\label{Eqn:chap5-4}
+  ax\cdot (a^{-1}x')^{-1}\in S\,.
+  \end{equation}
+  
+  Finally, by \eqref{Eqn:chap5-2}, \eqref{Eqn:chap5-4} and the IP, we obtain $ax\in S$. Thus $x\in a^{-1}S$
+  and so $x^{-1}\in Sa$. 
+  
+  We have proven that for all $x\in Q\setminus S$, $x^{-1}\in Sa$. Since $x\in Q\setminus S$ implies $x^{-1}\in Q\setminus S$, we conclude that for all $x\in Q\setminus S$, $x\in Sa$. It follows that
+  $Q= S\cup Sa$, that is, (1) holds.
+\end{proof}
+
+\begin{prp}
+  Let $Q$ be a Moufang loop, $S < Q$, and assume there exists $a\in Q\setminus S$ such that $S\cup Sa \subsetneq Q$. Then there exists $b\in Q$ such that $Sb\cap S = Sb\cap Sa = \emptyset$.
+\end{prp}
+
+\begin{proof}
+  Assume first that $a^2\not\in S$. Then by Proposition \ref{power-cosets} we may take $b=a^2$. Now assume $a^2\in S$. If no such $b$ exists, then for all $x\in Q$, $Sx\cap S \neq \emptyset$ or $Sx\cap Sa \neq \emptyset$. Note that $Sx\cap S\neq\emptyset$ if and only if $x\in S$. Thus for all $x\in Q$, if $x\not\in S$, then $Sx\cap Sa\neq\emptyset$. By Lemma \ref{lem-q-part} $Q = S\cup Sa$, contradicting our assumption.
+\end{proof}
+
+\begin{lem}\label{lem-technical-1}
+  Let $Q$ be a commutative Moufang loop and $x, y, z\in Q$ be given. Then 
+  \[z\cdot(y\cdot x^3) = x\cdot(x\cdot(yz\cdot x))\]
+\end{lem}
+
+\begin{proof}
+  Let $x, y, z\in Q$ be given. Then
+  \begin{alignat*}{2}
+    x\cdot (x\cdot (yz\cdot x)) &= x\cdot (xy\cdot zx) &&\text{, since $Q$ is Moufang}\\
+    &= x\cdot(xy\cdot xz)   &&\text{, since $Q$ is commutative}\\
+    &= (x\cdot xy)x\cdot z  &&\text{, since $Q$ is Moufang}\\
+    &= (x^3\cdot y)\cdot z  &&\text{, since $Q$ is diassociative and commutative}\\
+    &= z\cdot (y\cdot x^3)  &&\text{, since $Q$ is commutative}
+  \end{alignat*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-squaresNormal}
+  Let $Q$ be a commutative Moufang loop and $S\leq Q$ such that $x^2\in S$ for all $x\in Q$. Then $S\unlhd Q$.
+\end{lem}
+
+\begin{proof}
+  First note that since $Q$ is commutative $T_y(x) = x$ and $R_{y, z}(x) = L_{y, x}(x)$. So it is sufficient to show that for all $x\in S$, $y, z\in Q$ $L_{y, z}(x) \in S$. Suppose toward a contradiction that there exist $c_1\in S$, $c_2, c_3\in Q$ such that $L_{c_2, c_3}(c_1)\notin S$. Then
+  \begin{alignat*}{2}
+    x\cdot c_1 x &\in S &&\text{, since $x^2\in S$ for all $x\in Q$}\\
+    (x\cdot c_1 x)\cdot y^2 &\in S &&\\
+    (xc_1\cdot x)\cdot y^2 &\in S &&\\
+    x\cdot(c_1\cdot (x\cdot y^2)) &\in S &&\text{, since $Q$ is Moufang}\\
+    x\cdot (c_1\cdot (y\cdot xy)) &\in S &&\text{, since $Q$ is commutative and diassociative}\\
+    x^{-1}\cdot(c_1\cdot(y\cdot xy)) &\in S &&\text{, since $x^{-2}\in S$}\\
+    (xy)^{-1}\cdot(c_1\cdot(c_1\cdot (xy\cdot c_1))) &\in S &&\text{, substituting $x\mapsfrom xy$, $y\mapsfrom c_1$}\\
+    (xy)^{-1}\cdot (x\cdot(y\cdot c_1^3)) &\in S &&\text{, by lemma \ref{lem-technical-1}}\\
+    L_{x,y}(c_1^3) &\in S &&
+  \end{alignat*}
+
+  But by assumption $L_{c_2, c_3}(c_1)\notin S$ and since $Q$ is automorphic and $x^2\in S$ we have $L_{c_2, c_3}(c_1^2)\in S$. Thus $L_{c_2, c_3}(c_1)\cdot L_{c_2, c_3}(c_1^2) = L_{c_2, c_3}(c_1^3)\notin S$, contradicting the last line above. Hence, a contradiction and the proof is complete.
+\end{proof}
+
+\begin{prp}
+  Let $Q$ be a commutative Moufang loop, $S\leq Q$ and suppose that there exist $c_1, c_2\in Q$ such that 
+  \begin{align*}
+    c_1, c_2&\notin S,\\
+    c_1^2, c_2^2 &\in S,\\
+    Sc_1\cap Sc_2 &= \emptyset\text{, and}\\
+    S\cup Sc_1\cup Sc_2 &\subsetneq Q.
+  \end{align*}
+  Then there exists $c_3\in Q$ such that $S\cap Sc_3 = Sc_1\cap Sc_3 = Sc_2\cap Sc_3 = \emptyset$.
+\end{prp}
+
+\begin{proof}
+  Assume toward a contradiction that there is no such $c_3\in Q$. Then for all $x\in Q\setminus S$ there exists $f(x)$ such that $f(x)\in Sx$ and $f(x)\in Sc_1\cup Sc_2$. Note that by \cite{DiaCC} lemma 3.6 we have that for all $x\in Q$, $\forall y, z\in Q$, $(x\in S\wedge xy^{-1}\cdot z\in S)$ iff $(x\in S\wedge xz^{-1}\cdot y\in S)$. So in particular
+  \begin{alignat*}{2}
+    ((x\in S)\wedge (xy^{-1}\cdot z\in S))&\implies xz^{-1}\cdot y\in S &&\\
+    ((x\in S)\wedge (xy\in S))&\implies xy^{-1}\in S &&\text{ substituting $1\mapsfrom z$}\\
+    ((x\in S)\wedge (y\cdot xx\in S))&\implies x\cdot (xy)^{-1}\in S &&\text{ substituting $y\mapsfrom xy$}\\
+    ((x\in S)\wedge (y\cdot xx\in S))&\implies y^{-1}\in S &&\\
+    ((xy\in S)\wedge (xy\cdot y^{-1}x\in S))&\implies yy\in S &&\text{ substituting $x\mapsfrom xy$, $y\mapsfrom (yy)^{-1}$}\\
+    ((xy\in S)\wedge (xx\in S))&\implies yy\in S &&\text{ since $Q$ is commutative and diassociative}
+  \end{alignat*}
+
+  But by assumption we have that $x\notin S\implies x^{-1}f(x)\in S$. By the above we have $(x^{-1}f(x)\in S\wedge f(x)^2\in S)\implies x^{-2}\in S$. Thus
+  \begin{alignat*}{2}
+    ((x\notin S)\wedge (f(x)^2\in S))&\implies x^{-2}\in S &&\text{ equivalently,}\\
+    (x\in S)\vee (f(x)^2\notin S) &\vee (x^{-2}\in S) &&
+  \end{alignat*}
+  Call this last line $\dagger$. Note that if $xc_1^{-1}\in S$, then $(x c_1^{-1})^2\cdot c_1^2 = x^2\in S$ since $c_1^2\in S$ and $Q$ is commutative and diassociative. So $xc_1^{-1}\in S\implies x^2\in S$. Equivalently, $x^2\notin S\vee xc_1^{-1}\in S$ and in particular $f(x)c_1^{-1}\notin S\vee f(x)^2\in S$. But by our choice of $f(x)$ we have that $(f(x)x^{-1}, f(x)c_1^{-1}\in S)\vee f(x)c_2^{-1}\in S\vee x\in S$. So
+  \begin{alignat*}{2}
+    (f(x)^2\in S)&\vee (x\in S)\vee (f(x)c_2^{-1}\in S) &&\\
+    (f(x)^2\in S)&\vee (x\in S)\vee (c_2f(x)\in S) &&\text{ since $c_2^2\in S$}\\
+    (x^{-2}\in S)&\vee (c_2f(x)\in S)\vee (x\in S) &&\text{ by $\dagger$}\\
+    (x\in S)&\vee (x^2\in S)\vee (f(x)^2\in S) &&\text{ since $c_2^2\in S$}\\
+    (x\in S)&\vee (x^{-2}\in S) \vee (x^2\in S) &&\text{ by (*)}\\
+    (x\in S)&\vee (x^2\in S) &&
+  \end{alignat*}
+  But if $x\in S$, then $x^2\in S$ since $S$ is a subloop. So by lemma \ref{lem-squaresNormal} we have that $S\unlhd Q$. But the cosets of a normal subloop partition $Q$, so the proof is complete.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{An Equivalence Relation}
+
+We previously attempted to partition the loop by sets known to have size a multiple of that of the subloop. We will now instead start with a partition of the loop and attempt to show that the blocks have size a multiple of that of of the subloop.
+
+\begin{prp}
+  For an IP loop $Q$, $H\leq Q$ the relation $\sim_H$ defined by $x\sim_H y$ iff $xy^{-1} \in H$ and $H(yx^{-1})\cdot x = Hy$ is an equivalence relation.
+\end{prp}
+
+This proposition actually holds for arbitrary loops. However, we are primarily concerned with Moufang loops here and using inversion instead of left and right division substantially simplifies notation, so we will prove it only for IP loops.
+
+\begin{proof}
+  First note that $xx^{-1} = 1\in H$ and $H(xx^{-1})\cdot x = H1\cdot x = Hx$. So $\sim_H$ is reflexive.
+
+  Now suppose that $x\sim_H y$. Then $xy^{-1}\in H$, so $(xy^{-1})^{-1} = yx^{-1}\in H$ since IP loops have the AAIP.
+  \begin{alignat*}{2}
+    H(yx^{-1})\cdot x &= Hy &&\text{ since $x\sim_H y$}\\
+    Hx &= Hy &&\text{ since $yx^{-1}\in H$}\\
+    H(yx^{-1})\cdot x &= Hy &&\text{ since $yx^{-1}\in H$} 
+  \end{alignat*}
+  Thus $yx^{-1}\in H$ and $H(yx^{-1})\cdot x = Hy$, so $y\sim_H x$.
+
+  Finally, suppose that $x\sim_H y$ and $y\sim_H z$. Then $xy^{-1}, yz^{-1}\in H$, $H(yx^{-1})\cdot x = Hy$, and $H(zy^{-1})\cdot y = z$. Then
+  \begin{alignat*}{2}
+    x&\in Hy = H(zy^{-1})\cdot y &&\text{ since $(yz^{-1})^{-1} = zy^{-1}\in H$}\\
+    x&\in Hz &&\text{ since $H(zy^{-1})\cdot y = Hz$}\\
+    xz^{-1}&\in H &&\text{ since $Q$ is an IP loop}
+  \end{alignat*}
+  Then
+  \begin{alignat*}{2}
+    H(zx^{-1})\cdot x &= Hx &&\text{ since $zx^{-1} = (xz^{-1})^{-1}\in H$}\\
+    &= H(yx^{-1})\cdot x &&\text{ since $yx^{-1} = (xy^{-1})^{-1}\in H$}\\
+    &= Hy &&\\
+    &= H(zy^{-1})\cdot y &&\text{ since $zy^{-1} = (yz^{-1})^{-1}\in H$}\\
+    &= Hz &&
+  \end{alignat*}
+  Thus $xz^{-1}\in H$ and $H(zx^{-1})\cdot x = Hz$. So $x\sim_H z$ completing the proof that $\sim_H$ is an equivalence relation.
+\end{proof}
+
+Note that it is possible that all equivalence classes other than the subloop itself are singletons. The Moufang loop of order $12$ below with subloop $H = \{1, 2, 7, 8\}$ is one such example.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c | c c c c c c c c c c c c}
+    $\cdot$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
+    \hline \hline
+    1 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+    2 & 2 & 1 & 4 & 3 & 6 & 5 & 8 & 7 & 12 & 11 & 10 & 9 \\
+    3 & 3 & 6 & 5 & 2 & 1 & 4 & 9 & 10 & 11 & 12 & 7 & 8 \\
+    4 & 4 & 5 & 6 & 1 & 2 & 3 & 10 & 9 & 8 & 7 & 12 & 11 \\
+    5 & 5 & 4 & 1 & 6 & 3 & 2 & 11 & 12 & 7 & 8 & 9 & 10 \\
+    6 & 6 & 3 & 2 & 5 & 4 & 1 & 12 & 11 & 10 & 9 & 8 & 7 \\
+    7 & 7 & 8 & 11 & 10 & 9 & 12 & 1 & 2 & 5 & 4 & 3 & 6 \\
+    8 & 8 & 7 & 12 & 9 & 10 & 11 & 2 & 1 & 4 & 5 & 6 & 3 \\
+    9 & 9 & 12 & 7 & 8 & 11 & 10 & 3 & 4 & 1 & 6 & 5 & 2 \\
+    10 & 10 & 11 & 8 & 7 & 12 & 9 & 4 & 3 & 6 & 1 & 2 & 5 \\
+    11 & 11 & 10 & 9 & 12 & 7 & 8 & 5 & 6 & 3 & 2 & 1 & 4 \\
+    12 & 12 & 9 & 10 & 11 & 8 & 7 & 6 & 5 & 2 & 3 & 4 & 1
+  \end{tabular}
+  \caption{Moufang loop and subloop with trivial $\sim_H$-classes}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Orbits of $\mlt_L(Q; S)$}
+
+Having been unable to prove Lagrange's theorem for Moufang loops directly using cosets we will now try another approach.
+
+\begin{dfn}
+  Let $Q$ be a loop, $S\leq Q$ and recall that $\mlt_L(Q) = \langle L_x : x\in Q\rangle$. We then define the \emph{left multiplication group of $S$ in $Q$} as 
+  \[\mlt_L(Q; S) = \langle L_x : x\in S\rangle \leq \mlt_L(Q)\]
+  Note that left translations in $\mlt_L(Q; S)$ act on all of $Q$, so $\mlt_L(Q; S)\neq \mlt_L(S)$.
+\end{dfn}
+
+For a group $G$ with $S\leq G$ the orbits of $\mlt_L(G; S)$ are precisely the right cosets of $S$ in $G$. This observation suggests that perhaps in Moufang loops the proper generalization of cosets to use to prove Lagrange's theorem directly is orbits of $\mlt_L(Q; S)$. 
+
+The orbits of $\mlt_L(Q; S)$ partition $Q$ so we would need to show that the order of orbits of $\mlt_L(Q; S)$ are multiples of the order of $S$. We were not able to prove this result, but we were able to show that if it holds in simple Moufang loops $M$, then it holds in all Moufang loops. Additionally, we were able to show that the order of orbits of $\mlt_L(Q; S)$ are multiples of $\frac{|\mlt_L(Q; S)}{\inn_L(Q)}$.
+
+\begin{dfn}
+  The \emph{action matrix} of $x\in Q$, $R_{S\ldv Q}(x)$, is the transition matrix of a Markov chain on the state space of orbits of $\mlt_L(Q; S)$ where the probability of transition from orbit $X$ to orbit $Y$ is
+  \[\frac{|X\cap R_x^{-1}(Y)|}{X}\]
+  \cite{Smith}.
+\end{dfn}
+
+Informally, for fixed $x\in Q$ this Markov chain represents applying $R_x$ to an orbit $X$ of $\mlt_L(Q; S)$ and considering the probability that a randomly chosen element is sent to the orbit $Y$.
+
+\begin{prp}
+  Suppose that $R_{P\ldv Q}(x) = R_{P\ldv Q}(y)$, then $x$ and $y$ lie in the same orbit of $\mlt_L(Q; P)$.
+\end{prp}
+
+\begin{proof}
+  Let $Q$ be a loop $P\leq Q$. Let $x, y\in Q$ such that $R_{P\ldv Q}(x) = R_{P\ldv Q}(y)$. Suppose that $X$ is the orbit of $\mlt_L(Q; P)$ containing $x$.
+
+  Since $R_{P\ldv Q}(x) = R_{P\ldv Q}(y)$ we have that $|P\cap R^{-1}(y)(X)| = |P\cap R^{-1}(x)(X)| \geq 1$ by Theorem 4.1 in \cite{Smith}. So there exists $p\in P$ such that $py \in X$. By our choice of $X$ there exists $\phi\in\mlt_L(Q; P)$ such that $py = \phi(x)$. But then $y = L_p^{-1}(\phi(x))$ and thus $x, y$ lie in the same orbit of $\mlt_L(Q; P)$.
+\end{proof}
+
+\begin{dfn}
+  A partition is \emph{uniform} if all blocks have the same size.
+\end{dfn}
+
+\begin{prp}
+  The partition of $Q$ into orbits of $\mlt_L(Q; P)$ is uniform iff all action matrices are doubly stochastic.
+\end{prp}
+
+\begin{proof}
+  Let $s_Y(x)$ be the sum of entries in the column corresponding to $Y$ in the matrix $R_{P\ldv Q}(x)$. Note that
+  \[s_Y(x) = \sum_{Z\in P\ldv Q} \frac{|R_x^{-1}(Y)\cap Z|}{|Z|}\] and since $P\ldv Q$ is a partition of $Q$ and $R_x$ is a permutation of $Q$ we have
+  \[|Y| = \sum_{Z\in P\ldv Q} |R_x^{-1}(Y)\cap Z|.\]
+
+  Suppose first that all action matrices are doubly stochastic and let $x\in Q$ be given. Suppose that $X$ is the orbit of $\mlt_L(Q; P)$ containing $x$. From the previous proposition the entry corresponding to row $P$ and column $X$ is a $1$. Since $R_{P\ldv Q}(x)$ is doubly stochastic the remaining entries in this column are $0$. Thus $s_Y(x) = \sum_{Z\in P\ldv Q} \frac{|R_x^{-1}(X)\cap Z|}{|Z|} = \frac{|R_x^{-1}(X)\cap P|}{|P|} = 1$ and $|X| = \sum_{Z\in P\ldv Q} |R_x^{-1}(X)\cap Z| = |R_x^{-1}(X)\cap P| = |P|$. So for all $X\in P\ldv Q$ $|X| = |P|$ and the partition is uniform.
+
+  Now suppose that the partition $P\ldv Q$ is uniform and let $x\in Q$, $Y\in P\ldv Q$ be given. We will show that $s_Y(x) = 1$. Consider
+  \begin{alignat*}{2}
+    |Y| &= \sum_{Z\in P\ldv Q} |R_x^{-1}(Y)\cap Z| &&\text{ from the above}\\
+    &\text{Dividing by $|Y|$ we have} &&\\
+    1 &= \sum_{Z\in P\ldv Q} \frac{|R_x^{-1}(Y)\cap Z|}{|Y|} &&\\
+    &= \sum_{Z\in P\ldv Q} \frac{|R_x^{-1}(Y)\cap Z|}{|Z|} &&\text{ since the partition is uniform}\\
+    &= s_Y(x) &&\text{ by definition}
+  \end{alignat*}
+  Thus $s_Y(x) = 1$, so $R_{P\ldv Q}(x)$ is doubly stochastic for all $x\in Q$.
+\end{proof}
+
+\begin{prp}
+  If there is a Moufang loop $Q$ with subloop $P$ and an orbit $X$ of $\mlt_L(Q; P)$ such that $|P|$ does not divide $|X|$, then there is such a simple Moufang loop.
+\end{prp}
+
+\begin{proof}
+  Note that $|P|$ fails to divide $|X|$ iff every representation of $X$ as a union of cosets contains at least $2$ with nontrivial intersection. This passes directly to the quotient loop.
+\end{proof}
+
+\begin{prp}
+ Let $Q$ be a Moufang loop with $S\leq Q$ and $x\in Q$. Then $\frac{|\mlt_L(Q;S)|}{|\inn_L(Q)|}$ divides $|\orb_{\mlt_L(Q;S)}(x)|$.
+\end{prp}
+
+\begin{proof}
+Let $G = \mlt_L(Q; S)$ and define $F: \stb_G(x)\to \inn_L(Q)$ by $F(\phi) = L_{x^{-1}}\phi L_x$. First note that $F$ is injective since $L_{x^{-1}}\phi L_x = L_{x^{-1}}\psi L_x$ implies $\phi = \psi$. Further, $F$ is a homomorphism, since
+  \begin{align*}
+    F(\phi\psi) &= L_{x^{-1}}\phi\psi L_x\\
+    &= L_{x^{-1}}\phi L_x L_{x^{-1}} \psi L_x\\
+    &= F(\phi)F(\psi)
+  \end{align*}
+and
+  \begin{align*}
+    F(\phi^{-1}) &= L_{x^{-1}}\phi^{-1}L_x\\
+    &= (L_x^{-1}\phi L_{x^{-1}}^{-1})^{-1}\\
+    &= (L_{x^{-1}}\phi L_x)^{-1}\\
+    &= F(\phi)^{-1}
+  \end{align*}
+
+Thus $\stb_G(x)$ is isomorphic to some subloop of $\inn_L(Q)$ and in particular $\frac{|\inn_L(Q)|}{|\stb_G(x)|} = n$ for some $n\in \mathbb{N}$. So $|\orb_G(x)| = n\cdot \frac{|G|}{|\inn_L(Q)|}$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Universally and semi-universally flexible loops}
+
+\section{Introduction}
+
+It was shown in \cite{SUF} that every SUF IP loop is diassociative. It is conjectured that there exists a SUF IP loop which is not Moufang, meaning that this result is not simply a consequence of Moufang's theorem. However, no such example has yet been found. Our attempt to construct such an example is described below.
+
+Recall that left SUF loops are loops all of whose left isotopes are flexible, right SUF loops are defined dually, and SUF loops are loops which are both left and right SUF. In practice we will define these varieties of loops equationally. We now present identities which define the varieties of SUF and UF loops:
+\begin{align*}
+  &\text{Left SUF:}\\
+  (x\rdv u) \cdot (y\rdv u)x &= (((x\rdv u)y)\rdv u)\cdot x\\
+  &\text{Right SUF:}\\
+  x\cdot (v\ldv(y(v\ldv x))) &= x(v\ldv y)\cdot (v\ldv x)\\
+  &\text{Universally flexible:}\\
+  (x\rdv u)\cdot (v\ldv ((y\rdv u)\cdot (v\ldv x))) &= (((x\rdv u)\cdot (v\ldv y))\rdv u)\cdot (v\ldv x)
+\end{align*}
+
+\section{Basic examples}
+
+Below is a loop of order $6$ which is left SUF but not right SUF. By symmetry of the definitions of left (right) SUF this shows that neither implies the other.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c| c c c c c c}
+      $\cdot$ & 0 & 1 & 2 & 3 & 4 & 5\\
+      \hline\hline
+      0 & 0 & 1 & 2 & 3 & 4 & 5\\
+      1 & 1 & 0 & 3 & 2 & 5 & 4\\
+      2 & 2 & 4 & 0 & 5 & 1 & 3\\
+      3 & 3 & 5 & 4 & 0 & 2 & 1\\
+      4 & 4 & 3 & 5 & 1 & 0 & 2\\
+      5 & 5 & 2 & 1 & 4 & 3 & 0
+  \end{tabular}
+  \caption{A loop which is left SUF but not right SUF}
+\end{table}
+
+Note that for some properties universality and semi-universality coincide. This is the case for LIP, for example, a quasigroup is semi-universally LIP iff it is universally LIP. We conjecture that this is not the case for flexibility, that is we conjecture that there exists a SUF quasigroup which is not universally flexible. However such a quasigroup has not yet been constructed.
+
+\section{Central extensions of Moufang loops}
+
+It is conjectured in \cite{SUF} that there exists an SUF IP loop which is not Moufang, meaning that the result in \cite{SUF} showing that such loops are diassociative does not follow from Moufang's theorem. However, no such loop has been found. Our goal in this chapter is to construct such a loop. Naive searches with MACE4 up to order $20$ were unsuccessful.
+
+An approach allowing the constructing of SUF IP loops of larger order is to emulate the central extension construction in \cite{64and81}.
+
+\begin{dfn}
+  Let $Q, K$ be loops, $A\unlhd Q$, $A\leq Z(Q)$ such that $Q\rdv A\simeq K$. Then $Q$ is a \emph{central extension} of $A$ by $K$ \cite{64and81}.
+\end{dfn}
+
+The advantage of this approach is that it allows us to construct SUF IP loops which are much larger than those that can be investigated by MACE4. We were able to construct SUF IP loops of orders up to $729$. However, unlike MACE4 searches, we were not able to exhaustively check all SUF IP loops of a given order using this approach. Following the approach in \cite{64and81} we will construct $Q$ given $A$ and $K$. The central extension construction proceeds as follows:
+
+Given:
+  \begin{align*}
+    (K, \cdot, 1) &\text{ a loop,}\\
+    (A, +, 0) &\text{ an abelian group, and}\\
+    f:K\times K\to A\text{ satisfying } &f(1, k) = f(k, 1) = 0 
+  \end{align*}
+
+We construct $(Q, *)$, where:
+  \begin{align*}
+    Q  &= K\times A\\
+    (x, a)*(y, b) &= (x\cdot y, a + b + f(x, y))
+  \end{align*}
+By proposition 5 in \cite{64and81} $Q$ is a central extension of $K$ by $A$. By imposing additional conditions on $K$ and $f$ we can ensure that $Q$ has properties we desire. In particular, by choosing $K$ SUF IP (and thus in practice Moufang) and imposing the conditions on $f$ given below we can ensure that $Q$ is SUF and IP.
+
+To ensure that $Q$ is IP we require:
+  \begin{align*}
+    f(x, x^{-1}) &= 0,\\
+    f(y, x) + f(yx, x^{-1}) &= 0\text{, and }\\
+    f(x, y) + f(x^{-1} xy) &= 0
+  \end{align*}
+
+To ensure that $Q$ is SUF we require:
+\[f(y, vx) + f(v, y\cdot vx) + f(x, v\cdot(y\cdot vx)) - f(v, y) - f(x, vy) - f(x\cdot vy, vx) = 0\]
+
+Professor Vojt\v{e}chovsk\'{y} provided us with GAP code to efficiently carry out the construction as described in \cite{64and81}. This allowed us to search many SUF loops arising as central extensions for one which is not Moufang. However, we were unable to find such a loop. The Moufang library in the GAP LOOPS package provided us with an exhaustive list of non-associative Moufang loops of orders $\leq 64$ and $81$ to serve as bases for our central extensions. The extensions we searched are listed below.
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{c|c|c}
+    $K$ &  & $A$\\
+    \hline
+    Moufang loops of order $16$ & by & $\ZZZ_2$\\
+    Central extensions of Moufang loops of order $16$ by $\ZZZ_2$ & by & $\ZZZ_2$\\
+    Moufang loops of order $32$ & by & $\ZZZ_2$\\
+    Central extensions of Moufang loops of order $32$ by $\ZZZ_2$ & by & $\ZZZ_2$\\
+    Moufang loops of order $64$ & by & $\ZZZ_2$\\
+    Moufang loops of order $81$ & by & $\ZZZ_3$\\
+    Central extensions of Moufang loops of order $81$ by $\ZZZ_3$ & by & $\ZZZ_3$\\
+    Moufang loops of order $64$ & by & $\ZZZ_p$, $p \leq 13$ prime
+  \end{tabular}
+  \caption{Loops checked for SUF IP and not Moufang}
+\end{table}
+
+Given the extent of loops checked we conjecture the following:
+
+\begin{cnj}
+  Let $Q$ be an SUF IP loop which is also a central extension of a Moufang loop by a cyclic group, then $Q$ is a Moufang loop.
+\end{cnj}
+
+\section{An SUF loop which is not middle Bol}
+
+
+It had been conjectured that all universally flexible loops are middle Bol. The central extension approach did allow us to construct a UF loop which is not middle Bol. The multiplication table of such a loop is below, it is a central extension of a middle Bol loop of order 16 by $\ZZZ_2$. The central extension structure can clearly be seen in the multiplication table, $K\times \{0\}$ is the upper left quadrant.
+
+In particular, this loop is universally flexible and does not have the AAIP and thus is not middle Bol. Further, it is commutative and has the semiautomorphic inverse property $(xyx)^{-1} = x^{-1} y^{-1} x^{-1}$.
+
+\begin{table}[H]
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{c|cccccccccccccccccccccccccccccccc|}
+  $\cdot$ & 1& 2& 3& 4& 5& 6& 7& 8& 9& 10& 11& 12& 13& 14& 15& 16& 17& 18& 19& 20& 21& 22& 23& 24& 25& 26& 27& 28& 29& 30& 31& 32 \\
+  \hline\hline
+  1& 1&  2&  3&  4&  5&  6&  7&  8&  9& 10& 11& 12& 13& 14& 15& 16& 17& 18& 19& 20& 21& 22& 23& 24& 25& 26& 27& 28& 29& 30& 31& 32 \\
+  2& 2&  1&  4&  3&  6&  5&  8&  7& 10&  9& 12& 11& 14& 13& 16& 15& 18& 17& 20& 19& 22& 21& 24& 23& 26& 25& 28& 27& 30& 29& 32& 31 \\
+  3& 3&  4&  7&  8&  9& 10& 11& 12& 13& 14&  1&  2& 15& 16&  5&  6& 27& 28& 23& 24& 31& 32& 19& 20& 29& 30& 17& 18& 25& 26& 21& 22 \\
+  4& 4&  3&  8&  7& 10&  9& 12& 11& 14& 13&  2&  1& 16& 15&  6&  5& 28& 27& 24& 23& 32& 31& 20& 19& 30& 29& 18& 17& 26& 25& 22& 21 \\
+  5& 5&  6&  9& 10&  1&  2& 14& 13&  3&  4& 16& 15&  8&  7& 12& 11& 21& 22& 25& 26& 17& 18& 29& 30& 19& 20& 31& 32& 23& 24& 27& 28 \\
+  6& 6&  5& 10&  9&  2&  1& 13& 14&  4&  3& 15& 16&  7&  8& 11& 12& 22& 21& 26& 25& 18& 17& 30& 29& 20& 19& 32& 31& 24& 23& 28& 27 \\
+  7& 7&  8& 11& 12& 14& 13&  1&  2& 16& 15&  3&  4&  6&  5& 10&  9& 23& 24& 27& 28& 29& 30& 17& 18& 31& 32& 19& 20& 21& 22& 25& 26 \\
+  8& 8&  7& 12& 11& 13& 14&  2&  1& 15& 16&  4&  3&  5&  6&  9& 10& 24& 23& 28& 27& 30& 29& 18& 17& 32& 31& 20& 19& 22& 21& 26& 25 \\
+  9& 9& 10& 13& 14&  3&  4& 16& 15&  7&  8&  6&  5& 12& 11&  2&  1& 31& 32& 29& 30& 27& 28& 25& 26& 23& 24& 21& 22& 19& 20& 17& 18 \\
+  10& 10&  9& 14& 13&  4&  3& 15& 16&  8&  7&  5&  6& 11& 12&  1&  2& 32& 31& 30& 29& 28& 27& 26& 25& 24& 23& 22& 21& 20& 19& 18& 17 \\
+  11& 11& 12&  1&  2& 16& 15&  3&  4&  6&  5&  7&  8& 10&  9& 14& 13& 19& 20& 17& 18& 25& 26& 27& 28& 21& 22& 23& 24& 31& 32& 29& 30 \\
+  12& 12& 11&  2&  1& 15& 16&  4&  3&  5&  6&  8&  7&  9& 10& 13& 14& 20& 19& 18& 17& 26& 25& 28& 27& 22& 21& 24& 23& 32& 31& 30& 29 \\
+  13& 13& 14& 15& 16&  8&  7&  6&  5& 12& 11& 10&  9&  1&  2&  3&  4& 30& 29& 32& 31& 24& 23& 22& 21& 28& 27& 26& 25& 18& 17& 20& 19 \\
+  14& 14& 13& 16& 15&  7&  8&  5&  6& 11& 12&  9& 10&  2&  1&  4&  3& 29& 30& 31& 32& 23& 24& 21& 22& 27& 28& 25& 26& 17& 18& 19& 20 \\
+  15& 15& 16&  5&  6& 12& 11& 10&  9&  2&  1& 14& 13&  3&  4&  7&  8& 26& 25& 22& 21& 20& 19& 32& 31& 18& 17& 30& 29& 28& 27& 24& 23 \\
+  16& 16& 15&  6&  5& 11& 12&  9& 10&  1&  2& 13& 14&  4&  3&  8&  7& 25& 26& 21& 22& 19& 20& 31& 32& 17& 18& 29& 30& 27& 28& 23& 24 \\
+  17& 17& 18& 27& 28& 21& 22& 23& 24& 31& 32& 19& 20& 30& 29& 26& 25& 13& 14& 11& 12&  7&  8&  5&  6& 16& 15&  3&  4&  2&  1&  9& 10 \\
+  18& 18& 17& 28& 27& 22& 21& 24& 23& 32& 31& 20& 19& 29& 30& 25& 26& 14& 13& 12& 11&  8&  7&  6&  5& 15& 16&  4&  3&  1&  2& 10&  9 \\
+  19& 19& 20& 23& 24& 25& 26& 27& 28& 29& 30& 17& 18& 32& 31& 22& 21& 11& 12&  5&  6& 16& 15&  3&  4&  1&  2& 13& 14&  9& 10&  8&  7 \\
+  20& 20& 19& 24& 23& 26& 25& 28& 27& 30& 29& 18& 17& 31& 32& 21& 22& 12& 11&  6&  5& 15& 16&  4&  3&  2&  1& 14& 13& 10&  9&  7&  8 \\
+  21& 21& 22& 31& 32& 17& 18& 29& 30& 27& 28& 25& 26& 24& 23& 20& 19&  7&  8& 16& 15& 13& 14&  2&  1& 11& 12&  9& 10&  5&  6&  3&  4 \\
+  22& 22& 21& 32& 31& 18& 17& 30& 29& 28& 27& 26& 25& 23& 24& 19& 20&  8&  7& 15& 16& 14& 13&  1&  2& 12& 11& 10&  9&  6&  5&  4&  3 \\
+  23& 23& 24& 19& 20& 29& 30& 17& 18& 25& 26& 27& 28& 22& 21& 32& 31&  5&  6&  3&  4&  2&  1& 13& 14&  9& 10& 11& 12&  7&  8& 16& 15 \\
+  24& 24& 23& 20& 19& 30& 29& 18& 17& 26& 25& 28& 27& 21& 22& 31& 32&  6&  5&  4&  3&  1&  2& 14& 13& 10&  9& 12& 11&  8&  7& 15& 16 \\
+  25& 25& 26& 29& 30& 19& 20& 31& 32& 23& 24& 21& 22& 28& 27& 18& 17& 16& 15&  1&  2& 11& 12&  9& 10&  5&  6&  8&  7&  3&  4& 13& 14 \\
+  26& 26& 25& 30& 29& 20& 19& 32& 31& 24& 23& 22& 21& 27& 28& 17& 18& 15& 16&  2&  1& 12& 11& 10&  9&  6&  5&  7&  8&  4&  3& 14& 13 \\
+  27& 27& 28& 17& 18& 31& 32& 19& 20& 21& 22& 23& 24& 26& 25& 30& 29&  3&  4& 13& 14&  9& 10& 11& 12&  8&  7&  5&  6& 16& 15&  1&  2 \\
+  28& 28& 27& 18& 17& 32& 31& 20& 19& 22& 21& 24& 23& 25& 26& 29& 30&  4&  3& 14& 13& 10&  9& 12& 11&  7&  8&  6&  5& 15& 16&  2&  1 \\
+  29& 29& 30& 25& 26& 23& 24& 21& 22& 19& 20& 31& 32& 18& 17& 28& 27&  2&  1&  9& 10&  5&  6&  7&  8&  3&  4& 16& 15& 13& 14& 11& 12 \\
+  30& 30& 29& 26& 25& 24& 23& 22& 21& 20& 19& 32& 31& 17& 18& 27& 28&  1&  2& 10&  9&  6&  5&  8&  7&  4&  3& 15& 16& 14& 13& 12& 11 \\
+  31& 31& 32& 21& 22& 27& 28& 25& 26& 17& 18& 29& 30& 20& 19& 24& 23&  9& 10&  8&  7&  3&  4& 16& 15& 13& 14&  1&  2& 11& 12&  5&  6 \\
+  32& 32& 31& 22& 21& 28& 27& 26& 25& 18& 17& 30& 29& 19& 20& 23& 24& 10&  9&  7&  8&  4&  3& 15& 16& 14& 13&  2&  1& 12& 11&  6&  5 \\
+  \hline
+  \end{tabular}}
+  \caption{A loop which is SUF and not middle Bol}
+  \label{suf-notMBol}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Future directions of research}
+
+\section{Power graphs}
+
+The \textit{enhanced power graph} of a group, which lies between the power graph and the commuting graph as a subgraph, was recently defined in \cite{Zahirovic}. They were able to prove a similar result, that two finite groups with isomorphic power graphs must have isomorphic enhanced power graphs. One natural progression of our research would be to attempt to transfer this result to the context of Moufang loops.
+
+There has been some work in describing properties of the power graph of a group and how they relate to properties of the group itself as in \cite{EPG}, line graphs citation, and undirected power graphs of semi-groups citation. Another natural progression of this research would be to attempt to characterize properties of the power graphs of Moufang loops.
+
+\section{Para-F quasigroups}
+
+There are several outstanding problems regarding para-F quasigroups. The first is the lack of a human readable proof that para-F quasigroups are affine over Moufang loops. An example of a para-F quasigroup which is not paramedial is also still needed.
+
+There is another generalization of medial quasigroups which we have not considered above, the trimedial quasigroups. The relation of trimedial quasigroups to other varieties is shown in figure \ref{trimedial-diag} \cite{trimedial}. It seems that the variety of quasigroups defined by the (*) identities in section \ref{sec-can-identities} may be the correct defining identities for the analogous triparamedial quasigroups \cite{trimedial}. To formalize this would require proving exactly where the variety defined by (*) lies in relation to the other identities. If it is the case that the variety defined by (*) is the triparamedial quasigroups the next step would be to prove a similar linearity result for this variety.
+
+\begin{figure}[H]
+  \centering
+  \begin{tikzpicture}
+    \node (medial) [draw]
+      {\makecell{\textbf{Medial}\\ $xa\cdot by = xb\cdot ay$}};
+    \node (trimedial) [draw, below = 2cm of medial]
+      {\makecell{\textbf{Trimedial}\\ all $3$-generated\\ subquasigroups medial}};
+    \node (semimedial) [draw, below left = 2cm and .1cm of trimedial]
+      {\makecell{\textbf{Semimedial}\\ $xx\cdot yz = xy\cdot xz$\\ and \\ $zy\cdot xx = zx\cdot yx$}};
+    \node (f-quasigroups) [draw, below = 2cm of trimedial]
+      {\makecell{\textbf{F-quasigroups}\\ $x\cdot yz = xy\cdot (x\ldv x)z$\\ and \\ $zy\cdot x = z(x\rdv x)\cdot yx$}};
+
+    \node (paramedial) [draw, right = .5cm of medial]
+      {\makecell{\textbf{Paramedial}\\ $ax\cdot yb = bx\cdot ya$}};
+    \node (triparamedial) [draw, below = 2cm of paramedial]
+      {\makecell{\textbf{Triparamedial}\\ ?}};
+    \node (semiparamedial) [draw, below = 2cm of triparamedial]
+      {\makecell{\textbf{Semiparamedial}\\ $xx\cdot yz = zx\cdot yx$\\ and \\ $zy\cdot xx = xy\cdot xz$}};
+    \node (para-f) [draw, below right = 2cm and .5cm of triparamedial]
+      {\makecell{\textbf{Para-F}\\ $x\cdot yz = zx\cdot y(x\rdv x)$\\ and \\ $zy\cdot x = (x\ldv x)y\cdot xz$}};
+
+    \draw[-{Latex[scale=2]}] (medial) -- (trimedial);
+    \draw[-{Latex[scale=2]}] (trimedial) -- (f-quasigroups);
+    \draw[-{Latex[scale=2]}] (trimedial) -- (semimedial);
+
+    \draw[-{Latex[scale=2]}] (paramedial) -- (triparamedial);
+    \draw[-{Latex[scale=2]}] (triparamedial) -- (semiparamedial);
+    \draw[-{Latex[scale=2]}] (triparamedial) -- (para-f);
+  \end{tikzpicture}
+  \caption{Generalizations of medial and paramedial with trimedial}
+  \label{trimedial-diag}
+\end{figure}
+
+\section{Solvability for loops}
+
+In this chapter we succeeded in finding a sufficient condition for classical and congruence solvability degrees to coincide in loops. A natural next step would be to attempt to weaken this sufficient condition or find an equivalent condition for solvability degrees to coincide.
+
+\section{Cosets in Moufang loops}
+
+The question we set out to answer here, namely "for any subloop of a Moufang loop does there exist a subset of its cosets partitioning the loop?", remains open. We conjecture that the answer is negative, however no example has yet been constructed.
+
+\section{SUF loops}
+
+The first open question to address here is whether there exists an SUF loop which is not UF. We conjecture that such a loop does exist, but we have thus far been unable to construct one.
+
+There is also the remaining question of whether SUF and IP implies Moufang. As above, it is conjectured that there is an SUF IP loop which is not Moufang, but none has yet been constructed.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{unsrt}
+\bibliography{topics-Mloops}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+
+\chapter{Automated proofs}
+
+\section{Notation}
+
+\begin{align*}
+  \text{Prover9 format } &= \text{ standard notation}\\
+  0 &= 1\\
+  x * y &= x\cdot y\\
+  i(x) &= x^{-1}\\
+  R(x, y, z) &= R_{x, y}(z)\\
+  L(x, y, z) &= L_{x, y}(z)\\
+  T(x, y) &= T_x(y)\\
+  A(x, y, z) &= [x, y, z]\\
+  C(x, y) &= [x, y]
+\end{align*}
+
+\section{Para-F}
+
+\subsection{Prover9 proof of Proposition \ref{can1}}
+
+\begin{proof}\label{appendix:can1}
+  The following shows that the (*) identities imply one of the para-F identities. The other para-F identity is dual.
+  \begin{lstlisting}
+    1 (x * y) * z = ((z \ z) * y) * (z * x) # label(non_clause) #label(goal).  [].
+  	2 x * (x \ y) = y.  [].
+  	3 x \ (x * y) = y.  [].
+  	4 (x / y) * y = x.  [].
+  	5 (x * y) / y = x.  [].
+  	6 x * (y * z) = (z * (x \ x)) * (y * x).  [].
+  	7 (x * (y \ y)) * (z * y) = y * (z * x).  [6].
+  	8 (x * y) * z = (z * y) * ((z / z) * x).  [].
+  	9 (x * y) * ((x / x) * z) = (z * y) * x.  [8].
+  	10 ((c3 \ c3) * c2) * (c3 * c1) != (c1 * c2) * c3.  [1].
+  	11 (x / y) \ x = y.  [4,3].
+  	12 x / (y \ x) = y.  [2,5].
+  	13 (x * (y \ y)) \ (y * (z * x)) = z * y.  [7,3].
+  	14 x * (y * (z / (x \ x))) = z * (y * x).  [4,7].
+  	15 (x * (y \ y)) * z = y * ((z / y) * x).  [4,7].
+  	16 (x * (y * z)) / (y * x) = z * (x \ x).  [7,5].
+  	17 (x * (y \ z)) * y = z * ((y / y) * x).  [2,9].
+  	18 (((x / x) \ y) * z) * x = (x * z) * y.  [2,9].
+  	19 (x * y) \ ((z * y) * x) = (x / x) * z.  [9,3].
+  	20 ((x * y) * z) / ((z / z) * x) = z * y.  [9,5].
+  	21 (x * (y \ y)) \ (y * z) = (z / x) * y.  [4,13].
+  	22 x \ (y * (z * x)) = z * (y / (x \ x)).  [14,3].
+  	23 (x * ((y / x) * z)) / y = z * (x \ x).  [15,5].
+  	24 x * ((((y / y) * z) / x) * y) = x * ((y / x) * z).  [15,9,15].
+  	25 (x * y) / (z * x) = (z \ y) * (x \ x).  [2,16].
+  	26 x * ((y / y) * (z / (y \ x))) = z * y.  [4,17].
+  	27 (x * ((y / y) * z)) / y = z * (y \ x).  [17,5].
+  	28 (x * (((x / x) \ y) \ z)) * y = z * x.  [2,18].
+  	29 (((x / y) * z) / x) * y = (x / x) * z.  [15,19,21].
+  	30 (x * y) / ((y / y) * z) = y * (z \ x).  [2,20].
+  	31 (x * (y \ y)) \ z = ((y \ z) / x) * y.  [2,21].
+  	32 (x / y) * (z / (y \ y)) = y \ (z * x).  [4,22].
+  	33 x * ((y / (x * z)) / (z \ z)) = z \ y.  [4,22].
+  	34 ((x / y) \ z) * (y \ y) = (y * z) / x.  [2,23].
+  	35 (x \ (y \ z)) * (y \ y) = z / (x * y).  [2,25].
+  	36 (x / x) * (y / (x \ z)) = z \ (y * x).  [26,3].
+  	37 ((x / x) \ y) * (x \ z) = (z * y) / x.  [2,27].
+  	38 (x / (y \ y)) * (z \ y) = y * (z \ x).  [14,27,27].
+  	39 x * (((x / x) \ y) \ z) = (z * x) / y.  [28,5].
+  	40 (x / x) * ((x / y) \ z) = (z / x) * y.  [2,29].
+  	41 ((x / y) * z) / x = ((x / x) * z) / y.  [29,5].
+  	42 x / ((y / y) * z) = y * (z \ (x / y)).  [4,30].
+  	43 (x / y) \ (y \ (z * x)) = z / (y \ y).  [32,3].
+  	44 (x / (y * z)) / (z \ z) = y \ (z \ x).  [33,3].
+  	45 ((x * y) / z) / (x \ x) = (z / x) \ y.  [34,5].
+  	46 (x \ (y \ z)) \ (z / (x * y)) = y \ y.  [35,3].
+  	47 (((x / x) * y) / z) * x = (x / z) * y.  [24,3,3].
+  	48 (x / x) \ (y \ (z * x)) = z / (x \ y).  [36,3].
+  	49 (x * (y \ (z * u))) / u = (z / (u \ y)) * (u \ x).  [36,27].
+  	50 (x / (y \ y)) \ (y * (z \ x)) = z \ y.  [38,3].
+  	51 (x * (y \ z)) / (y \ x) = z / (x \ x).  [38,5].
+  	52 (x / (y \ y)) * z = y * ((y / z) \ x).  [11,38].
+  	53 ((x / x) \ y) \ z = x \ ((z * x) / y).  [39,3].
+  	54 (x / x) \ ((y / x) * z) = (x / z) \ y.  [40,3].
+  	55 (((x / y) \ z) * u) * x = (x * u) * ((z / x) * y).  [40,9].
+  	56 (x / y) * (z \ y) = (y / y) * (z \ x).  [12,40].
+  	57 ((x / x) * y) / (z \ x) = (z * y) / x.  [12,41].
+  	58 x * ((y / (x \ z)) \ (u / x)) = u / (z \ (y * x)).  [36,42].
+  	59 (x / y) \ (y \ z) = (z / x) / (y \ y).  [4,43].
+  	60 (x / y) * ((x / x) \ z) = (z / y) * x.  [2,47].
+  	61 (x / (y \ ((x / x) * z))) * z = y * x.  [12,47].
+  	62 (x / x) \ (y \ z) = (z / x) / (x \ y).  [4,48].
+  	63 x / (y \ ((x * y) / z)) = (y / y) \ z.  [11,48].
+  	64 (x / (y \ z)) * (z \ z) = y * (z \ x).  [48,35,42,5].
+  	65 (x * (y \ z)) / (y \ y) = z / (x \ y).  [48,44,42,5].
+  	66 (x / (y \ z)) \ (y * (z \ x)) = z \ z.  [48,46,42,5].
+  	67 (x / (y \ y)) \ (y * z) = (x / z) \ y.  [11,50].
+  	68 (x * y) / (z \ z) = (z * y) / (x \ z).  [3,51].
+  	69 (x * y) / ((z / y) \ x) = z / (x \ x).  [11,51].
+  	70 x * ((x / y) \ ((x * z) / u)) = ((u / x) \ z) * y.  [45,52].
+  	71 (x / y) \ (z * x) = (x / x) \ (z * y).  [5,54].
+  	72 (x / x) * (y \ (z * x)) = z * (y \ x).  [5,56].
+  	73 (x * (y / (z \ u))) / z = (u \ (y * z)) / (x \ z).  [36,57].
+  	74 (x * (y \ z)) / y = z / (x \ (y * y)).  [59,37,52,58].
+  	75 (x / (y \ z)) * z = y * ((z / z) \ x).  [12,60].
+  	76 x / (y \ ((x / x) * z)) = (y * x) / z.  [61,5].
+  	77 (x / y) * (z \ z) = (z / y) * (z \ x).  [11,64].
+  	78 ((x * y) / (z \ x)) \ (z * y) = x \ x.  [3,66].
+  	79 (x * y) / ((x * z) \ (x * z)) = ((x * z) * y) / z.  [3,68].
+  	80 ((x * y) / (z \ x)) * u = x * ((x / u) \ (z * y)).  [68,40,40,52].
+  	81 ((x * y) * (x \ x)) / ((z / y) \ x) = z / ((x * y) \ (x * y)).  [67,69].
+  	82 (x / x) \ (y * (z \ x)) = z \ (y * x).  [12,71].
+  	83 x * (((y \ (z * (x * x))) / x) * (x \ x)) = z * (y \ (x * x)).  [25,72,15].
+  	84 (x * (y \ z)) / (u \ z) = (x / (z \ y)) * (z \ u).  [72,57,49].
+  	85 x * ((x / (x \ (y / z))) \ (x * z)) = y / ((x * z) \ (x * z)).  [81,84,52].
+  	86 (x * y) / (z \ (x * x)) = (z * y) / x.  [3,74].
+  	87 (x / (y \ (z * z))) * z = y * (z \ x).  [74,4].
+  	88 (x / (y \ z)) \ (y * ((z / z) \ x)) = z.  [75,3].
+  	89 (x * y) / (z \ (u * y)) = y / (x \ (u * (z \ y))).  [72,76].
+  	90 x / (y \ (z * ((z * x) \ x))) = z * ((z / x) \ y).  [78,69,84,80,67,89].
+  	91 x \ (y * (z * z)) = z * (y / (z \ x)).  [25,82,31,52,62,49,65,11].
+  	92 x * (y \ (z * z)) = z * (y \ (x * z)).  [83,91,73,4].
+  	93 ((x * y) / z) \ (z * y) = x \ (z * z).  [86,11].
+  	94 ((x * x) / y) / (y \ z) = x / (y \ ((z * y) / x)).  [86,63,62].
+  	95 (x / y) * ((y / y) \ z) = y * ((y / (y \ z)) \ x).  [67,87,75,52].
+  	96 (x / (y \ ((y * y) / x))) * (y \ ((z * y) / x)) = y * ((y / (y \ x)) \ z).  [88,87,95,53,53].
+  	97 (x / (y \ ((z * y) / x))) * (y \ u) = (x * (z \ (u * x))) / y.  [92,37,62,94].
+  	98 x / (y \ (x * (z \ x))) = x * ((x / (x \ z)) \ y).  [96,97,4,74,89].
+  	99 x * ((x / (x \ y)) \ (x * z)) = x * ((x / z) \ y).  [93,69,89,98,89,90].
+  	100 x / ((y * z) \ (y * z)) = y * ((y / z) \ (x / z)).  [85,99].
+  	101 ((x * y) * z) / y = ((y / x) \ z) * y.  [79,100,70].
+  	102 (x * x) * ((y / x) * z) = (z * x) * y.  [101,4,55].
+  	103 ((x \ y) * z) * x = ((x \ x) * z) * y.  [77,102,102].
+  	104 ((x \ x) * y) * (x * z) = (z * y) * x.  [3,103].
+  	105 \$F.  [104,10].
+  \end{lstlisting}
+
+  The following shows that the (*) identities imply one of the semiparamedial identities. The other semiparamedial identity is dual.
+	\begin{lstlisting}
+    1 (x * y) * (z * z) = (z * y) * (z * x) # label(non_clause) # label(goal).  [].
+    2 x * (x \ y) = y.  [].
+    3 x \ (x * y) = y.  [].
+    4 (x / y) * y = x.  [].
+    5 (x * y) / y = x.  [].
+    6 x * (y * z) = (z * (x \ x)) * (y * x).  [].
+    7 (x * (y \ y)) * (z * y) = y * (z * x).  [6].
+    8 (x * y) * z = (z * y) * ((z / z) * x).  [].
+    9 (x * y) * ((x / x) * z) = (z * y) * x.  [8].
+    10 (c1 * c2) * (c3 * c3) != (c3 * c2) * (c3 * c1).  [1].
+    11 (c3 * c2) * (c3 * c1) != (c1 * c2) * (c3 * c3).  [10].
+    12 (x / y) \ x = y.  [4,3].
+    13 x / (y \ x) = y.  [2,5].
+    14 (x * (y \ y)) \ (y * (z * x)) = z * y.  [7,3].
+    15 x * (y * (z / (x \ x))) = z * (y * x).  [4,7].
+    16 (x * (y \ y)) * z = y * ((z / y) * x).  [4,7].
+    17 (x * (y * z)) / (y * x) = z * (x \ x).  [7,5].
+    18 (x * (y \ z)) * y = z * ((y / y) * x).  [2,9].
+    19 (x * y) \ ((z * y) * x) = (x / x) * z.  [9,3].
+    20 ((x * y) * z) / ((z / z) * x) = z * y.  [9,5].
+    21 (x * (y \ y)) \ (y * z) = (z / x) * y.  [4,14].
+    22 x \ (y * (z * x)) = z * (y / (x \ x)).  [15,3].
+    23 (x * ((y / x) * z)) / y = z * (x \ x).  [16,5].
+    24 x * ((((y / y) * z) / x) * y) = x * ((y / x) * z).  [16,9,16].
+    25 x * (y * (((z / (x \ x)) / y) * u)) = z * (y * ((x / y) * u)).  [16,15,16].
+    26 (x * y) / (z * x) = (z \ y) * (x \ x).  [2,17].
+    27 x * ((y / y) * (z / (y \ x))) = z * y.  [4,18].
+    28 (x * ((y / y) * z)) / y = z * (y \ x).  [18,5].
+    29 (x * y) \ (z * x) = (x / x) * (z / y).  [4,19].
+    30 (((x / y) * z) / x) * y = (x / x) * z.  [16,19,21].
+    31 (x * y) / ((y / y) * z) = y * (z \ x).  [2,20].
+    32 (x / (y / (z \ z))) * z = y \ (z * x).  [4,21].
+    33 (x / y) * (z / (y \ y)) = y \ (z * x).  [4,22].
+    34 ((x / y) \ z) * (y \ y) = (y * z) / x.  [2,23].
+    35 ((x * x) * y) * (x * ((z / x) * (x \ x))) = (z * y) * (x * x).  [26,9,16].
+    36 (x / x) * (y / (x \ z)) = z \ (y * x).  [27,3].
+    37 ((x / x) \ y) * (x \ z) = (z * y) / x.  [2,28].
+    38 (x / (y \ y)) * (z \ y) = y * (z \ x).  [15,28,28].
+    39 (x / x) * ((x / y) \ z) = (z / x) * y.  [2,30].
+    40 ((x / y) * z) / x = ((x / x) * z) / y.  [30,5].
+    41 ((x * y) / z) * (x \ z) = (z / z) * y.  [13,30].
+    42 x / ((y / y) * z) = y * (z \ (x / y)).  [4,31].
+    43 (x / (y / (z \ z))) \ (y \ (z * x)) = z.  [32,3].
+    44 (x / y) \ (y \ (z * x)) = z / (y \ y).  [33,3].
+    45 ((x * y) / z) / (x \ x) = (z / x) \ y.  [34,5].
+    46 (((x / x) * y) / z) * x = (x / z) * y.  [24,3,3].
+    47 (x * (y \ (z * u))) / u = (z / (u \ y)) * (u \ x).  [36,28].
+    48 (x / (y \ y)) \ (y * (z \ x)) = z \ y.  [38,3].
+    49 (x * (y \ z)) / (y \ x) = z / (x \ x).  [38,5].
+    50 x * (y \ (z * (x \ x))) = z * (y \ x).  [5,38].
+    51 (x / (y \ y)) * z = y * ((y / z) \ x).  [12,38].
+    52 (x / y) * (z \ y) = (y / y) * (z \ x).  [13,39].
+    53 ((x / x) * y) / (z \ x) = (z * y) / x.  [13,40].
+    54 x * ((y / (x \ z)) \ (u / x)) = u / (z \ (y * x)).  [36,42].
+    55 (x / ((x * y) / (z \ z))) \ ((x / x) * (z / y)) = z.  [29,43].
+    56 (x / y) \ (y \ z) = (z / x) / (y \ y).  [4,44].
+    57 x \ (((x * y) / z) * u) = (u / x) * ((z / x) \ y).  [45,33].
+    58 (x / y) * ((x / x) \ z) = (z / y) * x.  [2,46].
+    59 (x / (y \ y)) \ (y * z) = (x / z) \ y.  [12,48].
+    60 (x * y) / (z \ z) = (z * y) / (x \ z).  [3,49].
+    61 (x * ((x / y) \ z)) / y = z / (x \ x).  [12,49].
+    62 x \ (y * (z \ z)) = z \ (y * (x \ z)).  [50,3].
+    63 x * ((x / y) \ ((x * z) / u)) = ((u / x) \ z) * y.  [45,51].
+    64 (x / x) * (y \ (z * x)) = z * (y \ x).  [5,52].
+    65 (x * y) * ((z / x) * (u \ x)) = ((u \ z) * y) * x.  [52,9].
+    66 (x * (y \ z)) / y = z / (x \ (y * y)).  [56,37,51,54].
+    67 (x / (y \ z)) * z = y * ((z / z) \ x).  [13,58].
+    68 ((x / y) * z) / (x \ x) = (x * z) / y.  [12,60].
+    69 (x * ((x / y) \ z)) / (z \ z) = (z * y) / (x \ x).  [59,61].
+    70 (x / y) \ (z * (x \ x)) = x \ (z * y).  [12,62].
+    71 (x * (y \ z)) / (u \ z) = (x / (z \ y)) * (z \ u).  [64,53,47].
+    72 (x / (y \ (x / z))) * (y \ y) = (y * z) / (x \ x).  [69,71].
+    73 (x / (y \ (z * z))) * z = y * (z \ x).  [66,4].
+    74 ((x * x) * y) / z = ((z / x) \ y) * x.  [68,66,57,65,5].
+    75 (x / y) \ ((x / x) * z) = (y / x) * ((x / x) \ z).  [41,70,57].
+    76 (((x * y) / (z \ z)) / x) * ((x / x) \ (z / y)) = z.  [55,75].
+    77 (x / y) * ((y / y) \ z) = y * ((y / (y \ z)) \ x).  [59,73,67,51].
+    78 (((x \ x) / y) \ z) * (y \ (x / z)) = x.  [76,77,63].
+    79 ((x \ x) / y) \ z = x / (y \ (x / z)).  [78,5].
+    80 (x * y) * (z * z) = (z * y) * (z * x).  [35,25,74,79,5,72,15].
+    81 \$F.  [80,11].
+  \end{lstlisting}
+\end{proof}
+
+\subsection{Prover9 proof of Proposition \ref{semipara+paraF}}
+
+\begin{proof}\label{appendix:semipara+paraF}
+  This proves one of the candidate (*) identities follows from semiparamedial and para-F. The proof of the other (*) identity is dual.
+  \begin{lstlisting} 
+    1 x * (y * z) = (z * (x \ x)) * (y * x) # label(non_clause) # label(goal).  [].
+    2 x * (x \ y) = y.  [].
+    3 x \ (x * y) = y.  [].
+    4 (x / y) * y = x.  [].
+    5 (x * y) / y = x.  [].
+    6 (x * x) * (y * z) = (z * x) * (y * x).  [].
+    7 (x * y) * (z * y) = (y * y) * (z * x).  [6].
+    8 (x * y) * (z * z) = (z * y) * (z * x).  [].
+    9 x * (y * z) = (z * x) * (y * (x / x)).  [].
+    10 (x * y) * (z * (y / y)) = y * (z * x).  [9].
+    11 (x * y) * z = ((z \ z) * y) * (z * x).  [].
+    12 ((x \ x) * y) * (x * z) = (z * y) * x.  [11].
+    13 (c3 * (c1 \ c1)) * (c2 * c1) != c1 * (c2 * c3).  [1].
+    14 (x / y) \ x = y.  [4,3].
+    15 ((x \ y) * (x \ y)) * (z * x) = y * (z * (x \ y)).  [2,7].
+    16 ((x \ y) * z) * (x * z) = (z * z) * y.  [2,7].
+    17 (x * y) \ ((y * y) * (z * x)) = z * y.  [7,3].
+    18 (x * x) * ((y / x) * z) = (z * x) * y.  [4,7].
+    19 (x * (y \ z)) * (y * y) = z * (y * x).  [2,8].
+    20 x * (y * (z / z)) = z * (y * (x / z)).  [4,10].
+    21 ((x \ y) * z) * x = ((x \ x) * z) * y.  [2,12].
+    22 ((x \ x) * y) \ ((z * y) * x) = x * z.  [12,3].
+    23 ((x \ y) * (x \ z)) * z = ((x \ z) * (x \ z)) * y.  [2,16].
+    24 (x * y) \ ((y * y) * z) = (z / x) * y.  [4,17].
+    25 ((x \ y) * (x \ y)) * z = y * ((z / x) * (x \ y)).  [4,15].
+    26 ((x \ y) * (x \ z)) * z = z * ((y / x) * (x \ z)).  [23,25].
+    27 (x * (y * z)) / (y * y) = z * (y \ x).  [19,5].
+    28 x * ((((y / (x \ x)) * z) / x) * (x \ x)) = (z * (x \ x)) * y.  [21,18,26].
+    29 ((x \ x) * y) \ (z * x) = x * (z / y).  [4,22].
+    30 (x * y) \ ((z * y) * u) = (((u / y) * z) / x) * y.  [18,24].
+    31 (x * y) / (z * z) = (z \ y) * (z \ x).  [2,27].
+    32 (x / y) * (z \ y) = (y / y) * (z \ x).  [20,27,31,3].
+    33 (((x / y) * z) / (x \ x)) * y = x * z.  [5,29,30].
+    34 ((x * y) / z) * (x \ z) = (z / z) * y.  [3,32].
+    35 (x / x) * ((x / y) \ z) = (z / x) * y.  [14,32].
+    36 (x / (y \ y)) * z = y * ((y / z) \ x).  [2,33].
+    37 (x * (y \ y)) * z = y * ((z / y) * x).  [28,36,34,35].
+    38 \$F.  [13,37,5]. 
+  \end{lstlisting}
+\end{proof}
+
+
+\section{$Q\rdv\nuc(Q)$}
+
+\subsection{Prover9 proof of Theorem \ref{thm:right-inv}}
+\begin{proof}\label{appendix:right-inv}
+  \begin{lstlisting} 
+    1 R(x,y,R(z,u,w)) = R(z,u,R(x,y,w)) # label(non_clause) # label(goal).  [].
+    2 0 * x = x.  [].
+    3 x * 0 = x.  [].
+    4 x * (x \ y) = y.  [].
+    5 x \ (x * y) = y.  [].
+    6 (x / y) * y = x.  [].
+    7 (x * y) / y = x.  [].
+    8 L(x,y,z) = (x * y) \ (x * (y * z)).  [].
+    9 (x * y) \ (x * (y * z)) = L(x,y,z).  [8].
+    10 R(x,y,z) = ((z * x) * y) / (x * y).  [].
+    11 ((x * y) * z) / (y * z) = R(y,z,x).  [10].
+    12 T(x,y) = (x * y) / x.  [].
+    13 (x * y) / x = T(x,y).  [12].
+    14 A(x,y,z) = (x * (y * z)) / ((x * y) * z).  [].
+    15 (x * (y * z)) / ((x * y) * z) = A(x,y,z).  [14].
+    16 C(x,y) = (x * y) / (y * x).  [].
+    17 (x * y) / (y * x) = C(x,y).  [16].
+    18 A(A(x,y,z),u,w) = 0.  [].
+    19 A(x,A(y,z,u),w) = 0.  [].
+    20 R(x,y,0 / z) = 0 / R(x,y,z).  [].
+    21 0 / R(x,y,z) = R(x,y,0 / z).  [20].
+    22 R(c1,c2,R(c3,c4,c5)) != R(c3,c4,R(c1,c2,c5)).  [1].
+    23 R(c3,c4,R(c1,c2,c5)) != R(c1,c2,R(c3,c4,c5)).  [22].
+    24 0 \ x = x.  [4,2].
+    25 x / 0 = x.  [6,3].
+    26 (x / y) \ x = y.  [6,5].
+    27 x / x = 0.  [2,7].
+    28 x / (y \ x) = y.  [4,7].
+    29 L(0,x,y) = y.  [2,9,2,5].
+    30 (x * y) * L(x,y,z) = x * (y * z).  [9,4].
+    31 x \ (y * ((y \ x) * z)) = L(y,y \ x,z).  [4,9].
+    32 L(x,y,y \ z) = (x * y) \ (x * z).  [4,9].
+    33 x \ ((x / y) * (y * z)) = L(x / y,y,z).  [6,9].
+    34 R(x \ y,z,x) = (y * z) / ((x \ y) * z).  [4,11].
+    35 ((x * y) * (y \ z)) / z = R(y,y \ z,x).  [4,11].
+    36 R(x,y,z) * (x * y) = (z * x) * y.  [11,6].
+    37 R(x,y,z / x) = (z * y) / (x * y).  [6,11].
+    38 T(x / y,y) = x / (x / y).  [6,13].
+    39 A(x,y,z) * ((x * y) * z) = x * (y * z).  [15,6].
+    40 ((x \ y) * x) / y = C(x \ y,x).  [4,17].
+    41 x / (y * (x / y)) = C(x / y,y).  [6,17].
+    42 R(x,y,0 / z) * R(x,y,z) = 0.  [21,6].
+    43 R(x,y,0 / z) \ 0 = R(x,y,z).  [21,26].
+    44 (x * (y * z)) / L(x,y,z) = x * y.  [9,28].
+    45 (x \ 0) * x = C(x \ 0,x).  [40,25].
+    46 (C(x \ 0,x) * y) / (x * y) = R(x,y,x \ 0).  [45,11].
+    47 x * (0 / x) = C(x,0 / x).  [26,45,26].
+    48 0 / C(x,0 / x) = C(0 / x,x).  [47,17,6].
+    49 L(x,R(y,z,0 / u),R(y,z,u)) = (x * R(y,z,0 / u)) \ x.  [42,9,3].
+    50 R(x,y,z) \ 0 = R(x,y,z \ 0).  [28,43].
+    51 x * L(y,y \ x,z) = y * ((y \ x) * z).  [4,30].
+    52 (x * (y * z)) \ (x * (y * (z * u))) = L(x,y * z,L(y,z,u)).  [30,9].
+    53 (x * (y * z)) / (y * L(x,y,z)) = R(y,L(x,y,z),x).  [30,11].
+    54 L(x,y,y \ 0) = (x * y) \ x.  [3,32].
+    55 L(x,y,y \ (x \ z)) = (x * y) \ z.  [4,32].
+    56 L(x / y,y,y \ 0) = x \ (x / y).  [6,54].
+    57 x / L(x,y,y \ 0) = x * y.  [54,28].
+    58 C(x \ 0,x) \ (x \ 0) = L(x \ 0,x,x \ 0).  [45,54].
+    59 C(x,0 / x) \ x = L(x,0 / x,x).  [47,54,26].
+    60 ((x * y) * z) / ((R(y,z,x) * y) * z) = A(R(y,z,x),y,z).  [36,15].
+    61 (R(x,y,z) * ((x * y) * u)) / (((z * x) * y) * u) = A(R(x,y,z),x * y,u).  [36,15].
+    62 R(x,y,0 / x) = y / (x * y).  [2,37].
+    63 R(x,y,(z / y) / x) = z / (x * y).  [6,37].
+    64 R(x,y,z / x) \ (z * y) = x * y.  [37,26].
+    65 R(x,x \ y,0 / x) = (x \ y) / y.  [4,62].
+    66 R(x,y,0 / x) \ y = x * y.  [62,26].
+    67 (0 / x) / C(x,0 / x) = R(x,0 / x,0 / x).  [47,62].
+    68 R(x,y,x) = (y / (x * y)) \ 0.  [62,50,26].
+    69 x / L(x / (y * z),y,z) = (x / (y * z)) * y.  [6,44].
+    70 (x * ((y * z) * u)) / L(x,R(z,u,y),z * u) = x * R(z,u,y).  [36,44].
+    71 R(C(x,0 / x),L(x,0 / x,x),C(0 / x,x)) = L(x,0 / x,x) / x.  [59,65,48,59].
+    72 (0 / x) * (x * y) = L(0 / x,x,y).  [33,24].
+    73 L(0 / x,x,x \ y) = (0 / x) * y.  [4,72].
+    74 (0 / x) \ L(0 / x,x,y) = x * y.  [72,5].
+    75 C(0 / x,x) \ L(C(0 / x,x),C(x,0 / x),y) = C(x,0 / x) * y.  [41,74,47,48,47,47].
+    76 (x * y) * (y \ 0) = R(y,y \ 0,x).  [35,25].
+    77 R(x,x \ 0,y / x) = y * (x \ 0).  [6,76].
+    78 C(x,0 / x) * x = R(0 / x,x,x).  [47,76,26,26].
+    79 R(x,x \ 0,x) = (x \ 0) \ 0.  [68,76,76,4,25].
+    80 (x \ 0) * R(0 / x,x,x) = 0.  [79,42,26,26].
+    81 R(0 / x,x,x) = (x \ 0) \ 0.  [80,5].
+    82 C(x,0 / x) * x = (x \ 0) \ 0.  [78,81].
+    83 A(x / y,y,z) * (x * z) = (x / y) * (y * z).  [6,39].
+    84 (A(x,y,z) * u) * w = A(x,y,z) * (u * w).  [18,39,2].
+    85 (x * A(y,z,u)) * w = x * (A(y,z,u) * w).  [19,39,2].
+    86 L(A(x,y,z),u,w) = w.  [84,5,9].
+    87 (A(x,y,z) * (u * w)) / w = A(x,y,z) * u.  [84,7].
+    88 L(A(x,y,z) * u,w,v5) = L(u,w,v5).  [84,9,84,52,86].
+    89 R(x,y,A(z,u,w)) = A(z,u,w).  [84,11,7].
+    90 (x * (A(y,z,u) * (w * v5))) / ((x * (A(y,z,u) * w)) * v5) = A(x,A(y,z,u) * w,v5).  [84,15].
+    91 R(x,y,0 / A(z,u,w)) = 0 / A(z,u,w).  [89,21].
+    92 L(A(x,y,z) \ u,w,v5) = L(u,w,v5).  [4,88].
+    93 ((0 / A(x,y,z)) * u) * w = (0 / A(x,y,z)) * (u * w).  [91,36].
+    94 (0 / A(x,y,z)) \ u = A(x,y,z) * u.  [91,66].
+    95 A(x,y,z) \ 0 = 0 / A(x,y,z).  [91,79,26].
+    96 C(0 / A(x,y,z),A(x,y,z)) = 0.  [95,40,6,27,95].
+    97 x / L(x,A(y,z,u),0 / A(y,z,u)) = x * A(y,z,u).  [95,57].
+    98 L(x / A(y,z,u),A(y,z,u),0 / A(y,z,u)) = x \ (x / A(y,z,u)).  [95,56].
+    99 L(0 / A(x,y,z),u,w) = w.  [95,92,29].
+    100 ((0 / A(x,y,z)) * u) \ w = u \ (A(x,y,z) * w).  [99,55,94].
+    101 (0 / A(x,y,z)) * u = A(x,y,z) \ u.  [99,73].
+    102 (A(x,y,z) \ u) \ w = u \ (A(x,y,z) * w).  [100,101].
+    103 A(x,y,z) \ (u * w) = (A(x,y,z) \ u) * w.  [93,101,101].
+    104 L(x,0 / A(y,z,u),A(y,z,u) * (x \ w)) = (x * (0 / A(y,z,u))) \ w.  [94,55].
+    105 ((x * (0 / A(y,z,u))) * w) / (A(y,z,u) \ w) = R(0 / A(y,z,u),w,x).  [101,11].
+    106 L(x,A(y,z,u),w) = w.  [85,5,9].
+    107 R(A(x,y,z),u,w) = w.  [85,11,7].
+    108 A(x * A(y,z,u),w,v5) = A(x,A(y,z,u) * w,v5).  [85,15,85,90].
+    109 x \ (x / A(y,z,u)) = 0 / A(y,z,u).  [98,106].
+    110 x / (0 / A(y,z,u)) = x * A(y,z,u).  [97,106].
+    111 (x * A(y,z,u)) \ w = A(y,z,u) \ (x \ w).  [106,55].
+    112 (x / A(y,z,u)) \ (x * w) = A(y,z,u) * w.  [107,64].
+    113 x * (0 / A(y,z,u)) = x / A(y,z,u).  [109,4].
+    114 L(x,0 / A(y,z,u),w) = w.  [109,31,101,112,4,109].
+    115 (x / A(y,z,u)) * w = x * (A(y,z,u) \ w).  [109,51,114,109,101].
+    116 R(0 / A(x,y,z),u,w) = w.  [105,113,115,7].
+    117 (x / A(y,z,u)) \ w = A(y,z,u) * (x \ w).  [104,114,113].
+    118 x / (A(y,z,u) \ w) = (x / w) * A(y,z,u).  [116,63,110,115,2].
+    119 (A(x,y,z) * u) / w = A(x,y,z) * (u / w).  [6,87].
+    120 A(x,y,z) * R(u,w,v5) = R(u,w,A(x,y,z) * v5).  [87,37,84,119,11].
+    121 L(x / A(y,z,u),w,v5) = L(x,A(y,z,u) \ w,v5).  [115,9,115,103,9].
+    122 A(x / A(y,z,u),w,v5) = A(x,A(y,z,u) \ w,v5).  [115,15,103,115,15].
+    123 A(x,y,z) * (0 / u) = A(x,y,z) / u.  [3,119].
+    124 A(x,y,z) * ((0 / u) * w) = (A(x,y,z) / u) * w.  [123,30,86].
+    125 L(A(x,y,z) / u,w,v5) = L(0 / u,w,v5).  [123,88].
+    126 R(C(x,0 / x),x,R(x,0 / x,0 / x)) = x \ 0.  [67,63,82,28].
+    127 L((x / y) * (y * z),u,w) = L(x * z,u,w).  [83,88].
+    128 (A(R(x,0 / x,0 / x),C(x,0 / x),y) / x) * y = R(x,0 / x,0 / x) * (C(x,0 / x) * y).  [67,83,124,67].
+    129 L(L(0 / x,x,y),z,u) = L(y,z,u).  [2,127,72].
+    130 L(x \ 0,y,z) = L(0 / x,y,z).  [54,129,6,24].
+    131 C(x \ 0,x) \ (x \ 0) = 0 / x.  [58,130,73,3].
+    132 R(C(x,0 / x),x,R(x,0 / x,0 / (0 / x))) = x.  [126,21,28,21].
+    133 R(R(x,y,z) * x,y,(z * x) / (R(x,y,z) * x)) = A(R(x,y,z),x,y).  [60,37].
+    134 A(R(x,0 / x,0 / x),C(x,0 / x),y) / x = (R(x,0 / x,0 / x) * (C(x,0 / x) * y)) / y.  [128,7].
+    135 ((x \ 0) \ 0) / x = C(x,0 / x).  [82,7].
+    136 (x * ((y \ 0) \ 0)) / (C(y,0 / y) * L(x,C(y,0 / y),y)) = R(C(y,0 / y),L(x,C(y,0 / y),y),x).  [82,53].
+    137 L(x,0 / x,x) = 0 / (0 / x).  [26,131,26,59].
+    138 R(C(x,0 / x),0 / (0 / x),C(0 / x,x)) = (0 / (0 / x)) / x.  [71,137,137].
+    139 C(x,0 / x) * (0 / (0 / x)) = x.  [137,30,47,6,3].
+    140 C(x,0 / x) * T(0 / x,x) = x.  [38,139].
+    141 (x * y) / (C(y,0 / y) * L(x,C(y,0 / y),0 / (0 / y))) = R(C(y,0 / y),L(x,C(y,0 / y),0 / (0 / y)),x).  [139,53].
+    142 (x * y) / (C(y,0 / y) * L(x,C(y,0 / y),T(0 / y,y))) = R(C(y,0 / y),L(x,C(y,0 / y),0 / (0 / y)),x).  [38,141].
+    143 ((x * y) * z) / (x * (y * z)) = 0 / A(x,y,z).  [39,46,95,96,2,95,91].
+    144 A(x,y,z) \ x = R(y,z,x).  [143,69,121,29,11,143,115,2].
+    145 x / R(y,z,x) = A(x,y,z).  [144,28].
+    146 R(x,y,z) / z = 0 / A(z,x,y).  [144,65,91,144].
+    147 (x * y) / (R(z,u,x) * y) = A(x,z,u).  [144,34,89,144].
+    148 A(R(x,y,z),x,y) = A(z,x,y).  [133,144,147,18,147,24].
+    149 R(x,y,z \ 0) = z \ A(z,x,y).  [145,56,50,86,145].
+    150 x * R(y,z,x \ 0) = A(x,y,z).  [145,77,50,89,50].
+    151 (R(x,y,z) / z) * u = A(z,x,y) \ u.  [146,73,106].
+    152 L(x,R(y,z,u) / u,w) = w.  [146,114].
+    153 L(R(x,y,z) / z,u,w) = w.  [146,125,121,86].
+    154 L(x,C(y,0 / y),z) = z.  [79,152,135].
+    155 R(C(x,0 / x),0 / (0 / x),y) = y.  [142,154,140,7,154].
+    156 R(C(x,0 / x),x,y) = y.  [136,154,82,7,154].
+    157 C(0 / x,x) \ y = C(x,0 / x) * y.  [75,154].
+    158 (0 / (0 / x)) / x = C(0 / x,x).  [138,155].
+    159 R(x,0 / x,0 / (0 / x)) = x.  [132,156].
+    160 R(x,0 / x,0 / x) = x \ 0.  [126,156].
+    161 A(x \ 0,C(x,0 / x),y) / x = ((x \ 0) * (C(x,0 / x) * y)) / y.  [134,160,160].
+    162 (x * (C(y,0 / y) * z)) / z = x * C(y,0 / y).  [154,44].
+    163 R(C(x,0 / x),y,z) = z.  [154,53,7,154].
+    164 A(x \ 0,C(x,0 / x),y) / x = (x \ 0) * C(x,0 / x).  [161,162].
+    165 A(x,C(y,0 / y),z) = 0.  [163,145,27].
+    166 (x \ 0) * C(x,0 / x) = 0 / x.  [164,165].
+    167 L(C(x,0 / x),y,z) = z.  [79,153,135].
+    168 A(x,y,z) \ R(u,w,v5) = R(u,w,A(x,y,z) \ v5).  [153,70,151,103,103,11,151].
+    169 (C(x,0 / x) * y) * z = C(x,0 / x) * (y * z).  [167,30].
+    170 A(0 / (0 / x),x,0 / x) = C(0 / x,x).  [159,145,158].
+    171 A(x,x,0 / x) = C(0 / x,x).  [159,148,170].
+    172 A(x,A(y,z,u) * w,v5) = A(x,w,v5).  [150,85,108,111,120,4,150].
+    173 A(x,A(y,z,u) \ w,v5) = A(x,w,v5).  [150,115,122,117,168,5,150].
+    174 A(x * A(y,z,u),w,v5) = A(x,w,v5).  [108,172].
+    175 (x \ 0) * (C(x,0 / x) * y) = (0 / x) * y.  [166,30,154].
+    176 A(x \ 0,C(x,0 / x) * y,z) = A(0 / x,y,z).  [166,61,163,169,175,15,163].
+    177 A(x,C(y,0 / y) * z,u) = A(x,z,u).  [171,173,157].
+    178 A(x \ 0,y,z) = A(0 / x,y,z).  [176,177].
+    179 A(R(x,y,z \ 0),u,w) = A(R(x,y,0 / z),u,w).  [21,178,50].
+    180 A(x \ A(y,z,u),w,v5) = A(0 / x,w,v5).  [102,178,3,118,174].
+    181 A(0 / (A(x,y,z) / u),w,v5) = A(u,w,v5).  [26,180].
+    182 A(R(x,y,0 / (A(z,u,w) / v5)),v6,v7) = A(R(x,y,v5),v6,v7).  [49,180,86,120,123,21].
+    183 A(R(x,y,0 / z),u,w) = A(0 / z,u,w).  [149,180,179].
+    184 A(R(x,y,z),u,w) = A(z,u,w).  [182,183,181].
+    185 R(x,y,R(z,u,w)) = R(z,u,R(x,y,w)) # label(non_clause) # label(goal).  [184,144,168,144].
+    186 \$F.  [185,23].
+  \end{lstlisting}
+\end{proof}
+
+
+%%%%%%%%%%%%% COMPILATION SEQUENCE
+%%%%%%%%%%%%%
+%%%%%%%%%%%%% pdflatex Template.tex
+%%%%%%%%%%%%% bibtex Template
+%%%%%%%%%%%%% pdflatex Template.tex
+%%%%%%%%%%%%% pdflatex Template.tex
+
+\end{document}

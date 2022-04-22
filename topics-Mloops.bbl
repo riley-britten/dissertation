@@ -1,0 +1,205 @@
+\begin{thebibliography}{10}
+
+\bibitem{Belousov}
+V.~D. Belousov.
+\newblock {\em Foundations of the theory of quasigroups and loops}.
+\newblock Nauka, 1967.
+\newblock in Russian.
+
+\bibitem{Bruck}
+R.~H. Bruck.
+\newblock {\em Survey of binary systems}.
+\newblock Springer Verlag, 1971.
+
+\bibitem{Pf}
+H.~O. Pflugfelder.
+\newblock {\em Quasigroups and loops: introduction}.
+\newblock Heldermann Verlag, 1990.
+
+\bibitem{Shcherbacov}
+V.~Shcherbacov.
+\newblock {\em Elements of quasigroup theory and applications}.
+\newblock Monographs and Research Notes in Mathematics. CRC Press, 2017.
+
+\bibitem{Smith}
+J.D.H. Smith.
+\newblock {\em An introduction to quasigroups and their representations}.
+\newblock Studies in Advanced Mathematics. Chapman \& Hall/CRC, 2007.
+
+\bibitem{Bel}
+V.~D. Belousov.
+\newblock Foundations of the theory of quasigroups and loops.
+\newblock {\em Izdat. Nauka}, 1967.
+
+\bibitem{PACC}
+M.~Kinyon and K.~Kunen.
+\newblock Power-associative, conjugacy closed loops.
+\newblock {\em J. Algebra}, 304:679--711, 2006.
+
+\bibitem{SUF}
+M.~Kinyon, K.~Kunen, and J.D. Phillips.
+\newblock Loops with universal and semi-universal flexibility.
+\newblock {\em preprint}, 2021.
+
+\bibitem{Moufang}
+R.~Moufang.
+\newblock Zur struktur von alternativkörpern.
+\newblock {\em Mathematische Annalen}, 110:416--430, 1935.
+
+\bibitem{LG}
+A.~Grishkov and A.~V. Zavarnitsine.
+\newblock Lagrange's theorem for moufang loops.
+\newblock {\em Math. Proc. Camb. Phil. Soc.}, 139(01):41--57, 2005.
+
+\bibitem{KepkaKinyonPhillips}
+T.~Kepka, M.~Kinyon, and J.D. Phillips.
+\newblock The structure of $f$-quasigroups.
+\newblock {\em J. Algebra}, 317:435--461, 2007.
+
+\bibitem{EPG}
+G.~Aalipour, S.~Akbari, P.~J. Cameron, R.~Nikandish, and F.~Shaveisi.
+\newblock On the structure of the power graph and the enhanced power graph of a
+  group.
+\newblock {\em Electron. J. Comb.}, 24(3), 2017.
+
+\bibitem{PG}
+P.~J. Cameron and S.~Ghosh.
+\newblock The power graph of a finite group.
+\newblock {\em Discrete Mathematics}, 311(13), 2011.
+
+\bibitem{PGII}
+P.~J. Cameron.
+\newblock The power graph of a finite group, ii.
+\newblock {\em Discrete Mathematics}, 311(6), 2011.
+
+\bibitem{Tor}
+P.~J. Cameron, H.~Guerra, and S.~Jurina.
+\newblock The power graph of a torsion-free group.
+\newblock {\em J. Algebr. Comb.}, 49(1):83--98, 2019.
+
+\bibitem{Feng}
+M.~Feng, X.~Ma, and K.~Wang.
+\newblock The structure and metric dimension of the power graph of a finite
+  group.
+\newblock {\em Eur. J. Comb.}, 43:82--97, 2015.
+
+\bibitem{Mog}
+A.~R. Moghaddanfar, S.~Rahbariyan, and W.~J. Shi.
+\newblock Certain properties of the power graph associated with a finite group.
+\newblock {\em Filomat}, 26(6), 2014.
+
+\bibitem{Panda}
+R.~P. Panda and K.~V. Krishna.
+\newblock On connectedness of power graphs of finite groups.
+\newblock {\em J. Algebr. Appl.}, 17(10), 2018.
+
+\bibitem{Brown}
+K.~Brown.
+\newblock {\em Cohomology of groups}.
+\newblock Springer-Verlag, 1982.
+
+\bibitem{Cartan}
+H.~Cartan and S.~Eilenberg.
+\newblock {\em Homological algebra}.
+\newblock Princeton University Press, 1999.
+
+\bibitem{genQuat}
+K.~Conrad.
+\newblock Generalized quaternions.
+
+\bibitem{2-loops}
+G.~Glauberman and C.~R.~B. Wright.
+\newblock Nilpotence of finite moufang 2-loops.
+\newblock {\em Journal of Algebra}, 8(4), 1968.
+
+\bibitem{Glau}
+G.~Glauberman.
+\newblock On loops of odd order.
+\newblock {\em Journal of Algebra}, 1:374--396, 1964.
+
+\bibitem{Chein}
+O.~Chein.
+\newblock Moufang loops of small order.
+\newblock {\em Memoirs of the AMS}, 13(197), 1978.
+
+\bibitem{Burnside}
+W.~Burnside.
+\newblock {\em Theory of groups of finite order}.
+\newblock Dover Publ., 1955.
+\newblock reprint.
+
+\bibitem{64and81}
+G.~P. Nagy and Petr {Vojt\v{e}chovsk\'{y}}.
+\newblock The moufang loops of order 64 and 81.
+\newblock {\em Journal of Symbolic Computation}, 42, 2007.
+
+\bibitem{Goodaire}
+E.~G. Goodaire, S.~May, and M.~Raman.
+\newblock {\em The Moufang loops of order less than 64}.
+\newblock Nova Science Publishers, Inc., 1999.
+
+\bibitem{Ivy}
+I.~Chakrabarty, S.~Ghosh, and M.K. Sen.
+\newblock Undirected power graphs of semigroups.
+\newblock {\em Semigroup Forum}, 78:410--426, 2009.
+
+\bibitem{SP}
+V.A. Shcherbacov and D.I. Pushkashku.
+\newblock On the structure of finite paramedial quasigroups.
+\newblock {\em Comment. Math. Univ. Carolin.}, 51:357--370, 2010.
+
+\bibitem{BK-isotopes}
+M.~Barnes and M.~Kinyon.
+\newblock Quasigroups isotopic to commutative moufang loops.
+\newblock {\em preprint}, 2021.
+
+\bibitem{Prover9}
+W.~McCune.
+\newblock Prover9.
+\newblock software, 2009.
+
+\bibitem{FG}
+T.~Kepka, M.~K. Kinyon, and J.~D. Phillips.
+\newblock F-quasigroups isotopic to groups.
+\newblock {\em preprint}, 2006.
+
+\bibitem{univAlg}
+S.~Burris and H.~P. Sankappanavar.
+\newblock A course in universal algebra.
+\newblock 1981.
+
+\bibitem{ComTheory}
+D.~Stanovsky and P.~{Vojt\v{e}chovsk\'{y}}.
+\newblock Commutator theory for loops.
+\newblock {\em J. Algebra}, 399:290--322, 2014.
+
+\bibitem{BK-inner}
+M.~Barnes and M.~Kinyon.
+\newblock Inner mapping group result.
+\newblock {\em preprint}, 2021.
+
+\bibitem{DiaCC}
+M.~Kinyon, K.~Kunen, and J.D. Phillips.
+\newblock Diassociativity in conjugacy closed loops.
+\newblock {\em Com. Algebra}, 32:767 -- 786, 2004.
+
+\bibitem{LOOPS}
+G.~Nagy and P.~{Vojt\v{e}chovks\`{y}}.
+\newblock Gap loops package.
+
+\bibitem{incidence}
+M.~Kinyon, K.~Pula, and P.~{Vojt\v{e}chovks\`{y}}.
+\newblock Incidence properties of cosets.
+\newblock {\em J. Combinatorial Designs}, 20:161--197, 2012.
+
+\bibitem{Zahirovic}
+S.~{Zahirovi\'{c}}, I.~{Bo\v{s}njak}, and R.~{Madara\'{a}sz}.
+\newblock A study of enhanced power graphs of finite groups.
+\newblock {\em J. Algebra Appl.}, 2020.
+
+\bibitem{trimedial}
+M.~Kinyon and J.D. Phillips.
+\newblock Axioms for trimedial quasigroups.
+\newblock {\em Comment. Math. Univ. Carolin.}, 2003.
+
+\end{thebibliography}
