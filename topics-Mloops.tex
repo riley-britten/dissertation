@@ -2712,45 +2712,34 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
   But by assumption $L_{c_2, c_3}(c_1)\notin S$ and since $Q$ is automorphic and $x^2\in S$ we have $L_{c_2, c_3}(c_1^2)\in S$. Thus $L_{c_2, c_3}(c_1)\cdot L_{c_2, c_3}(c_1^2) = L_{c_2, c_3}(c_1^3)\notin S$, contradicting the last line above. Hence, a contradiction and the proof is complete.
 \end{proof}
 
+We freely use commutativity and diassociativity in what follows, especially in calculations of the form $(xy)^2 = x^2 y^2$.
+
+\begin{lem}\label{lem-comMoufang}
+  Let $Q$ be a commutative Moufang loop, $S < Q$, and assume there exists $a,b\in Q\setminus S$ such that $a^2,b^2\in S$ and $Sa\cap Sb=\emptyset$. The following are equivalent:
+  \begin{enumerate}
+    \item $Q = S\cup Sa\cup Sb$, 
+    \item For all $x\in Q$, if $x\not\in S$, then $Sx\cap (Sa\cup Sb)\neq \emptyset$
+  \end{enumerate}
+  When these equivalent conditions occur, $S$ is normal in $Q$.
+\end{lem}
+
+\begin{proof}
+  Assume (1) holds and let $x\in Q\setminus S$ be given. Then $Sx\cap S = \emptyset$. By (1), $Sx\cap (Sa\cup Sb)\neq \emptyset$. Thus (2) holds.
+  
+  Conversely, assume (2) holds and let $x\in Q\setminus S$ be given. Then there exists $x'\in Sx\cap (Sa\cup Sb)$. Thus $x'x^{-1}\in S$ and $x'a^{-1}\in S$ or $x'b^{-1}\in S$.
+  
+  If $x'a^{-1}\in S$, then $(x')^2 a^{-2} = (x'a^{-1})^2\in S$, and so $(x')^2\in S$ since $a^2\in S$. Similarly, if $x'a^{-1}\in S$, then $(x')^2\in S$ since $b^2\in S$. In either case, we shown that $(x')^2\in S$.
+  
+  Now since $x'x^{-1}\in S$, we have $(x')^2 x^{-2} = (x'x^{-1})^2\in S$, and thus $x^{-2}\in S$ since $(x')^2\in S$. We have shown that for all $x\in Q\setminus S$, we have $x^2\in S$. On the other hand, this is also true for all $x\in S$. Therefore for all $x\in Q$, $x^2\in S$. By Lemma \ref{lem-squaresNormal} $S$ is a normal subloop of $Q$ and hence the cosets of $S$ partition $Q$. Since there are no cosets disjoint from $S$, $Sa$ and $Sb$, we must have $S\cup Sa\cup Sb = Q$. Therefore (1) holds and we have also established the additional assertion.
+\end{proof}
+
 \begin{prp}
-  Let $Q$ be a commutative Moufang loop, $S\leq Q$ and suppose that there exist $c_1, c_2\in Q$ such that 
-  \begin{align*}
-    c_1, c_2&\notin S,\\
-    c_1^2, c_2^2 &\in S,\\
-    Sc_1\cap Sc_2 &= \emptyset\text{, and}\\
-    S\cup Sc_1\cup Sc_2 &\subsetneq Q.
-  \end{align*}
-  Then there exists $c_3\in Q$ such that $S\cap Sc_3 = Sc_1\cap Sc_3 = Sc_2\cap Sc_3 = \emptyset$.
+  Let $Q$ be a commutative Moufang loop, $S < Q$, and assume there exists $a,b\in Q\setminus S$ such that $a^2,b^2\in S$, $Sa\cap Sb=\emptyset$ and $S\cup Sa\cup Sb \subsetneq Q$. Then there exists $c\in Q$ such that $Sc\cap S = Sc\cap Sa = Sc\cap Sb = \emptyset$.
 \end{prp}
 
 \begin{proof}
-  Assume toward a contradiction that there is no such $c_3\in Q$. Then for all $x\in Q\setminus S$ there exists $f(x)$ such that $f(x)\in Sx$ and $f(x)\in Sc_1\cup Sc_2$. Note that by \cite{DiaCC} lemma 3.6 we have that for all $x\in Q$, $\forall y, z\in Q$, $(x\in S\wedge xy^{-1}\cdot z\in S)$ iff $(x\in S\wedge xz^{-1}\cdot y\in S)$. So in particular
-  \begin{alignat*}{2}
-    ((x\in S)\wedge (xy^{-1}\cdot z\in S))&\implies xz^{-1}\cdot y\in S &&\\
-    ((x\in S)\wedge (xy\in S))&\implies xy^{-1}\in S &&\text{ substituting $1\mapsfrom z$}\\
-    ((x\in S)\wedge (y\cdot xx\in S))&\implies x\cdot (xy)^{-1}\in S &&\text{ substituting $y\mapsfrom xy$}\\
-    ((x\in S)\wedge (y\cdot xx\in S))&\implies y^{-1}\in S &&\\
-    ((xy\in S)\wedge (xy\cdot y^{-1}x\in S))&\implies yy\in S &&\text{ substituting $x\mapsfrom xy$, $y\mapsfrom (yy)^{-1}$}\\
-    ((xy\in S)\wedge (xx\in S))&\implies yy\in S &&\text{ since $Q$ is commutative and diassociative}
-  \end{alignat*}
-
-  But by assumption we have that $x\notin S\implies x^{-1}f(x)\in S$. By the above we have $(x^{-1}f(x)\in S\wedge f(x)^2\in S)\implies x^{-2}\in S$. Thus
-  \begin{alignat*}{2}
-    ((x\notin S)\wedge (f(x)^2\in S))&\implies x^{-2}\in S &&\text{ equivalently,}\\
-    (x\in S)\vee (f(x)^2\notin S) &\vee (x^{-2}\in S) &&
-  \end{alignat*}
-  Call this last line $\dagger$. Note that if $xc_1^{-1}\in S$, then $(x c_1^{-1})^2\cdot c_1^2 = x^2\in S$ since $c_1^2\in S$ and $Q$ is commutative and diassociative. So $xc_1^{-1}\in S\implies x^2\in S$. Equivalently, $x^2\notin S\vee xc_1^{-1}\in S$ and in particular $f(x)c_1^{-1}\notin S\vee f(x)^2\in S$. But by our choice of $f(x)$ we have that $(f(x)x^{-1}, f(x)c_1^{-1}\in S)\vee f(x)c_2^{-1}\in S\vee x\in S$. So
-  \begin{alignat*}{2}
-    (f(x)^2\in S)&\vee (x\in S)\vee (f(x)c_2^{-1}\in S) &&\\
-    (f(x)^2\in S)&\vee (x\in S)\vee (c_2f(x)\in S) &&\text{ since $c_2^2\in S$}\\
-    (x^{-2}\in S)&\vee (c_2f(x)\in S)\vee (x\in S) &&\text{ by $\dagger$}\\
-    (x\in S)&\vee (x^2\in S)\vee (f(x)^2\in S) &&\text{ since $c_2^2\in S$}\\
-    (x\in S)&\vee (x^{-2}\in S) \vee (x^2\in S) &&\text{ by (*)}\\
-    (x\in S)&\vee (x^2\in S) &&
-  \end{alignat*}
-  But if $x\in S$, then $x^2\in S$ since $S$ is a subloop. So by lemma \ref{lem-squaresNormal} we have that $S\unlhd Q$. But the cosets of a normal subloop partition $Q$, so the proof is complete.
+  If no such $c$ exists, then for all $x\in Q$, $Sx\cap S \neq \emptyset$ or $Sx\cap Sa \neq \emptyset$ or $Sx\cap Sb\neq \emptyset$. Note that $Sx\cap S\neq\emptyset$ if and only if $x\in S$. Thus for all $x\in Q$, if $x\not\in S$, then $Sx\cap Sa\neq\emptyset$ or $Sx\cap Sb\neq\emptyset$. Equivalently, for all $x\in Q$, if $x\not\in S$, then $Sx\cap (Sa\cup Sb)\neq \emptyset$. By Lemma \ref{lem-comMoufang}, $Q = S\cup Sa\cup Sb$, contradicting our assumption.
 \end{proof}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{An Equivalence Relation}

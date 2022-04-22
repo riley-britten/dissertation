@@ -52,21 +52,21 @@
 \contentsline {subsection}{\numberline {5.2.2}An iterative approach}{73}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}An Equivalence Relation}{80}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Orbits of $\text {Mlt}_L(Q; S)$}{82}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Universally and semi-universally flexible loops}{87}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Introduction}{87}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Basic examples}{87}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Central extensions of Moufang loops}{88}{section.6.3}%
-\contentsline {section}{\numberline {6.4}An SUF loop which is not middle Bol}{90}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Future directions of research}{92}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Power graphs}{92}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Para-F quasigroups}{92}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Solvability for loops}{93}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Cosets in Moufang loops}{93}{section.7.4}%
-\contentsline {section}{\numberline {7.5}SUF loops}{93}{section.7.5}%
-\contentsline {chapter}{\numberline {A}Automated proofs}{99}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Notation}{99}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Para-F}{99}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}Prover9 proof of Proposition \ref {can1}}{99}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}Prover9 proof of Proposition \ref {semipara+paraF}}{107}{subsection.A.2.2}%
-\contentsline {section}{\numberline {A.3}$Q/\text {Nuc}(Q)$}{109}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Prover9 proof of Theorem \ref {thm:right-inv}}{109}{subsection.A.3.1}%
+\contentsline {chapter}{\numberline {6}Universally and semi-universally flexible loops}{86}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{86}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Basic examples}{86}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Central extensions of Moufang loops}{87}{section.6.3}%
+\contentsline {section}{\numberline {6.4}An SUF loop which is not middle Bol}{89}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Future directions of research}{91}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Power graphs}{91}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Para-F quasigroups}{91}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Solvability for loops}{92}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Cosets in Moufang loops}{92}{section.7.4}%
+\contentsline {section}{\numberline {7.5}SUF loops}{92}{section.7.5}%
+\contentsline {chapter}{\numberline {A}Automated proofs}{98}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Notation}{98}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Para-F}{98}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}Prover9 proof of Proposition \ref {can1}}{98}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}Prover9 proof of Proposition \ref {semipara+paraF}}{106}{subsection.A.2.2}%
+\contentsline {section}{\numberline {A.3}$Q/\text {Nuc}(Q)$}{108}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Prover9 proof of Theorem \ref {thm:right-inv}}{108}{subsection.A.3.1}%
