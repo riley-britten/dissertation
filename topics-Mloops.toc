@@ -60,10 +60,11 @@
 \contentsline {section}{\numberline {6.4}A UF loop which is not middle Bol}{92}{section.6.4}%
 \contentsline {chapter}{\numberline {7}Future directions of research}{93}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Power graphs}{93}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Para-F quasigroups}{93}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Solvability for loops}{94}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Cosets in Moufang loops}{94}{section.7.4}%
-\contentsline {section}{\numberline {7.5}SUF loops}{95}{section.7.5}%
+\contentsline {section}{\numberline {7.2}Future directions of research}{93}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Para-F quasigroups}{93}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Solvability for loops}{94}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Cosets in Moufang loops}{94}{section.7.5}%
+\contentsline {section}{\numberline {7.6}SUF loops}{95}{section.7.6}%
 \contentsline {chapter}{\numberline {A}Automated proofs}{100}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Notation}{100}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Para-F}{100}{section.A.2}%
