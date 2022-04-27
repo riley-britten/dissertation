@@ -2908,8 +2908,8 @@ It has been shown that Lagrange's Theorem holds in Moufang loops \cite{LG}. Howe
   classification of finite simple groups. The proof of Lagrange's Theorem for groups is much
   simpler because it uses the fact that cosets of a subgroup are a uniform partition of the group.
   In general, the cosets of a subloop of a Moufang loop need not partition the loop. However, based
-  on extensive computational evidence (all Moufang loops of orders $\leq 64$, $81$, and $243$
-  checked \cite{LOOPS}) we make the following conjecture:
+  on extensive computational evidence (all Moufang loops of orders $\leq 64$, $81$, and $243$ along
+  with the Paige loop of order 120 checked \cite{LOOPS}) we make the following conjecture:
 
 \begin{cnj}
   Let $M$ be a Moufang loop, $S \leq M$ and $\mathcal{S}$ the family of all left cosets of $S$.
@@ -3349,7 +3349,7 @@ The orbits of $\mlt_L(Q; S)$ partition $Q$ so we would need to show that the ord
   $\mlt_L(Q; S)$ are multiples of the order of $S$. We were not able to prove this result, but we
   were able to show that if it holds in simple Moufang loops $M$, then it holds in all Moufang loops.
   Additionally, we were able to show that the order of orbits of $\mlt_L(Q; S)$ are multiples of
-  $\frac{|\mlt_L(Q; S)}{\inn_L(Q)}$.
+  $\frac{|\mlt_L(Q; S)|}{\inn_L(Q)}$.
 
 \begin{dfn}
   Let $S\ldv Q$ be the set of orbits of $\mlt_L(Q; S)$ on the set $Q$.
@@ -3424,6 +3424,28 @@ Informally, for fixed $x\in Q$ this Markov chain represents applying $R_x$ to an
   Note that $|S|$ fails to divide $|X|$ iff every representation of $X$ as a union of cosets contains
     at least $2$ with nontrivial intersection. This passes directly to the quotient loop.
 \end{proof}
+
+The smallest Paige loop does have such a subloop and such an orbit. Using the representation in the
+  GAP LOOPS package let
+\begin{align*}
+  Q &= \text{PaigeLoop(2)}\\
+  S &= \{1, 2, 5, 6, 11, 12, 15, 16, 19, 20, 23, 24\} \leq Q
+\end{align*}
+
+Then
+
+\begin{align*}
+X &= \{25, 29, 37, 39, 89, 91, 97, 99, 61, 63, 69, 71, 40, 38, 90, 92,\\
+  &98, 100, 64, 62, 72, 70, 30, 105, 107, 113, 115, 85, 87, 77, 79, 106,\\
+  &108, 114, 116, 88, 86, 80, 78, 31, 53, 55, 56, 54, 32, 27, 45, 47, 48,\\
+  &46, 28, 26, 110, 112, 118, 120, 84, 82, 76, 74, 109, 111, 117, 119, 81,\\
+  &83, 73, 75, 51, 49, 50, 52, 42, 44, 43, 41, 94, 96, 102, 104, 60, 58,\\
+  &68, 66, 35, 36, 34, 33, 103, 101, 95, 93, 67, 65, 59, 57\}
+\end{align*}
+is an orbit of $\mlt_L(Q; S)$, but $|X| = 96$, which does not divide $|L| = 120$.
+
+Thus our conjecture that the orders orbits of relative left multiplication groups of subloops of Moufang loops always
+  divide the orders of the corresponding loops is false. 
 
 \begin{prp}
  Let $Q$ be a Moufang loop with $S\leq Q$ and $x\in Q$. Then $\frac{|\mlt_L(Q;S)|}{|\inn_L(Q)|}$
