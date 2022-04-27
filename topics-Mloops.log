@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.26)  27 APR 2022 12:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.26)  27 APR 2022 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1322,7 +1322,7 @@ l.3653 \chapter
                {Future directions of research}]
 Chapter 7.
 
-Overfull \hbox (16.50964pt too wide) in paragraph at lines 3709--3710
+Overfull \hbox (16.50964pt too wide) in paragraph at lines 3711--3712
  [][] 
  []
 
@@ -1333,19 +1333,19 @@ Overfull \hbox (16.50964pt too wide) in paragraph at lines 3709--3710
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3731 T
+l.3733 T
         here is also the remaining question of whether SUF and IP implies Mo...
 ] (./topics-Mloops.bbl [95] [96
 
 ] [97] [98]) [99]
 Appendix A.
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 3
-768.
+770.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3768.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3770.
 
  [100
 
@@ -1353,28 +1353,28 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 [103] [104] [105] [106] [107] [108] [109]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 4008.
+(hyperref)                removing `math shift' on input line 4010.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 4008.
+(hyperref)                removing `math shift' on input line 4010.
 
 [110] [111] [112] [113] [114] [115] [116] [117] [118]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4210.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4210.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4212.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4212.
  (./topics-Mloops.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4210.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4210.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4212.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4212.
 
 Package rerunfilecheck Info: File `topics-Mloops.out' has not changed.
-(rerunfilecheck)             Checksum: 1C8D6C5D58B802A7879920284FF53EFB;5090.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4210.
+(rerunfilecheck)             Checksum: 320905801CE3D42292331D3C0656D2FA;5166.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4212.
  ) 
 Here is how much of TeX's memory you used:
- 27301 strings out of 483107
- 524262 string characters out of 5964630
- 913885 words of memory out of 5000000
- 40923 multiletter control sequences out of 15000+600000
+ 27307 strings out of 483107
+ 524348 string characters out of 5964630
+ 913955 words of memory out of 5000000
+ 40926 multiletter control sequences out of 15000+600000
  558216 words of font info for 91 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  60i,16n,67p,418b,2281s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1395,10 +1395,10 @@ ive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on topics-Mloops.pdf (126 pages, 479194 bytes).
+Output written on topics-Mloops.pdf (126 pages, 479691 bytes).
 PDF statistics:
- 2384 PDF objects out of 2487 (max. 8388607)
- 1939 compressed objects within 20 object streams
- 882 named destinations out of 1000 (max. 500000)
- 597 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2394 PDF objects out of 2487 (max. 8388607)
+ 1949 compressed objects within 20 object streams
+ 885 named destinations out of 1000 (max. 500000)
+ 605 words of extra memory for PDF output out of 10000 (max. 10000000)
 
