@@ -106,6 +106,7 @@ H.~Cartan and S.~Eilenberg.
 \bibitem{genQuat}
 K.~Conrad.
 \newblock Generalized quaternions.
+\newblock {\em preprint}, 2018.
 
 \bibitem{2-loops}
 G.~Glauberman and C.~R.~B. Wright.
@@ -148,6 +149,11 @@ V.A. Shcherbacov and D.I. Pushkashku.
 \newblock On the structure of finite paramedial quasigroups.
 \newblock {\em Comment. Math. Univ. Carolin.}, 51:357--370, 2010.
 
+\bibitem{triabelian}
+T.~Kepka.
+\newblock Structure of triabelian quasigroups.
+\newblock {\em Comment. Math. Univ. Carolinae}, 17:229--240, 1976.
+
 \bibitem{BK-isotopes}
 M.~Barnes and M.~Kinyon.
 \newblock Quasigroups isotopic to commutative moufang loops.
@@ -155,8 +161,8 @@ M.~Barnes and M.~Kinyon.
 
 \bibitem{Prover9}
 W.~McCune.
-\newblock Prover9.
-\newblock software, 2009.
+\newblock Prover9 and mace4, 2005--2010.
+\newblock \url{http://www.cs.unm.edu/~mccune/prover9}.
 
 \bibitem{FG}
 T.~Kepka, M.~K. Kinyon, and J.~D. Phillips.
@@ -165,8 +171,8 @@ T.~Kepka, M.~K. Kinyon, and J.~D. Phillips.
 
 \bibitem{univAlg}
 S.~Burris and H.~P. Sankappanavar.
-\newblock A course in universal algebra.
-\newblock 1981.
+\newblock {\em A course in universal algebra}.
+\newblock Springer, 1981.
 
 \bibitem{ComTheory}
 D.~Stanovsky and P.~{Vojt\v{e}chovsk\'{y}}.
@@ -185,12 +191,17 @@ M.~Kinyon, K.~Kunen, and J.D. Phillips.
 
 \bibitem{LOOPS}
 G.~Nagy and P.~{Vojt\v{e}chovks\`{y}}.
-\newblock Gap loops package.
+\newblock Gap loops package, 2017.
 
 \bibitem{incidence}
 M.~Kinyon, K.~Pula, and P.~{Vojt\v{e}chovks\`{y}}.
 \newblock Incidence properties of cosets.
 \newblock {\em J. Combinatorial Designs}, 20:161--197, 2012.
+
+\bibitem{GAP4}
+the GAP~Group.
+\newblock {\em {GAP -- Groups, Algorithms, and Programming, version 4.11.1}},
+  2021.
 
 \bibitem{Zahirovic}
 S.~{Zahirovi\'{c}}, I.~{Bo\v{s}njak}, and R.~{Madara\'{a}sz}.
@@ -211,6 +222,6 @@ I.~Chakrabarty, S.~Ghosh, and M.~K. Sen.
 \bibitem{trimedial}
 M.~Kinyon and J.D. Phillips.
 \newblock Axioms for trimedial quasigroups.
-\newblock {\em Comment. Math. Univ. Carolin.}, 2003.
+\newblock {\em Comment. Math. Univ. Carolin.}, 45(2):287--294, 2003.
 
 \end{thebibliography}

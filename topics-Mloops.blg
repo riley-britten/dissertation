@@ -3,48 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: topics-Mloops.aux
 The style file: unsrt.bst
 Database file #1: topics-Mloops.bib
-Warning--empty journal in genQuat
-Warning--empty year in genQuat
-Warning--empty journal in univAlg
-You've used 42 entries,
+You've used 44 entries,
             1791 wiz_defined-function locations,
-            698 strings with 7499 characters,
-and the built_in function-call counts, 7470 in all, are:
-= -- 662
-> -- 321
+            713 strings with 7750 characters,
+and the built_in function-call counts, 7894 in all, are:
+= -- 710
+> -- 326
 < -- 0
-+ -- 126
-- -- 84
-* -- 393
-:= -- 1264
-add.period$ -- 128
-call.type$ -- 42
++ -- 129
+- -- 85
+* -- 422
+:= -- 1322
+add.period$ -- 134
+call.type$ -- 44
 change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 45
-duplicate$ -- 361
-empty$ -- 762
-format.name$ -- 84
-if$ -- 1642
+cite$ -- 44
+duplicate$ -- 379
+empty$ -- 813
+format.name$ -- 85
+if$ -- 1742
 int.to.chr$ -- 0
-int.to.str$ -- 42
-missing$ -- 49
-newline$ -- 213
-num.names$ -- 42
-pop$ -- 124
+int.to.str$ -- 44
+missing$ -- 51
+newline$ -- 223
+num.names$ -- 43
+pop$ -- 128
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 142
+skip$ -- 143
 stack$ -- 0
-substring$ -- 313
-swap$ -- 40
+substring$ -- 363
+swap$ -- 44
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 3
-while$ -- 68
-width$ -- 44
-write$ -- 442
-(There were 3 warnings)
+warning$ -- 0
+while$ -- 73
+width$ -- 46
+write$ -- 467
