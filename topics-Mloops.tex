@@ -1735,9 +1735,9 @@ In what follows let $(Q, \cdot)$ be a para-F quasigroup and $x, y, z\in Q$ be un
   \begin{align*}
     (x\cdot ((y\ldv y)\ldv z))\cdot y &= z\cdot(y\cdot x)\\
     ((x\cdot ((y\ldv y)\ldv z))\cdot y)/y &= (z\cdot(y\cdot x))/y\\
-    x\cdot((y\ldv y)\ldv z) &= (z\cdot(y\cdot x))/y
+    x\cdot((y\ldv y)\ldv z) &= (z\cdot(y\cdot x))/y \tag{$\dagger$}
   \end{align*}
-  Call this last line $\dagger$. Substituting $x \mapsfrom x/x$, $z \mapsfrom z\cdot x$ into (*) we have that
+  Substituting $x \mapsfrom x/x$, $z \mapsfrom z\cdot x$ into $\dagger$ we have that
   \begin{align*}
     (x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) &= ((z\cdot x)\cdot (y\cdot (x/x)))/y\\
     (x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) &= (x\cdot(y\cdot z))/y
@@ -1775,9 +1775,8 @@ In what follows let $(Q, \cdot)$ be a para-F quasigroup and $x, y, z\in Q$ be un
   \begin{align*}
     ((z/(x/x))\ldv y)\cdot x &= (x\cdot y)/z\\
     (((z/(x/x))\ldv y)\cdot x)/x &= ((x\cdot y)/z)/x\\
-    (z/(x/x))\ldv y &= ((x\cdot y)/z)/x
+    (z/(x/x))\ldv y &= ((x\cdot y)/z)/x \tag{$\dagger$}
   \end{align*}
-  Call this last line $\dagger$.
 
   By Lemma \ref{M-23} we have that $(((x\ldv x)\cdot y)\cdot z)/x = (x\ldv z)\cdot y$.
     Substituting $y \mapsfrom x$, $x \mapsfrom z$, $z \mapsfrom y\cdot (x/x)$ we have
@@ -1800,31 +1799,27 @@ In what follows let $(Q, \cdot)$ be a para-F quasigroup and $x, y, z\in Q$ be un
   Substituting $x \mapsfrom z$, $y \mapsfrom (y\ldv y)\ldv x$, $z \mapsfrom y$ in Lemma \ref{M-23} we have
   \begin{align*}
     (z\ldv y)\cdot ((y\ldv y)\ldv x) &= (((z\ldv z)\cdot((y\ldv y)\ldv x)\cdot y))/z \\
-    &= (x\cdot(y\cdot(z\ldv z)))/z\text{ by Lemma \ref{M-15}}
+    &= (x\cdot(y\cdot(z\ldv z)))/z\text{ by Lemma \ref{M-15}}\tag{I}
   \end{align*}
-  Call this identity (I).
 
   From Lemma \ref{M-27} with $z = z\cdot(x\ldv x)$ we have
   \begin{align*}
     ((x/(y/y))\ldv(z\cdot(x\ldv x)))\cdot y &= (y\cdot(z\cdot(x\ldv x)))/x\\
-    &= (x\ldv z)\cdot ((z\ldv z)\ldv y)\text{ by (I)}
+    &= (x\ldv z)\cdot ((z\ldv z)\ldv y)\text{ by (I)} \tag{II}
   \end{align*}
-  Call this identity (II).
 
   But from Lemma \ref{M-38} we have
   \begin{align*}
     (x/(z/z))\ldv(y\cdot(x\ldv x)) &= x\ldv(y\cdot (z/z))\\
     ((x/(z/z))\ldv(y\cdot(x\ldv x)))\cdot z &= (x\ldv(y\cdot (z/z)))\cdot z\\
-    (x\ldv y)\cdot((y\ldv y)\ldv z) &= (x\ldv(y\cdot(z/z)))\cdot z\text{ by (II)}
+    (x\ldv y)\cdot((y\ldv y)\ldv z) &= (x\ldv(y\cdot(z/z)))\cdot z\text{ by (II)} \tag{III}
   \end{align*}
-  Call this last line (III)
 
   Then from Lemma \ref{M-27} we have
   \begin{align*}
     ((x/(y/y))\ldv (z\cdot(y/y))) \cdot y &= (y\cdot (z\cdot(y/y)))/x\\
-    ((x/(y/y))\ldv z)\cdot ((z\ldv z)\ldv y) &= (y\cdot (z\cdot (y/y)))/x\text{ from (III)}
+    ((x/(y/y))\ldv z)\cdot ((z\ldv z)\ldv y) &= (y\cdot (z\cdot (y/y)))/x\text{ from (III)}\tag{IV}
   \end{align*}
-  Call this last line (IV)
 
   Substituting $z \mapsfrom (z/(x/x))\ldv y$ in Lemma \ref{M-30} we have
   \begin{align*}
@@ -1836,9 +1831,8 @@ In what follows let $(Q, \cdot)$ be a para-F quasigroup and $x, y, z\in Q$ be un
     ((x/x)\cdot((y\ldv z)\ldv x))\cdot z &= x\cdot(y\cdot (x/x))\\
     &\text{ substituting $y \mapsfrom z/y$ we have}\\
     ((x/x)\cdot (((z/y)\ldv z)\ldv x))\cdot z &= x\cdot ((z/y)\cdot (x/x))\\
-    ((x/x)\cdot (y\ldv x))\cdot z &= x\cdot ((z/y)\cdot (x/x))\text{ using that $(z/y)\ldv z = y$}
+    ((x/x)\cdot (y\ldv x))\cdot z &= x\cdot ((z/y)\cdot (x/x))\text{ using that $(z/y)\ldv z = y$} \tag{V}
   \end{align*}
-  Call this last line (V)
 
   Now consider
   \begin{align*}
@@ -2159,9 +2153,9 @@ Note that all loop isotopes of a para-FG quasigroup must be groups.
     &\text{ substituting $z\mapsfrom x, x\mapsfrom (z\rdv (y\ldv(yu)))\rdv y$}\\
     (x\cdot (y\ldv z))\rdv u &= ((z\rdv (y\ldv (yu)))\rdv y)\cdot ((y\rdv y)\ldv x)
       \text{ by Lemma \ref{lem-34}}\\
-    (x\cdot (y\ldv z))\rdv u &= ((z\rdv u)\rdv y)\cdot ((y\rdv y)\ldv x)\label{id-43} \tag{II}
+    (x\cdot (y\ldv z))\rdv u &= ((z\rdv u)\rdv y)\cdot ((y\rdv y)\ldv x)\label{id-43} \tag{I}
   \end{align*}
-  Call this last line $\dagger$. Note that by \ref{id-fg2} we have $(x\ldv x)y\cdot zu = uy\cdot z(x\ldv x)$.
+  Note that by \ref{id-fg2} we have $(x\ldv x)y\cdot zu = uy\cdot z(x\ldv x)$.
     Consider
   \begin{align*}
     (x\ldv x)y\cdot xz &= zy\cdot x\\

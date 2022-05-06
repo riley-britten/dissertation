@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.31)  6 MAY 2022 08:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.26)  6 MAY 2022 09:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1199,56 +1199,45 @@ l.1635
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
-[40]
-Underfull \vbox (badness 8094) has occurred while \output is active []
-
- [41]
-Underfull \vbox (badness 6808) has occurred while \output is active []
-
- [42]
-[43] [44]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45]
-[46]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [47]
-[48] [49pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.3.2}) has been already used, duplicate ignored
+[40] [41] [42] [43] [44] [45] [46] [47] [48pdfTeX warning (ext4): destination w
+ith the same identifier (name{figure.3.2}) has been already used, duplicate ign
+ored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2074   \end{alignat*}
-                       ] [50] [51]
+l.2051   \end{align*}
+                     ]
+Underfull \vbox (badness 1454) has occurred while \output is active []
+
+ [49]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50]
+[51]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [52]
-[53] [54]
-Underfull \vbox (badness 1496) has occurred while \output is active []
-
- [55]
-[56] [57] [58]
+[53] [54] [55] [56] [57] [58]
 Chapter 4.
 [59
 
 ] [60]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2473.
+(hyperref)                removing `math shift' on input line 2467.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2473.
+(hyperref)                removing `math shift' on input line 2467.
 
 [61] [62]
-Overfull \hbox (1.71428pt too wide) in paragraph at lines 2548--2551
+Overfull \hbox (1.71428pt too wide) in paragraph at lines 2542--2545
 []\OT1/ptm/m/n/12 We will show by induc-tion that the derived series are equal.
  First note that $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 Q; Q\OT1/cmr/m/n/12 ][] =
  []
 
 [63]
-Overfull \hbox (33.63191pt too wide) in paragraph at lines 2564--2568
+Overfull \hbox (33.63191pt too wide) in paragraph at lines 2558--2562
 []\OT1/ptm/m/n/12 We will now show that $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 H; H
 \OT1/cmr/m/n/12 ][] \OMS/cmsy/m/n/12 ^^R \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 H; H
 \OT1/cmr/m/n/12 ]$\OT1/ptm/m/n/12 . Let $\OML/cmm/m/it/12 u[]; v[]; u[]; v[]; a
@@ -1258,11 +1247,11 @@ t/12 u[]=v[]; u[]=v[]; a \OMS/cmsy/m/n/12 2
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2580.
+(hyperref)                removing `math shift' on input line 2574.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2580.
+(hyperref)                removing `math shift' on input line 2574.
 
 [64] [65] [66] [67]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1276,15 +1265,15 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2841   \begin{alignat*}{2}
+l.2835   \begin{alignat*}{2}
                             ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2858.
+(hyperref)                removing `math shift' on input line 2852.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2858.
+(hyperref)                removing `math shift' on input line 2852.
 
 
 Underfull \vbox (badness 2150) has occurred while \output is active []
@@ -1294,14 +1283,14 @@ Underfull \vbox (badness 2150) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2882 \subsection{Left and middle nuclei}
+l.2876 \subsection{Left and middle nuclei}
                                           ] [73pdfTeX warning (ext4): destinati
 on with the same identifier (name{table.4.3}) has been already used, duplicate 
 ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2927 \chapter
+l.2921 \chapter
                {Cosets in Moufang loops}] [74
 
 ]
@@ -1311,7 +1300,7 @@ table.5.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3040 ...cdot (z\cdot xy) = x\cdot (yz\cdot xy)\]
+l.3034 ...cdot (z\cdot xy) = x\cdot (yz\cdot xy)\]
                                                   ] [78] [79] [80]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1322,24 +1311,24 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [85]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3357.
+(hyperref)                removing `math shift' on input line 3351.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 3357.
+(hyperref)                removing `subscript' on input line 3351.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3357.
+(hyperref)                removing `math shift' on input line 3351.
 
 [86pdfTeX warning (ext4): destination with the same identifier (name{table.5.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3378 
+l.3372 
        ] [87] [88]
-Overfull \hbox (4.34161pt too wide) in paragraph at lines 3444--3446
+Overfull \hbox (4.34161pt too wide) in paragraph at lines 3438--3440
 []\OT1/ptm/b/n/12 Proposition 5.19. []\OT1/ptm/m/n/12 If there is a Moufang loo
 p $\OML/cmm/m/it/12 Q$ \OT1/ptm/m/n/12 with subloop $\OML/cmm/m/it/12 S$ \OT1/p
 tm/m/n/12 and an orbit $\OML/cmm/m/it/12 X$ \OT1/ptm/m/n/12 of $[][]\OT1/cmr/m/
@@ -1358,7 +1347,7 @@ Underfull \vbox (badness 2181) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3577 \end{dfn}
+l.3571 \end{dfn}
                 ] [93]
 Underfull \vbox (badness 5592) has occurred while \output is active []
 
@@ -1367,13 +1356,13 @@ Underfull \vbox (badness 5592) has occurred while \output is active []
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3649 
+l.3643 
        ] [95pdfTeX warning (ext4): destination with the same identifier (name{t
 able.6.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3700 \chapter
+l.3694 \chapter
                {Future directions of research}] [96
 
 ]
@@ -1383,18 +1372,18 @@ e.7.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3784 
+l.3778 
        ] (./topics-Mloops.bbl [99] [100
 
 ] [101] [102] [103]) [104]
 Appendix A.
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 3
-817.
+811.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3817.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3811.
 
  [105
 
@@ -1424,11 +1413,11 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [114]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 4057.
+(hyperref)                removing `math shift' on input line 4051.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 4057.
+(hyperref)                removing `math shift' on input line 4051.
 
 [115]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1453,20 +1442,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [122]
 [123]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4259.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4259.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4253.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4253.
  (./topics-Mloops.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4259.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4259.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4253.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4253.
 
 Package rerunfilecheck Info: File `topics-Mloops.out' has not changed.
 (rerunfilecheck)             Checksum: 320905801CE3D42292331D3C0656D2FA;5166.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4259.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4253.
  ) 
 Here is how much of TeX's memory you used:
  27316 strings out of 483107
  524458 string characters out of 5964630
- 913997 words of memory out of 5000000
+ 913995 words of memory out of 5000000
  40929 multiletter control sequences out of 15000+600000
  558216 words of font info for 91 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -1488,7 +1477,7 @@ ive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on topics-Mloops.pdf (131 pages, 485225 bytes).
+Output written on topics-Mloops.pdf (131 pages, 484644 bytes).
 PDF statistics:
  2417 PDF objects out of 2487 (max. 8388607)
  1967 compressed objects within 20 object streams
