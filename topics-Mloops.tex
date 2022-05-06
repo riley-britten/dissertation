@@ -1,8 +1,8 @@
 % This was the original version
-%\documentclass[12pt]{report}
+\documentclass[12pt]{report}
 
 % This forces chapters to start on odd numbered pages
-\documentclass[12pt, twoside, openright]{report}
+% \documentclass[12pt, twoside, openright]{report}
 
 \usepackage{draftwatermark}
 \SetWatermarkText{Draft}
@@ -55,7 +55,7 @@
 % % > > > > - - - - - - - - - - - IMPORTANT - - - - - - - - - - - - - < < < < % %
 % You should uncomment the line below (use showframe package) until you're ready for your final copy.
 % This will put lines on the page to show you whether your stuff sticks out past margins.
-\usepackage{showframe} % SHOW MARGINS
+% \usepackage{showframe} % SHOW MARGINS
 
 
 
@@ -572,7 +572,7 @@ As above, isotopy is a generalization of isomorphism. In the context of groups i
 Right isotope is defined dually.
 
 \begin{dfn}
-  A property of a quasigroup $(Q, \cdot)$ is \emph{universal} if it holds in all isotopes of $Q$.
+  A property of a loop $(Q, \cdot)$ is \emph{universal} if it holds in all loop isotopes of $Q$.
 \end{dfn}
 
 \begin{dfn}
@@ -1440,11 +1440,11 @@ We will first present the definitions and linearity results for medial, semimedi
   \end{align*}
 \end{dfn}
 
-\begin{thm}(Barnes, Kinyon)
+\begin{thm}(Kepka)
   Every semimedial quasigroup $(Q, \cdot)$ is linear over a commutative Moufang loop $(Q, +)$ with
     the linearity given by
   \[x\cdot y = \varphi(x) + (\psi(y) + c)\]
-  where $\varphi\psi = \psi\varphi$ \cite{BK-isotopes}.
+  where $\varphi\psi = \psi\varphi$ \cite{triabelian}.
 \end{thm}
 
 \begin{dfn}
@@ -1552,7 +1552,7 @@ We will call quasigroups satisfying these identities quasigroups of type (**).
 \end{prp}
 
 \begin{proof}
-  This result was proved using Prover9 \cite{Prover9}. The proof can be found in appendix \ref{appendix:can1}.
+  This result was proved using \textsc{prover9} \cite{Prover9}. The proof can be found in appendix \ref{appendix:can1}.
 \end{proof}
 
 This result indicates that the (*) identities are too strong to be an analogue of the F-quasigroup
@@ -1563,7 +1563,7 @@ This result indicates that the (*) identities are too strong to be an analogue o
 \end{prp}
 
 \begin{proof}
-  This result was proved using Prover9 \cite{Prover9}. The proof can be found in
+  This result was proved using \textsc{prover9} \cite{Prover9}. The proof can be found in
     appendix \ref{appendix:semipara+paraF}.
 \end{proof}
 
@@ -1960,7 +1960,7 @@ With this result we can prove an analogue to the linearity results in section \r
 \end{thm}
 
 \begin{proof}
-  This result was proved using Prover9. We will present an outline of the proof here.
+  This result was proved using \textsc{prover9}. We will present an outline of the proof here.
   Suppose that $(Q, \cdot)$ is a para-F quasigroup and for all $u\in Q$ define:
   \[x +_u y = (x\rdv(u\ldv u))\cdot ((u\rdv u)\ldv y)\]
   From Theorem \ref{thm-iso-moufang} we have that $(Q, +_u)$ is a Moufang loop with
@@ -1978,7 +1978,7 @@ With this result we can prove an analogue to the linearity results in section \r
     A_u &= 1_u(u\ldv u)\\
     B_u &= (u\rdv u) 1_u
   \end{align*}
-    So that $f_u(1_u) = g_u(1_u) = 1_u$. We define $C_u = A_u + B_u$ and use Prover9 to prove
+    So that $f_u(1_u) = g_u(1_u) = 1_u$. We define $C_u = A_u + B_u$ and use \textsc{prover9} to prove
       the following sequence of results:
 \begin{enumerate}
   \item $1_{u\cdot u} = C_u$
@@ -1998,7 +1998,7 @@ With this result we can prove an analogue to the linearity results in section \r
 
   Note that steps 5, 6, and 7 above make use of our approach of considering all loop isotopes of
     $(Q, \cdot)$ of the form $(Q, +_u)$ simultaneously. These steps seem to be key in allowing
-    Prover9 to find proofs of 8 and 9.
+    \textsc{prover9} to find proofs of 8 and 9.
 \end{proof}
 
 With this result all of the varieties of quasigroups in diagram \ref{para-f-diag} have been shown
@@ -2455,6 +2455,9 @@ Our goal in this chapter will be to find conditions under which these definition
   If $Q/\nuc(Q)$ is an abelian group, then classical and congruence solvability degrees of $Q$ coincide.
 \end{thm}
 
+Note that conjugacy closed loops satisfy this condition, so in particular classical and congruence solvability degrees coincide
+  for conjugacy closed loops.
+
 Weakening our assumption on $Q$ we are no longer able to show that classical and congruence
   solvability degrees coincide, but we do obtain the following result about $\inn^*(Q)$:
 
@@ -2556,6 +2559,7 @@ We will now show that if $Q/\nuc(Q)$ is an abelian group, then the classical and
     all generators of $[H, H]$ and $[H, H]\subseteq [H, H]_C$.
 
   We will now show that $[H, H]_C\subseteq [H, H]$. Let $u_1, v_1, u_2, v_2, a\in Q$
+
     such that $u_1\rdv v_1, u_2\rdv v_2, a\in H$ be given. Note that
     $L_{u_1, u_2}(a) = L_{v_1, v_2}(a) = R_{u_1, u_2}(a) = R_{v_1, v_2}(a) = 1$ since
     $a\in H\subseteq \nuc(Q)$. So we need only consider $T\in\mathcal{W}$. Consider
@@ -2645,7 +2649,7 @@ We will follow the argument proving Lemma 4.2 in \cite{DiaCC} to show that
 \end{lem}
 
 \begin{proof}
-  This is immediate from the preceding two lemmas and the fact that since $\nuc(Q)\unlhd Q$
+  This is immediate from the preceding two lemmas and the fact that since $\nuc(Q)\unlhd Q$,
     we have $yn = n'y$ for some $n'\in\nuc(Q)$.
 \end{proof}
 
@@ -2759,7 +2763,7 @@ We will now present some further results dealing providing sufficient conditions
 
 \begin{dfn}
   Let $(Q, \cdot, 1)$ be a loop. A map $\phi: Q\to Q$ \emph{preserves inverses} if
-  \[\phi(0\rdv x) = 0\rdv \phi(x)\]
+  \[\phi(1\rdv x) = 1\rdv \phi(x)\]
   for all $x\in Q$.
 \end{dfn}
 
@@ -2769,7 +2773,7 @@ We will now present some further results dealing providing sufficient conditions
 \end{thm}
 
 \begin{proof}
-  This result was proved using Prover9 \cite{Prover9}. The proof can be found in
+  This result was proved using \textsc{prover9} \cite{Prover9}. The proof can be found in
     appendix \ref{appendix:right-inv}.
 \end{proof}
 
@@ -2801,7 +2805,7 @@ We will now present some further results dealing providing sufficient conditions
 
 Below is a right automorphic loop with center $\{1,2\}$, so $Q/\{1,2\}$ is an abelian
   group (being of order 4). It is not an RCC loop. This shows that a right automorphic
-  in which all associators lie in left nucleus need not be RCC. Thus the previous result
+  in which all associators lie in the left nucleus need not be RCC. Thus the previous result
   is not a statement solely about RCC loops.
 
 \begin{table}[H]
@@ -2850,7 +2854,7 @@ Below is a right automorphic loop with center $\{1,2\}$, so $Q/\{1,2\}$ is an ab
 \section{Counterexamples}
 
 \subsection{$\inn(Q)$}
-Theorem \ref{inn*} does not directly extend to all of $\inn(Q)$. The following is the CC
+Theorem \ref{inn*} does not directly extend to all of $\inn(Q)$. The following is the nonassociative CC
   loop of order 6 (there is only one) and in any CC loop $Q/\nuc(Q)$ is an abelian group.
   But in this loop the T's do not commute with the R's and in particular $\inn^*(Q)$ is
   not abelian.
@@ -2971,7 +2975,7 @@ Let $G$ be a group with $S\leq G$ and $x\in xS\cap yS$. Since left cosets of $S$
   $S$?" was posed in \cite{incidence}. We are able to provide a negative answer:\\ 
 Let 
   \begin{align*}
-    Q &= \text{MoufangLoop}(48, 2)\text{ in the GAP LOOPS package},\\
+    Q &= \text{MoufangLoop}(48, 2)\text{ in the GAP LOOPS package \cite{GAP4}, \cite{LOOPS},}\\
     S &= \{1,4,8,16,25,28,32,40\},\\
     x &= 3,\\
     y &= 27
@@ -3560,7 +3564,7 @@ Note that for some properties universality and semi-universality coincide. This 
 It is conjectured in \cite{SUF} that there exists an SUF IP loop which is not Moufang, meaning that
   the result in \cite{SUF} showing that such loops are diassociative does not follow from Moufang's
   Theorem. However, no such loop has been found. Our goal in this chapter is to construct such a loop.
-  Naive searches with MACE4 up to order $20$ were unsuccessful.
+  Naive searches with \textsc{mace4} up to order $20$ were unsuccessful.
 
 An approach allowing the constructing of SUF IP loops of larger order is to emulate the central
   extension construction in \cite{64and81}.
@@ -3571,8 +3575,8 @@ An approach allowing the constructing of SUF IP loops of larger order is to emul
 \end{dfn}
 
 The advantage of this approach is that it allows us to construct SUF IP loops which are much
-  larger than those that can be investigated by MACE4. We were able to construct SUF IP loops
-  of orders up to $729$. However, unlike MACE4 searches, we were not able to exhaustively check
+  larger than those that can be investigated by \textsc{mace4}. We were able to construct SUF IP loops
+  of orders up to $729$. However, unlike \textsc{mace4} searches, we were not able to exhaustively check
   all SUF IP loops of a given order using this approach. Following the approach in \cite{64and81}
   we will construct $Q$ given $A$ and $K$. The central extension construction proceeds as follows:
 
@@ -3790,7 +3794,7 @@ There is also the remaining question of whether SUF and IP implies Moufang. As a
 \section{Notation}
 
 \begin{align*}
-  \text{Prover9 format } &= \text{ standard notation}\\
+  \text{\textsc{prover9} format } &= \text{ standard notation}\\
   0 &= 1\\
   x * y &= x\cdot y\\
   i(x) &= x^{-1}\\
@@ -3803,7 +3807,7 @@ There is also the remaining question of whether SUF and IP implies Moufang. As a
 
 \section{Para-F}
 
-\subsection{Prover9 proof of Proposition \ref{can1}}
+\subsection{\textsc{prover9} proof of Proposition \ref{can1}}
 
 \begin{proof}\label{appendix:can1}
   The following shows that the (*) identities imply one of the para-F identities. The other para-F identity is dual.
@@ -4001,7 +4005,7 @@ There is also the remaining question of whether SUF and IP implies Moufang. As a
   \end{lstlisting}
 \end{proof}
 
-\subsection{Prover9 proof of Proposition \ref{semipara+paraF}}
+\subsection{\textsc{prover9} proof of Proposition \ref{semipara+paraF}}
 
 \begin{proof}\label{appendix:semipara+paraF}
   This proves one of the candidate (*) identities follows from semiparamedial and para-F. The proof of the other (*) identity is dual.
@@ -4050,7 +4054,7 @@ There is also the remaining question of whether SUF and IP implies Moufang. As a
 
 \section{$Q\rdv\nuc(Q)$}
 
-\subsection{Prover9 proof of Theorem \ref{thm:right-inv}}
+\subsection{\textsc{prover9} proof of Theorem \ref{thm:right-inv}}
 \begin{proof}\label{appendix:right-inv}
   \begin{lstlisting} 
     1 R(x,y,R(z,u,w)) = R(z,u,R(x,y,w)) # label(non_clause) # label(goal).  [].
