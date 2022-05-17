@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.26)  12 MAY 2022 12:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.26)  16 MAY 2022 19:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**topics-Mloops
+**topics-Mloops.tex
 (./topics-Mloops.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
@@ -24,49 +24,6 @@ File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
-(/usr/share/texlive/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
-Package: draftwatermark 2015/02/19 1.2 Put a gray textual watermark on document
- pages
-
-(/usr/share/texlive/texmf-dist/tex/latex/everypage/everypage.sty
-Package: everypage 2007/06/20 1.1 Hooks to run on every page
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
-)
-Package graphics Info: Driver file: pdftex.def on input line 105.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen135
-\Gin@req@width=\dimen136
-)
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2019/11/23 v1.2a Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 147.
-)
-\sc@wm@hcenter=\skip49
-\sc@wm@vcenter=\skip50
-\sc@wm@fontsize=\skip51
-)
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
@@ -75,7 +32,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks15
+\@emptytoks=\toks14
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
@@ -96,9 +53,33 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks16
-\ex@=\dimen137
+\@emptytoks=\toks15
+\ex@=\dimen135
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen136
+\Gin@req@width=\dimen137
+)
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2020-02-14 LaTeX2e option processing using LaTeX3 keys
 )
@@ -117,7 +98,7 @@ Package: xtemplate 2020-02-14 L3 Experimental prototype document functions
 \l__xtemplate_tmp_dim=\dimen138
 \l__xtemplate_tmp_int=\count181
 \l__xtemplate_tmp_muskip=\muskip16
-\l__xtemplate_tmp_skip=\skip52
+\l__xtemplate_tmp_skip=\skip49
 )
 Package: xfrac 2020-02-14 L3 Experimental split-level fractions
 \l__xfrac_slash_box=\box46
@@ -142,7 +123,7 @@ Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 )
 (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip53
+\OuterFrameSep=\skip50
 \fb@frw=\dimen144
 \fb@frh=\dimen145
 \FrameRule=\dimen146
@@ -155,7 +136,6 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-LaTeX Info: Redefining \color on input line 709.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -173,9 +153,9 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headfont=\toks21
 \thm@notefont=\toks22
 \thm@headpunct=\toks23
-\thm@preskip=\skip54
-\thm@postskip=\skip55
-\thm@headsep=\skip56
+\thm@preskip=\skip51
+\thm@postskip=\skip52
+\thm@headsep=\skip53
 \dth@everypar=\toks24
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
@@ -300,14 +280,14 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip57
+\Hy@SectionHShift=\skip54
 )
 (/usr/share/texlive/texmf-dist/tex/latex/bbding/bbding.sty
 Package: bbding 1999/04/15 v1.01 Dingbats symbols
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip58
+\@mathmargin=\skip55
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -349,8 +329,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \totwidth@=\dimen158
 \lineht@=\dimen159
 \@envbody=\toks27
-\multlinegap=\skip59
-\multlinetaggap=\skip60
+\multlinegap=\skip56
+\multlinetaggap=\skip57
 \mathdisplay@stack=\toks28
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
@@ -372,8 +352,8 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \ar@mcellbox=\box50
 \extrarowheight=\dimen163
 \NC@list=\toks29
-\extratabsurround=\skip61
-\backup@length=\skip62
+\extratabsurround=\skip58
+\backup@length=\skip59
 \ar@cellbox=\box51
 )
 \l__siunitx_tmp_box=\box52
@@ -399,8 +379,8 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \l__siunitx_unit_prefix_base_int=\count288
 \l__siunitx_unit_prefix_gram_int=\count289
 \l__siunitx_number_product_int=\count290
-\c__siunitx_one_fill_skip=\skip63
-\l__siunitx_table_unit_align_skip=\skip64
+\c__siunitx_one_fill_skip=\skip60
+\l__siunitx_table_unit_align_skip=\skip61
 \l__siunitx_table_exponent_dim=\dimen167
 \l__siunitx_table_integer_dim=\dimen168
 \l__siunitx_table_mantissa_dim=\dimen169
@@ -414,8 +394,8 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \l__siunitx_table_post_box=\box56
 \l__siunitx_table_mantissa_box=\box57
 \l__siunitx_table_result_box=\box58
-\l__siunitx_table_number_align_skip=\skip65
-\l__siunitx_table_text_align_skip=\skip66
+\l__siunitx_table_number_align_skip=\skip62
+\l__siunitx_table_text_align_skip=\skip63
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
@@ -467,12 +447,12 @@ Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip67
-\subfigcapskip=\skip68
+\subfigtopskip=\skip64
+\subfigcapskip=\skip65
 \subfigcaptopadj=\dimen180
-\subfigbottomskip=\skip69
+\subfigbottomskip=\skip66
 \subfigcapmargin=\dimen181
-\subfiglabelskip=\skip70
+\subfiglabelskip=\skip67
 \c@subfigure=\count299
 \c@lofdepth=\count300
 \c@subtable=\count301
@@ -482,8 +462,8 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 * Local config file subfigure.cfg used *
 ****************************************
 (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip71
-\subfig@bottom=\skip72
+\subfig@top=\skip68
+\subfig@bottom=\skip69
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
@@ -821,8 +801,8 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box74
-\beforetitleunit=\skip73
-\aftertitleunit=\skip74
+\beforetitleunit=\skip70
+\aftertitleunit=\skip71
 \ttl@plus=\dimen301
 \ttl@minus=\dimen302
 \ttl@toksa=\toks47
@@ -833,46 +813,46 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
-\cftparskip=\skip75
-\cftbeforetoctitleskip=\skip76
-\cftaftertoctitleskip=\skip77
-\cftbeforepartskip=\skip78
-\cftpartnumwidth=\skip79
-\cftpartindent=\skip80
-\cftbeforechapskip=\skip81
-\cftchapindent=\skip82
-\cftchapnumwidth=\skip83
-\cftbeforesecskip=\skip84
-\cftsecindent=\skip85
-\cftsecnumwidth=\skip86
-\cftbeforesubsecskip=\skip87
-\cftsubsecindent=\skip88
-\cftsubsecnumwidth=\skip89
-\cftbeforesubsubsecskip=\skip90
-\cftsubsubsecindent=\skip91
-\cftsubsubsecnumwidth=\skip92
-\cftbeforeparaskip=\skip93
-\cftparaindent=\skip94
-\cftparanumwidth=\skip95
-\cftbeforesubparaskip=\skip96
-\cftsubparaindent=\skip97
-\cftsubparanumwidth=\skip98
-\cftbeforeloftitleskip=\skip99
-\cftafterloftitleskip=\skip100
-\cftbeforefigskip=\skip101
-\cftfigindent=\skip102
-\cftfignumwidth=\skip103
-\cftbeforelottitleskip=\skip104
-\cftafterlottitleskip=\skip105
-\cftbeforetabskip=\skip106
-\cfttabindent=\skip107
-\cfttabnumwidth=\skip108
-\cftbeforesubfigskip=\skip109
-\cftsubfigindent=\skip110
-\cftsubfignumwidth=\skip111
-\cftbeforesubtabskip=\skip112
-\cftsubtabindent=\skip113
-\cftsubtabnumwidth=\skip114
+\cftparskip=\skip72
+\cftbeforetoctitleskip=\skip73
+\cftaftertoctitleskip=\skip74
+\cftbeforepartskip=\skip75
+\cftpartnumwidth=\skip76
+\cftpartindent=\skip77
+\cftbeforechapskip=\skip78
+\cftchapindent=\skip79
+\cftchapnumwidth=\skip80
+\cftbeforesecskip=\skip81
+\cftsecindent=\skip82
+\cftsecnumwidth=\skip83
+\cftbeforesubsecskip=\skip84
+\cftsubsecindent=\skip85
+\cftsubsecnumwidth=\skip86
+\cftbeforesubsubsecskip=\skip87
+\cftsubsubsecindent=\skip88
+\cftsubsubsecnumwidth=\skip89
+\cftbeforeparaskip=\skip90
+\cftparaindent=\skip91
+\cftparanumwidth=\skip92
+\cftbeforesubparaskip=\skip93
+\cftsubparaindent=\skip94
+\cftsubparanumwidth=\skip95
+\cftbeforeloftitleskip=\skip96
+\cftafterloftitleskip=\skip97
+\cftbeforefigskip=\skip98
+\cftfigindent=\skip99
+\cftfignumwidth=\skip100
+\cftbeforelottitleskip=\skip101
+\cftafterlottitleskip=\skip102
+\cftbeforetabskip=\skip103
+\cfttabindent=\skip104
+\cfttabnumwidth=\skip105
+\cftbeforesubfigskip=\skip106
+\cftsubfigindent=\skip107
+\cftsubfignumwidth=\skip108
+\cftbeforesubtabskip=\skip109
+\cftsubtabindent=\skip110
+\cftsubtabnumwidth=\skip111
 )
 Package hyperref Info: Option `linktocpage' set `true' on input line 127.
 Package hyperref Info: Option `colorlinks' set `true' on input line 127.
@@ -1059,10 +1039,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 1
 93.
 
-(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1{/var/lib/texmf/
-fonts/map/pdftex/updmap/pdftex.map}
+(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 246--251
 
  []
@@ -1336,13 +1315,13 @@ Package rerunfilecheck Info: File `topics-Mloops.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4257.
  ) 
 Here is how much of TeX's memory you used:
- 27254 strings out of 483107
- 523360 string characters out of 5964630
- 910159 words of memory out of 5000000
- 40866 multiletter control sequences out of 15000+600000
- 563513 words of font info for 99 fonts, out of 8000000 for 9000
+ 27185 strings out of 483107
+ 521882 string characters out of 5964630
+ 909556 words of memory out of 5000000
+ 40810 multiletter control sequences out of 15000+600000
+ 561928 words of font info for 97 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 60i,14n,67p,418b,2281s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,14n,67p,422b,2278s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1360,7 +1339,7 @@ ive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on topics-Mloops.pdf (128 pages, 471102 bytes).
+Output written on topics-Mloops.pdf (128 pages, 461532 bytes).
 PDF statistics:
  2429 PDF objects out of 2487 (max. 8388607)
  1967 compressed objects within 20 object streams
