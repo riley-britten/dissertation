@@ -1234,7 +1234,7 @@ Recall that the generalized quaternion group of order $4n$ can be presented as
   \node (a3u) [below left = .5cm and 1cm of a3]{$a^3 u$};
   \node (a2u) [above left = 1cm and .5cm of a2]{$a^2u$};
   \node (a3bu) [right = .8cm of a3b]{$(a^3b)u$};
-  \node (abu) [above right = .3cm and 1cm of ab]{$(ab)u$};
+  \node (abu) [below right = .3cm and 1cm of ab]{$(ab)u$};
   \node (a2bu) [below right = .3cm and 1cm of a2b]{$(a^2b)u$};
   \node (bu) [right = .8cm of b]{$bu$};
   
@@ -1261,21 +1261,25 @@ Recall that the generalized quaternion group of order $4n$ can be presented as
   
   (a3u) -- (a2)
   (a3u) -- (1)
+  (a3u) -- (au)
   
   (au) -- (a2)
   (au) -- (1)
   
   (a2u) -- (a2)
   (a2u) -- (1)
+  (a2u) -- (u)
   
   (a3bu) -- (a2)
   (a3bu) -- (1)
+  (a3bu) -- (abu)
   
   (abu) -- (a2)
   (abu) -- (1)
   
   (a2bu) -- (a2)
   (a2bu) -- (1)
+  (a2bu) -- (bu)
   
   (bu) -- (a2)
   (bu) -- (1);
