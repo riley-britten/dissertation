@@ -1568,215 +1568,40 @@ Note that all of the varieties of loops in diagram \ref{medial-para}, with the e
 In what follows let $(Q, \cdot)$ be a para-F quasigroup and $x, y, z\in Q$ be universally quantified.
   We will now prove a series of lemmas which will allow us to prove Theorem \ref{thm-iso-moufang}.
 
-\begin{lem}\label{lem-divs}
-  $(x\rdv y)\ldv x = y$ for all $x, y\in Q$.
+\begin{lem}\label{trans-lem}
+  $L_{xy} R_{y\rdv y} = L_y R_x$.
 \end{lem}
 
 \begin{proof}
-  Substituting $x \mapsfrom x/y$ into the loop identity $x\ldv(xy) = y$ we have
-    $(x/y)\ldv((x/y)\cdot y) = y$ and so $(x/y)\ldv x = y$.
+  By the para-F identities we have
+  \begin{align*}
+    xy\cdot z(y\rdv y) &= y\cdot zx\\
+    L_{xy} R_{y\rdv y}(z) &= L_y R_x(z)
+  \end{align*}
+  So the proof is complete.
 \end{proof}
 
-\begin{lem}\label{M-15}
-  $(z\cdot((y\ldv y)\ldv x))\cdot y = x\cdot yz$ for all $x, y, z\in Q$.
+\begin{lem}\label{iso-lem}
+  $(x\rdv x)(y\ldv x)\cdot z = x\cdot (z\rdv y)(x\rdv x)$ for all $x, y, z\in Q$.
 \end{lem}
-
-\begin{proof}
-  Substituting $y \mapsfrom (y\ldv y)\ldv x$ and $x \mapsfrom y$ in the para-F identity
-    $(x\ldv x)y \cdot xz = zy\cdot x$ we have that
-  \begin{align*}
-    (z\cdot ((y\ldv y)\ldv x))\cdot y &= ((y\ldv y)\cdot((y\ldv y)\ldv x))\cdot yz\\
-    &= x\cdot yz
-  \end{align*}
-  So $x\cdot yz = (z\cdot ((y\ldv y)\ldv x))\cdot y$ for all $x, y, z\in Q$.
-\end{proof}
-
-\begin{lem}\label{M-23}
-  $(((x\ldv x)\cdot y)\cdot z)/x = (x\ldv z)\cdot y$
-\end{lem}
-
-\begin{proof}
-  Substituting $z \mapsfrom x\ldv z$ into the para-F identity
-    $((x\ldv x)\cdot y)\cdot(x\cdot z) = (z\cdot y)\cdot x$ we have
-  \begin{align*}
-    ((x\ldv x)\cdot y)\cdot (x\cdot (x\ldv z)) &= ((x\ldv z)\cdot y)\cdot x\\
-    ((x\ldv x)\cdot y)\cdot z &= ((x\ldv z)\cdot y)\cdot x\\
-    (((x\ldv x)\cdot y)\cdot z)/x &= (((x\ldv z)\cdot y)\cdot x)/x\\
-    (((x\ldv x)\cdot y)\cdot z)/x &= (x\ldv z)\cdot y
-  \end{align*}
-
-  So $(((x\ldv x)\cdot y)\cdot z)/x = (x\ldv z)\cdot y$ for all $x, y, z\in Q$.
-\end{proof}
-
-\begin{lem}\label{M-25}
-  $x\ldv(y\cdot z) = (z/(x/y))\cdot(y/y)$ for all $x, y, z\in Q$.
-\end{lem}
-
-\begin{proof}
-  Note that
-  \begin{align*}
-    (x\cdot y)\cdot(z\cdot(y/y)) &= y\cdot (z\cdot x)\\
-    (x\cdot y)\ldv ((x\cdot y)\cdot(z\cdot(y/y))) &= (x\cdot y)\ldv(y\cdot (z\cdot x))\\
-    z\cdot (y/y) &= (x\cdot y)\ldv(y\cdot (z\cdot x))
-  \end{align*}
-  Substituting $x \mapsfrom x/y$ into the above we have
-  \begin{align*}
-    z\cdot(y/y) &= ((x/y)\cdot y)\ldv (y\cdot (z\cdot (x/y)))\\
-    z\cdot (y/y) &= x\ldv (y\cdot (z\cdot (x/y)))
-  \end{align*}
-  Substituting $z \mapsfrom z/(x/y)$ into the above we have
-  \begin{align*}
-    (z/(x/y))\cdot(y/y) &= x\ldv(y\cdot ((z/(x/y))\cdot (x/y)))\\
-    (z/(x/y))\cdot(y/y) &= x\ldv(y\cdot z)
-  \end{align*}
-  Thus $x\ldv(y\cdot z) = (z/(x/y))\cdot (y/y)$ for all $x, y, z\in Q$.
-\end{proof}
-
-\begin{lem}\label{M-27}
-  $(x\cdot y)/z = ((z/(y/y))\ldv y)\cdot x$ for all $x, y, z\in Q$.
-\end{lem}
-
-\begin{proof}
-  Note that
-  \begin{align*}
-    (x\cdot y)\cdot (z\cdot(y/y)) &= y\cdot (z\cdot x)\\
-    ((x\cdot y)\cdot (z\cdot(y/y)))/(z\cdot(y/y)) &= (y\cdot (z\cdot x))/(z\cdot(y/y))\\
-    x\cdot y &= (y\cdot (z\cdot x))/(z\cdot(y/y))
-  \end{align*}
-  Substituting $x \mapsfrom z\ldv y$, $y \mapsfrom x$ into the above we have
-  \begin{align*}
-    (z\ldv y)\cdot x &= (x\cdot (z\cdot (z\ldv y)))/(z\cdot(y/y))\\
-    (z\ldv y)\cdot x &= (x\cdot y)/(z\cdot(y/y))
-  \end{align*}
-  Substituting $z \mapsfrom z/(y/y)$ into the above we have
-  \begin{align*}
-    ((z/(y/y))\ldv y)\cdot x &= (x\cdot y)/((z/(y/y))\cdot (y/y))\\
-    ((z/(y/y))\ldv y)\cdot x &= (x\cdot y)/z
-  \end{align*}
-  So $(x\cdot y)/z = ((z/(y/y))\ldv y)\cdot x$ for all $x, y, z\in Q$.
-\end{proof}
-
-\begin{lem}\label{M-30}
-  $(x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) = z\cdot((y\ldv y)\ldv x)$ for all $x, y, z\in Q$.
-\end{lem}
-
-\begin{proof}
-  By Lemma \ref{M-15} we have
-  \begin{align*}
-    (x\cdot ((y\ldv y)\ldv z))\cdot y &= z\cdot(y\cdot x)\\
-    ((x\cdot ((y\ldv y)\ldv z))\cdot y)/y &= (z\cdot(y\cdot x))/y\\
-    x\cdot((y\ldv y)\ldv z) &= (z\cdot(y\cdot x))/y \tag{$\dagger$}
-  \end{align*}
-  Substituting $x \mapsfrom x/x$, $z \mapsfrom z\cdot x$ into $\dagger$ we have that
-  \begin{align*}
-    (x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) &= ((z\cdot x)\cdot (y\cdot (x/x)))/y\\
-    (x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) &= (x\cdot(y\cdot z))/y
-  \end{align*}
-  Applying $\dagger$ to the right hand side above we have that
-    $(x/x)\cdot ((y\ldv y)\ldv (z\cdot x)) = z\cdot((y\ldv y)\ldv x)$.
-\end{proof}
-
-\begin{lem}\label{M-36}
-  $(x\ldv x)\ldv((y\cdot x)/z) = (x\ldv z)\ldv y$.
-\end{lem}
-
-\begin{proof}
-  From the para-F identities we have that
-  \begin{align*}
-    ((x\ldv x)\cdot y)\cdot (x\cdot (x\ldv z)) &= ((x\ldv z)\cdot y)\cdot x\\
-    ((x\ldv x)\cdot y)\cdot z &= ((x\ldv z)\cdot y)\cdot x\\
-    &\text{ substituting $y \mapsfrom (x\ldv z)\ldv y$}\\
-    ((x\ldv x)\cdot ((x\ldv z)\ldv y))\cdot z &= ((x\ldv z)\cdot ((x\ldv z)\ldv y))\cdot x\\
-    ((x\ldv x)\cdot ((x\ldv z)\ldv y))\cdot z &=  y\cdot x\\
-    (((x\ldv x)\cdot ((x\ldv z)\ldv y))\cdot z)/z &=  (y\cdot x)/z\\
-    ((x\ldv x)\cdot ((x\ldv z)\ldv y)) &=  (y\cdot x)/z\\
-    (x\ldv x)\ldv(((x\ldv x)\cdot ((x\ldv z)\ldv y))) &=  (x\ldv x)\ldv((y\cdot x)/z)\\
-    (x\ldv z)\ldv y &= (x\ldv x)\ldv((y\cdot x)/z)
-  \end{align*}
-  Thus $(x\ldv z)\ldv y = (x\ldv x)\ldv((y\cdot x)/z)$ for all $x, y, z\in Q$.
-\end{proof}
-
-\begin{lem}\label{M-38}
-  $(x/(y/y))\ldv (z\cdot(x\ldv x)) = x\ldv(z\cdot (y/y))$
-\end{lem}
-
-\begin{proof}
-  By Lemma \ref{M-27} we have
-  \begin{align*}
-    ((z/(x/x))\ldv y)\cdot x &= (x\cdot y)/z\\
-    (((z/(x/x))\ldv y)\cdot x)/x &= ((x\cdot y)/z)/x\\
-    (z/(x/x))\ldv y &= ((x\cdot y)/z)/x \tag{$\dagger$}
-  \end{align*}
-
-  By Lemma \ref{M-23} we have that $(((x\ldv x)\cdot y)\cdot z)/x = (x\ldv z)\cdot y$.
-    Substituting $y \mapsfrom x$, $x \mapsfrom z$, $z \mapsfrom y\cdot (x/x)$ we have
-  \begin{align*}
-    (((z\ldv z)\cdot x)\cdot (y\cdot(x/x)))/z &= (z\ldv (y\cdot (x/x)))\cdot x\\
-    x\cdot (y\cdot(z\ldv z))/z &= (z\ldv(y\cdot(x/x)))\cdot x\text{ from the para-F identities}\\
-    (x\cdot (y\cdot(z\ldv z))/z)/x &= ((z\ldv(y\cdot(x/x)))\cdot x)/x\\
-    (x\cdot (y\cdot(z\ldv z))/z)/x &= z\ldv(y\cdot(x/x))\\
-    (z/(x\rdv x))\ldv(y\cdot(z\ldv z)) &= z\ldv(y\cdot (x/x))\text{ by $\dagger$}
-  \end{align*}
-  Thus $(x/(y/y))\ldv (z\cdot(x\ldv x)) = x\ldv(z\cdot (y/y))$ for all $x, y, z\in Q$.
-\end{proof}
 
 \begin{prp}\label{BI}
-  \[((x\ldv x)\cdot ((y/x)\ldv x))\cdot z = x\cdot (y\ldv(x\cdot z))\]
-  for all $x, y, z\in Q$.
+  $L_x L_y^{-1} L_x = L_{(x\rdv x)\cdot (y\rdv x)\ldv x}$ for all $x, y\in Q$. 
 \end{prp}
 
 \begin{proof}
-  Substituting $x \mapsfrom z$, $y \mapsfrom (y\ldv y)\ldv x$, $z \mapsfrom y$ in Lemma \ref{M-23} we have
+  By Lemma \ref{iso-lem} we have
   \begin{align*}
-    (z\ldv y)\cdot ((y\ldv y)\ldv x) &= (((z\ldv z)\cdot((y\ldv y)\ldv x)\cdot y))/z \\
-    &= (x\cdot(y\cdot(z\ldv z)))/z\text{ by Lemma \ref{M-15}}\tag{I}
+    (x\rdv x)(y\ldv x)\cdot z &= x\cdot (z\rdv y)(x\rdv x)\\
+    L_{(x\rdv x)(y\ldv x)}(z) &= L_x R_{x\rdv x} R_y^{-1}(z)\\
+    L_{(x\rdv x)(y\ldv x)}(z) &= L_x L_{yx}^{-1} L_x(z)\text{ by Lemma \ref{trans-lem}}\\
+    L_{(x\rdv x)((y\rdv x)\ldv x)}(z) &= L_x L_y^{-1} L_x(z)\text{ substituting $y\mapsfrom y\rdv x$}
   \end{align*}
-
-  From Lemma \ref{M-27} with $z = z\cdot(x\ldv x)$ we have
-  \begin{align*}
-    ((x/(y/y))\ldv(z\cdot(x\ldv x)))\cdot y &= (y\cdot(z\cdot(x\ldv x)))/x\\
-    &= (x\ldv z)\cdot ((z\ldv z)\ldv y)\text{ by (I)} \tag{II}
-  \end{align*}
-
-  But from Lemma \ref{M-38} we have
-  \begin{align*}
-    (x/(z/z))\ldv(y\cdot(x\ldv x)) &= x\ldv(y\cdot (z/z))\\
-    ((x/(z/z))\ldv(y\cdot(x\ldv x)))\cdot z &= (x\ldv(y\cdot (z/z)))\cdot z\\
-    (x\ldv y)\cdot((y\ldv y)\ldv z) &= (x\ldv(y\cdot(z/z)))\cdot z\text{ by (II)} \tag{III}
-  \end{align*}
-
-  Then from Lemma \ref{M-27} we have
-  \begin{align*}
-    ((x/(y/y))\ldv (z\cdot(y/y))) \cdot y &= (y\cdot (z\cdot(y/y)))/x\\
-    ((x/(y/y))\ldv z)\cdot ((z\ldv z)\ldv y) &= (y\cdot (z\cdot (y/y)))/x\text{ from (III)}\tag{IV}
-  \end{align*}
-
-  Substituting $z \mapsfrom (z/(x/x))\ldv y$ in Lemma \ref{M-30} we have
-  \begin{align*}
-    (x/x)\cdot((y\ldv y)\ldv(((z/(x/x))\ldv y)\cdot x)) &= ((z/(x/x))\ldv y)\cdot ((y\ldv y)\ldv x)\\
-    (x/x)\cdot((y\ldv y)\ldv(((z/(x/x))\ldv y)\cdot x)) &= (x\cdot (y\cdot (x/x)))/z\text{ from (IV)}\\
-    (x/x)\cdot((y\ldv y)\ldv((x\cdot y)/z)) &= (x\cdot(y\cdot (x/x)))/z\text{ from Lemma \ref{M-27}}\\
-    (x/x)\cdot((y\ldv z)\ldv x) &= (x\cdot(y\cdot (x/x)))/z\text{ from Lemma \ref{M-36}}\\
-    ((x/x)\cdot((y\ldv z)\ldv x))\cdot z &= ((x\cdot(y\cdot (x/x)))/z)\cdot z\\
-    ((x/x)\cdot((y\ldv z)\ldv x))\cdot z &= x\cdot(y\cdot (x/x))\\
-    &\text{ substituting $y \mapsfrom z/y$ we have}\\
-    ((x/x)\cdot (((z/y)\ldv z)\ldv x))\cdot z &= x\cdot ((z/y)\cdot (x/x))\\
-    ((x/x)\cdot (y\ldv x))\cdot z &= x\cdot ((z/y)\cdot (x/x))\text{ using that $(z/y)\ldv z = y$} \tag{V}
-  \end{align*}
-
-  Now consider
-  \begin{align*}
-    x\cdot((y/(z/u))\cdot (u/u)) &= x\cdot((y/(z/u))\cdot (u/u))\\
-    x\cdot(z\ldv (u\cdot y)) &= x\cdot((y/(z/u))\cdot (u/u))\text{ from Lemma \ref{M-25}}\\
-    x\cdot(y\ldv (x\cdot z)) &= x\cdot((z/(y/x))\cdot (x/x))\text{ renaming variables}\\
-    x\cdot(y\ldv (x\cdot z)) &= ((x/x)\cdot((y/x)\ldv x))\cdot z\text{ from (V)}
-  \end{align*}
-  So $x\cdot(y\ldv (x\cdot z)) = ((x/x)\cdot((y/x)\ldv x))\cdot z$ for all $x, y, z\in Q$.
+  So the proof is complete.
 \end{proof}
 
 \begin{prp}\label{BI-dual}
-  \[z\cdot((x\rdv(x\ldv y))\cdot (x\rdv x)) = ((z\cdot x)\rdv y)\cdot x\]
-  for all $x, y, z\in Q$.
+  $R_x R_y^{-1} R_x = R_{x\rdv (x\ldv y)\cdot (x\ldv x)}$.
 \end{prp}
 
 \begin{proof}
