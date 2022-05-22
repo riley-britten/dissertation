@@ -1069,7 +1069,7 @@ To make the Theorem \ref{moufangDesc} more closely follow the result for groups 
     octonion loop.
 \end{proof}
 
-\begin{lem}\label{u-order-2}
+\begin{lem}\label{u-order-4}
   Suppose that $M$ is generalized octonion with $S_1\unlhd S_2\unlhd\ldots\unlhd S_m = M$ where $S_{i + 1}$
     satisfies Theorem \ref{thm-chein} with $G = S_i$. Then there exists such a sequence with $|u| = 4$ in
     Theorem \ref{thm-chein} at each stage.
@@ -1256,18 +1256,34 @@ Thus if the power graph of a Moufang $p$-loop $M$ has a non-identity vertex conn
   Hence every element of $M$ is a power of $x$ and $M = \langle x\rangle$ is a cyclic group.
 \end{proof}
 
-  Note that if $|M|$ is not a power of $2$, then $M$ is a cyclic group and there is nothing to prove.
-    So suppose that $|M|$ is a power of $2$. Recall that the power graph of a cyclic $p$-group is
-    complete \cite{Ivy}. If the largest complete subgraph in $\Gamma$ has order $2^{n - 2}$, then $M$
-    cannot be cyclic or generalized quaternion, since both of these have complete subgraphs of order
-    at least $2^{n - 1}$ in their power graphs. So in this case $M$ must be generalized octonion.
-    Similarly, if the largest complete subgraph in $\Gamma$ has order $2^{n - 1}$, then $M$ must be
-    generalized quaternion. Finally, if $\Gamma$ is complete, then $M$ is cyclic.
+We will now prove Theorem \ref{mainThm} in the case that a non-identity vertex is connected to all
+  others in $\Gamma$.
 
-  The above shows that if the power graph of $M$ has a non-identity vertex connected to all others,
-    then we can identify $M$ up to isomorphism. So in this case the undirected power graph determines
-    the directed power graph up to isomorphism. We will next handle the case that the power graph of
-    $M$ has no such vertex.
+\begin{proof}
+  From Lemma \ref{connectedVertex} $M$ has a unique subloop of order $p$ for each prime divisor $p$
+   of $|M|$. Thus by Theorem \ref{genOct} we have that $M$ is either a cyclic group, a generalized quaternion
+    group or a generalized octonion loop. If $|M|$ is not a power of $2$, then $M$ is a cyclic group and there
+    is nothing to prove. So suppose that $|M| = 2^n$. Let $K$ be the largest complete subgraph in $\Gamma$.
+    We will split the proof into cases based on the size of $K$.
+
+  First suppose that $|K| = 2^n$. Then $M$ is a cyclic group and thus its directed power graph is
+    uniquely determined.
+
+  Now suppose that $|K| = 2^{n - 1}$. Then $M$ is a generalized quaternion group and thus its power graph i
+    uniquely determined.
+
+  Finally, suppose that $|K| < 2^{n - 1}$. Then $M$ is generalized octonion and there exist
+    $S_1\unlhd S_2\unlhd \ldots \unlhd S_k = M$ as in Theorem \ref{genOctChain}. Say $S_1 = Q_m$, the
+    generalized quaternion group of order $m$. Choose a subgraph, $\Lambda$, of $\Gamma$ isomorphic to that of $Q_m$
+    and apply arrows as in the case of $Q_m$. Now let $u\in M$ be a vertex $\Lambda$. By Theorem
+    \ref{genOctChain} and Lemma \ref{u-order-4} we have that $u^2$ is the unique element of order $2$ and
+    $u^3 = u^{-1}$ is distinct from $u$ and not contained in $\Lambda$.
+
+  So each vertex outside $\Lambda$ is connected to the identity, the unique element of order $2$, and one other vertex
+    which also lies outside $\Lambda$. Arrows are directed toward the identity and the unique element of order $2$ and
+    are bidirectional between elements outside of $\Lambda$. Thus in this case the direction of each arrow is
+    uniquely determined and the directed power graph is determined by the directed in this case.
+\end{proof}
 
 \subsection{Only identity connected to all others}
 
