@@ -2289,6 +2289,11 @@ We now present some universal algebraic definitions and their equivalent definit
 \end{dfn}
 
 \begin{dfn}
+  Let $(Q, \cdot)$ be a quasigroup and $x, y\in Q$. The \emph{commutator} of $x$ and $y$ is
+  \[[x, y] = (xy)\rdv (yx)\]
+\end{dfn}
+
+\begin{dfn}
   Let $G$ be a group and $H, K\unlhd G$. Then the \emph{classical (group theoretic) commutator}
     of $H$ and $K$ is $[H, K] = \langle [x, y] : x\in H, y\in K\rangle$.
 \end{dfn}
@@ -2352,71 +2357,16 @@ We will now show that if $Q/\nuc(Q)$ is an abelian group, then the classical and
   of solvability coincide. Denote the classical commutator of two normal subloops $A, B\unlhd Q$ by
   $[A, B]$ and the congruence commutator by $[A, B]_C$.
 
-\begin{lem}\label{lem-1}
-  Let Q be a loop such that $Q/\nuc(Q)$ is an abelian group. Then for all $x, y\in Q$ we have
-    that $[x, y]\ldv 1 = [y, x]$.
+\begin{lem}\label{buch-lem}
+  $T_x T_y (a) = T_{xy}(a)$ for all $a\in \nuc(Q)$.
 \end{lem}
 
 \begin{proof}
-  Let $x, y\in Q$ be given and consider
-  \begin{align*}
-    L_{xy, [x, y]} ([x, y]\ldv 1) &= (xy\cdot [x, y])\ldv(xy\cdot ([x, y]\cdot([x, y]\ldv 1)))\\
-    &= (xy\cdot [x, y])\ldv (xy))\\
-    &= (xy\cdot ((xy)\ldv (yx)))\ldv (xy)\\
-    &= (yx)\ldv (xy)\\
-    &= [y, x]
-  \end{align*}
-
-  But on the other hand since $[x, y]\in\nuc(Q)$ we have that
-  \begin{align*}
-    L_{xy, [x, y]}([x, y]\ldv 1) &= (xy\cdot [x, y])\ldv (xy\cdot ([x, y]\cdot([x, y]\ldv 1)))\\
-    &= (xy\cdot [x, y])\ldv ((xy\cdot [x, y])\cdot ([x, y]\ldv 1))\\
-    &= [x, y]\ldv 1
-  \end{align*}
-  Thus $[x, y]\ldv 1 = [y, x]$.
-\end{proof}
-
-\begin{lem}\label{lem-2}
-  Let $Q$ be a loop such that $Q/\nuc(Q)$ is an abelian group. Then for all $u, v, a\in Q$ we have
-    $[u, a]\cdot(1\rdv [v, a]) = [u, a]\rdv [v, a]$.
-\end{lem}
-
-\begin{proof}
-  Let $u, v, a\in Q$ be given and note that $[u, a], [v, a]\in\nuc(Q)$ since $Q'\subseteq \nuc(Q)$. Then
-  \begin{align*}
-    [u, a] &= [u, a]\\
-    [u, a]\cdot 1 &= [u, a]\\
-    [u, a]\cdot (1\rdv [v, a])[v, a] &= [u, a]\\
-    [u, a](1\rdv [v, a])\cdot [v, a] &= [u, a]\text{ since $[u, a]\in\nuc(Q) $}\\
-    [u, a](1\rdv [v, a]) &= [u, a]\rdv[v,a]
-  \end{align*}
-  as desired.
-\end{proof}
-
-\begin{lem}\label{lem-3}
-  Let $Q$ be a loop such that $Q/\nuc(Q)$ is an abelian group. Then $x\cdot [y, z] = x\rdv [z, y]$
-    for all $x, y, z\in Q$.
-\end{lem}
-
-\begin{proof}
-  Let $x, y, z\in Q$ be given and consider
-  \begin{alignat*}{2}
-    x\rdv(L_{x, [y, z]}([y, z]\ldv 0)) &= x\rdv([y, z]\ldv 0) &&\text{ since $[y, z]\in\nuc(Q)$}\\
-    &= x\rdv [z, y] &&\text{ by Lemma \ref{lem-1}.}
-  \end{alignat*}
-
-  But on the other hand we have that
-  \begin{align*}
-    x\rdv(L_{x, [y, z]}([y, z]\ldv 1)) &= x\rdv((x\cdot [y, z])\ldv (x\cdot ([y, z]\cdot([y, z]\ldv 1))))\\
-    &= x\rdv((x\cdot [y, z])\ldv x)\\
-    &= x\cdot [y, z]
-  \end{align*}
-  Thus $x\rdv[z, y] = x\cdot [y, z]$.
+  This is shown in Lemma 7.2 of \cite{buch}.
 \end{proof}
 
 \begin{thm}
-  Let $Q$ be a loop such that $Q/\nuc(Q)$ is an abelian group. Then classical and congruence
-    solvability degrees of $Q$ coincide.
+  If $Q\nuc(Q)$ is an abelian group, then the classical and congruence solvability degrees of $Q$ are equal.
 \end{thm}
 
 \begin{proof}
@@ -2433,24 +2383,23 @@ We will now show that if $Q/\nuc(Q)$ is an abelian group, then the classical and
     commutators are in the nucleus.
 
   We will first show that $[H, H]\subseteq [H, H]_C$. Let $x, y\in H$ be given. Then
-    $[x, y] = T_x(y)\rdv y = T_x(y)\rdv T_1(y) \in [H, H]_C$. Thus $[H, H]_C$ contains
+    $[x, y] = T_x(y)\cdot y = T_x(y)\rdv T_1(y) \in [H, H]_C$. Thus $[H, H]_C$ contains
     all generators of $[H, H]$ and $[H, H]\subseteq [H, H]_C$.
 
   We will now show that $[H, H]_C\subseteq [H, H]$. Let $u_1, v_1, u_2, v_2, a\in Q$
-
     such that $u_1\rdv v_1, u_2\rdv v_2, a\in H$ be given. Note that
     $L_{u_1, u_2}(a) = L_{v_1, v_2}(a) = R_{u_1, u_2}(a) = R_{v_1, v_2}(a) = 1$ since
-    $a\in H\subseteq \nuc(Q)$. So we need only consider $T\in\mathcal{W}$. Consider
-  \begin{alignat*}{2}
-    T_{u_1}(a)\rdv T_{v_1}(a) &= ([u_1, a]\cdot a)\rdv ([v_1, a]\cdot a) &&\\
-    &= [u_1, a](a\rdv([v_1, a]\cdot a)) &&\text{ since $[u_1, a]\in\nuc(Q)$}\\
-    &= [u_1, a]((a\rdv a)(1\rdv[v_1, a])) &&\text{ since $[v_1, a]\in\nuc(Q)$}\\
-    &= [u_1, a](1\rdv [v_1, a]) &&\\
-    &= [u_1, a]\rdv [v_1, a] &&\text{ by Lemma \ref{lem-2}}\\
-    &= [u_1, a]\cdot [a, v_1] &&\text{ by Lemma \ref{lem-3}}\\
+    $a\in H\subseteq \nuc(Q)$. So we need only consider $T\in\mathcal{W}$. By Lemma
+    \ref{buch-lem} we have that
+  \begin{align*}
+    T_{u_1}(a)\rdv T_{v_1}(a) &= (T_{u_1\rdv v_1}(a) T_{v_1}(a))\rdv T_{v_1}(a)\\
+    &= ([u_1\rdv v_1, T_{v_1}(a)] T_{v_1}(a))\rdv T_{v_1}(a)\\
+    &= [u_1\rdv v_1, T_{v_1}(a)]\\
     &\in [H, H]
-  \end{alignat*}
-  So $[H, H]_C\subseteq [H, H]$ and $[H, H]_C = [H, H]$. Thus the derived series are equal by induction.
+  \end{align*}
+  
+  Thus $[H, H]_C\subseteq [H, H]$ so $[H, H]_C = [H, H]$ and by induction the derived series
+    are equal. So the classical and congruence solvability degrees of $Q$ are equal.
 \end{proof}
 
 \section{$Q/\nuc(Q)$ a group}
