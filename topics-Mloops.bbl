@@ -134,11 +134,6 @@ G.~P. Nagy and Petr {Vojt\v{e}chovsk\'{y}}.
 \newblock The moufang loops of order 64 and 81.
 \newblock {\em Journal of Symbolic Computation}, 42, 2007.
 
-\bibitem{Ivy}
-I.~Chakrabarty, S.~Ghosh, and M.K. Sen.
-\newblock Undirected power graphs of semigroups.
-\newblock {\em Semigroup Forum}, 78:410--426, 2009.
-
 \bibitem{SP}
 V.A. Shcherbacov and D.I. Pushkashku.
 \newblock On the structure of finite paramedial quasigroups.
@@ -173,6 +168,11 @@ S.~Burris and H.~P. Sankappanavar.
 D.~Stanovsky and P.~{Vojt\v{e}chovsk\'{y}}.
 \newblock Commutator theory for loops.
 \newblock {\em J. Algebra}, 399:290--322, 2014.
+
+\bibitem{buch}
+P.~Csorgo, A.~Drapal, and M.~Kinyon.
+\newblock Buchsteiner loops.
+\newblock {\em Internat. J. Alebra Comput.}, 19(8):1049--1088, 2009.
 
 \bibitem{BK-inner}
 M.~Barnes and M.~Kinyon.
