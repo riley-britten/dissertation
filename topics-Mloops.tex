@@ -821,7 +821,7 @@ Cameron's proof in \cite{PGII} relied on handling groups with multiple vertices 
   take a similar approach here. In generalizing to Moufang loops, a third type of loop with such a power graph
   arises; we have termed these \textit{generalized octonion loops}. 
 
-\begin{thm}\label{moufangDesc2}
+\begin{thm}\label{moufangDesc}
   A Moufang $p$-loop $M$ with a unique subloop of order $p$ is either a cyclic group, a generalized quaternion
     group, or a generalized octonion loop. These last two only occur when $p = 2$.
 \end{thm}
@@ -946,7 +946,7 @@ Throughout the paper we will denote loops arising from this construction by $M(G
   Suppose that $M$ is a finite Moufang loop with a set of generators $\{u, u_1, \ldots, u_n\}$ such that
   \begin{itemize}
     \item $u\notin G = \langle u_1,\ldots, u_n\rangle$,
-    \item $u^2\in N(\langle, u^2, G\rangle)$,
+    \item $u^2\in N(\langle u^2, G\rangle)$,
     \item conjugation by $u$ maps $G$ into itself.
   \end{itemize}
   Let $k$ be the smallest positive integer such that $u^k\in G$. Then
@@ -968,7 +968,7 @@ We will begin by classifying Moufang $p$-loops $M$ with a unique subloop of orde
   Theorem \ref{mainThm}, we will handle such loops separately. Note that every nontrivial subloop of a
   Moufang loop of order $p^n$ with a unique subloop of order $p$ also has a unique subloop of order $p$.
 
-\begin{thm}\label{moufangDesc}
+\begin{thm}
     A Moufang $p$-loop $M$ with a unique subloop of order $p$ is either a cyclic group, a generalized
       quaternion group, or $M(Q_{4n}, 2)$. These last two only occur when $p = 2$.
 \end{thm}
@@ -1088,7 +1088,7 @@ To make the Theorem \ref{moufangDesc} more closely follow the result for groups 
     as needed. The same procedure can be repeated for any other stage at which $|u| \neq 4$. So the proof is complete.
 \end{proof}
 
-\begin{thm}\label{moufangDesc2}
+\begin{thm}\label{genOctChain}
   Let $M$ be a generalized octonion loop. Then there exist $S_1\unlhd S_2\unlhd\ldots\unlhd M$ such that
   \begin{enumerate}
     \item $S_{i + 1}$ satisfies the hypotheses of Theorem \ref{thm-chein} with $G = S_i$.
@@ -1201,7 +1201,7 @@ Recall that the generalized quaternion group of order $4n$ can be presented as
 
 \section{Undirected power graphs determine directed} \label{gen-oct}
 
-With Theorem \ref{moufangDesc2} at our disposal we can now translate the argument in \cite{PGII} to the
+With Theorem \ref{genOctChain} at our disposal we can now translate the argument in \cite{PGII} to the
   Moufang case to show that two Moufang loops with isomorphic undirected power graphs must have isomorphic
   directed power graphs. As in \cite{PGII} the proof is split into two cases depending on whether the
   identity vertex is the only one connected to all other vertices. In what follows, let $M$ be a Moufang
@@ -1229,7 +1229,7 @@ With Theorem \ref{moufangDesc2} at our disposal we can now translate the argumen
 
 Thus if the power graph of a Moufang $p$-loop $M$ has a non-identity vertex connected to all
   others, then $M$ is either cyclic, generalized quaternion or generalized octonion by Theorem
-  \ref{moufangDesc2}. We now handle the case that $M$ does not have prime power order.
+  \ref{moufangDesc}. We now handle the case that $M$ does not have prime power order.
 
 \begin{lem}
   Suppose that $x\in M$ with $x\neq 1$ and $x$ connected to all other vertices in the power

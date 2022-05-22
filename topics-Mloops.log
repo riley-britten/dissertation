@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.31)  21 MAY 2022 22:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.31)  21 MAY 2022 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,14 +913,7 @@ Package: arydshln 2019/02/21 v1.76
 \adl@everyvbox=\toks48
 \adl@LTpagetotal=\dimen332
 )
-(./topics-Mloops.aux
-
-LaTeX Warning: Label `moufangDesc2' multiply defined.
-
-
-LaTeX Warning: Label `moufangDesc2@cref' multiply defined.
-
-)
+(./topics-Mloops.aux)
 \openout1 = `topics-Mloops.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 193.
@@ -943,8 +936,7 @@ LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
 93.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+) (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count341
 \scratchdimen=\dimen333
@@ -1294,7 +1286,7 @@ l.3696
 
 ] [96]
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-65.
+60.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -1333,16 +1325,13 @@ Package rerunfilecheck Info: File `topics-Mloops.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4171.
  ) 
 Here is how much of TeX's memory you used:
- 27182 strings out of 483107
- 521851 string characters out of 5964630
- 909596 words of memory out of 5000000
- 40811 multiletter control sequences out of 15000+600000
+ 27180 strings out of 483107
+ 521826 string characters out of 5964630
+ 909522 words of memory out of 5000000
+ 40810 multiletter control sequences out of 15000+600000
  561928 words of font info for 97 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  60i,14n,67p,418b,2278s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1363,10 +1352,10 @@ ive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on topics-Mloops.pdf (125 pages, 456156 bytes).
+Output written on topics-Mloops.pdf (125 pages, 455818 bytes).
 PDF statistics:
- 2416 PDF objects out of 2487 (max. 8388607)
- 1957 compressed objects within 20 object streams
- 886 named destinations out of 1000 (max. 500000)
+ 2415 PDF objects out of 2487 (max. 8388607)
+ 1956 compressed objects within 20 object streams
+ 885 named destinations out of 1000 (max. 500000)
  605 words of extra memory for PDF output out of 10000 (max. 10000000)
 
