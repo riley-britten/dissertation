@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.4.26)  19 MAY 2022 07:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.31)  22 MAY 2022 07:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1075,250 +1075,255 @@ Chapter 2.
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
-35.
+56.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [15]
-Overfull \hbox (3.09285pt too wide) in paragraph at lines 881--882
+)
+Overfull \hbox (3.09285pt too wide) in paragraph at lines 876--877
 [] []|\OT1/ptm/b/n/12 2.2.2 Moufang loops.[] \OT1/ptm/m/n/12 We now present som
 e fun-da-men-tal results on Moufang loops which
  []
 
-[16] [17]
-Overfull \hbox (21.26263pt too wide) in paragraph at lines 951--952
+[15] [16]
+Overfull \hbox (21.26263pt too wide) in paragraph at lines 946--947
 []\OT1/ptm/b/n/12 Theorem 2.13. []\OT1/ptm/m/n/12 Sup-pose that $\OML/cmm/m/it/
 12 M$ \OT1/ptm/m/n/12 is a finite Moufang loop with a set of gen-er-a-tors $\OM
 S/cmsy/m/n/12 f\OML/cmm/m/it/12 u; u[]; [] ; u[]\OMS/cmsy/m/n/12 g$
  []
 
+[17]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 970.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 970.
+(hyperref)                removing `math shift' on input line 965.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 970.
+(hyperref)                removing `math shift' on input line 965.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 970.
+(hyperref)                removing `math shift' on input line 965.
 
-[18] [19] [20] [21] [22] [23] [24] [25pdfTeX warning (ext4): destination with t
-he same identifier (name{figure.2.1}) has been already used, duplicate ignored
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 965.
+
+[18] [19] [20] [21]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[22] [23pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1299 
-       ] [26] [27] [28] [29]
+l.1246 
+       ] [24] [25] [26]
 Chapter 3.
 
-Overfull \hbox (2.0114pt too wide) in paragraph at lines 1422--1424
+Overfull \hbox (2.0114pt too wide) in paragraph at lines 1348--1350
 [] []|\OT1/ptm/b/n/12 3.1.1 Medial and F-quasi-groups.[] \OT1/ptm/m/n/12 We wil
 l first present the def-i-ni-tions and lin-ear-ity results
  []
 
-[30
+[27
 
-] [31] [32] [33pdfTeX warning (ext4): destination with the same identifier (nam
+] [28] [29] [30pdfTeX warning (ext4): destination with the same identifier (nam
 e{figure.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1556 \end{prp}
-                ] [34] [35pdfTeX warning (ext4): destination with the same iden
+l.1482 \end{prp}
+                ] [31] [32pdfTeX warning (ext4): destination with the same iden
 tifier (name{table.3.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1639 
+l.1565 
        pdfTeX warning (ext4): destination with the same identifier (name{table.
 3.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1639 
-       ] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47pdfTeX warni
+l.1565 
+       ] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44pdfTeX warni
 ng (ext4): destination with the same identifier (name{figure.3.2}) has been alr
 eady used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2055   \end{align*}
-                     ] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57]
+l.1981   \end{align*}
+                     ] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54]
 Chapter 4.
-[58
+[55
 
-] [59]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2474.
-
+] [56]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2474.
+(hyperref)                removing `math shift' on input line 2400.
 
-[60] [61]
-Overfull \hbox (1.71428pt too wide) in paragraph at lines 2549--2552
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 2400.
+
+[57] [58]
+Overfull \hbox (1.71428pt too wide) in paragraph at lines 2475--2478
 []\OT1/ptm/m/n/12 We will show by induc-tion that the derived series are equal.
  First note that $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 Q; Q\OT1/cmr/m/n/12 ][] =
  []
 
-[62]
+[59]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2582.
+(hyperref)                removing `math shift' on input line 2508.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2582.
+(hyperref)                removing `math shift' on input line 2508.
 
-[63] [64] [65] [66] [67] [68] [69] [70pdfTeX warning (ext4): destination with t
+[60] [61] [62] [63] [64] [65] [66] [67pdfTeX warning (ext4): destination with t
 he same identifier (name{table.4.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2837 \end{thm}
+l.2763 \end{thm}
                 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2860.
+(hyperref)                removing `math shift' on input line 2786.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2860.
+(hyperref)                removing `math shift' on input line 2786.
 
-[71] [72pdfTeX warning (ext4): destination with the same identifier (name{table
+[68] [69pdfTeX warning (ext4): destination with the same identifier (name{table
 .4.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2926 
-       ] [73pdfTeX warning (ext4): destination with the same identifier (name{t
+l.2852 
+       ] [70pdfTeX warning (ext4): destination with the same identifier (name{t
 able.4.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2929 \chapter
+l.2855 \chapter
                {Cosets in Moufang loops}]
 Chapter 5.
-[74
+[71
 
-] [75] [76pdfTeX warning (ext4): destination with the same identifier (name{tab
+] [72] [73pdfTeX warning (ext4): destination with the same identifier (name{tab
 le.5.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3042 ...cdot (z\cdot xy) = x\cdot (yz\cdot xy)\]
-                                                  ] [77] [78] [79] [80]
-[81] [82] [83] [84]
+l.2968 ...cdot (z\cdot xy) = x\cdot (yz\cdot xy)\]
+                                                  ] [74] [75] [76] [77]
+[78] [79] [80] [81]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3359.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 3359.
+(hyperref)                removing `math shift' on input line 3285.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3359.
+(hyperref)                removing `subscript' on input line 3285.
 
-[85pdfTeX warning (ext4): destination with the same identifier (name{table.5.2}
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3285.
+
+[82pdfTeX warning (ext4): destination with the same identifier (name{table.5.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3380 
-       ] [86] [87]
-Overfull \hbox (4.34161pt too wide) in paragraph at lines 3446--3448
+l.3306 
+       ] [83] [84]
+Overfull \hbox (4.34161pt too wide) in paragraph at lines 3372--3374
 []\OT1/ptm/b/n/12 Proposition 5.19. []\OT1/ptm/m/n/12 If there is a Moufang loo
 p $\OML/cmm/m/it/12 Q$ \OT1/ptm/m/n/12 with subloop $\OML/cmm/m/it/12 S$ \OT1/p
 tm/m/n/12 and an orbit $\OML/cmm/m/it/12 X$ \OT1/ptm/m/n/12 of $[][]\OT1/cmr/m/
 n/12 (\OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 ; \OML/cmm/m/it/12 S\OT1/cmr/m/n/12 )$
  []
 
-[88] [89]
+[85] [86]
 Chapter 6.
-[90
+[87
 
-] [91pdfTeX warning (ext4): destination with the same identifier (name{table.6.
+] [88pdfTeX warning (ext4): destination with the same identifier (name{table.6.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3579 \end{dfn}
-                ] [92] [93pdfTeX warning (ext4): destination with the same iden
+l.3505 \end{dfn}
+                ] [89] [90pdfTeX warning (ext4): destination with the same iden
 tifier (name{table.6.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3651 
-       ] [94pdfTeX warning (ext4): destination with the same identifier (name{t
+l.3577 
+       ] [91pdfTeX warning (ext4): destination with the same identifier (name{t
 able.6.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3702 \chapter
+l.3628 \chapter
                {Future directions of research}]
 Chapter 7.
-[95
+[92
 
-] [96pdfTeX warning (ext4): destination with the same identifier (name{figure.7
+] [93pdfTeX warning (ext4): destination with the same identifier (name{figure.7
 .1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3786 
-       ] (./topics-Mloops.bbl [97] [98
+l.3712 
+       ] (./topics-Mloops.bbl [94] [95
 
-] [99]
+] [96]
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
-65.
+60.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [100]) [101]
+) [97]) [98]
 Appendix A.
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 3
-819.
+745.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3819.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3745.
 
- [102
+ [99
 
-] [103] [104]
-[105] [106] [107] [108] [109] [110] [111]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 4059.
-
+] [100] [101]
+[102] [103] [104] [105] [106] [107] [108]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 4059.
+(hyperref)                removing `math shift' on input line 3985.
 
-[112] [113] [114] [115] [116] [117] [118] [119] [120]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4261.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4261.
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3985.
+
+[109] [110] [111] [112] [113] [114] [115] [116] [117]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4187.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4187.
  (./topics-Mloops.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4261.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4261.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4187.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4187.
 
 Package rerunfilecheck Info: File `topics-Mloops.out' has not changed.
 (rerunfilecheck)             Checksum: 5244F6FFDC63A9F96985178DA72E3579;5166.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4261.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4187.
  ) 
 Here is how much of TeX's memory you used:
- 27185 strings out of 483107
- 521882 string characters out of 5964630
- 909555 words of memory out of 5000000
- 40810 multiletter control sequences out of 15000+600000
+ 27179 strings out of 483107
+ 521815 string characters out of 5964630
+ 909521 words of memory out of 5000000
+ 40809 multiletter control sequences out of 15000+600000
  561928 words of font info for 97 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  60i,14n,67p,418b,2278s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1339,10 +1344,10 @@ ive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on topics-Mloops.pdf (128 pages, 461591 bytes).
+Output written on topics-Mloops.pdf (125 pages, 456692 bytes).
 PDF statistics:
- 2429 PDF objects out of 2487 (max. 8388607)
- 1967 compressed objects within 20 object streams
- 890 named destinations out of 1000 (max. 500000)
+ 2421 PDF objects out of 2487 (max. 8388607)
+ 1962 compressed objects within 20 object streams
+ 885 named destinations out of 1000 (max. 500000)
  605 words of extra memory for PDF output out of 10000 (max. 10000000)
 
