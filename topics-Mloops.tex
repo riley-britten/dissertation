@@ -1581,9 +1581,132 @@ In what follows let $(Q, \cdot)$ be a para-F quasigroup and $x, y, z\in Q$ be un
   So the proof is complete.
 \end{proof}
 
+\begin{lem}\label{lem-21}
+  $((x\ldv x)y \cdot z)\rdv x = (x\ldv z)\cdot y$
+\end{lem}
+
+\begin{proof}
+  By the para-F identities we have that
+  \begin{align*}
+    (x\ldv x)y\cdot xz &= zy\cdot x\\
+    (x\ldv x)y\cdot z &= (x\ldv z)y\cdot x\text{ substituting $x\mapsfrom x\ldv z$}\\
+    ((x\ldv x)y\cdot x)\rdv x &= (x\ldv z)\cdot y\text{ right dividing by $x$}
+  \end{align*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-22}
+  $(xy)\rdv z = ((z\rdv (x\rdv x))\ldv y)\cdot x$
+\end{lem}
+
+\begin{proof}
+  By the para-F identities we have
+  \begin{align*}
+    zx \cdot y(x\rdv x) &= x\cdot yz\\
+    zx &= (x\cdot yz)\rdv(y(x\rdv x))\text{ right dividing by $y(x\rdv x)$}\\
+    (z\ldv y)\cdot x &= (xy)\rdv (z\cdot (x\rdv x))\text{ substituting $y\mapsfrom z, z\mapsfrom z\ldv y$}\\
+    ((z\rdv (x\rdv x))\ldv y)\cdot x &= (x\cdot y)\rdv z\text{ substituting $z\mapsfrom z\rdv (x\rdv x)$}
+  \end{align*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-25}
+  $z\cdot ((y\ldv y)\ldv x) = (x\rdv x)\cdot ((y\ldv y)\ldv (z\cdot x))$
+\end{lem}
+
+\begin{proof}
+  By the para-F identities we have
+  \begin{align*}
+    (x\ldv x)y\cdot xz &= zy\cdot x\\
+    x\cdot yz &= z ((y\ldv y)\ldv x)\cdot y\text{ substituting $x\mapsfrom y, y\mapsfrom (y\ldv y)\ldv x$}\\
+    (x\cdot yz)\rdv y &= z\cdot ((y\ldv y)\ldv x)\text{ right dividing by $y$} \label{line-18}\tag{I}\\
+    (zx\cdot y(x\rdv x))\rdv y &= (x\rdv x)\cdot ((y\ldv y)\ldv(z\cdot x))\text{ substituting $x\mapsfrom zx, z\mapsfrom x\rdv x$}\\
+    (x\cdot yz)\rdv y &= (x\rdv x)\cdot ((y\ldv y)\ldv(z\cdot x))\text{ by the para-F identities}\\
+    z\cdot ((y\ldv y)\ldv x) &= (x\rdv x)\cdot ((y\ldv y)\ldv(z\cdot x))\text{ by (\ref{line-18})}
+  \end{align*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-31}
+  $((x\cdot y)\rdv z)\rdv x = (z\rdv (x\rdv x))\ldv y$
+\end{lem}
+
+\begin{proof}
+  By the para-F identities we have
+  \begin{align*}
+    x\cdot yz &= zx\cdot y(x\rdv x)\\
+    (x\cdot yz)\rdv (y\cdot (x\rdv x)) &= z\cdot x\text{ right dividing by $y\cdot (x\rdv x)$}\\
+    (x\cdot y)\rdv(z\cdot (x\rdv x)) &= (z\ldv y)\cdot x\text{ substituting $y\mapsfrom z, z\mapsfrom z\ldv y$}\\
+    (x\cdot y)\rdv z &= ((z\rdv (x\rdv x))\ldv y)\cdot x\text{ substituting $z\mapsfrom z\rdv (x\rdv x)$}\\
+    ((x\cdot y)\rdv z)\rdv x &= (z\rdv (x\rdv x))\ldv y\text{ right dividing by $x$}
+  \end{align*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-32}
+  $(y\ldv y)\ldv ((x\cdot y)\rdv z) = (y\ldv z)\ldv x$
+\end{lem}
+
+\begin{proof}
+  By the para-F identities we have
+  \begin{align*}
+    (x\ldv x)y\cdot xz &= zy\cdot x\\
+    (x\ldv x)y\cdot z &= (x\ldv z)y\cdot x\text{ substituting $z\mapsfrom x\ldv z$}\\
+    ((y\ldv y)\cdot ((y\ldv z)\ldv x))\cdot z &= x\cdot y\text{ substituting $x\mapsfrom y, y\mapsfrom (y\ldv z)\ldv x$}\\
+    (y\ldv y)\cdot ((y\ldv z)\ldv x) &= (x\cdot y)\rdv z\text{ right dividing by $z$}\\
+    (y\ldv z)\ldv x &= (y\ldv y)\ldv((x\cdot y)\rdv z)\text{ left dividing by $y\ldv y$}
+  \end{align*}
+  So the proof is complete.
+\end{proof}
+
+\begin{lem}\label{lem-34-f}
+  $(z\rdv(x\rdv x))\ldv (y\cdot (z\ldv z)) = z\ldv (y\cdot (x\rdv x))$
+\end{lem}
+
+\begin{proof}
+  Substituting $x\mapsfrom z, y\mapsfrom x, z\mapsfrom y\cdot(x\rdv x)$ in Lemma \ref{lem-21} we have
+  \begin{align*}
+    ((z\ldv z)x \cdot y(x\rdv x))\rdv z &= (z\ldv (y\cdot (x\rdv x)))\cdot x)\\
+    (x\cdot y(z\ldv z))\rdv z &= (z\ldv (y\cdot (x\rdv x)))\cdot x\text{ by the para-F identities}\\
+    ((x\cdot y(z\ldv z))\rdv z)\rdv x &= z\ldv (y\cdot (x\rdv x))\text{ right dividing by $x$}\\
+    (z\rdv(x\rdv x))\ldv (y\cdot (z\ldv z)) &= z\ldv (y\cdot (x\rdv x))\text{ by Lemma \ref{lem-31}}
+  \end{align*}
+  So the proof is complete.
+\end{proof}
+
 \begin{lem}\label{iso-lem}
   $(x\rdv x)(y\ldv x)\cdot z = x\cdot (z\rdv y)(x\rdv x)$ for all $x, y, z\in Q$.
 \end{lem}
+
+\begin{proof}
+  Substituting $x\mapsfrom y, y\mapsfrom (y\ldv y)\ldv x$ in \ref{eq:pF2} we have
+  \begin{align*}
+    x\cdot yz &= z((y\ldv y)\ldv x)\cdot y\label{line-14} \tag{I}\\
+    ((z\ldv z)((y\ldv y)\ldv x)\cdot y)\rdv z &= (z\ldv y)\cdot ((y\ldv y)\ldv x)\\
+      &\text{ substituting $x\mapsfrom z,
+      y\mapsfrom (y\ldv y)\ldv x, z\mapsfrom y$ in Lemma \ref{lem-21}}\\
+    (x\cdot y(z\rdv z))\rdv z &= (z\ldv y)\cdot ((y\ldv y)\ldv x)\text{ by (\ref{line-14})}
+      \label{line-30} \tag{II}\\
+    (y\cdot z(x\ldv x))\rdv y &= ((x\rdv(y\rdv y))\ldv (z\cdot (x\ldv x)))\cdot y\\
+      &\text{ substituting $x\mapsfrom y,
+      y\mapsfrom z\cdot (x\ldv x), y\mapsfrom x$ in Lemma \ref{lem-22}}\\
+    (x\ldv z)\cdot ((z\ldv z)\ldv y) &= ((x\rdv(y\rdv y))\ldv (z\cdot (x\ldv x)))\cdot y\text{ by (\ref{line-30})}\\
+    (x\ldv(z\cdot (y\rdv y)))\cdot y &= (x\ldv z)\cdot ((z\ldv z)\ldv y)\text{ from Lemma \ref{lem-34-f}}
+      \label{line-36} \tag{III}\\
+    (y\cdot z(y\rdv y))\rdv x &= ((x\rdv (y\rdv y))\ldv (z\cdot (y\rdv y)))\cdot y\\
+      &\text{substituting $x\mapsfrom y, y\mapsfrom z\cdot(y\rdv y), z\mapsfrom x$ in Lemma \ref{lem-22}}\\
+    (y\cdot z(y\rdv y))\rdv x &= ((x\rdv(y\rdv y))\ldv z)\cdot ((z\ldv z)\ldv y)\text{ by (\ref{line-36})}
+      \label{line-37} \tag{IV}\\
+    (x\rdv x)\cdot ((y\ldv y)\ldv(((z\rdv (x\rdv x))\ldv y)\cdot x)) &= ((z\rdv (x\rdv x))\ldv y)\cdot ((y\ldv y)\ldv x)\\
+      &\text{substituting $z\mapsfrom (z\rdv(x\rdv x))\ldv y$ in Lemma \ref{lem-25}}\\
+    (x\rdv x)\cdot ((y\ldv y)\ldv(((z\rdv (x\rdv x))\ldv y)\cdot x)) &= (x\cdot y(x\rdv x))\rdv z\text{ by (\ref{line-37})}\\
+    (x\rdv x)\cdot ((y\ldv y)\ldv ((x\cdot y)\rdv z)) &= (x\cdot y(x\rdv x))\rdv z\text{ by Lemma \ref{lem-22}}\\
+    (x\rdv x)\cdot ((y\ldv z)\ldv x) &= (x\cdot y(x\rdv x))\rdv z\text{ by Lemma \ref{lem-32}}\\
+    ((x\rdv x)\cdot ((y\ldv z)\ldv x))\cdot z &= x\cdot y(x\rdv x)\text{ right multiplying by $z$}\\
+    (x\rdv x)(y\ldv x)\cdot z &= x\cdot (z\rdv y)(x\rdv x)\text{ substituting $y\mapsfrom z\rdv y$}
+  \end{align*}
+  So the proof is complete.
+\end{proof}
 
 \begin{prp}\label{BI}
   $L_x L_y^{-1} L_x = L_{(x\rdv x)\cdot (y\rdv x)\ldv x}$ for all $x, y\in Q$. 
