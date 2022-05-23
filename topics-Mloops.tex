@@ -3493,7 +3493,7 @@ In particular, this loop is universally flexible and does not have the AAIP and 
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{c|cccccccccccccccccccccccccccccccc|}
   $\cdot$ & 1& 2& 3& 4& 5& 6& 7& 8& 9& 10& 11& 12& 13& 14& 15& 16& 17& 18& 19& 20& 21& 22& 23& 24& 25& 26& 27& 28& 29& 30& 31& 32 \\
-  \hline\hline
+  \hline
   1& 1&  2&  3&  4&  5&  6&  7&  8&  9& 10& 11& 12& 13& 14& 15& 16& 17& 18& 19& 20& 21& 22& 23& 24& 25& 26& 27& 28& 29& 30& 31& 32 \\
   2& 2&  1&  4&  3&  6&  5&  8&  7& 10&  9& 12& 11& 14& 13& 16& 15& 18& 17& 20& 19& 22& 21& 24& 23& 26& 25& 28& 27& 30& 29& 32& 31 \\
   3& 3&  4&  7&  8&  9& 10& 11& 12& 13& 14&  1&  2& 15& 16&  5&  6& 27& 28& 23& 24& 31& 32& 19& 20& 29& 30& 17& 18& 25& 26& 21& 22 \\
@@ -3545,10 +3545,25 @@ The \textit{enhanced power graph} of a group, which lies between the power graph
   two finite groups with isomorphic power graphs must have isomorphic enhanced power graphs. One natural
   progression of our research would be to attempt to transfer this result to the context of Moufang loops.
 
-There has been some work in describing properties of the power graph of a group and how they relate to
-  properties of the group itself as in \cite{EPG}, \cite{LineGraph}, and \cite{GraphSemigroups}. Another
-  natural progression of this research would be to attempt to characterize properties of the power graphs
-  of Moufang loops.
+There has been further work in describing graphs related to generalized quaternion groups. A potential
+  avenue of research would be to attempt to prove analogous results for generalized octonion loops.
+
+\begin{dfn}
+  Let $G$ be a graph, then the \emph{line graph of} $G$ has vertex set edges of $G$,
+    with two vertices adjacent if and only if the corresponding edges are incident in $G$
+\end{dfn}
+
+\begin{dfn}
+  A graph is a \emph{line graph} if it is the line graph of some graph
+\end{dfn}
+
+\begin{dfn}
+  The \emph{proper power graph} is obtained from the power graph by deleting all vertices
+    connected to all others
+\end{dfn}
+
+It is shown in \cite{LineGraph} that the proper power graphs of generalized quaternion groups are line graphs.
+  We conjecture that this result can be extended to generalized octonion loops?
 
 \section{Para-F quasigroups}
 
@@ -3606,8 +3621,7 @@ In this chapter we succeeded in finding a sufficient condition for classical and
 \section{Cosets in Moufang loops}
 
 The question we set out to answer here, namely "for any subloop of a Moufang loop does there exist a
-  subset of its cosets partitioning the loop?", remains open. We conjecture that the answer is negative,
-  however no example has yet been constructed.
+  subset of its cosets partitioning the loop?", remains open. We conjecture that the answer is positive.
 
 \section{SUF loops}
 

@@ -63,8 +63,8 @@
 \contentsline {section}{\numberline {7.2}Future directions of research}{88}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Para-F quasigroups}{88}{section.7.3}%
 \contentsline {section}{\numberline {7.4}Solvability for loops}{89}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Cosets in Moufang loops}{89}{section.7.5}%
-\contentsline {section}{\numberline {7.6}SUF loops}{89}{section.7.6}%
+\contentsline {section}{\numberline {7.5}Cosets in Moufang loops}{90}{section.7.5}%
+\contentsline {section}{\numberline {7.6}SUF loops}{90}{section.7.6}%
 \contentsline {chapter}{\numberline {A}Automated proofs}{95}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Notation}{95}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Para-F}{95}{section.A.2}%
