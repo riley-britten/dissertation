@@ -390,8 +390,8 @@ It is frequently convenient to use infix notation for the inverses of the transl
 \begin{dfn}
   A \emph{quasigroup} is a set $Q$ along with three binary operations $\cdot, \ldv, \rdv:Q\times Q\to Q$ satisfying:
   \begin{align*}
-    &(x\rdv y)\cdot y = x, &(x\cdot y)\rdv y = x\\
-    &x\cdot (x\ldv y) = y, &x\ldv (x\cdot y) = y
+    &(x\rdv y)\cdot y = x, &(x\cdot y)\rdv y = x,\\
+    &x\cdot (x\ldv y) = y, &x\ldv (x\cdot y) = y.
   \end{align*}
 \end{dfn}
 
@@ -408,7 +408,7 @@ Standard references for quasigroup theory are \cite{Belousov,Bruck,Pf,Shcherbaco
 
 \begin{dfn}
   A \emph{loop} $(Q, \cdot, \ldv, \rdv, 1)$ is a quasigroup $(Q, \cdot, \ldv, \rdv)$ with an element $1\in Q$ satisfying:
-  \[1\cdot x = x, \quad x\cdot 1 = x\]
+  \[1\cdot x = x, \quad x\cdot 1 = x.\]
 \end{dfn}
 
 Basic references for loop theory are \cite{Bel}, \cite{Bruck}, \cite{Pf}. Any uncited facts in the discussion that follows
@@ -418,19 +418,19 @@ Basic references for loop theory are \cite{Bel}, \cite{Bruck}, \cite{Pf}. Any un
 
 \begin{dfn}
   Let $(Q, \cdot)$ be a quasigroup. The \emph{left multiplication group} of $Q$ is
-  \[\mlt_L(Q) = \langle L_x : x\in Q\rangle\]
+  \[\mlt_L(Q) = \langle L_x : x\in Q\rangle.\]
 \end{dfn}
 
 The right multiplication group, $\mlt_R(Q)$ is defined dually.
 
 \begin{dfn}
   Let $(Q, \cdot)$ be a quasigroup. The \emph{multiplication group} of $Q$ is
-  \[\mlt(Q) = \langle L_x, R_x : x\in Q\rangle\].
+  \[\mlt(Q) = \langle L_x, R_x : x\in Q\rangle.\]
 \end{dfn}
 
 \begin{dfn}
   Let $(Q, \cdot, 1)$ be a loop. The \emph{left inner mapping group} of $Q$ is
-  \[\inn_L(Q) = \{f\in \mlt_L(Q) : f(1) = 1\}\]
+  \[\inn_L(Q) = \{f\in \mlt_L(Q) : f(1) = 1\}.\]
 \end{dfn}
 
 The right inner mapping group is defined dually.
@@ -450,17 +450,26 @@ The right inner mapping group is defined dually.
 \end{fct}
 
 \begin{dfn}
-  Let $(Q, \cdot)$ be a loop for all $x, y\in Q$ we define $L_{x, y}, R_{x, y}, T_x: Q\to Q$ by:
+  Let $(Q, \cdot)$ be a loop. For all $x, y\in Q$ we define $L_{x, y}, R_{x, y}, T_x: Q\to Q$ by:
   \begin{align*}
-    L_{x, y}(z) &= (xy)\ldv(x\cdot yz)\\
-    R_{x, y}(z) &= (zx\cdot y)\rdv(xy)\\
-    M_{x, y}(z) &= (y\ldv(yz\cdot x))\rdv x\\
-    T_x(z) &= (xz)\rdv x
+    L_{x, y}(z) &= (xy)\ldv(x\cdot yz),\\
+    R_{x, y}(z) &= (zx\cdot y)\rdv(xy),\\
+    M_{x, y}(z) &= (y\ldv(yz\cdot x))\rdv x,\\
+    T_x(z) &= (xz)\rdv x.
   \end{align*}
 \end{dfn}
 
+Note that for all $x, y\in Q$ we have
+\begin{align*}
+  L_{x, y}(1) &= 1,\\
+  R_{x, y}(1) &= 1,\\
+  M_{x, y}(1) &= 1,\\
+  T_x(1) &= 1.
+\end{align*}
+So $L_{x,y}, R_{x, y}, M_{x, y}, T_x\in Q$ for all $x, y\in Q$.
+
 \begin{dfn}
-  Define $\inn^*(Q) = \langle L_{x, y}, R_{x, y}, M_{x, y}\rangle$.\
+  Define $\inn^*(Q) = \langle L_{x, y}, R_{x, y}, M_{x, y} : x, y\in Q\rangle$.\
 \end{dfn}
 
 Informally, we think of $\inn^*(Q)$ as being the group of all inner mappings measuring associativity.
@@ -520,8 +529,7 @@ Let $(Q, \cdot)$, $(P, +)$ be magmas and $f: Q\to P$ be a homomorphism. Then $(f
     permuting columns of the multiplication table by $\beta$, and relabeling elements by $\gamma$.
 \end{fct}
 
-As above, isotopy is a generalization of isomorphism. In the context of groups isotopy and isomorphism are the same
-  concept, as shown in the following result: 
+As above, isotopy is a generalization of isomorphism. Note that if two groups are isotopic, then they are isomorphic.
 
 \begin{fct}
   Suppose that $(G, \cdot)$, $(H, +)$ are groups and $(\alpha, \beta, \gamma): G\to H$ is an isotopy. Then $(G, \cdot)$,
@@ -543,7 +551,7 @@ As above, isotopy is a generalization of isomorphism. In the context of groups i
 \end{dfn}
 
 \begin{dfn}
-  Let $(Q, \cdot)$ be a quasigroup. An isotope of $(Q, \cdot)$ is \emph{principal} if it has the same underlying set.
+  Let $(Q, \cdot)$ be a loop. An isotope of $(P, +)$ is \emph{principal} if it has the same underlying set, that is $P = Q$.
 \end{dfn}
 
 \begin{fct}
@@ -553,18 +561,13 @@ As above, isotopy is a generalization of isomorphism. In the context of groups i
   for fixed $a, b\in Q$\cite{Bruck}.
 \end{fct}
 
-\begin{fct}
-  Let $(Q, \cdot)$ be a magma with an isotope $(P, *)$. Then there exists $+:Q\times Q\to Q$ such that $(Q, +)$ is
-    isomorphic to $(P, *)$ \cite{Bruck}.
-\end{fct}
-
 \begin{rmk}
   Note that together the preceding results tell us that up to isomorphism all loop isotopes of $(Q, \cdot)$ are of the
     form $(Q, +)$, where $x + y = (x\rdv a)\cdot (b\ldv y)$ for fixed $a, b\in Q$.
 \end{rmk}
 
 \begin{dfn}
-  Let $(Q, \cdot)$ be a quasigroup, a \emph{left isotope} of $(Q, \cdot)$ is $(Q, +)$ with
+  Let $(Q, \cdot)$ be a quasigroup. A \emph{left isotope} of $(Q, \cdot)$ is $(Q, +)$ with
   \[x + y = (x\rdv a)\cdot y\]
   for fixed $a\in Q$.
 \end{dfn}
@@ -587,14 +590,14 @@ Right isotope is defined dually.
   for all $x, y\in Q$.
 \end{dfn}
 
-As the following result shows, being linear over a loop is a stronger property than being isotopic to a loop.
+As the following result shows, being linear over a loop is at least as strong as being isotopic to a loop.
 
 \begin{prp}\label{prp-linear-iso}
   Suppose that $(Q, \cdot)$ is linear over $(Q, +)$. Then $(Q, +)$ is an isotope of $(Q, \cdot)$.
 \end{prp}
 
 \begin{proof}
-  Suppose that $x\cdot y = (f(x) + g(y)) + c$ for all $x, y\in Q$, where $f, g\in \aut(Q, +)$, $c\in Q$. Let $\gamma = \id$,
+  Suppose that $x\cdot y = f(x) + (g(y) + c)$ for all $x, y\in Q$, where $f, g\in \aut(Q, +)$, $c\in Q$. Let $\gamma = \id$,
     $\alpha(x) = f(x)$, and $\beta(x) = g(x) + c$. It is immediate that $\alpha, \beta, \gamma$ are bijections.
     Let $x, y\in Q$ be given, then
   \begin{align*}
@@ -605,6 +608,8 @@ As the following result shows, being linear over a loop is a stronger property t
   Thus $(\alpha, \beta, \gamma)$ is an isotopy and $(Q, +)$ is an isotope of $(Q, \cdot)$.
 \end{proof}
 
+TODO: Isotope which is not linear.
+
 \subsection{Inverse properties}
 
 \begin{dfn}
@@ -614,10 +619,13 @@ As the following result shows, being linear over a loop is a stronger property t
 \end{dfn}
 
 \begin{dfn}
-  Similarly, a loop $(Q, \cdot)$ has the \emph{right inverse property} (RIP) if there exists a bijection $\gamma: Q\to Q$
+  Similarly, a loop $(Q, \cdot)$ has the \emph{right inverse property} (RIP) if there exists a bijection $\rho: Q\to Q$
     such that for all $x, y\in Q$
-  \[xy\cdot \gamma(y) = x\]
+  \[xy\cdot \rho(y) = x\]
 \end{dfn}
+
+Note that LIP and RIP loop have two sided inverses. That is, $\lambda(x) x = 1 = x \lambda(x)$ and $\rho(x) x = 1 = x \rho(x)$.
+  Further, note that $\lambda(x)y = x\ldv y$ and $x\rho(y) = x\rdv y$.
 
 \begin{dfn}
   A loop $(Q, \cdot)$ which has both the left and right inverse properties is said to be an \emph{inverse property loop}
@@ -625,16 +633,16 @@ As the following result shows, being linear over a loop is a stronger property t
 \end{dfn}
 
 When working with IP loops we will frequently use the inversion map ${}^{-1}:Q\to Q$, where
-  $x^{-1} = \lambda(x) = \gamma(x)$, instead of the left and right divisions.
+  $x^{-1} = \lambda(x) = \rho(x)$, instead of the left and right divisions.
 
 \begin{dfn}
-  A loop $(Q, \cdot, {}^{-1})$ has the \emph{automorphic inverse property} (AIP) if the following equation holds
+  An IP loop $(Q, \cdot, {}^{-1})$ has the \emph{automorphic inverse property} (AIP) if the following equation holds
     for all $x, y\in Q$
   \[(x\cdot y)^{-1} = x^{-1}\cdot y^{-1}\]
 \end{dfn}
 
 \begin{dfn}
-  A loop $(Q, \cdot, {}^{-1})$ has the \emph{antiautomorphic inverse property} (AAIP) if the following equation
+  An IP loop $(Q, \cdot, {}^{-1})$ has the \emph{antiautomorphic inverse property} (AAIP) if the following equation
     holds for all $x, y\in Q$
   \[(x\cdot y)^{-1} = y^{-1}\cdot x^{-1}\]
 \end{dfn}
@@ -785,7 +793,7 @@ Standard examples of nonassociative Moufang loops are the unit octonions with mu
   Let $A$ be a set, a \emph{partition} of $A$ is $\mathcal{C}\subset\mathcal{P}(A)$ such that
   \begin{align*}
     \bigcup \mathcal{C} &= A\\
-    A\cap B &= \emptyset\quad \forall A, B\in\mathcal{C}
+    A\cap B &= \emptyset\quad \forall A\neq B\in\mathcal{C}
   \end{align*}
 \end{dfn}
 
