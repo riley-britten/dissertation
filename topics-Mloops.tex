@@ -2260,7 +2260,8 @@ Many properties from universal algebra have equivalent definitions specific to t
   Let $A$ be a universal algebra. $\phi\subseteq A\times A$ is a \emph{congruence} on $A$ if and only if
   \begin{enumerate}
     \item $\phi$ is an equivalence relation.
-    \item For each $n$-ary operation $f$ of $A$ $a_1 \phi a_1'\ldots a_n\phi a_n'$ implies
+    \item For each $n$-ary operation $f$ of $A$ and every $a_1, \ldots, a_n, a_1', \ldots, a_n'\in $, 
+      $a_1 \phi a_1'\ldots a_n\phi a_n'$ implies
       $f(a_1, \ldots, a_n)\phi f(a_1', \ldots a_n')$.
   \end{enumerate}
 \end{dfn}
@@ -2278,7 +2279,8 @@ Many properties from universal algebra have equivalent definitions specific to t
 \begin{fct}
   Let $G$ be a group, then:
   \begin{enumerate}
-    \item For every congruence $\phi$ on $G$ there exists $N\unlhd G$ such that
+    \item For every congruence $\phi$ on $G$ there exists $N\unlhd G$, namely the equivalence class
+      of $1$, such that
       $x\phi y$ if and only if $xy^{-1}\in N$.
     \item For $N\unlhd G$ the relation $x\phi y$ if and only if $xy^{-1}\in N$ is a congruence \cite{univAlg} 
   \end{enumerate}
@@ -2307,22 +2309,17 @@ We now present some universal algebraic definitions and their equivalent definit
 
 \begin{dfn}
   Let $(Q, \cdot)$ be a quasigroup and $x, y\in Q$. The \emph{commutator} of $x$ and $y$ is
-  \[[x, y] = (xy)\rdv (yx)\]
+  \[[x, y] = (xy)\rdv (yx).\]
 \end{dfn}
 
 \begin{dfn}
-  Let $G$ be a group and $H, K\unlhd G$. Then the \emph{classical (group theoretic) commutator}
-    of $H$ and $K$ is $[H, K] = \langle [x, y] : x\in H, y\in K\rangle$.
+  Let $(Q, \cdot)$ be a quasigroup and $x, y, z\in Q$. The \emph{associator} of $x, y, z$ is
+  \[[x, y, z] = (x\cdot yz)\rdv (xy\cdot z).\]
 \end{dfn}
 
 \begin{dfn}
-  An algebra $A$ is \emph{(congruence) nilpotent} if $\gamma_{(n)} = 0_A$ for some $n$, where
-  \[\gamma_{(0)} = 1_A,\quad \gamma_{(i + 1)} = [\gamma_{(i)}, 1_A]_C\]
-\end{dfn}
-
-\begin{dfn}
-  A loop $L$ with identity $1$ is \emph{(classically) nilpotent} if $L_n = \{1\}$ for some $n$, where
-  \[L_0 = L,\quad L_{i + 1} = [L_i, L]\]
+  Let $(Q, \cdot)$ be a loop and $Q'$ be the smallest subloop such that $Q/Q'$ is an abelian
+    group. Then $Q' = [Q, Q]$ is the \emph{derived subloop} of $Q$.
 \end{dfn}
 
 \begin{dfn}
@@ -2336,11 +2333,7 @@ We now present some universal algebraic definitions and their equivalent definit
 \end{dfn}
 
 \begin{fct}
-  Classical and congruence normality, nilpotency, and solvability coincide in groups \cite{ComTheory}.
-\end{fct}
-
-\begin{fct}
-  Classical and congruence nilpotency coincide in loops \cite{ComTheory}.
+  Classical and congruence solvability coincide in groups \cite{ComTheory}.
 \end{fct}
 
 \begin{fct}
@@ -2359,7 +2352,8 @@ Note that conjugacy closed loops satisfy this condition, so in particular classi
   for conjugacy closed loops.
 
 Weakening our assumption on $Q$ we are no longer able to show that classical and congruence
-  solvability degrees coincide, but we do obtain the following result about $\inn^*(Q)$:
+  solvability degrees coincide, but we do obtain the following result about 
+  $\inn^*(Q) = \langle L_{x, y}, R_{x, y}, M_{x, y} : x, y\in Q\rangle$:
 
 \begin{thm}
   If $Q/\nuc(Q)$ is a group, then $\inn^*(Q)$ is abelian.
@@ -2451,7 +2445,7 @@ We will follow the argument proving Lemma 4.2 in \cite{DiaCC} to show that
 \end{lem}
 
 \begin{proof}
-  This is immediate from the fact that $n\in\nuc(Q)$ and the definition of $[x, y, z]_M$.
+  This follows from the fact that $n\in\nuc(Q)$ and the definition of $[x, y, z]_M$.
 \end{proof}
 
 \begin{lem}\label{lem-M2}
@@ -2459,13 +2453,12 @@ We will follow the argument proving Lemma 4.2 in \cite{DiaCC} to show that
 \end{lem}
 
 \begin{proof}
-  First note that $M_{x, y}(z)\ldv(y\ldv(yz\cdot x) = x$ by Lemma \ref{lem-divs}.
+  First note that $M_{x, y}(z)\ldv(y\ldv(yz\cdot x)) = x$ by Lemma \ref{lem-divs}.
     Further $(n\ldv a)\rdv(b\ldv a) = n\ldv b$ since $n\in\nuc(Q)$. So
   \begin{align*}
     (n\ldv (y\ldv(yz\cdot x)))\rdv x &= (n\ldv (y\ldv(yz\cdot x)))\rdv(M_{x, y}(z)\ldv (y\ldv(yz\cdot x)))\\
-    &= n\ldv M_{x, y}(z)
+    &= n\ldv M_{x, y}(z)\label{q-nuc-dag} \tag{$\dagger$}
   \end{align*}
-  Thus $(n\ldv (y\ldv(yz\cdot x)))\rdv x = n\ldv M_{x, y}(z)$, call this $\dagger$.
 
   Further, since $n\in \nuc(Q)$ we have that
     $M_{x, yn}(z) = ((yn)\ldv((yn\cdot z)\cdot x))\rdv x = ((yn)\ldv((y\cdot nz)\cdot x))\rdv x$.
@@ -2474,7 +2467,7 @@ We will follow the argument proving Lemma 4.2 in \cite{DiaCC} to show that
     M_{x, yn}(z) &= ((yn)\ldv((y\cdot nz)\cdot x))\rdv x\\
     &= (n\ldv(y\ldv((y\cdot nz)\cdot x)))\rdv x
   \end{align*}
-  But by $\dagger$ we have that
+  But by (\ref{q-nuc-dag}) we have that
   \begin{align*}
     M_{x, yn}(z) &= (n\ldv(y\ldv((y\cdot nz)\cdot x)))\rdv x\\
     &= n\ldv M_{x, y}(nz)
@@ -2497,7 +2490,7 @@ We will follow the argument proving Lemma 4.2 in \cite{DiaCC} to show that
 \end{proof}
 
 \begin{cor}\label{cor-M}
-  If $Q/\nuc(Q)$ is a group, then $M_{x, y}(nz) = n\cdot M_{x, y}(z)$ for $n\in\nuc(Q)$
+  If $Q/\nuc(Q)$ is a group, then $M_{x, y}(nz) = n\cdot M_{x, y}(z)$ for $n\in\nuc(Q)$.
 \end{cor}
 
 \begin{proof}
@@ -2553,7 +2546,7 @@ Now define
     R_{x, y}(M_{u, v}(z)) &= R_{x, y}([v, z, u]_{M'}z) &&\\
     &= [v, z, u]_{M'}\cdot R_{x, y}(z) &&\text{ by Lemma \ref{lem-LR}}\\
     &= [v, z, u]_{M'}\cdot [z, y, x]_{R'}z &&\\
-    &= [z, y, x]_{R'}\cdot [v, z, u]_{M'}z &&\\
+    &= [z, y, x]_{R'}\cdot [v, z, u]_{M'}z &&\text{ from \cite{PACC}}\\
     &= [z, y, x]_{R'}\cdot M_{u, v}(z) &&\\
     &= M_{u, v}([z, y, x]_{R'}z) &&\text{ by Corollary \ref{cor-M}}\\
     &= M_{u, v}(R_{x, y}(z)) &&
@@ -2575,7 +2568,7 @@ Now define
     L_{x, y}(L_{u, v}(z)) &= L_{x, y}(z[u, v, z]_L) &&\\
     &= L_{x, y}(z)\cdot [u, v, z]_L &&\text{ by Lemma \ref{lem-LR}}\\
     &= z[x, y, z]_L\cdot [u, v, z]_L &&\\
-    &= z[u, v, z]_L\cdot [x, y, z]_L &&\\
+    &= z[u, v, z]_L\cdot [x, y, z]_L &&\text{ from \cite{PACC}}\\
     &= L_{u, v}(z)\cdot [x, y, z]_L &&\\
     &= L_{u, v}(z[x, y, z]_L) &&\text{ by Lemma \ref{lem-LR}}\\
     &= L_{u, v}(L_{x, y}(z)) &&
@@ -2586,7 +2579,7 @@ Now define
     R_{x, y}(R_{u, v}(z)) &= R_{x, y}([z, v, u]_{R'}z) &&\\
     &= [z, v, u]_{R'}\cdot R_{x, y}(z) &&\text{ by Lemma \ref{lem-LR}}\\
     &= [z, v, u]_{R'}\cdot [z, y, x]_{R'}z &&\\
-    &= [z, y, x]_{R'}\cdot [z, v, u]_{R'}z &&\\
+    &= [z, y, x]_{R'}\cdot [z, v, u]_{R'}z &&\text{ from \cite{PACC}}\\
     &= [z, y, x]_{R'}\cdot R_{u, v}(z) &&\\
     &= R_{u, v}([z, y, x]_{R'}z) &&\text{ by Lemma \ref{lem-LR}}\\
     &= R_{u, v}(R_{x, y}(z)) &&
@@ -2630,19 +2623,19 @@ We will now present some further results dealing providing sufficient conditions
 \begin{proof}
   \begin{align*}
     R_{u, v}(R_{x, y}(z)) &= R_{u, v}(R_{x, y}(R_{u, v}(z)\cdot R_{u, v}(z)\ldv z))\\
-    &= R_{u, v}(R_{x,y}(R_{u,v}(z)\cdot R_{x, y}(R_{u,v}(z)\ldv z)))\\
+    &= R_{u, v}(R_{x,y}(R_{u,v}(z))\cdot R_{x, y}(R_{u,v}(z)\ldv z)))\\
     &\text{ since $R_{x, y}$ is an automorphism}\\
     &= R_{u, v}(R_{x, y}(R_{u, v}(z))\cdot (R_{u, v}(z)\ldv z))\\
     &\text{ since $R_{u, v}(z)\ldv z$ is in the associator subloop and thus the left nucleus}\\
-    &= R_{u, v}([R_{u, v}(z), x, y]R_{u, v}(z)\cdot (R_{u, v}(z)\ldv z))\\
-    & \text{ definition of $[\cdot, \cdot, \cdot]$}\\
-    &= R_{u, v}([R_{u, v}(z), x, y]\cdot R_{u, v}(z)(R_{u,v}(z)\ldv z))\\
+    &= R_{u, v}([R_{u, v}(z), x, y]_{R'} R_{u, v}(z)\cdot (R_{u, v}(z)\ldv z))\\
+    & \text{ defining the associator $[x, y, z]_{R'} = R_{x, y}(z)\cdot z$}\\
+    &= R_{u, v}([R_{u, v}(z), x, y]_{R'}\cdot R_{u, v}(z)(R_{u,v}(z)\ldv z))\\
     &\text{ associators in left nucleus}\\
     &= R_{u, v}([R_{u, v}(z), x, y]z) &&\\
-    &= [R_{u, v}(z), x, y]R_{u, v}(z)\\
-    &\text{ $R_{u, v}$ is an automorphism}\\
+    &= [R_{u, v}(z), x, y]_{R'}R_{u, v}(z)\\
+    &\text{ $R_{u, v}$ is an automorphism and associators in the nucleus}\\
     &= R_{x, y}(R_{u, v}(z))\\
-    &\text{ definition of $[\cdot, \cdot, \cdot]$}
+    &\text{ definition of $[\cdot, \cdot, \cdot]_{R'}$}
   \end{align*}
 \end{proof}
 

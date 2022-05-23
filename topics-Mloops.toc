@@ -37,11 +37,11 @@
 \contentsline {section}{\numberline {3.4}Para-FG quasigroups}{43}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Solvability for loops}{53}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introduction}{53}{section.4.1}%
-\contentsline {section}{\numberline {4.2}$Q/\text {Nuc}(Q)$ an abelian group}{56}{section.4.2}%
+\contentsline {section}{\numberline {4.2}$Q/\text {Nuc}(Q)$ an abelian group}{55}{section.4.2}%
 \contentsline {section}{\numberline {4.3}$Q/\text {Nuc}(Q)$ a group}{57}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Further results}{62}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Inverses preserved by right inner mappings}{62}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Right automorphic}{63}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.2}Right automorphic}{62}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Left nucleus and commutant}{64}{subsection.4.4.3}%
 \contentsline {section}{\numberline {4.5}Counterexamples}{65}{section.4.5}%
 \contentsline {subsection}{\numberline {4.5.1}$\text {Inn}(Q)$}{65}{subsection.4.5.1}%
