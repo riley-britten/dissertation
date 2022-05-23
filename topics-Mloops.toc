@@ -35,40 +35,40 @@
 \contentsline {section}{\numberline {3.2}Loop isotopes are Moufang}{34}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Para-F quasigroups are antilinear over Moufang loops}{41}{section.3.3}%
 \contentsline {section}{\numberline {3.4}Para-FG quasigroups}{43}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Solvability for loops}{54}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introduction}{54}{section.4.1}%
-\contentsline {section}{\numberline {4.2}$Q/\text {Nuc}(Q)$ an abelian group}{57}{section.4.2}%
-\contentsline {section}{\numberline {4.3}$Q/\text {Nuc}(Q)$ a group}{58}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Further results}{63}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Inverses preserved by right inner mappings}{63}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Right automorphic}{64}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Left nucleus and commutant}{65}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Counterexamples}{66}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}$\text {Inn}(Q)$}{66}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Left and middle nuclei}{66}{subsection.4.5.2}%
-\contentsline {chapter}{\numberline {5}Cosets in Moufang loops}{68}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introduction}{68}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Coset intersections}{69}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}A first Approach}{69}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}An iterative approach}{70}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}An Equivalence Relation}{77}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Orbits of $\text {Mlt}_L(Q; S)$}{79}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Universally and semi-universally flexible loops}{84}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Introduction}{84}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Basic examples}{85}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Central extensions of Moufang loops}{85}{section.6.3}%
-\contentsline {section}{\numberline {6.4}A UF loop which is not middle Bol}{88}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Future directions of research}{89}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Power graphs}{89}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Future directions of research}{89}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Para-F quasigroups}{89}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Solvability for loops}{90}{section.7.4}%
-\contentsline {section}{\numberline {7.5}Cosets in Moufang loops}{90}{section.7.5}%
-\contentsline {section}{\numberline {7.6}SUF loops}{90}{section.7.6}%
-\contentsline {chapter}{\numberline {A}Automated proofs}{96}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Notation}{96}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Para-F}{96}{section.A.2}%
-\contentsline {subsection}{\numberline {A.2.1}\textsc {prover9} proof of Proposition \ref {can1}}{96}{subsection.A.2.1}%
-\contentsline {subsection}{\numberline {A.2.2}\textsc {prover9} proof of Proposition \ref {semipara+paraF}}{104}{subsection.A.2.2}%
-\contentsline {section}{\numberline {A.3}$Q/\text {Nuc}(Q)$}{106}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}\textsc {prover9} proof of Theorem \ref {thm:right-inv}}{106}{subsection.A.3.1}%
+\contentsline {chapter}{\numberline {4}Solvability for loops}{53}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{53}{section.4.1}%
+\contentsline {section}{\numberline {4.2}$Q/\text {Nuc}(Q)$ an abelian group}{56}{section.4.2}%
+\contentsline {section}{\numberline {4.3}$Q/\text {Nuc}(Q)$ a group}{57}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Further results}{62}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Inverses preserved by right inner mappings}{62}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Right automorphic}{63}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Left nucleus and commutant}{64}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Counterexamples}{65}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}$\text {Inn}(Q)$}{65}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Left and middle nuclei}{65}{subsection.4.5.2}%
+\contentsline {chapter}{\numberline {5}Cosets in Moufang loops}{67}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{67}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Coset intersections}{68}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}A first Approach}{68}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}An iterative approach}{69}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}An Equivalence Relation}{76}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Orbits of $\text {Mlt}_L(Q; S)$}{78}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Universally and semi-universally flexible loops}{83}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Introduction}{83}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Basic examples}{84}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Central extensions of Moufang loops}{84}{section.6.3}%
+\contentsline {section}{\numberline {6.4}A UF loop which is not middle Bol}{87}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Future directions of research}{88}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Power graphs}{88}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Future directions of research}{88}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Para-F quasigroups}{88}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Solvability for loops}{89}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Cosets in Moufang loops}{89}{section.7.5}%
+\contentsline {section}{\numberline {7.6}SUF loops}{89}{section.7.6}%
+\contentsline {chapter}{\numberline {A}Automated proofs}{95}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Notation}{95}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Para-F}{95}{section.A.2}%
+\contentsline {subsection}{\numberline {A.2.1}\textsc {prover9} proof of Proposition \ref {can1}}{95}{subsection.A.2.1}%
+\contentsline {subsection}{\numberline {A.2.2}\textsc {prover9} proof of Proposition \ref {semipara+paraF}}{103}{subsection.A.2.2}%
+\contentsline {section}{\numberline {A.3}$Q/\text {Nuc}(Q)$}{105}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}\textsc {prover9} proof of Theorem \ref {thm:right-inv}}{105}{subsection.A.3.1}%

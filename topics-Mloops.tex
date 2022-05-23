@@ -1511,6 +1511,12 @@ This result indicates that the (*) identities are too strong to be an analogue o
     appendix \ref{appendix:semipara+paraF}.
 \end{proof}
 
+Together these results give us the following theorem.
+
+\begin{thm}
+  A quasigroups is of type (*) if and only if it is semiparamedial and of type (*).
+\end{thm}
+
 \subsection{Para-F quasigroups}
 
 \begin{dfn}
@@ -1522,15 +1528,15 @@ This result indicates that the (*) identities are too strong to be an analogue o
   \end{align}
 \end{dfn}
 
-We will call a quasigroup satisfying only equation \ref{eq:pF1} \emph{left para-F} and a quasigroup
-  satisfying only equation \ref{eq:pF2} \emph{right para-F}. The following quasigroup is left para-F,
+We will call a quasigroup satisfying only equation (\ref{eq:pF1}) \emph{left para-F} and a quasigroup
+  satisfying only equation (\ref{eq:pF2}) \emph{right para-F}. The following quasigroup is left para-F,
   but not right para-F. Since these identities are dual this demonstrates that neither implies the other.
 
 \begin{table}[H]
   \centering
   \begin{tabular}{c | c c c c c c c c}
     $\cdot$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
-    \hline \hline
+    \hline
     0 & 1& 0& 4& 2& 5& 3& 7& 6\\
 	  1 & 3& 2& 1& 7& 0& 6& 5& 4\\
 	  2 & 0& 6& 2& 3& 4& 5& 1& 7\\
@@ -1547,8 +1553,8 @@ As we will show later in this chapter, para-F quasigroups are antilinear over Mo
   use this antilinearity to explicitly construct a para-F quasigroup which is not a semiparamedial,
   semimedial, nor F-quasigroup. Let $D_8 = \langle a, b | a^4 = b^2 = 1, bab^{-1} = a^{-1}\rangle$
   and define $\phi, \psi : D_8\to D_8$ by 
-  $\phi(ab) = \psi(ab) = a^3 b$, $\phi(a^3 b) = \psi(a^3 b) = ab$ and $\phi, \psi$ fix all other
-  elements of $D_8$. Then $\phi, \psi$ are antiautomorphisms of $D_8$. Define a quasigroup $(Q, +)$ by
+  $\phi(ab) = a^3 b$, $\phi(a^3 b) = ab$ and $\phi$ fixes all other
+  elements of $D_8$. Let $\psi = \phi$. Then $\phi, \psi$ are antiautomorphisms of $D_8$. Define a quasigroup $(Q, +)$ by
 \[x + y = \phi(x) \cdot \psi(y) \cdot a^2\]
 where $\cdot$ is the operation in $D_8$. This quasigroup is para-F but not semiparamedial, semimedial or F.
   Its multiplication table is below. Note that $(Q, +)$ is also neither medial nor paramedial since it is
@@ -1579,7 +1585,7 @@ Note that all of the varieties of loops in diagram \ref{medial-para}, with the e
 
 \section{Loop isotopes are Moufang}
 
-In what follows let $(Q, \cdot)$ be a para-F quasigroup and $x, y, z\in Q$ be universally quantified.
+In what follows let $(Q, \cdot)$ be a para-F quasigroup. 
   We will now prove a series of lemmas which will allow us to prove Theorem \ref{thm-iso-moufang}.
 
 \begin{lem}\label{trans-lem}
@@ -1841,9 +1847,6 @@ While para-F quasigroups are not linear over loops in general, they are antiline
   for all $x, y\in Q$.
 \end{dfn}
 
-With this result we can prove an analogue to the linearity results in section \ref{para-f-intro}
-  for para-F quasigroups.
-
 \begin{thm}\label{thm-para-f}
   Every para-F quasigroup $(Q, \cdot)$ is antilinear over a Moufang loop $(Q, +)$ with the antilinearity
     given by
@@ -1861,17 +1864,17 @@ With this result we can prove an analogue to the linearity results in section \r
   \begin{align*}
     x +_u y &= (x\rdv(u\ldv u))\cdot ((u\rdv u)\ldv y)\\
     x\cdot y &= x(u\ldv u) +_u (u\rdv u)y\\
-    x\cdot y &= (f_u(x) +_u A_u) +_u (B_u +_u g_u(y))
+    x\cdot y &= (f_u(x) +_u A_u) +_u (B_u +_u g_u(y)),
   \end{align*}
-  Set
+  where we set
   \begin{align*}
     f_u(x) &= x(u\ldv u) -_u 1_u(u\ldv u)\\
     g_u(y) &= -_u(u\rdv u)1_u +_u (u\rdv u)y\\
     A_u &= 1_u(u\ldv u)\\
     B_u &= (u\rdv u) 1_u
   \end{align*}
-    So that $f_u(1_u) = g_u(1_u) = 1_u$. We define $C_u = A_u + B_u$ and use \textsc{prover9} to prove
-      the following sequence of results:
+  Then $f_u(1_u) = g_u(1_u) = 1_u$. We define $C_u = A_u + B_u$ and use \textsc{prover9} to prove
+    the following sequence of results:
 \begin{enumerate}
   \item $1_{u\cdot u} = C_u$
   \item $A_u, B_u, C_u$ are in the commutant of $(Q, +_u)$
