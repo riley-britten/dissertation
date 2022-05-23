@@ -24,7 +24,7 @@
 \BOOKMARK [2][-]{subsection.2.2.4}{Chein's construction}{section.2.2}% 24
 \BOOKMARK [1][-]{section.2.3}{Moufang p-loops with a unique subloop of order p}{chapter.2}% 25
 \BOOKMARK [1][-]{section.2.4}{Generalized octonion loops}{chapter.2}% 26
-\BOOKMARK [1][-]{section.2.5}{Undirected power graphs determine directed}{chapter.2}% 27
+\BOOKMARK [1][-]{section.2.5}{Undirected power graphs determine directed power graphs}{chapter.2}% 27
 \BOOKMARK [2][-]{subsection.2.5.1}{Non-identity vertex connected to all others}{section.2.5}% 28
 \BOOKMARK [2][-]{subsection.2.5.2}{Only identity connected to all others}{section.2.5}% 29
 \BOOKMARK [0][-]{chapter.3}{Para-F quasigroups}{}% 30
@@ -49,7 +49,7 @@
 \BOOKMARK [0][-]{chapter.5}{Cosets in Moufang loops}{}% 49
 \BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 50
 \BOOKMARK [1][-]{section.5.2}{Coset intersections}{chapter.5}% 51
-\BOOKMARK [2][-]{subsection.5.2.1}{A first Approach}{section.5.2}% 52
+\BOOKMARK [2][-]{subsection.5.2.1}{A first approach}{section.5.2}% 52
 \BOOKMARK [2][-]{subsection.5.2.2}{An iterative approach}{section.5.2}% 53
 \BOOKMARK [1][-]{section.5.3}{An Equivalence Relation}{chapter.5}% 54
 \BOOKMARK [1][-]{section.5.4}{Orbits of MltL\(Q; S\)}{chapter.5}% 55
@@ -71,4 +71,4 @@
 \BOOKMARK [2][-]{subsection.A.2.1}{prover9 proof of Proposition 3.11}{section.A.2}% 71
 \BOOKMARK [2][-]{subsection.A.2.2}{prover9 proof of Proposition 3.12}{section.A.2}% 72
 \BOOKMARK [1][-]{section.A.3}{Q/Nuc\(Q\)}{appendix.A}% 73
-\BOOKMARK [2][-]{subsection.A.3.1}{prover9 proof of Theorem 4.26}{section.A.3}% 74
+\BOOKMARK [2][-]{subsection.A.3.1}{prover9 proof of Theorem 4.24}{section.A.3}% 74

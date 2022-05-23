@@ -390,8 +390,8 @@ It is frequently convenient to use infix notation for the inverses of the transl
 \begin{dfn}
   A \emph{quasigroup} is a set $Q$ along with three binary operations $\cdot, \ldv, \rdv:Q\times Q\to Q$ satisfying:
   \begin{align*}
-    &(x\rdv y)\cdot y = x, &(x\cdot y)\rdv y = x\\
-    &x\cdot (x\ldv y) = y, &x\ldv (x\cdot y) = y
+    &(x\rdv y)\cdot y = x, &(x\cdot y)\rdv y = x,\\
+    &x\cdot (x\ldv y) = y, &x\ldv (x\cdot y) = y.
   \end{align*}
 \end{dfn}
 
@@ -408,7 +408,7 @@ Standard references for quasigroup theory are \cite{Belousov,Bruck,Pf,Shcherbaco
 
 \begin{dfn}
   A \emph{loop} $(Q, \cdot, \ldv, \rdv, 1)$ is a quasigroup $(Q, \cdot, \ldv, \rdv)$ with an element $1\in Q$ satisfying:
-  \[1\cdot x = x, \quad x\cdot 1 = x\]
+  \[1\cdot x = x, \quad x\cdot 1 = x.\]
 \end{dfn}
 
 Basic references for loop theory are \cite{Bel}, \cite{Bruck}, \cite{Pf}. Any uncited facts in the discussion that follows
@@ -418,19 +418,19 @@ Basic references for loop theory are \cite{Bel}, \cite{Bruck}, \cite{Pf}. Any un
 
 \begin{dfn}
   Let $(Q, \cdot)$ be a quasigroup. The \emph{left multiplication group} of $Q$ is
-  \[\mlt_L(Q) = \langle L_x : x\in Q\rangle\]
+  \[\mlt_L(Q) = \langle L_x : x\in Q\rangle.\]
 \end{dfn}
 
 The right multiplication group, $\mlt_R(Q)$ is defined dually.
 
 \begin{dfn}
   Let $(Q, \cdot)$ be a quasigroup. The \emph{multiplication group} of $Q$ is
-  \[\mlt(Q) = \langle L_x, R_x : x\in Q\rangle\].
+  \[\mlt(Q) = \langle L_x, R_x : x\in Q\rangle.\]
 \end{dfn}
 
 \begin{dfn}
   Let $(Q, \cdot, 1)$ be a loop. The \emph{left inner mapping group} of $Q$ is
-  \[\inn_L(Q) = \{f\in \mlt_L(Q) : f(1) = 1\}\]
+  \[\inn_L(Q) = \{f\in \mlt_L(Q) : f(1) = 1\}.\]
 \end{dfn}
 
 The right inner mapping group is defined dually.
@@ -450,17 +450,26 @@ The right inner mapping group is defined dually.
 \end{fct}
 
 \begin{dfn}
-  Let $(Q, \cdot)$ be a loop for all $x, y\in Q$ we define $L_{x, y}, R_{x, y}, T_x: Q\to Q$ by:
+  Let $(Q, \cdot)$ be a loop. For all $x, y\in Q$ we define $L_{x, y}, R_{x, y}, T_x: Q\to Q$ by:
   \begin{align*}
-    L_{x, y}(z) &= (xy)\ldv(x\cdot yz)\\
-    R_{x, y}(z) &= (zx\cdot y)\rdv(xy)\\
-    M_{x, y}(z) &= (y\ldv(yz\cdot x))\rdv x\\
-    T_x(z) &= (xz)\rdv x
+    L_{x, y}(z) &= (xy)\ldv(x\cdot yz),\\
+    R_{x, y}(z) &= (zx\cdot y)\rdv(xy),\\
+    M_{x, y}(z) &= (y\ldv(yz\cdot x))\rdv x,\\
+    T_x(z) &= (xz)\rdv x.
   \end{align*}
 \end{dfn}
 
+Note that for all $x, y\in Q$ we have
+\begin{align*}
+  L_{x, y}(1) &= 1,\\
+  R_{x, y}(1) &= 1,\\
+  M_{x, y}(1) &= 1,\\
+  T_x(1) &= 1.
+\end{align*}
+So $L_{x,y}, R_{x, y}, M_{x, y}, T_x\in Q$ for all $x, y\in Q$.
+
 \begin{dfn}
-  Define $\inn^*(Q) = \langle L_{x, y}, R_{x, y}, M_{x, y}\rangle$.\
+  Define $\inn^*(Q) = \langle L_{x, y}, R_{x, y}, M_{x, y} : x, y\in Q\rangle$.\
 \end{dfn}
 
 Informally, we think of $\inn^*(Q)$ as being the group of all inner mappings measuring associativity.
@@ -520,8 +529,7 @@ Let $(Q, \cdot)$, $(P, +)$ be magmas and $f: Q\to P$ be a homomorphism. Then $(f
     permuting columns of the multiplication table by $\beta$, and relabeling elements by $\gamma$.
 \end{fct}
 
-As above, isotopy is a generalization of isomorphism. In the context of groups isotopy and isomorphism are the same
-  concept, as shown in the following result: 
+As above, isotopy is a generalization of isomorphism. Note that if two groups are isotopic, then they are isomorphic.
 
 \begin{fct}
   Suppose that $(G, \cdot)$, $(H, +)$ are groups and $(\alpha, \beta, \gamma): G\to H$ is an isotopy. Then $(G, \cdot)$,
@@ -543,7 +551,7 @@ As above, isotopy is a generalization of isomorphism. In the context of groups i
 \end{dfn}
 
 \begin{dfn}
-  Let $(Q, \cdot)$ be a quasigroup. An isotope of $(Q, \cdot)$ is \emph{principal} if it has the same underlying set.
+  Let $(Q, \cdot)$ be a loop. An isotope of $(P, +)$ is \emph{principal} if it has the same underlying set, that is $P = Q$.
 \end{dfn}
 
 \begin{fct}
@@ -553,18 +561,13 @@ As above, isotopy is a generalization of isomorphism. In the context of groups i
   for fixed $a, b\in Q$\cite{Bruck}.
 \end{fct}
 
-\begin{fct}
-  Let $(Q, \cdot)$ be a magma with an isotope $(P, *)$. Then there exists $+:Q\times Q\to Q$ such that $(Q, +)$ is
-    isomorphic to $(P, *)$ \cite{Bruck}.
-\end{fct}
-
 \begin{rmk}
   Note that together the preceding results tell us that up to isomorphism all loop isotopes of $(Q, \cdot)$ are of the
     form $(Q, +)$, where $x + y = (x\rdv a)\cdot (b\ldv y)$ for fixed $a, b\in Q$.
 \end{rmk}
 
 \begin{dfn}
-  Let $(Q, \cdot)$ be a quasigroup, a \emph{left isotope} of $(Q, \cdot)$ is $(Q, +)$ with
+  Let $(Q, \cdot)$ be a quasigroup. A \emph{left isotope} of $(Q, \cdot)$ is $(Q, +)$ with
   \[x + y = (x\rdv a)\cdot y\]
   for fixed $a\in Q$.
 \end{dfn}
@@ -587,14 +590,14 @@ Right isotope is defined dually.
   for all $x, y\in Q$.
 \end{dfn}
 
-As the following result shows, being linear over a loop is a stronger property than being isotopic to a loop.
+As the following result shows, being linear over a loop is at least as strong as being isotopic to a loop.
 
 \begin{prp}\label{prp-linear-iso}
   Suppose that $(Q, \cdot)$ is linear over $(Q, +)$. Then $(Q, +)$ is an isotope of $(Q, \cdot)$.
 \end{prp}
 
 \begin{proof}
-  Suppose that $x\cdot y = (f(x) + g(y)) + c$ for all $x, y\in Q$, where $f, g\in \aut(Q, +)$, $c\in Q$. Let $\gamma = \id$,
+  Suppose that $x\cdot y = f(x) + (g(y) + c)$ for all $x, y\in Q$, where $f, g\in \aut(Q, +)$, $c\in Q$. Let $\gamma = \id$,
     $\alpha(x) = f(x)$, and $\beta(x) = g(x) + c$. It is immediate that $\alpha, \beta, \gamma$ are bijections.
     Let $x, y\in Q$ be given, then
   \begin{align*}
@@ -605,6 +608,8 @@ As the following result shows, being linear over a loop is a stronger property t
   Thus $(\alpha, \beta, \gamma)$ is an isotopy and $(Q, +)$ is an isotope of $(Q, \cdot)$.
 \end{proof}
 
+TODO: Isotope which is not linear.
+
 \subsection{Inverse properties}
 
 \begin{dfn}
@@ -614,10 +619,13 @@ As the following result shows, being linear over a loop is a stronger property t
 \end{dfn}
 
 \begin{dfn}
-  Similarly, a loop $(Q, \cdot)$ has the \emph{right inverse property} (RIP) if there exists a bijection $\gamma: Q\to Q$
+  Similarly, a loop $(Q, \cdot)$ has the \emph{right inverse property} (RIP) if there exists a bijection $\rho: Q\to Q$
     such that for all $x, y\in Q$
-  \[xy\cdot \gamma(y) = x\]
+  \[xy\cdot \rho(y) = x\]
 \end{dfn}
+
+Note that LIP and RIP loop have two sided inverses. That is, $\lambda(x) x = 1 = x \lambda(x)$ and $\rho(x) x = 1 = x \rho(x)$.
+  Further, note that $\lambda(x)y = x\ldv y$ and $x\rho(y) = x\rdv y$.
 
 \begin{dfn}
   A loop $(Q, \cdot)$ which has both the left and right inverse properties is said to be an \emph{inverse property loop}
@@ -625,16 +633,16 @@ As the following result shows, being linear over a loop is a stronger property t
 \end{dfn}
 
 When working with IP loops we will frequently use the inversion map ${}^{-1}:Q\to Q$, where
-  $x^{-1} = \lambda(x) = \gamma(x)$, instead of the left and right divisions.
+  $x^{-1} = \lambda(x) = \rho(x)$, instead of the left and right divisions.
 
 \begin{dfn}
-  A loop $(Q, \cdot, {}^{-1})$ has the \emph{automorphic inverse property} (AIP) if the following equation holds
+  An IP loop $(Q, \cdot, {}^{-1})$ has the \emph{automorphic inverse property} (AIP) if the following equation holds
     for all $x, y\in Q$
   \[(x\cdot y)^{-1} = x^{-1}\cdot y^{-1}\]
 \end{dfn}
 
 \begin{dfn}
-  A loop $(Q, \cdot, {}^{-1})$ has the \emph{antiautomorphic inverse property} (AAIP) if the following equation
+  An IP loop $(Q, \cdot, {}^{-1})$ has the \emph{antiautomorphic inverse property} (AAIP) if the following equation
     holds for all $x, y\in Q$
   \[(x\cdot y)^{-1} = y^{-1}\cdot x^{-1}\]
 \end{dfn}
@@ -705,7 +713,7 @@ Right Bol loops are defined dually and have a dual characterization.
 \subsection{Generalizations of associativity}
 
 \begin{dfn}
-  An \emph{power associative loop} is a loop $(Q, \cdot)$ having the property that $\langle x\rangle$ is a group
+  A \emph{power associative loop} is a loop $(Q, \cdot)$ having the property that $\langle x\rangle$ is a group
     for all $x\in Q$.
 \end{dfn}
 
@@ -759,20 +767,19 @@ Standard examples of nonassociative Moufang loops are the unit octonions with mu
   All Moufang loops have the Lagrange property \cite{LG}. 
 \end{fct}
 
-\begin{dfn}
+\begin{dfn}[\cite{KepkaKinyonPhillips}]
   Let $(Q,\cdot)$ be a loop, the \emph{Moufang center} of $Q$ is
-  \[K(Q) = \{a\in Q : (a + a) + (x + y) = (a + x) + (a + y),\forall x, y\in Q\}\]\cite{KepkaKinyonPhillips}
+  \[K(Q) = \{a\in Q : (a + a) + (x + y) = (a + x) + (a + y),\forall x, y\in Q\}\].
 \end{dfn}
 
 \begin{fct}
   The Moufang center of any loop $(Q, \cdot)$ is a commutative Moufang subloop of $Q$ \cite{Bruck}
 \end{fct}
 
-\begin{dfn}
+\begin{dfn}[\cite{KepkaKinyonPhillips}]
   An \emph{NK-loop} is a loop $(Q, \cdot)$ such that for all $a\in Q$ there exists $n\in \nuc(Q)$, $k$
     in the Moufang center of $Q$ such that
-  \[a = n \cdot k\]
-  \cite{KepkaKinyonPhillips}.
+  \[a = n \cdot k\].
 \end{dfn}
 
 \begin{fct}
@@ -785,7 +792,8 @@ Standard examples of nonassociative Moufang loops are the unit octonions with mu
   Let $A$ be a set, a \emph{partition} of $A$ is $\mathcal{C}\subset\mathcal{P}(A)$ such that
   \begin{align*}
     \bigcup \mathcal{C} &= A\\
-    A\cap B &= \emptyset\quad \forall A, B\in\mathcal{C}
+    A\cap B &= \emptyset\quad \forall A\neq B\in\mathcal{C}\\
+    A &\neq \emptyset\quad \forall A\in\mathcal{C}
   \end{align*}
 \end{dfn}
 
@@ -829,8 +837,8 @@ Cameron's proof in \cite{PGII} relied on handling groups with multiple vertices 
 We will investigate the structure of generalized octonion loops, yielding the following characterization:
 
 \begin{thm}\label{genOct}
-  A finite Moufang loop is generalized octonion if and only if it is a non-associative Moufang $p$-loop
-    with a unique element of order $p$.
+  A finite Moufang loop is generalized octonion if and only if it is a non-associative Moufang loop
+    having order a power of $p$ for some prime $p$ and a unique element of order $p$.
 \end{thm}
 
 We will also construct explicit examples of generalized octonion loops.
@@ -857,7 +865,7 @@ In the process of proving Theorem \ref{mainThm} we will investigate a class of l
     \item $G$ is isomorphic to $\langle e^{\frac{i\pi}{n}}, j\rangle$ as a subgroup of the unit
       quaternions for some $n$ \cite{Brown}.
     \item $G$ is a finite $p$ group in which every subgroup is cyclic \cite{Cartan}.
-    \item $G$ is a finite $p$ group with a unique subloop of order $2$ \cite{Brown}.
+    \item $G$ is a finite $p$ group with a unique subloop of order $p$ \cite{Brown}.
   \end{itemize}
 \end{fct}
 
@@ -868,7 +876,7 @@ In the process of proving Theorem \ref{mainThm} we will investigate a class of l
 
 \begin{fct}\label{fct:genQuat-rep}
   Let $Q_{4n} = \langle a, b : a^n = b^2, a^{2n} = 1, b^{-1}ab = a^{-1}\rangle$. Then every element $x \in Q_{4n}$
-    can be written uniquely as $x = a^k$ or $x = a^k b$ for some $k\in\NNN$ \cite{genQuat}.
+    can be written uniquely as $x = a^k$ or $x = a^k b$ for some $k\in\ZZZ_{2n}$ \cite{genQuat}.
 \end{fct}
 
 \subsection{Moufang loops}
@@ -881,12 +889,11 @@ We now present some fundamental results on Moufang loops which we will need in l
 \end{thm}
 
 \begin{prp}\label{gen-facts}
-	Let $M$ be a finite Moufang loop. Then
+	Let $M$ be a Moufang loop. Then
     \begin{itemize}
         \item $M$ has the inverse property.
-        \item $M$ is diassociative (and thus power-associative).
-        \item For all $x, y\in M$, $\langle x, y\rangle$ is a group \cite{Moufang}.
-  	    \item For all $x\in M$, $|x|$ divides $|M|$.
+        \item $M$ is diassociative (and thus power-associative and IP)\cite{Moufang}.
+  	    \item If $M$ is finite, then for all $x\in M$, $|x|$ divides $|M|$.
         \item Suppose that $|M| = p^k$ for $p$ prime, $k\in\ZZZ^+$. Then there exists $S\leq M$ with $|S| = p^{k - 1}$.
     \end{itemize}
 \end{prp}
@@ -914,19 +921,18 @@ So the undirected power graph of \textbf{A} is the underlying undirected graph o
   \textbf{A}. In the remainder of this paper, \textit{power graph} will refer to the undirected power graph
   unless otherwise specified.
 
-Recall that a group in which every commutative subgroup is cyclic is either cyclic or generalized quaternion
-  \cite{Cartan}. We will use the following definition for generalized octonion loops in the interest of closely
+We will use the following definition for generalized octonion loops in the interest of closely
   following this characterization of generalized quaternion groups. In {\S}4 we will see that there are several
   alternate characterizations of generalized octonion loops.
 
 \begin{dfn}
-	Let $M$ be a nonassociative Moufang $p$-loop such that every associative commutative subloop of $M$ is cyclic,
+	Let $M$ be a nonassociative Moufang $p$-loop such that every abelian subloop of $M$ is cyclic,
     then we call $M$ a \textit{generalized octonion loop}.
 \end{dfn}
 
 \subsection{Chein's construction}
 
-\begin{thm}\label{cnst-chein}
+\begin{thm}[\cite{Chein}]\label{cnst-chein}
   Let $G$ be a group. For $1\neq c\in Z(G)$ and $u$ an indeterminate. Define $(M, \cdot)$ by $M = G\cup Gu$ and
   \begin{align*}
     g\cdot h &= gh\\
@@ -935,14 +941,14 @@ Recall that a group in which every commutative subgroup is cyclic is either cycl
     gu\cdot hu &= ch^{-1}g
   \end{align*}
   for all $g, h\in G$. Then $M$ is a Moufang loop \cite{Chein}. Further, $M$ is associative if and only if $G$
-    is abelian \cite{Chein}.
+    is abelian.
 \end{thm}
 
 Throughout the paper we will denote loops arising from this construction by $M(G, 2)$, where $G$ is the underlying
   group. We will show that the loops $M(Q_{4n}, 2)$, where $Q_{4n}$ is
   a generalized quaternion group, are generalized octonion.
 
-\begin{thm}\label{thm-chein}
+\begin{thm}[\cite{Chein}]\label{thm-chein}
   Suppose that $M$ is a finite Moufang loop with a set of generators $\{u, u_1, \ldots, u_n\}$ such that
   \begin{itemize}
     \item $u\notin G = \langle u_1,\ldots, u_n\rangle$,
@@ -966,7 +972,8 @@ Throughout the paper we will denote loops arising from this construction by $M(G
 
 We will begin by classifying Moufang $p$-loops $M$ with a unique subloop of order $p$. In the proof of
   Theorem \ref{mainThm}, we will handle such loops separately. Note that every nontrivial subloop of a
-  Moufang loop of order $p^n$ with a unique subloop of order $p$ also has a unique subloop of order $p$.
+  Moufang loop of order $p^n$ with a unique subloop of order $p$ also has a unique subloop of order $p$
+  by the last point of Proposition \ref{gen-facts}.
 
 \begin{thm}
     A Moufang $p$-loop $M$ with a unique subloop of order $p$ is either a cyclic group, a generalized
@@ -975,9 +982,9 @@ We will begin by classifying Moufang $p$-loops $M$ with a unique subloop of orde
 
 We will first handle the simpler case that $p$ is an odd prime.
 
-\begin{lem}\label{lem-burnside}
-  Let $G$ be a group of order $p^n$, $p > 2$ prime with a unique subloop of order $p^s$ for some $0 < s < n$.
-    Then $G$ is cyclic \cite{Burnside}
+\begin{lem}[\cite{Burnside}]\label{lem-burnside}
+  Let $G$ be a group of order $p^n$, $p > 2$ prime with a unique subgroup of order $p^s$ for some $0 < s < n$.
+    Then $G$ is cyclic. 
 \end{lem}
 
 \begin{lem}\label{not2power}
@@ -987,7 +994,7 @@ We will first handle the simpler case that $p$ is an odd prime.
 
 \begin{proof}
     Let $x, y, z\in M$ be given. If $\langle x, y\rangle = M$, then $M$ is a group by diassociativity and
-      we are done by the result for groups \cite{Burnside}. Otherwise $\langle x, y\rangle \subsetneq M$
+      we are done by Lemma \ref{lem-burnside}. Otherwise $\langle x, y\rangle \subsetneq M$
       must be a $p$-group with a unique subgroup of order $p$ and thus cyclic by Lemma \ref{lem-burnside}.
       Say $\langle x, y\rangle = \langle g\rangle$ and $x = g^i$, $y = g^j$. Then
       $x\cdot yz = g^i \cdot g^j z = g^{i + j}z = xy\cdot z$ by diassociativity. Hence in either case 
@@ -1014,7 +1021,7 @@ We will now handle the case $p = 2$. In what follows, let $M$ be a nonassociativ
     $i\in\mathbb{N}$. If $x = a^i$, $y = a^j$, then $xy = yx$. If $x = a^i b$, $y = a^j b$,
     then $x^2 = a^i b a^i b = b a^{-i} a^i b = b^2$ and similarly $y^2 = b^2$,
     thus $|x| = |y| = 4$. If $x = a^i$, $y = a^j b$, then $xy = a^i a^j b = a^j b a^{-i} = yx^{-1}$.
-    Finally, if $x = a^i b$, $y = a^j b$, then $xy = a^i b a^j = a^{-j} a^i b = y^{-1} x$.
+    Finally, if $x = a^i b$, $y = a^j$, then $xy = a^i b a^j = a^{-j} a^i b = y^{-1} x$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1051,6 +1058,8 @@ To make the Theorem \ref{moufangDesc} more closely follow the result for groups 
     $M$ is either cyclic or generalized quaternion and thus every commutative and associative subloop of
     $M$ is cyclic. Thus $M$ is generalized octonion.
 \end{proof}
+
+Let $\{1, e_1, \ldots, e_7\}$ be the standard basis for the octonions.
 
 \begin{thm}
   The subloop of the unit octonions generated by $\{e^{\frac{e_2\pi}{n}}, e_3, e_5\}$ for some $n\in\NNN$.
@@ -1123,9 +1132,8 @@ To make the Theorem \ref{moufangDesc} more closely follow the result for groups 
 Recall that the generalized quaternion group of order $4n$ can be presented as
   $Q_{4n} = \langle a, b | a^n = b^2, a^{2n} = 1, b^{-1}ab = a^{-1}\rangle$. Viewing the generalized
   octonion loop of order $16$ as $M(Q_8, 2)$ with this presentation yields the power graph of $O_{16}$
-  presented above. Note that the non-identity vertex $a^2$ is connected to all other vertices. The fact
-  that generalized octonion loops are the only nonassociative Moufang loops with this feature is the
-  primary reason we are interested in generalized octonion loops in the context of power graphs.
+  presented above. Note that the non-identity vertex $a^2$ is connected to all other vertices. We will 
+  show later that generalized octonion loops are the only nonassociative Moufang loops with this feature.
 
 \begin{figure}[h]
   \centering
@@ -1199,7 +1207,7 @@ Recall that the generalized quaternion group of order $4n$ can be presented as
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Undirected power graphs determine directed} \label{gen-oct}
+\section{Undirected power graphs determine directed power graphs} \label{gen-oct}
 
 With Theorem \ref{genOctChain} at our disposal we can now translate the argument in \cite{PGII} to the
   Moufang case to show that two Moufang loops with isomorphic undirected power graphs must have isomorphic
@@ -1210,16 +1218,17 @@ With Theorem \ref{genOctChain} at our disposal we can now translate the argument
 \subsection{Non-identity vertex connected to all others}\label{multi-vert}
 
 \begin{lem}\label{connectedVertex}
-  Suppose that $x\in M$ with $x\neq 1$ and $x$ connected to all other vertices in $\Gamma$ and $p$ is a
+  Suppose that $x\in M$ with $x\neq 1$ and $x$ is connected to all other vertices in $\Gamma$ and $p$ is a
     prime divisor of $\Exp(M)$. Then $M$ has a unique subgroup $P$ of order $p$ and
     $P = \langle x^n \rangle$ for some $n$.
 \end{lem}
 
 \begin{proof}
-  Let $|x^p| = k$ and $y\in M$ such that $|y| = p$ be given. Since $x$ and $y$ are connected in
-    $\Gamma$, either $x$ is a power of $y$ or $y$ is a power of $x$. Suppose that $y^i = x$
-    where $1\leq i < p$ without loss of generality. Then $(p, i) = 1$ and there exists
-    $j\in\mathbb{N}$ such that $(y^i)^j = y = x^j$. Thus every element of $Q$ of order $p$
+  Let $|x^p| = k$ and $y\in M$ such that $|y| = p$ be given. Such a $y$ must exist because
+    $p|\exp(M)$. Since $x$ and $y$ are connected in
+    $\Gamma$, either $x$ is a power of $y$ or $y$ is a power of $x$. Suppose that $y^i = x$.
+    Then $(p, i) = 1$ and there exists
+    $j\in\mathbb{N}$ such that $x^j = (y^i)^j = y$. Thus every element of $Q$ of order $p$
     is a power of $x$.
 
   Further $1 = y^p = x^{jp} = (x^p)^j$ and so $k\mid j$. Thus $y = x^j = (x^k)^m$ for some
@@ -1232,17 +1241,22 @@ Thus if the power graph of a Moufang $p$-loop $M$ has a non-identity vertex conn
   \ref{moufangDesc}. We now handle the case that $M$ does not have prime power order.
 
 \begin{lem}
-  Suppose that $x\in M$ with $x\neq 1$ and $x$ connected to all other vertices in the power
+  Suppose that $x\in M$ with $x\neq 1$ and $x$ is connected to all other vertices in the power
     graph of $M$ and $|M|$ is not a prime power. Then $M$ is a cyclic group.
 \end{lem}
 
 \begin{proof}
-  Since $M$ is not a $p$-loop $\Exp(M)$ is not a prime power \cite{64and81}. As in the proof of
-    Lemma \ref{connectedVertex} $|x|$ is divisible by every prime divisor of $\Exp(M)$. Since
-    $\Exp(M)$ has at least two distinct prime factors so does $|x|$ and for all $y\in M$ with
-    $|y|$ a prime power we have that $y$ is a power of $x$. Let $z\in M$ such that $|z|$ is not
-    a prime power be given. If $z$ is a power of $x$ then we are done. We will show that $z$
-    must be a power of $x$.
+  Since $M$ is not a $p$-loop, $\Exp(M)$ is not a prime power \cite{64and81}. As in the proof of
+    Lemma \ref{connectedVertex}, $|x|$ is divisible by every prime divisor of $\Exp(M)$. Since
+    $\Exp(M)$ has at least two distinct prime factors so does $|x|$. 
+
+  First let $z\in M$ such that $|z| = p^n$ for some prime $p$ be given. Note that either $x$ is
+    a power of $z$ or vice versa. But all powers of $z$ have order a power of $p$ while $x$ has
+    composite order. So $z$ must be a power of $x$, otherwise we would contradict that the order
+    of $x$ is composite.
+
+  Let $z\in M$ such that $|z|$ is not a prime power be given. If $z$ is a power of $x$ then
+    we are done. We will show that $z$ must be a power of $x$.
 
   Suppose toward a contradiction that $z$ is not a power of $x$. Then $x = z^k$ for some $k$.
     Say $|z| = p_0^{i_0}\cdots p_m^{i_m}$, where this is a factorization into distinct primes
@@ -1301,6 +1315,11 @@ We will now prove Theorem \ref{mainThm} in the case that a non-identity vertex i
     This completes the proof of Theorem \ref{mainThm}. We present an outline of the proof in
     \cite{PGII} here for completeness.
 
+\begin{dfn}
+  Let $x$ be a vertex in a graph. Then the \emph{closed neigborhood} of $x$ is the collection
+    of all vertices $x$ is adjacent to along with $x$.
+\end{dfn}
+
 \begin{proof}
   Define two equivalence relations on $M$:
     \[x\equiv y\text{ if and only if the closed neighborhoods of $x$ and $y$ coincide}\]
@@ -1320,7 +1339,7 @@ We will now prove Theorem \ref{mainThm} in the case that a non-identity vertex i
     we can then partition $\equiv$-classes into $\approx$-classes arbitrarily. But $\equiv$-classes
     can be recognized with only the undirected power graph, so this reduces the problem to that of
     deciding which direction arrows between $\approx$-classes point. This is handled by noticing that
-    if two $\approx$-classes have dif and only iferent sizes, then arrows point from the larger to the smaller.
+    if two $\approx$-classes have different sizes, then arrows point from the larger to the smaller.
     If two $\approx$-classes have the same size, then $\phi(m) = \phi(n)$, where $m, n$ are the orders
     of elements in the respective classes. But this only occurs for $\phi$ when either $m = n$ or
     $2m = n$ for $m$ odd. If $m = n$ the classes cannot be joined. In the other case exactly one class
@@ -1424,7 +1443,7 @@ Note that since $e$ is in the center, and thus the nucleus, we can omit parenthe
   where $\varphi\varphi = \psi\psi$ \cite{BK-isotopes}.
 \end{thm}
 
-The relation between these varieties is shown below.
+The relation between these equations is shown below.
 
 \begin{figure}[H]
   \centering
@@ -1497,6 +1516,12 @@ This result indicates that the (*) identities are too strong to be an analogue o
     appendix \ref{appendix:semipara+paraF}.
 \end{proof}
 
+Together these results give us the following theorem.
+
+\begin{thm}
+  A quasigroups is of type (*) if and only if it is semiparamedial and of type (*).
+\end{thm}
+
 \subsection{Para-F quasigroups}
 
 \begin{dfn}
@@ -1508,15 +1533,15 @@ This result indicates that the (*) identities are too strong to be an analogue o
   \end{align}
 \end{dfn}
 
-We will call a quasigroup satisfying only equation \ref{eq:pF1} \emph{left para-F} and a quasigroup
-  satisfying only equation \ref{eq:pF2} \emph{right para-F}. The following quasigroup is left para-F,
+We will call a quasigroup satisfying only equation (\ref{eq:pF1}) \emph{left para-F} and a quasigroup
+  satisfying only equation (\ref{eq:pF2}) \emph{right para-F}. The following quasigroup is left para-F,
   but not right para-F. Since these identities are dual this demonstrates that neither implies the other.
 
 \begin{table}[H]
   \centering
   \begin{tabular}{c | c c c c c c c c}
     $\cdot$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
-    \hline \hline
+    \hline
     0 & 1& 0& 4& 2& 5& 3& 7& 6\\
 	  1 & 3& 2& 1& 7& 0& 6& 5& 4\\
 	  2 & 0& 6& 2& 3& 4& 5& 1& 7\\
@@ -1533,8 +1558,8 @@ As we will show later in this chapter, para-F quasigroups are antilinear over Mo
   use this antilinearity to explicitly construct a para-F quasigroup which is not a semiparamedial,
   semimedial, nor F-quasigroup. Let $D_8 = \langle a, b | a^4 = b^2 = 1, bab^{-1} = a^{-1}\rangle$
   and define $\phi, \psi : D_8\to D_8$ by 
-  $\phi(ab) = \psi(ab) = a^3 b$, $\phi(a^3 b) = \psi(a^3 b) = ab$ and $\phi, \psi$ fix all other
-  elements of $D_8$. Then $\phi, \psi$ are antiautomorphisms of $D_8$. Define a quasigroup $(Q, +)$ by
+  $\phi(ab) = a^3 b$, $\phi(a^3 b) = ab$ and $\phi$ fixes all other
+  elements of $D_8$. Let $\psi = \phi$. Then $\phi, \psi$ are antiautomorphisms of $D_8$. Define a quasigroup $(Q, +)$ by
 \[x + y = \phi(x) \cdot \psi(y) \cdot a^2\]
 where $\cdot$ is the operation in $D_8$. This quasigroup is para-F but not semiparamedial, semimedial or F.
   Its multiplication table is below. Note that $(Q, +)$ is also neither medial nor paramedial since it is
@@ -1565,7 +1590,7 @@ Note that all of the varieties of loops in diagram \ref{medial-para}, with the e
 
 \section{Loop isotopes are Moufang}
 
-In what follows let $(Q, \cdot)$ be a para-F quasigroup and $x, y, z\in Q$ be universally quantified.
+In what follows let $(Q, \cdot)$ be a para-F quasigroup. 
   We will now prove a series of lemmas which will allow us to prove Theorem \ref{thm-iso-moufang}.
 
 \begin{lem}\label{trans-lem}
@@ -1827,9 +1852,6 @@ While para-F quasigroups are not linear over loops in general, they are antiline
   for all $x, y\in Q$.
 \end{dfn}
 
-With this result we can prove an analogue to the linearity results in section \ref{para-f-intro}
-  for para-F quasigroups.
-
 \begin{thm}\label{thm-para-f}
   Every para-F quasigroup $(Q, \cdot)$ is antilinear over a Moufang loop $(Q, +)$ with the antilinearity
     given by
@@ -1847,17 +1869,17 @@ With this result we can prove an analogue to the linearity results in section \r
   \begin{align*}
     x +_u y &= (x\rdv(u\ldv u))\cdot ((u\rdv u)\ldv y)\\
     x\cdot y &= x(u\ldv u) +_u (u\rdv u)y\\
-    x\cdot y &= (f_u(x) +_u A_u) +_u (B_u +_u g_u(y))
+    x\cdot y &= (f_u(x) +_u A_u) +_u (B_u +_u g_u(y)),
   \end{align*}
-  Set
+  where we set
   \begin{align*}
     f_u(x) &= x(u\ldv u) -_u 1_u(u\ldv u)\\
     g_u(y) &= -_u(u\rdv u)1_u +_u (u\rdv u)y\\
     A_u &= 1_u(u\ldv u)\\
     B_u &= (u\rdv u) 1_u
   \end{align*}
-    So that $f_u(1_u) = g_u(1_u) = 1_u$. We define $C_u = A_u + B_u$ and use \textsc{prover9} to prove
-      the following sequence of results:
+  Then $f_u(1_u) = g_u(1_u) = 1_u$. We define $C_u = A_u + B_u$ and use \textsc{prover9} to prove
+    the following sequence of results:
 \begin{enumerate}
   \item $1_{u\cdot u} = C_u$
   \item $A_u, B_u, C_u$ are in the commutant of $(Q, +_u)$
@@ -2124,7 +2146,7 @@ In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define
 
 \begin{lem}\label{lem-42}
   $(Q, \cdot)$ satisfies
-  \[x +_{z, v_6} (v_5 +_{w, (u +_{w, v_6} v_5)\rdv w} z) = x +_{z, u\rdv w} y\] 
+  \[x +_{z, r} (v +_{w, (u +_{w, r} v)\rdv w} z) = x +_{z, u\rdv w} y\] 
 \end{lem}
 
 \begin{proof}
@@ -2142,10 +2164,10 @@ In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define
   \begin{alignat*}{2}
     x +_{y, z} u &= (x\rdv y)\cdot (z\ldv u) &&\\
     (x\rdv y)\ldv(x +_{y, z} u) &= z\ldv u &&\text{ left dividing by $x\rdv y$}\\
-    x +_{y, w\rdv v_5} (w +_{v_5, z} u) &= (x\rdv y)\cdot (z\ldv u)
-      &&\text{ by definition of $+_{w, v_5}$}\\
-    x +_{y, w\rdv v_5} (w +_{v_5, z} u) &= x +_{y, z} u &&\\
-    x +_{z, v_6} (v_5 +_{w, (u +_{w, v_6} v_5)\rdv w} z) &= x +_{z, u\rdv w} y
+    x +_{y, w\rdv v} (w +_{v, z} u) &= (x\rdv y)\cdot (z\ldv u)
+      &&\text{ by definition of $+_{w, v}$}\\
+    x +_{y, w\rdv v} (w +_{v, z} u) &= x +_{y, z} u &&\\
+    x +_{z, r} (v +_{w, (u +_{w, r} v)\rdv w} z) &= x +_{z, u\rdv w} y
       &&\text{ by \ref{id-40}}
   \end{alignat*}
   So the proof is complete.
@@ -2171,15 +2193,15 @@ In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define
 \end{lem}
 
 \begin{proof}
-  From \ref{id-40} in the proof of Lemma \ref{lem-42} we have
-  \begin{align*}{2}
+  From (\ref{id-40}) in the proof of Lemma \ref{lem-42} we have
+  \begin{align*}
     x +_{u, w} (y +_{u, (x +_{u, w} y)\rdv u} z) &= z\\
-    (x\cdot (y\ldv u)) +_{v_5, y} (w +_{v_5, (u +_{v_5, y} z)\rdv v_5} z) &= x\cdot (y\ldv z)\\
+    (x\cdot (y\ldv u)) +_{v, y} (w +_{v, (u +_{v, y} z)\rdv v} z) &= x\cdot (y\ldv z)\\
       &\text{ applying the above to Lemma \ref{lem-30}}\\
-    (x\cdot (y\ldv u)) +_{v_5, u\rdv v_5} z &= x\cdot (y\ldv z)\\
+    (x\cdot (y\ldv u)) +_{v, u\rdv v} z &= x\cdot (y\ldv z)\\
       &\text{ by Lemma \ref{lem-42}}\\
     x +_{z, u\rdv z} y &= (x\rdv(w\ldv u))\cdot (w\ldv y)\\
-      &\text{substituting $x\mapsfrom x\rdv(w\ldv u), y\mapsfrom w, z\mapsfrom y, v_5\mapsfrom z$}\\
+      &\text{substituting $x\mapsfrom x\rdv(w\ldv u), y\mapsfrom w, z\mapsfrom y, v\mapsfrom z$}\\
     x +_{z, u\rdv z} y &= x +_{w\ldv u, w} y\\
     ((w\rdv(x\rdv x))\ldv z)x \cdot y &= x\cdot (y +_{u\ldv w, u} z)\\
       &\text{ applying the above to Lemma \ref{lem-33}}\\
@@ -2221,7 +2243,7 @@ In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define
 \begin{proof}
   Let $(Q, \cdot)$ be a para-FG quasigroup. Then by Theorem \ref{thm-para-f} there exists a Moufang
     loop $(Q, +)$, antiautomorphisms $f, g: (Q, +)\to (Q, +)$, and $c\in Z(Q)$ such that
-  \[x\cdot y = f(x) + (g(y) + c)\].
+  \[x\cdot y = f(x) + (g(y) + c).\]
   By an analogous proof to that of Proposition \ref{prp-linear-iso} $(Q, \cdot)$ is isotopic to
     $(Q, +)$. But $(Q, \cdot)$ is a para-FG quasigroup and so isotopic to some group $(Q, *)$. But
     then $(Q, *)$ and $(Q, +)$ are isotopic and $(Q, +)$ must be a group. Thus $(Q, \cdot)$ is
@@ -2243,7 +2265,8 @@ Many properties from universal algebra have equivalent definitions specific to t
   Let $A$ be a universal algebra. $\phi\subseteq A\times A$ is a \emph{congruence} on $A$ if and only if
   \begin{enumerate}
     \item $\phi$ is an equivalence relation.
-    \item For each $n$-ary operation $f$ of $A$ $a_1 \phi a_1'\ldots a_n\phi a_n'$ implies
+    \item For each $n$-ary operation $f$ of $A$ and every $a_1, \ldots, a_n, a_1', \ldots, a_n'\in $, 
+      $a_1 \phi a_1'\ldots a_n\phi a_n'$ implies
       $f(a_1, \ldots, a_n)\phi f(a_1', \ldots a_n')$.
   \end{enumerate}
 \end{dfn}
@@ -2261,9 +2284,10 @@ Many properties from universal algebra have equivalent definitions specific to t
 \begin{fct}
   Let $G$ be a group, then:
   \begin{enumerate}
-    \item For every congruence $\phi$ on $G$ there exists $N\unlhd G$ such that
+    \item For every congruence $\phi$ on $G$ there exists $N\unlhd G$, namely the equivalence class
+      of $1$, such that
       $x\phi y$ if and only if $xy^{-1}\in N$.
-    \item For $N\unlhd G$ the relation $x\phi y$ if and only if $xy^{-1}\in N$ is a congruence \cite{univAlg} 
+    \item For $N\unlhd G$ the relation $\phi$, where $x\phi y$ if and only if $xy^{-1}\in N$ is a congruence \cite{univAlg} 
   \end{enumerate}
 \end{fct}
 
@@ -2290,22 +2314,17 @@ We now present some universal algebraic definitions and their equivalent definit
 
 \begin{dfn}
   Let $(Q, \cdot)$ be a quasigroup and $x, y\in Q$. The \emph{commutator} of $x$ and $y$ is
-  \[[x, y] = (xy)\rdv (yx)\]
+  \[[x, y] = (xy)\rdv (yx).\]
 \end{dfn}
 
 \begin{dfn}
-  Let $G$ be a group and $H, K\unlhd G$. Then the \emph{classical (group theoretic) commutator}
-    of $H$ and $K$ is $[H, K] = \langle [x, y] : x\in H, y\in K\rangle$.
+  Let $(Q, \cdot)$ be a quasigroup and $x, y, z\in Q$. The \emph{associator} of $x, y, z$ is
+  \[[x, y, z] = (x\cdot yz)\rdv (xy\cdot z).\]
 \end{dfn}
 
 \begin{dfn}
-  An algebra $A$ is \emph{(congruence) nilpotent} if $\gamma_{(n)} = 0_A$ for some $n$, where
-  \[\gamma_{(0)} = 1_A,\quad \gamma_{(i + 1)} = [\gamma_{(i)}, 1_A]_C\]
-\end{dfn}
-
-\begin{dfn}
-  A loop $L$ with identity $1$ is \emph{(classically) nilpotent} if $L_n = \{1\}$ for some $n$, where
-  \[L_0 = L,\quad L_{i + 1} = [L_i, L]\]
+  Let $(Q, \cdot)$ be a loop and $Q'$ be the smallest subloop such that $Q/Q'$ is an abelian
+    group. Then $Q' = [Q, Q]$ is the \emph{derived subloop} of $Q$.
 \end{dfn}
 
 \begin{dfn}
@@ -2319,11 +2338,7 @@ We now present some universal algebraic definitions and their equivalent definit
 \end{dfn}
 
 \begin{fct}
-  Classical and congruence normality, nilpotency, and solvability coincide in groups \cite{ComTheory}.
-\end{fct}
-
-\begin{fct}
-  Classical and congruence nilpotency coincide in loops \cite{ComTheory}.
+  Classical and congruence solvability coincide in groups \cite{ComTheory}.
 \end{fct}
 
 \begin{fct}
@@ -2342,7 +2357,8 @@ Note that conjugacy closed loops satisfy this condition, so in particular classi
   for conjugacy closed loops.
 
 Weakening our assumption on $Q$ we are no longer able to show that classical and congruence
-  solvability degrees coincide, but we do obtain the following result about $\inn^*(Q)$:
+  solvability degrees coincide, but we do obtain the following result about 
+  $\inn^*(Q) = \langle L_{x, y}, R_{x, y}, M_{x, y} : x, y\in Q\rangle$:
 
 \begin{thm}
   If $Q/\nuc(Q)$ is a group, then $\inn^*(Q)$ is abelian.
@@ -2434,7 +2450,7 @@ We will follow the argument proving Lemma 4.2 in \cite{DiaCC} to show that
 \end{lem}
 
 \begin{proof}
-  This is immediate from the fact that $n\in\nuc(Q)$ and the definition of $[x, y, z]_M$.
+  This follows from the fact that $n\in\nuc(Q)$ and the definition of $[x, y, z]_M$.
 \end{proof}
 
 \begin{lem}\label{lem-M2}
@@ -2442,13 +2458,12 @@ We will follow the argument proving Lemma 4.2 in \cite{DiaCC} to show that
 \end{lem}
 
 \begin{proof}
-  First note that $M_{x, y}(z)\ldv(y\ldv(yz\cdot x) = x$ by Lemma \ref{lem-divs}.
+  First note that $M_{x, y}(z)\ldv(y\ldv(yz\cdot x)) = x$. 
     Further $(n\ldv a)\rdv(b\ldv a) = n\ldv b$ since $n\in\nuc(Q)$. So
   \begin{align*}
     (n\ldv (y\ldv(yz\cdot x)))\rdv x &= (n\ldv (y\ldv(yz\cdot x)))\rdv(M_{x, y}(z)\ldv (y\ldv(yz\cdot x)))\\
-    &= n\ldv M_{x, y}(z)
+    &= n\ldv M_{x, y}(z)\label{q-nuc-dag} \tag{$\dagger$}
   \end{align*}
-  Thus $(n\ldv (y\ldv(yz\cdot x)))\rdv x = n\ldv M_{x, y}(z)$, call this $\dagger$.
 
   Further, since $n\in \nuc(Q)$ we have that
     $M_{x, yn}(z) = ((yn)\ldv((yn\cdot z)\cdot x))\rdv x = ((yn)\ldv((y\cdot nz)\cdot x))\rdv x$.
@@ -2457,7 +2472,7 @@ We will follow the argument proving Lemma 4.2 in \cite{DiaCC} to show that
     M_{x, yn}(z) &= ((yn)\ldv((y\cdot nz)\cdot x))\rdv x\\
     &= (n\ldv(y\ldv((y\cdot nz)\cdot x)))\rdv x
   \end{align*}
-  But by $\dagger$ we have that
+  But by (\ref{q-nuc-dag}) we have that
   \begin{align*}
     M_{x, yn}(z) &= (n\ldv(y\ldv((y\cdot nz)\cdot x)))\rdv x\\
     &= n\ldv M_{x, y}(nz)
@@ -2480,7 +2495,7 @@ We will follow the argument proving Lemma 4.2 in \cite{DiaCC} to show that
 \end{proof}
 
 \begin{cor}\label{cor-M}
-  If $Q/\nuc(Q)$ is a group, then $M_{x, y}(nz) = n\cdot M_{x, y}(z)$ for $n\in\nuc(Q)$
+  If $Q/\nuc(Q)$ is a group, then $M_{x, y}(nz) = n\cdot M_{x, y}(z)$ for $n\in\nuc(Q)$.
 \end{cor}
 
 \begin{proof}
@@ -2536,7 +2551,7 @@ Now define
     R_{x, y}(M_{u, v}(z)) &= R_{x, y}([v, z, u]_{M'}z) &&\\
     &= [v, z, u]_{M'}\cdot R_{x, y}(z) &&\text{ by Lemma \ref{lem-LR}}\\
     &= [v, z, u]_{M'}\cdot [z, y, x]_{R'}z &&\\
-    &= [z, y, x]_{R'}\cdot [v, z, u]_{M'}z &&\\
+    &= [z, y, x]_{R'}\cdot [v, z, u]_{M'}z &&\text{ from \cite{PACC}}\\
     &= [z, y, x]_{R'}\cdot M_{u, v}(z) &&\\
     &= M_{u, v}([z, y, x]_{R'}z) &&\text{ by Corollary \ref{cor-M}}\\
     &= M_{u, v}(R_{x, y}(z)) &&
@@ -2558,7 +2573,7 @@ Now define
     L_{x, y}(L_{u, v}(z)) &= L_{x, y}(z[u, v, z]_L) &&\\
     &= L_{x, y}(z)\cdot [u, v, z]_L &&\text{ by Lemma \ref{lem-LR}}\\
     &= z[x, y, z]_L\cdot [u, v, z]_L &&\\
-    &= z[u, v, z]_L\cdot [x, y, z]_L &&\\
+    &= z[u, v, z]_L\cdot [x, y, z]_L &&\text{ from \cite{PACC}}\\
     &= L_{u, v}(z)\cdot [x, y, z]_L &&\\
     &= L_{u, v}(z[x, y, z]_L) &&\text{ by Lemma \ref{lem-LR}}\\
     &= L_{u, v}(L_{x, y}(z)) &&
@@ -2569,7 +2584,7 @@ Now define
     R_{x, y}(R_{u, v}(z)) &= R_{x, y}([z, v, u]_{R'}z) &&\\
     &= [z, v, u]_{R'}\cdot R_{x, y}(z) &&\text{ by Lemma \ref{lem-LR}}\\
     &= [z, v, u]_{R'}\cdot [z, y, x]_{R'}z &&\\
-    &= [z, y, x]_{R'}\cdot [z, v, u]_{R'}z &&\\
+    &= [z, y, x]_{R'}\cdot [z, v, u]_{R'}z &&\text{ from \cite{PACC}}\\
     &= [z, y, x]_{R'}\cdot R_{u, v}(z) &&\\
     &= R_{u, v}([z, y, x]_{R'}z) &&\text{ by Lemma \ref{lem-LR}}\\
     &= R_{u, v}(R_{x, y}(z)) &&
@@ -2582,7 +2597,7 @@ Now define
 
 \section{Further results}
 
-We will now present some further results dealing providing sufficient conditions for right
+We will now present some further results providing sufficient conditions for right
   inner mappings to commute.
 
 \subsection{Inverses preserved by right inner mappings}
@@ -2613,19 +2628,19 @@ We will now present some further results dealing providing sufficient conditions
 \begin{proof}
   \begin{align*}
     R_{u, v}(R_{x, y}(z)) &= R_{u, v}(R_{x, y}(R_{u, v}(z)\cdot R_{u, v}(z)\ldv z))\\
-    &= R_{u, v}(R_{x,y}(R_{u,v}(z)\cdot R_{x, y}(R_{u,v}(z)\ldv z)))\\
+    &= R_{u, v}(R_{x,y}(R_{u,v}(z))\cdot R_{x, y}(R_{u,v}(z)\ldv z)))\\
     &\text{ since $R_{x, y}$ is an automorphism}\\
     &= R_{u, v}(R_{x, y}(R_{u, v}(z))\cdot (R_{u, v}(z)\ldv z))\\
     &\text{ since $R_{u, v}(z)\ldv z$ is in the associator subloop and thus the left nucleus}\\
-    &= R_{u, v}([R_{u, v}(z), x, y]R_{u, v}(z)\cdot (R_{u, v}(z)\ldv z))\\
-    & \text{ definition of $[\cdot, \cdot, \cdot]$}\\
-    &= R_{u, v}([R_{u, v}(z), x, y]\cdot R_{u, v}(z)(R_{u,v}(z)\ldv z))\\
+    &= R_{u, v}([R_{u, v}(z), x, y]_{R'} R_{u, v}(z)\cdot (R_{u, v}(z)\ldv z))\\
+    & \text{ defining the associator $[x, y, z]_{R'} = R_{x, y}(z)\cdot z$}\\
+    &= R_{u, v}([R_{u, v}(z), x, y]_{R'}\cdot R_{u, v}(z)(R_{u,v}(z)\ldv z))\\
     &\text{ associators in left nucleus}\\
     &= R_{u, v}([R_{u, v}(z), x, y]z) &&\\
-    &= [R_{u, v}(z), x, y]R_{u, v}(z)\\
-    &\text{ $R_{u, v}$ is an automorphism}\\
+    &= [R_{u, v}(z), x, y]_{R'}R_{u, v}(z)\\
+    &\text{ $R_{u, v}$ is an automorphism and associators in the nucleus}\\
     &= R_{x, y}(R_{u, v}(z))\\
-    &\text{ definition of $[\cdot, \cdot, \cdot]$}
+    &\text{ definition of $[\cdot, \cdot, \cdot]_{R'}$}
   \end{align*}
 \end{proof}
 
@@ -2765,14 +2780,14 @@ It has been shown that Lagrange's Theorem holds in Moufang loops \cite{LG}. Howe
     Then there exists $A\subset S$ such that $A$ is a partition of $M$.
 \end{cnj}
 
-That is, in Moufang loops there is always a subset of the family of all left cosets of a
+That is, in Moufang loops there is always a collection of the family of all left cosets of a
   subloop which do partition the loop. Proving this conjecture would provide a proof of
   Lagrange's Theorem for Moufang loops very similar to that for groups. In particular,
   such a proof would be direct in the sense that it would not rely on the classification
   of finite simple Moufang loops. We were ultimately unsuccessful, but each of our attempts
   did yield results which are interesting in their own rights.
 
-We will begin by attempting to directly construct such a uniform partition of cosets directly
+We will begin by attempting to construct such a uniform partition of cosets directly
   by proving results on the intersections of distinct cosets and the existence of disjoint
   cosets. When this approach does not prove fruitful we will try other approaches to proving
   Lagrange's Theorem for Moufang loops directly by constructing a partition of the loop with
@@ -2784,7 +2799,7 @@ We will first define an equivalence relation on $Q$ analogous to the natural equ
   order of the subloop.
 
 Finally, we will consider orbits of the relative left multiplication groups of $S$ in $Q$. These
-  orbits are a dif and only iferent generalization of the definition of cosets in groups to the context of loops.
+  orbits are a different generalization of the definition of cosets in groups to the context of loops.
   This strategy again has the advantage of providing us with a partition of the loop, reducing the
   problem to that of showing that the order of each orbit is a multiple of the order of the subloop.
 
@@ -2792,7 +2807,7 @@ Finally, we will consider orbits of the relative left multiplication groups of $
 
 \section{Coset intersections}
 
-\subsection{A first Approach}
+\subsection{A first approach}
 
 Let $G$ be a group with $S\leq G$ and $x\in xS\cap yS$. Since left cosets of $S$ partition $G$,
   it is immediate that $xS = yS$ and $x^{-1}(xS\cap yS) = x^{-1}xS = S\leq G$. So in particular,
@@ -2859,10 +2874,13 @@ Our next approach was to attempt to iteratively construct a set of cosets partit
   following series of lemmas provide restrictions on the intersections of distinct cosets and guarantee
   the existence of cosets disjoint from given sets.
 
-\begin{lem}\label{tech-cosets}
+\begin{lem}[\cite{okubo}]\label{tech-cosets}
   Let $Q$ be a Moufang loop. Then for all $x, y, z\in Q$ 
   \[xy\cdot (z\cdot xy) = x\cdot (yz\cdot xy)\]
 \end{lem}
+
+A generalization of this result is proved in \cite{okubo}. We present a proof of this version here
+  to make the dissertation self-contained.
 
 \begin{proof}
   Let $x, y, z\in Q$ be given and consider
@@ -2887,7 +2905,7 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
   nontrivial intersection, then the intersection must contain at least two distinct elements.
 
 \begin{proof}
-  Note that $(yx^{-1})\cdot (xz^{-1})(yx^{-1})\in S$ since $xy^{-1}, xz^{-1}\in S$ and $S$ is closed
+  Note that $(yx^{-1})\cdot (xz^{-1})(yx^{-1})\in S$ since $xy^{-1}, xz^{-1}\in S$ because $S$ is closed
     under inversion. Then
   \begin{align*}
     y\cdot(x^{-1}\cdot xz^{-1})(yx^{-1})&\in S\text{ by Lemma \ref{tech-cosets}}\\
@@ -3039,7 +3057,7 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
     sufficient to show that for all $x\in S$, $y, z\in Q$ $L_{y, z}(x) \in S$. Suppose toward a
     contradiction that there exist $c_1\in S$, $c_2, c_3\in Q$ such that $L_{c_2, c_3}(c_1)\notin S$. Then
   \begin{alignat*}{2}
-    x\cdot c_1 x &\in S &&\text{, since $x^2\in S$ for all $x\in Q$}\\
+    x^2 c_1 = x\cdot c_1 x &\in S &&\text{, since $x^2\in S$ for all $x\in Q$}\\
     (x\cdot c_1 x)\cdot y^2 &\in S &&\\
     (xc_1\cdot x)\cdot y^2 &\in S &&\\
     x\cdot(c_1\cdot (x\cdot y^2)) &\in S &&\text{, since $Q$ is Moufang}\\
@@ -3052,7 +3070,7 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
   \end{alignat*}
 
   But by assumption $L_{c_2, c_3}(c_1)\notin S$ and since $Q$ is automorphic and $x^2\in S$ we have
-    $L_{c_2, c_3}(c_1^2)\in S$. Thus
+    $L_{c_2, c_3}(c_1)^2\in S$. Thus
     $L_{c_2, c_3}(c_1)\cdot L_{c_2, c_3}(c_1^2) = L_{c_2, c_3}(c_1^3)\notin S$, contradicting
     the last line above. Hence, a contradiction and the proof is complete.
 \end{proof}
@@ -3078,7 +3096,7 @@ We freely use commutativity and diassociativity in what follows, especially in
     $x'\in Sx\cap (Sa\cup Sb)$. Thus $x'x^{-1}\in S$ and $x'a^{-1}\in S$ or $x'b^{-1}\in S$.
   
   If $x'a^{-1}\in S$, then $(x')^2 a^{-2} = (x'a^{-1})^2\in S$, and so $(x')^2\in S$ since
-    $a^2\in S$. Similarly, if $x'a^{-1}\in S$, then $(x')^2\in S$ since $b^2\in S$. In either
+    $a^2\in S$. Similarly, if $x'b^{-1}\in S$, then $(x')^2\in S$ since $b^2\in S$. In either
     case, we shown that $(x')^2\in S$.
   
   Now since $x'x^{-1}\in S$, we have $(x')^2 x^{-2} = (x'x^{-1})^2\in S$, and thus $x^{-2}\in S$
@@ -3129,7 +3147,7 @@ This proposition actually holds for arbitrary loops. However, we are primarily c
   \begin{alignat*}{2}
     H(yx^{-1})\cdot x &= Hy &&\text{ since $x\sim_H y$}\\
     Hx &= Hy &&\text{ since $yx^{-1}\in H$}\\
-    H(yx^{-1})\cdot x &= Hy &&\text{ since $yx^{-1}\in H$} 
+    Hx &= H(xy^{-1})\cdot y &&\text{ since $xy^{-1}\in H$}
   \end{alignat*}
   Thus $yx^{-1}\in H$ and $H(yx^{-1})\cdot x = Hy$, so $y\sim_H x$.
 
@@ -3144,9 +3162,9 @@ This proposition actually holds for arbitrary loops. However, we are primarily c
   \begin{alignat*}{2}
     H(zx^{-1})\cdot x &= Hx &&\text{ since $zx^{-1} = (xz^{-1})^{-1}\in H$}\\
     &= H(yx^{-1})\cdot x &&\text{ since $yx^{-1} = (xy^{-1})^{-1}\in H$}\\
-    &= Hy &&\\
+    &= Hy &&\text{ since $x\sim_H y$}\\
     &= H(zy^{-1})\cdot y &&\text{ since $zy^{-1} = (yz^{-1})^{-1}\in H$}\\
-    &= Hz &&
+    &= Hz &&\text{ since $y\sim_H z$}
   \end{alignat*}
   Thus $xz^{-1}\in H$ and $H(zx^{-1})\cdot x = Hz$. So $x\sim_H z$ completing the proof that
     $\sim_H$ is an equivalence relation.
@@ -3159,7 +3177,7 @@ Note that it is possible that all equivalence classes other than the subloop its
   \centering
   \begin{tabular}{c | c c c c c c c c c c c c}
     $\cdot$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
-    \hline \hline
+    \hline
     1 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
     2 & 2 & 1 & 4 & 3 & 6 & 5 & 8 & 7 & 12 & 11 & 10 & 9 \\
     3 & 3 & 6 & 5 & 2 & 1 & 4 & 9 & 10 & 11 & 12 & 7 & 8 \\
@@ -3369,7 +3387,7 @@ Below is a loop of order $6$ which is left SUF but not right SUF. By symmetry of
   \centering
   \begin{tabular}{c| c c c c c c}
       $\cdot$ & 0 & 1 & 2 & 3 & 4 & 5\\
-      \hline\hline
+      \hline
       0 & 0 & 1 & 2 & 3 & 4 & 5\\
       1 & 1 & 0 & 3 & 2 & 5 & 4\\
       2 & 2 & 4 & 0 & 5 & 1 & 3\\
@@ -3480,7 +3498,7 @@ In particular, this loop is universally flexible and does not have the AAIP and 
   \resizebox{\textwidth}{!}{%
   \begin{tabular}{c|cccccccccccccccccccccccccccccccc|}
   $\cdot$ & 1& 2& 3& 4& 5& 6& 7& 8& 9& 10& 11& 12& 13& 14& 15& 16& 17& 18& 19& 20& 21& 22& 23& 24& 25& 26& 27& 28& 29& 30& 31& 32 \\
-  \hline\hline
+  \hline
   1& 1&  2&  3&  4&  5&  6&  7&  8&  9& 10& 11& 12& 13& 14& 15& 16& 17& 18& 19& 20& 21& 22& 23& 24& 25& 26& 27& 28& 29& 30& 31& 32 \\
   2& 2&  1&  4&  3&  6&  5&  8&  7& 10&  9& 12& 11& 14& 13& 16& 15& 18& 17& 20& 19& 22& 21& 24& 23& 26& 25& 28& 27& 30& 29& 32& 31 \\
   3& 3&  4&  7&  8&  9& 10& 11& 12& 13& 14&  1&  2& 15& 16&  5&  6& 27& 28& 23& 24& 31& 32& 19& 20& 29& 30& 17& 18& 25& 26& 21& 22 \\
@@ -3532,10 +3550,25 @@ The \textit{enhanced power graph} of a group, which lies between the power graph
   two finite groups with isomorphic power graphs must have isomorphic enhanced power graphs. One natural
   progression of our research would be to attempt to transfer this result to the context of Moufang loops.
 
-There has been some work in describing properties of the power graph of a group and how they relate to
-  properties of the group itself as in \cite{EPG}, \cite{LineGraph}, and \cite{GraphSemigroups}. Another
-  natural progression of this research would be to attempt to characterize properties of the power graphs
-  of Moufang loops.
+There has been further work in describing graphs related to generalized quaternion groups. A potential
+  avenue of research would be to attempt to prove analogous results for generalized octonion loops.
+
+\begin{dfn}
+  Let $G$ be a graph, then the \emph{line graph of} $G$ has vertex set edges of $G$,
+    with two vertices adjacent if and only if the corresponding edges are incident in $G$
+\end{dfn}
+
+\begin{dfn}
+  A graph is a \emph{line graph} if it is the line graph of some graph
+\end{dfn}
+
+\begin{dfn}
+  The \emph{proper power graph} is obtained from the power graph by deleting all vertices
+    connected to all others
+\end{dfn}
+
+It is shown in \cite{LineGraph} that the proper power graphs of generalized quaternion groups are line graphs.
+  We conjecture that this result can be extended to generalized octonion loops?
 
 \section{Para-F quasigroups}
 
@@ -3593,8 +3626,7 @@ In this chapter we succeeded in finding a sufficient condition for classical and
 \section{Cosets in Moufang loops}
 
 The question we set out to answer here, namely "for any subloop of a Moufang loop does there exist a
-  subset of its cosets partitioning the loop?", remains open. We conjecture that the answer is negative,
-  however no example has yet been constructed.
+  subset of its cosets partitioning the loop?", remains open. We conjecture that the answer is positive.
 
 \section{SUF loops}
 
