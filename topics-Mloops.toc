@@ -23,8 +23,8 @@
 \contentsline {subsection}{\numberline {2.2.3}Power graphs}{17}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Chein's construction}{18}{subsection.2.2.4}%
 \contentsline {section}{\numberline {2.3}Moufang $p$-loops with a unique subloop of order $p$}{19}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Generalized octonion loops}{21}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Undirected power graphs determine directed}{23}{section.2.5}%
+\contentsline {section}{\numberline {2.4}Generalized octonion loops}{20}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Undirected power graphs determine directed power graphs}{24}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Non-identity vertex connected to all others}{24}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}Only identity connected to all others}{26}{subsection.2.5.2}%
 \contentsline {chapter}{\numberline {3}Para-F quasigroups}{28}{chapter.3}%

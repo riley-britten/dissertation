@@ -713,7 +713,7 @@ Right Bol loops are defined dually and have a dual characterization.
 \subsection{Generalizations of associativity}
 
 \begin{dfn}
-  An \emph{power associative loop} is a loop $(Q, \cdot)$ having the property that $\langle x\rangle$ is a group
+  A \emph{power associative loop} is a loop $(Q, \cdot)$ having the property that $\langle x\rangle$ is a group
     for all $x\in Q$.
 \end{dfn}
 
@@ -865,7 +865,7 @@ In the process of proving Theorem \ref{mainThm} we will investigate a class of l
     \item $G$ is isomorphic to $\langle e^{\frac{i\pi}{n}}, j\rangle$ as a subgroup of the unit
       quaternions for some $n$ \cite{Brown}.
     \item $G$ is a finite $p$ group in which every subgroup is cyclic \cite{Cartan}.
-    \item $G$ is a finite $p$ group with a unique subloop of order $2$ \cite{Brown}.
+    \item $G$ is a finite $p$ group with a unique subloop of order $p$ \cite{Brown}.
   \end{itemize}
 \end{fct}
 
@@ -876,7 +876,7 @@ In the process of proving Theorem \ref{mainThm} we will investigate a class of l
 
 \begin{fct}\label{fct:genQuat-rep}
   Let $Q_{4n} = \langle a, b : a^n = b^2, a^{2n} = 1, b^{-1}ab = a^{-1}\rangle$. Then every element $x \in Q_{4n}$
-    can be written uniquely as $x = a^k$ or $x = a^k b$ for some $k\in\NNN$ \cite{genQuat}.
+    can be written uniquely as $x = a^k$ or $x = a^k b$ for some $k\in\ZZZ_{2n}$ \cite{genQuat}.
 \end{fct}
 
 \subsection{Moufang loops}
@@ -889,12 +889,11 @@ We now present some fundamental results on Moufang loops which we will need in l
 \end{thm}
 
 \begin{prp}\label{gen-facts}
-	Let $M$ be a finite Moufang loop. Then
+	Let $M$ be a Moufang loop. Then
     \begin{itemize}
         \item $M$ has the inverse property.
-        \item $M$ is diassociative (and thus power-associative).
-        \item For all $x, y\in M$, $\langle x, y\rangle$ is a group \cite{Moufang}.
-  	    \item For all $x\in M$, $|x|$ divides $|M|$.
+        \item $M$ is diassociative (and thus power-associative and IP)\cite{Moufang}.
+  	    \item If $M$ is finite, then for all $x\in M$, $|x|$ divides $|M|$.
         \item Suppose that $|M| = p^k$ for $p$ prime, $k\in\ZZZ^+$. Then there exists $S\leq M$ with $|S| = p^{k - 1}$.
     \end{itemize}
 \end{prp}
@@ -922,13 +921,12 @@ So the undirected power graph of \textbf{A} is the underlying undirected graph o
   \textbf{A}. In the remainder of this paper, \textit{power graph} will refer to the undirected power graph
   unless otherwise specified.
 
-Recall that a group in which every commutative subgroup is cyclic is either cyclic or generalized quaternion
-  \cite{Cartan}. We will use the following definition for generalized octonion loops in the interest of closely
+We will use the following definition for generalized octonion loops in the interest of closely
   following this characterization of generalized quaternion groups. In {\S}4 we will see that there are several
   alternate characterizations of generalized octonion loops.
 
 \begin{dfn}
-	Let $M$ be a nonassociative Moufang $p$-loop such that every associative commutative subloop of $M$ is cyclic,
+	Let $M$ be a nonassociative Moufang $p$-loop such that every abelian subloop of $M$ is cyclic,
     then we call $M$ a \textit{generalized octonion loop}.
 \end{dfn}
 
@@ -974,7 +972,8 @@ Throughout the paper we will denote loops arising from this construction by $M(G
 
 We will begin by classifying Moufang $p$-loops $M$ with a unique subloop of order $p$. In the proof of
   Theorem \ref{mainThm}, we will handle such loops separately. Note that every nontrivial subloop of a
-  Moufang loop of order $p^n$ with a unique subloop of order $p$ also has a unique subloop of order $p$.
+  Moufang loop of order $p^n$ with a unique subloop of order $p$ also has a unique subloop of order $p$
+  by the last point of Proposition \ref{genFacts}.
 
 \begin{thm}
     A Moufang $p$-loop $M$ with a unique subloop of order $p$ is either a cyclic group, a generalized
@@ -983,9 +982,9 @@ We will begin by classifying Moufang $p$-loops $M$ with a unique subloop of orde
 
 We will first handle the simpler case that $p$ is an odd prime.
 
-\begin{lem}\label{lem-burnside}
+\begin{lem}[\cite{Burnside}]\label{lem-burnside}
   Let $G$ be a group of order $p^n$, $p > 2$ prime with a unique subloop of order $p^s$ for some $0 < s < n$.
-    Then $G$ is cyclic \cite{Burnside}
+    Then $G$ is cyclic. 
 \end{lem}
 
 \begin{lem}\label{not2power}
@@ -995,7 +994,7 @@ We will first handle the simpler case that $p$ is an odd prime.
 
 \begin{proof}
     Let $x, y, z\in M$ be given. If $\langle x, y\rangle = M$, then $M$ is a group by diassociativity and
-      we are done by the result for groups \cite{Burnside}. Otherwise $\langle x, y\rangle \subsetneq M$
+      we are done by Lemma \ref{lem-burnside}. Otherwise $\langle x, y\rangle \subsetneq M$
       must be a $p$-group with a unique subgroup of order $p$ and thus cyclic by Lemma \ref{lem-burnside}.
       Say $\langle x, y\rangle = \langle g\rangle$ and $x = g^i$, $y = g^j$. Then
       $x\cdot yz = g^i \cdot g^j z = g^{i + j}z = xy\cdot z$ by diassociativity. Hence in either case 
@@ -1059,6 +1058,8 @@ To make the Theorem \ref{moufangDesc} more closely follow the result for groups 
     $M$ is either cyclic or generalized quaternion and thus every commutative and associative subloop of
     $M$ is cyclic. Thus $M$ is generalized octonion.
 \end{proof}
+
+Let $\{1, e_1, \ldots, e_7\}$ be the standard basis for the octonions.
 
 \begin{thm}
   The subloop of the unit octonions generated by $\{e^{\frac{e_2\pi}{n}}, e_3, e_5\}$ for some $n\in\NNN$.
@@ -1131,9 +1132,8 @@ To make the Theorem \ref{moufangDesc} more closely follow the result for groups 
 Recall that the generalized quaternion group of order $4n$ can be presented as
   $Q_{4n} = \langle a, b | a^n = b^2, a^{2n} = 1, b^{-1}ab = a^{-1}\rangle$. Viewing the generalized
   octonion loop of order $16$ as $M(Q_8, 2)$ with this presentation yields the power graph of $O_{16}$
-  presented above. Note that the non-identity vertex $a^2$ is connected to all other vertices. The fact
-  that generalized octonion loops are the only nonassociative Moufang loops with this feature is the
-  primary reason we are interested in generalized octonion loops in the context of power graphs.
+  presented above. Note that the non-identity vertex $a^2$ is connected to all other vertices. We will 
+  show later that generalized octonion loops are the only nonassociative Moufang loops with this feature.
 
 \begin{figure}[h]
   \centering
@@ -1207,7 +1207,7 @@ Recall that the generalized quaternion group of order $4n$ can be presented as
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Undirected power graphs determine directed} \label{gen-oct}
+\section{Undirected power graphs determine directed power graphs} \label{gen-oct}
 
 With Theorem \ref{genOctChain} at our disposal we can now translate the argument in \cite{PGII} to the
   Moufang case to show that two Moufang loops with isomorphic undirected power graphs must have isomorphic
@@ -1218,16 +1218,17 @@ With Theorem \ref{genOctChain} at our disposal we can now translate the argument
 \subsection{Non-identity vertex connected to all others}\label{multi-vert}
 
 \begin{lem}\label{connectedVertex}
-  Suppose that $x\in M$ with $x\neq 1$ and $x$ connected to all other vertices in $\Gamma$ and $p$ is a
+  Suppose that $x\in M$ with $x\neq 1$ and $x$ is connected to all other vertices in $\Gamma$ and $p$ is a
     prime divisor of $\Exp(M)$. Then $M$ has a unique subgroup $P$ of order $p$ and
     $P = \langle x^n \rangle$ for some $n$.
 \end{lem}
 
 \begin{proof}
-  Let $|x^p| = k$ and $y\in M$ such that $|y| = p$ be given. Since $x$ and $y$ are connected in
-    $\Gamma$, either $x$ is a power of $y$ or $y$ is a power of $x$. Suppose that $y^i = x$
-    where $1\leq i < p$ without loss of generality. Then $(p, i) = 1$ and there exists
-    $j\in\mathbb{N}$ such that $(y^i)^j = y = x^j$. Thus every element of $Q$ of order $p$
+  Let $|x^p| = k$ and $y\in M$ such that $|y| = p$ be given. Such a $y$ must exist because
+    $p|\exp(M)$. Since $x$ and $y$ are connected in
+    $\Gamma$, either $x$ is a power of $y$ or $y$ is a power of $x$. Suppose that $y^i = x$.
+    Then $(p, i) = 1$ and there exists
+    $j\in\mathbb{N}$ such that $x^j = (y^i)^j = y$. Thus every element of $Q$ of order $p$
     is a power of $x$.
 
   Further $1 = y^p = x^{jp} = (x^p)^j$ and so $k\mid j$. Thus $y = x^j = (x^k)^m$ for some
@@ -1240,17 +1241,22 @@ Thus if the power graph of a Moufang $p$-loop $M$ has a non-identity vertex conn
   \ref{moufangDesc}. We now handle the case that $M$ does not have prime power order.
 
 \begin{lem}
-  Suppose that $x\in M$ with $x\neq 1$ and $x$ connected to all other vertices in the power
+  Suppose that $x\in M$ with $x\neq 1$ and $x$ is connected to all other vertices in the power
     graph of $M$ and $|M|$ is not a prime power. Then $M$ is a cyclic group.
 \end{lem}
 
 \begin{proof}
-  Since $M$ is not a $p$-loop $\Exp(M)$ is not a prime power \cite{64and81}. As in the proof of
-    Lemma \ref{connectedVertex} $|x|$ is divisible by every prime divisor of $\Exp(M)$. Since
-    $\Exp(M)$ has at least two distinct prime factors so does $|x|$ and for all $y\in M$ with
-    $|y|$ a prime power we have that $y$ is a power of $x$. Let $z\in M$ such that $|z|$ is not
-    a prime power be given. If $z$ is a power of $x$ then we are done. We will show that $z$
-    must be a power of $x$.
+  Since $M$ is not a $p$-loop, $\Exp(M)$ is not a prime power \cite{64and81}. As in the proof of
+    Lemma \ref{connectedVertex}, $|x|$ is divisible by every prime divisor of $\Exp(M)$. Since
+    $\Exp(M)$ has at least two distinct prime factors so does $|x|$. 
+
+  First let $z\in M$ such that $|z| = p^n$ for some prime $p$ be given. Note that either $x$ is
+    a power of $z$ or vice versa. But all powers of $z$ have order a power of $p$ while $x$ has
+    composite order. So $z$ must be a power of $x$, otherwise we would contradict that the order
+    of $x$ is composite.
+
+  Let $z\in M$ such that $|z|$ is not a prime power be given. If $z$ is a power of $x$ then
+    we are done. We will show that $z$ must be a power of $x$.
 
   Suppose toward a contradiction that $z$ is not a power of $x$. Then $x = z^k$ for some $k$.
     Say $|z| = p_0^{i_0}\cdots p_m^{i_m}$, where this is a factorization into distinct primes
@@ -1328,7 +1334,7 @@ We will now prove Theorem \ref{mainThm} in the case that a non-identity vertex i
     we can then partition $\equiv$-classes into $\approx$-classes arbitrarily. But $\equiv$-classes
     can be recognized with only the undirected power graph, so this reduces the problem to that of
     deciding which direction arrows between $\approx$-classes point. This is handled by noticing that
-    if two $\approx$-classes have dif and only iferent sizes, then arrows point from the larger to the smaller.
+    if two $\approx$-classes have different sizes, then arrows point from the larger to the smaller.
     If two $\approx$-classes have the same size, then $\phi(m) = \phi(n)$, where $m, n$ are the orders
     of elements in the respective classes. But this only occurs for $\phi$ when either $m = n$ or
     $2m = n$ for $m$ odd. If $m = n$ the classes cannot be joined. In the other case exactly one class
