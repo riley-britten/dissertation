@@ -767,20 +767,19 @@ Standard examples of nonassociative Moufang loops are the unit octonions with mu
   All Moufang loops have the Lagrange property \cite{LG}. 
 \end{fct}
 
-\begin{dfn}
+\begin{dfn}[\cite{KepkaKinyonPhillips}]
   Let $(Q,\cdot)$ be a loop, the \emph{Moufang center} of $Q$ is
-  \[K(Q) = \{a\in Q : (a + a) + (x + y) = (a + x) + (a + y),\forall x, y\in Q\}\]\cite{KepkaKinyonPhillips}
+  \[K(Q) = \{a\in Q : (a + a) + (x + y) = (a + x) + (a + y),\forall x, y\in Q\}\].
 \end{dfn}
 
 \begin{fct}
   The Moufang center of any loop $(Q, \cdot)$ is a commutative Moufang subloop of $Q$ \cite{Bruck}
 \end{fct}
 
-\begin{dfn}
+\begin{dfn}[\cite{KepkaKinyonPhillips}]
   An \emph{NK-loop} is a loop $(Q, \cdot)$ such that for all $a\in Q$ there exists $n\in \nuc(Q)$, $k$
     in the Moufang center of $Q$ such that
-  \[a = n \cdot k\]
-  \cite{KepkaKinyonPhillips}.
+  \[a = n \cdot k\].
 \end{dfn}
 
 \begin{fct}
@@ -793,7 +792,8 @@ Standard examples of nonassociative Moufang loops are the unit octonions with mu
   Let $A$ be a set, a \emph{partition} of $A$ is $\mathcal{C}\subset\mathcal{P}(A)$ such that
   \begin{align*}
     \bigcup \mathcal{C} &= A\\
-    A\cap B &= \emptyset\quad \forall A\neq B\in\mathcal{C}
+    A\cap B &= \emptyset\quad \forall A\neq B\in\mathcal{C}\\
+    A &\neq \emptyset\quad \forall A\in\mathcal{C}
   \end{align*}
 \end{dfn}
 
@@ -837,8 +837,8 @@ Cameron's proof in \cite{PGII} relied on handling groups with multiple vertices 
 We will investigate the structure of generalized octonion loops, yielding the following characterization:
 
 \begin{thm}\label{genOct}
-  A finite Moufang loop is generalized octonion if and only if it is a non-associative Moufang $p$-loop
-    with a unique element of order $p$.
+  A finite Moufang loop is generalized octonion if and only if it is a non-associative Moufang loop
+    having order a power of $p$ for some prime $p$ and a unique element of order $p$.
 \end{thm}
 
 We will also construct explicit examples of generalized octonion loops.
@@ -932,7 +932,7 @@ We will use the following definition for generalized octonion loops in the inter
 
 \subsection{Chein's construction}
 
-\begin{thm}\label{cnst-chein}
+\begin{thm}[\cite{Chein}]\label{cnst-chein}
   Let $G$ be a group. For $1\neq c\in Z(G)$ and $u$ an indeterminate. Define $(M, \cdot)$ by $M = G\cup Gu$ and
   \begin{align*}
     g\cdot h &= gh\\
@@ -941,14 +941,14 @@ We will use the following definition for generalized octonion loops in the inter
     gu\cdot hu &= ch^{-1}g
   \end{align*}
   for all $g, h\in G$. Then $M$ is a Moufang loop \cite{Chein}. Further, $M$ is associative if and only if $G$
-    is abelian \cite{Chein}.
+    is abelian.
 \end{thm}
 
 Throughout the paper we will denote loops arising from this construction by $M(G, 2)$, where $G$ is the underlying
   group. We will show that the loops $M(Q_{4n}, 2)$, where $Q_{4n}$ is
   a generalized quaternion group, are generalized octonion.
 
-\begin{thm}\label{thm-chein}
+\begin{thm}[\cite{Chein}]\label{thm-chein}
   Suppose that $M$ is a finite Moufang loop with a set of generators $\{u, u_1, \ldots, u_n\}$ such that
   \begin{itemize}
     \item $u\notin G = \langle u_1,\ldots, u_n\rangle$,
@@ -983,7 +983,7 @@ We will begin by classifying Moufang $p$-loops $M$ with a unique subloop of orde
 We will first handle the simpler case that $p$ is an odd prime.
 
 \begin{lem}[\cite{Burnside}]\label{lem-burnside}
-  Let $G$ be a group of order $p^n$, $p > 2$ prime with a unique subloop of order $p^s$ for some $0 < s < n$.
+  Let $G$ be a group of order $p^n$, $p > 2$ prime with a unique subgroup of order $p^s$ for some $0 < s < n$.
     Then $G$ is cyclic. 
 \end{lem}
 
@@ -1021,7 +1021,7 @@ We will now handle the case $p = 2$. In what follows, let $M$ be a nonassociativ
     $i\in\mathbb{N}$. If $x = a^i$, $y = a^j$, then $xy = yx$. If $x = a^i b$, $y = a^j b$,
     then $x^2 = a^i b a^i b = b a^{-i} a^i b = b^2$ and similarly $y^2 = b^2$,
     thus $|x| = |y| = 4$. If $x = a^i$, $y = a^j b$, then $xy = a^i a^j b = a^j b a^{-i} = yx^{-1}$.
-    Finally, if $x = a^i b$, $y = a^j b$, then $xy = a^i b a^j = a^{-j} a^i b = y^{-1} x$.
+    Finally, if $x = a^i b$, $y = a^j$, then $xy = a^i b a^j = a^{-j} a^i b = y^{-1} x$.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1315,6 +1315,11 @@ We will now prove Theorem \ref{mainThm} in the case that a non-identity vertex i
     This completes the proof of Theorem \ref{mainThm}. We present an outline of the proof in
     \cite{PGII} here for completeness.
 
+\begin{dfn}
+  Let $x$ be a vertex in a graph. Then the \emph{closed neigborhood} of $x$ is the collection
+    of all vertices $x$ is adjacent to along with $x$.
+\end{dfn}
+
 \begin{proof}
   Define two equivalence relations on $M$:
     \[x\equiv y\text{ if and only if the closed neighborhoods of $x$ and $y$ coincide}\]
@@ -1438,7 +1443,7 @@ Note that since $e$ is in the center, and thus the nucleus, we can omit parenthe
   where $\varphi\varphi = \psi\psi$ \cite{BK-isotopes}.
 \end{thm}
 
-The relation between these varieties is shown below.
+The relation between these equations is shown below.
 
 \begin{figure}[H]
   \centering
@@ -2141,7 +2146,7 @@ In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define
 
 \begin{lem}\label{lem-42}
   $(Q, \cdot)$ satisfies
-  \[x +_{z, v_6} (v_5 +_{w, (u +_{w, v_6} v_5)\rdv w} z) = x +_{z, u\rdv w} y\] 
+  \[x +_{z, r} (v +_{w, (u +_{w, r} v)\rdv w} z) = x +_{z, u\rdv w} y\] 
 \end{lem}
 
 \begin{proof}
@@ -2159,10 +2164,10 @@ In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define
   \begin{alignat*}{2}
     x +_{y, z} u &= (x\rdv y)\cdot (z\ldv u) &&\\
     (x\rdv y)\ldv(x +_{y, z} u) &= z\ldv u &&\text{ left dividing by $x\rdv y$}\\
-    x +_{y, w\rdv v_5} (w +_{v_5, z} u) &= (x\rdv y)\cdot (z\ldv u)
-      &&\text{ by definition of $+_{w, v_5}$}\\
-    x +_{y, w\rdv v_5} (w +_{v_5, z} u) &= x +_{y, z} u &&\\
-    x +_{z, v_6} (v_5 +_{w, (u +_{w, v_6} v_5)\rdv w} z) &= x +_{z, u\rdv w} y
+    x +_{y, w\rdv v} (w +_{v, z} u) &= (x\rdv y)\cdot (z\ldv u)
+      &&\text{ by definition of $+_{w, v}$}\\
+    x +_{y, w\rdv v} (w +_{v, z} u) &= x +_{y, z} u &&\\
+    x +_{z, r} (v +_{w, (u +_{w, r} v)\rdv w} z) &= x +_{z, u\rdv w} y
       &&\text{ by \ref{id-40}}
   \end{alignat*}
   So the proof is complete.
@@ -2188,15 +2193,15 @@ In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define
 \end{lem}
 
 \begin{proof}
-  From \ref{id-40} in the proof of Lemma \ref{lem-42} we have
-  \begin{align*}{2}
+  From (\ref{id-40}) in the proof of Lemma \ref{lem-42} we have
+  \begin{align*}
     x +_{u, w} (y +_{u, (x +_{u, w} y)\rdv u} z) &= z\\
-    (x\cdot (y\ldv u)) +_{v_5, y} (w +_{v_5, (u +_{v_5, y} z)\rdv v_5} z) &= x\cdot (y\ldv z)\\
+    (x\cdot (y\ldv u)) +_{v, y} (w +_{v, (u +_{v, y} z)\rdv v} z) &= x\cdot (y\ldv z)\\
       &\text{ applying the above to Lemma \ref{lem-30}}\\
-    (x\cdot (y\ldv u)) +_{v_5, u\rdv v_5} z &= x\cdot (y\ldv z)\\
+    (x\cdot (y\ldv u)) +_{v, u\rdv v} z &= x\cdot (y\ldv z)\\
       &\text{ by Lemma \ref{lem-42}}\\
     x +_{z, u\rdv z} y &= (x\rdv(w\ldv u))\cdot (w\ldv y)\\
-      &\text{substituting $x\mapsfrom x\rdv(w\ldv u), y\mapsfrom w, z\mapsfrom y, v_5\mapsfrom z$}\\
+      &\text{substituting $x\mapsfrom x\rdv(w\ldv u), y\mapsfrom w, z\mapsfrom y, v\mapsfrom z$}\\
     x +_{z, u\rdv z} y &= x +_{w\ldv u, w} y\\
     ((w\rdv(x\rdv x))\ldv z)x \cdot y &= x\cdot (y +_{u\ldv w, u} z)\\
       &\text{ applying the above to Lemma \ref{lem-33}}\\
@@ -2238,7 +2243,7 @@ In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define
 \begin{proof}
   Let $(Q, \cdot)$ be a para-FG quasigroup. Then by Theorem \ref{thm-para-f} there exists a Moufang
     loop $(Q, +)$, antiautomorphisms $f, g: (Q, +)\to (Q, +)$, and $c\in Z(Q)$ such that
-  \[x\cdot y = f(x) + (g(y) + c)\].
+  \[x\cdot y = f(x) + (g(y) + c).\]
   By an analogous proof to that of Proposition \ref{prp-linear-iso} $(Q, \cdot)$ is isotopic to
     $(Q, +)$. But $(Q, \cdot)$ is a para-FG quasigroup and so isotopic to some group $(Q, *)$. But
     then $(Q, *)$ and $(Q, +)$ are isotopic and $(Q, +)$ must be a group. Thus $(Q, \cdot)$ is
@@ -2282,7 +2287,7 @@ Many properties from universal algebra have equivalent definitions specific to t
     \item For every congruence $\phi$ on $G$ there exists $N\unlhd G$, namely the equivalence class
       of $1$, such that
       $x\phi y$ if and only if $xy^{-1}\in N$.
-    \item For $N\unlhd G$ the relation $x\phi y$ if and only if $xy^{-1}\in N$ is a congruence \cite{univAlg} 
+    \item For $N\unlhd G$ the relation $\phi$, where $x\phi y$ if and only if $xy^{-1}\in N$ is a congruence \cite{univAlg} 
   \end{enumerate}
 \end{fct}
 
@@ -2592,7 +2597,7 @@ Now define
 
 \section{Further results}
 
-We will now present some further results dealing providing sufficient conditions for right
+We will now present some further results providing sufficient conditions for right
   inner mappings to commute.
 
 \subsection{Inverses preserved by right inner mappings}
@@ -2775,14 +2780,14 @@ It has been shown that Lagrange's Theorem holds in Moufang loops \cite{LG}. Howe
     Then there exists $A\subset S$ such that $A$ is a partition of $M$.
 \end{cnj}
 
-That is, in Moufang loops there is always a subset of the family of all left cosets of a
+That is, in Moufang loops there is always a collection of the family of all left cosets of a
   subloop which do partition the loop. Proving this conjecture would provide a proof of
   Lagrange's Theorem for Moufang loops very similar to that for groups. In particular,
   such a proof would be direct in the sense that it would not rely on the classification
   of finite simple Moufang loops. We were ultimately unsuccessful, but each of our attempts
   did yield results which are interesting in their own rights.
 
-We will begin by attempting to directly construct such a uniform partition of cosets directly
+We will begin by attempting to construct such a uniform partition of cosets directly
   by proving results on the intersections of distinct cosets and the existence of disjoint
   cosets. When this approach does not prove fruitful we will try other approaches to proving
   Lagrange's Theorem for Moufang loops directly by constructing a partition of the loop with
@@ -2794,7 +2799,7 @@ We will first define an equivalence relation on $Q$ analogous to the natural equ
   order of the subloop.
 
 Finally, we will consider orbits of the relative left multiplication groups of $S$ in $Q$. These
-  orbits are a dif and only iferent generalization of the definition of cosets in groups to the context of loops.
+  orbits are a different generalization of the definition of cosets in groups to the context of loops.
   This strategy again has the advantage of providing us with a partition of the loop, reducing the
   problem to that of showing that the order of each orbit is a multiple of the order of the subloop.
 
@@ -2802,7 +2807,7 @@ Finally, we will consider orbits of the relative left multiplication groups of $
 
 \section{Coset intersections}
 
-\subsection{A first Approach}
+\subsection{A first approach}
 
 Let $G$ be a group with $S\leq G$ and $x\in xS\cap yS$. Since left cosets of $S$ partition $G$,
   it is immediate that $xS = yS$ and $x^{-1}(xS\cap yS) = x^{-1}xS = S\leq G$. So in particular,
@@ -2900,7 +2905,7 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
   nontrivial intersection, then the intersection must contain at least two distinct elements.
 
 \begin{proof}
-  Note that $(yx^{-1})\cdot (xz^{-1})(yx^{-1})\in S$ since $xy^{-1}, xz^{-1}\in S$ and $S$ is closed
+  Note that $(yx^{-1})\cdot (xz^{-1})(yx^{-1})\in S$ since $xy^{-1}, xz^{-1}\in S$ because $S$ is closed
     under inversion. Then
   \begin{align*}
     y\cdot(x^{-1}\cdot xz^{-1})(yx^{-1})&\in S\text{ by Lemma \ref{tech-cosets}}\\
