@@ -2869,10 +2869,13 @@ Our next approach was to attempt to iteratively construct a set of cosets partit
   following series of lemmas provide restrictions on the intersections of distinct cosets and guarantee
   the existence of cosets disjoint from given sets.
 
-\begin{lem}\label{tech-cosets}
+\begin{lem}[\cite{okubo}]\label{tech-cosets}
   Let $Q$ be a Moufang loop. Then for all $x, y, z\in Q$ 
   \[xy\cdot (z\cdot xy) = x\cdot (yz\cdot xy)\]
 \end{lem}
+
+A generalization of this result is proved in \cite{okubo}. We present a proof of this version here
+  to make the dissertation self-contained.
 
 \begin{proof}
   Let $x, y, z\in Q$ be given and consider
@@ -3049,7 +3052,7 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
     sufficient to show that for all $x\in S$, $y, z\in Q$ $L_{y, z}(x) \in S$. Suppose toward a
     contradiction that there exist $c_1\in S$, $c_2, c_3\in Q$ such that $L_{c_2, c_3}(c_1)\notin S$. Then
   \begin{alignat*}{2}
-    x\cdot c_1 x &\in S &&\text{, since $x^2\in S$ for all $x\in Q$}\\
+    x^2 c_1 = x\cdot c_1 x &\in S &&\text{, since $x^2\in S$ for all $x\in Q$}\\
     (x\cdot c_1 x)\cdot y^2 &\in S &&\\
     (xc_1\cdot x)\cdot y^2 &\in S &&\\
     x\cdot(c_1\cdot (x\cdot y^2)) &\in S &&\text{, since $Q$ is Moufang}\\
@@ -3062,7 +3065,7 @@ This result tells us that cosets in a Moufang loop cannot intersect in a single 
   \end{alignat*}
 
   But by assumption $L_{c_2, c_3}(c_1)\notin S$ and since $Q$ is automorphic and $x^2\in S$ we have
-    $L_{c_2, c_3}(c_1^2)\in S$. Thus
+    $L_{c_2, c_3}(c_1)^2\in S$. Thus
     $L_{c_2, c_3}(c_1)\cdot L_{c_2, c_3}(c_1^2) = L_{c_2, c_3}(c_1^3)\notin S$, contradicting
     the last line above. Hence, a contradiction and the proof is complete.
 \end{proof}
@@ -3088,7 +3091,7 @@ We freely use commutativity and diassociativity in what follows, especially in
     $x'\in Sx\cap (Sa\cup Sb)$. Thus $x'x^{-1}\in S$ and $x'a^{-1}\in S$ or $x'b^{-1}\in S$.
   
   If $x'a^{-1}\in S$, then $(x')^2 a^{-2} = (x'a^{-1})^2\in S$, and so $(x')^2\in S$ since
-    $a^2\in S$. Similarly, if $x'a^{-1}\in S$, then $(x')^2\in S$ since $b^2\in S$. In either
+    $a^2\in S$. Similarly, if $x'b^{-1}\in S$, then $(x')^2\in S$ since $b^2\in S$. In either
     case, we shown that $(x')^2\in S$.
   
   Now since $x'x^{-1}\in S$, we have $(x')^2 x^{-2} = (x'x^{-1})^2\in S$, and thus $x^{-2}\in S$
@@ -3139,7 +3142,7 @@ This proposition actually holds for arbitrary loops. However, we are primarily c
   \begin{alignat*}{2}
     H(yx^{-1})\cdot x &= Hy &&\text{ since $x\sim_H y$}\\
     Hx &= Hy &&\text{ since $yx^{-1}\in H$}\\
-    H(yx^{-1})\cdot x &= Hy &&\text{ since $yx^{-1}\in H$} 
+    Hx &= H(xy^{-1})\cdot y &&\text{ since $xy^{-1}\in H$}
   \end{alignat*}
   Thus $yx^{-1}\in H$ and $H(yx^{-1})\cdot x = Hy$, so $y\sim_H x$.
 
@@ -3154,9 +3157,9 @@ This proposition actually holds for arbitrary loops. However, we are primarily c
   \begin{alignat*}{2}
     H(zx^{-1})\cdot x &= Hx &&\text{ since $zx^{-1} = (xz^{-1})^{-1}\in H$}\\
     &= H(yx^{-1})\cdot x &&\text{ since $yx^{-1} = (xy^{-1})^{-1}\in H$}\\
-    &= Hy &&\\
+    &= Hy &&\text{ since $x\sim_H y$}\\
     &= H(zy^{-1})\cdot y &&\text{ since $zy^{-1} = (yz^{-1})^{-1}\in H$}\\
-    &= Hz &&
+    &= Hz &&\text{ since $y\sim_H z$}
   \end{alignat*}
   Thus $xz^{-1}\in H$ and $H(zx^{-1})\cdot x = Hz$. So $x\sim_H z$ completing the proof that
     $\sim_H$ is an equivalence relation.
@@ -3169,7 +3172,7 @@ Note that it is possible that all equivalence classes other than the subloop its
   \centering
   \begin{tabular}{c | c c c c c c c c c c c c}
     $\cdot$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\
-    \hline \hline
+    \hline
     1 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
     2 & 2 & 1 & 4 & 3 & 6 & 5 & 8 & 7 & 12 & 11 & 10 & 9 \\
     3 & 3 & 6 & 5 & 2 & 1 & 4 & 9 & 10 & 11 & 12 & 7 & 8 \\

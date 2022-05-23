@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.31)  23 MAY 2022 10:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.3.31)  23 MAY 2022 13:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1245,24 +1245,24 @@ l.2874 ...cdot (z\cdot xy) = x\cdot (yz\cdot xy)\]
 [74] [75] [76] [77]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3191.
+(hyperref)                removing `math shift' on input line 3194.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 3191.
+(hyperref)                removing `subscript' on input line 3194.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3191.
+(hyperref)                removing `math shift' on input line 3194.
 
 [78pdfTeX warning (ext4): destination with the same identifier (name{table.5.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3212 
-       ] [79] [80]
-Overfull \hbox (4.34161pt too wide) in paragraph at lines 3278--3280
+l.3204 \end{dfn}
+                ] [79] [80]
+Overfull \hbox (4.34161pt too wide) in paragraph at lines 3281--3283
 []\OT1/ptm/b/n/12 Proposition 5.19. []\OT1/ptm/m/n/12 If there is a Moufang loo
 p $\OML/cmm/m/it/12 Q$ \OT1/ptm/m/n/12 with subloop $\OML/cmm/m/it/12 S$ \OT1/p
 tm/m/n/12 and an orbit $\OML/cmm/m/it/12 X$ \OT1/ptm/m/n/12 of $[][]\OT1/cmr/m/
@@ -1278,19 +1278,19 @@ Chapter 6.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3411 \end{dfn}
+l.3414 \end{dfn}
                 ] [85] [86pdfTeX warning (ext4): destination with the same iden
 tifier (name{table.6.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3483 
+l.3486 
        ] [87pdfTeX warning (ext4): destination with the same identifier (name{t
 able.6.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3534 \chapter
+l.3537 \chapter
                {Future directions of research}]
 Chapter 7.
 [88
@@ -1300,7 +1300,7 @@ Chapter 7.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.3618 
+l.3621 
        ] (./topics-Mloops.bbl [90] [91
 
 ] [92]
@@ -1312,12 +1312,12 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [93]) [94]
 Appendix A.
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 3
-651.
+654.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3651.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3654.
 
  [95
 
@@ -1325,38 +1325,32 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 [98] [99] [100] [101] [102] [103] [104]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3891.
+(hyperref)                removing `math shift' on input line 3894.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3891.
+(hyperref)                removing `math shift' on input line 3894.
 
 [105] [106] [107] [108] [109] [110] [111] [112] [113]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4093.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4093.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4096.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4096.
  (./topics-Mloops.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4093.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4093.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4096.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4096.
 
+Package rerunfilecheck Info: File `topics-Mloops.out' has not changed.
+(rerunfilecheck)             Checksum: AE58C0F8D9227E0DC8F931495CF80F54;5179.
 
-
-Package rerunfilecheck Warning: File `topics-Mloops.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `topics-Mloops.out':
-(rerunfilecheck)             Before: 6999E9D4AD9B873EA94F0DF23D1D25DA;5177
-(rerunfilecheck)             After:  AE58C0F8D9227E0DC8F931495CF80F54;5179.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4093.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4096.
  ) 
 Here is how much of TeX's memory you used:
- 27182 strings out of 483107
- 521927 string characters out of 5964630
- 909996 words of memory out of 5000000
- 40819 multiletter control sequences out of 15000+600000
+ 27184 strings out of 483107
+ 521944 string characters out of 5964630
+ 910032 words of memory out of 5000000
+ 40820 multiletter control sequences out of 15000+600000
  561928 words of font info for 97 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  60i,14n,67p,418b,2278s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1377,10 +1371,10 @@ ive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
 s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on topics-Mloops.pdf (121 pages, 453050 bytes).
+Output written on topics-Mloops.pdf (121 pages, 453320 bytes).
 PDF statistics:
- 2474 PDF objects out of 2487 (max. 8388607)
- 1949 compressed objects within 20 object streams
- 878 named destinations out of 1000 (max. 500000)
+ 2477 PDF objects out of 2487 (max. 8388607)
+ 1952 compressed objects within 20 object streams
+ 879 named destinations out of 1000 (max. 500000)
  605 words of extra memory for PDF output out of 10000 (max. 10000000)
 

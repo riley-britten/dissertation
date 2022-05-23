@@ -3,36 +3,43 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: topics-Mloops.aux
 The style file: unsrt.bst
 Database file #1: topics-Mloops.bib
-You've used 43 entries,
+I was expecting a `,' or a `}'---line 456 of file topics-Mloops.bib
+ :   title = "
+ :            Okubo quasigroups",
+I'm skipping whatever remains of this entry
+Warning--empty title in okubo
+Warning--empty journal in okubo
+Warning--empty year in okubo
+You've used 44 entries,
             1791 wiz_defined-function locations,
-            711 strings with 7679 characters,
-and the built_in function-call counts, 7740 in all, are:
-= -- 699
-> -- 315
+            713 strings with 7732 characters,
+and the built_in function-call counts, 7877 in all, are:
+= -- 706
+> -- 323
 < -- 0
-+ -- 125
-- -- 82
-* -- 419
-:= -- 1295
-add.period$ -- 131
-call.type$ -- 43
++ -- 128
+- -- 84
+* -- 430
+:= -- 1317
+add.period$ -- 132
+call.type$ -- 44
 change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 43
-duplicate$ -- 369
-empty$ -- 797
-format.name$ -- 82
-if$ -- 1706
+cite$ -- 47
+duplicate$ -- 377
+empty$ -- 811
+format.name$ -- 84
+if$ -- 1733
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 49
-newline$ -- 218
-num.names$ -- 42
-pop$ -- 121
+int.to.str$ -- 44
+missing$ -- 50
+newline$ -- 221
+num.names$ -- 43
+pop$ -- 128
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 141
+skip$ -- 145
 stack$ -- 0
 substring$ -- 369
 swap$ -- 43
@@ -40,7 +47,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 72
-width$ -- 45
-write$ -- 457
+warning$ -- 3
+while$ -- 73
+width$ -- 46
+write$ -- 462
+(There was 1 error message)
