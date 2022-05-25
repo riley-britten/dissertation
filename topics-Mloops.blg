@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: topics-Mloops.aux
 The style file: unsrt.bst
 Database file #1: topics-Mloops.bib
-You've used 44 entries,
+You've used 43 entries,
             1791 wiz_defined-function locations,
-            716 strings with 7765 characters,
-and the built_in function-call counts, 7896 in all, are:
-= -- 713
-> -- 323
+            709 strings with 7632 characters,
+and the built_in function-call counts, 7648 in all, are:
+= -- 689
+> -- 312
 < -- 0
-+ -- 128
-- -- 84
-* -- 424
-:= -- 1324
-add.period$ -- 135
-call.type$ -- 44
-change.case$ -- 34
++ -- 124
+- -- 81
+* -- 405
+:= -- 1284
+add.period$ -- 132
+call.type$ -- 43
+change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 44
-duplicate$ -- 377
-empty$ -- 811
-format.name$ -- 84
-if$ -- 1740
+cite$ -- 43
+duplicate$ -- 368
+empty$ -- 788
+format.name$ -- 81
+if$ -- 1687
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 50
-newline$ -- 224
-num.names$ -- 43
-pop$ -- 123
+int.to.str$ -- 43
+missing$ -- 49
+newline$ -- 219
+num.names$ -- 42
+pop$ -- 122
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 145
+skip$ -- 142
 stack$ -- 0
-substring$ -- 369
-swap$ -- 44
+substring$ -- 344
+swap$ -- 43
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 73
-width$ -- 46
-write$ -- 469
+while$ -- 70
+width$ -- 45
+write$ -- 458

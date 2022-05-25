@@ -19,13 +19,13 @@
 \contentsline {section}{\numberline {2.1}Introduction}{16}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Preliminaries}{17}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Generalized quaternion groups}{17}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Moufang loops}{18}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.2}Moufang loops}{17}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Power graphs}{18}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Chein's construction}{19}{subsection.2.2.4}%
 \contentsline {section}{\numberline {2.3}Moufang $p$-loops with a unique subloop of order $p$}{20}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Generalized octonion loops}{21}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Undirected power graphs determine directed power graphs}{24}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Non-identity vertex connected to all others}{24}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.1}Non-identity vertex connected to all others}{25}{subsection.2.5.1}%
 \contentsline {subsection}{\numberline {2.5.2}Only identity connected to all others}{27}{subsection.2.5.2}%
 \contentsline {chapter}{\numberline {3}Para-F quasigroups}{29}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Introduction}{29}{section.3.1}%
