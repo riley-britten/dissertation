@@ -55,7 +55,7 @@
 % % > > > > - - - - - - - - - - - IMPORTANT - - - - - - - - - - - - - < < < < % %
 % You should uncomment the line below (use showframe package) until you're ready for your final copy.
 % This will put lines on the page to show you whether your stuff sticks out past margins.
-% \usepackage{showframe} % SHOW MARGINS
+%\usepackage{showframe} % SHOW MARGINS
 
 
 
@@ -103,19 +103,15 @@
 
 % TABLE OF CONTENTS FORMATTING
 \usepackage[subfigure]{tocloft}
-\setlength{\cftbeforechapskip}{10pt}
-\setlength{\cftbeforesecskip}{-8pt}
-\setlength{\cftbeforesubsecskip}{-8pt}
-\renewcommand{\contentsname}{\vspace{-2.6cm}\normalfont\normalsize\hfill TABLE OF CONTENTS\hfill}
-\renewcommand{\cftaftertoctitle}{\hfill \\ \vspace{-2cm}}
+\setlength{\cftbeforechapskip}{12pt}
+\renewcommand{\contentsname}{\normalfont\large\bfseries\centering\hfill Table of contents\hfill}
+\renewcommand{\cftaftertoctitle}{\vspace{-2cm}\hfill \\}
 
 % LIST OF FIGURES FORMATTING
-\renewcommand{\listfigurename}{\newpage\normalfont\normalsize\hfill LIST OF FIGURES\hfill}
-\renewcommand{\listtablename}{\newpage\normalfont\normalsize\hfill LIST OF TABLES\hfill}
-\renewcommand\cftfigafterpnum{\vskip-8pt\par}
-\renewcommand\cfttabafterpnum{\vskip-5pt\par}
-\renewcommand{\cftafterloftitle}{\hfill \\ \vspace{-2cm}}
-
+\renewcommand{\listfigurename}{\newpage\normalfont\large\bfseries\centering\vspace{-1.5cm}\vspace{12pt}\hfill List of figures\hfill}
+\renewcommand{\listtablename}{\newpage\normalfont\large\bfseries\centering\hfill List of tables\hfill}
+\renewcommand{\cftafterloftitle}{\vspace{-2cm}\hfill \\}
+\renewcommand{\cftafterlottitle}{\vspace{-2cm}\hfill \\}
 
 \hypersetup{
     linktocpage,
@@ -186,7 +182,6 @@
 \newcommand{\ZZZ}{\mathbb{Z}}
 \newcommand{\NNN}{\mathbb{N}}
 
-
 %\setlength{\parskip}{1.5em}
 
 
@@ -249,7 +244,7 @@
 \vspace{-3mm}Advisor: Michael Kinyon, Ph.D.\\
 Degree Date: August 2022\\
 
-\centerline{ABSTRACT}
+\centerline{\large\textbf{Abstract}}
 We will begin by discussing power graphs of Moufang loops. We are able to show that as in groups the directed
   power graph of a Moufang loop is uniquely determined by the undirected power graph. In the process of proving
   this result we define the generalized octonion loops, a variety of Moufang loops which behave analogously to
@@ -261,7 +256,7 @@ We will begin by discussing power graphs of Moufang loops. We are able to show t
 \newpage
 
 % ACKNOWLEDGEMENTS
-\centerline{ACKNOWLEDGEMENTS}
+\centerline{\large\textbf{Acknowledgements}}
 
 I would like to thank Michael Kinyon for his support and guidance. I would also like to thank the members of my
   committee: Petr Vojt\v{e}chovsk\`{y}, Nick Galatos, and Maciej Kumosa.
@@ -270,9 +265,9 @@ Thank you, also, to my parents and sister Caitlin. Your unwavering support has m
 
 Most of all, thank you to Emily and Iris, I wouldn't have been able to do this without you two.
 
-%Acknowledgements here!
 \newpage
 
+\singlespacing
 % TABLE OF CONTENTS
 \tableofcontents
 
@@ -281,6 +276,7 @@ Most of all, thank you to Emily and Iris, I wouldn't have been able to do this w
 
 % LIST OF FIGURES
 \listoffigures
+\doublespacing
 % % > > > > - - - - - - - - - - - IMPORTANT - - - - - - - - - - - - - < < < < % %
 % In your figures, if you want to change how the figure is referred to in the list of figures, put a caption this way:
 %
@@ -853,6 +849,7 @@ Standard examples of nonassociative Moufang loops are the unit octonions with mu
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Power graphs of Moufang loops}
+\addcontentsline{lof}{chapter}{\thechapter\;~Power graphs of Moufang loops}
 
 \section{Introduction}
 
@@ -1389,6 +1386,8 @@ We will now prove Theorem \ref{mainThm} in the case that a non-identity vertex i
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Para-F quasigroups}
+\addcontentsline{lof}{chapter}{\thechapter\;~Para-F quasigroups}
+\addcontentsline{lot}{chapter}{\thechapter\;~Para-F quasigroups}
 
 \section{Introduction}\label{para-f-intro}
 
@@ -1747,21 +1746,25 @@ In what follows let $(Q, \cdot)$ be a para-F quasigroup.
     x\cdot yz &= z((y\ldv y)\ldv x)\cdot y\label{line-14} \tag{I}\\
     ((z\ldv z)((y\ldv y)\ldv x)\cdot y)\rdv z &= (z\ldv y)\cdot ((y\ldv y)\ldv x)\\
       &\text{ substituting $x\mapsfrom z,
-      y\mapsfrom (y\ldv y)\ldv x, z\mapsfrom y$ in Lemma \ref{lem-21}}\\
+      y\mapsfrom (y\ldv y)\ldv x, z\mapsfrom y$}\\
+      &\text{in Lemma \ref{lem-21}}\\
     (x\cdot y(z\rdv z))\rdv z &= (z\ldv y)\cdot ((y\ldv y)\ldv x)\text{ by (\ref{line-14})}
       \label{line-30} \tag{II}\\
     (y\cdot z(x\ldv x))\rdv y &= ((x\rdv(y\rdv y))\ldv (z\cdot (x\ldv x)))\cdot y\\
       &\text{ substituting $x\mapsfrom y,
-      y\mapsfrom z\cdot (x\ldv x), y\mapsfrom x$ in Lemma \ref{lem-22}}\\
+      y\mapsfrom z\cdot (x\ldv x), y\mapsfrom x$}\\
+      &\text{in Lemma \ref{lem-22}}\\
     (x\ldv z)\cdot ((z\ldv z)\ldv y) &= ((x\rdv(y\rdv y))\ldv (z\cdot (x\ldv x)))\cdot y\text{ by (\ref{line-30})}\\
     (x\ldv(z\cdot (y\rdv y)))\cdot y &= (x\ldv z)\cdot ((z\ldv z)\ldv y)\text{ from Lemma \ref{lem-34-f}}
       \label{line-36} \tag{III}\\
     (y\cdot z(y\rdv y))\rdv x &= ((x\rdv (y\rdv y))\ldv (z\cdot (y\rdv y)))\cdot y\\
-      &\text{substituting $x\mapsfrom y, y\mapsfrom z\cdot(y\rdv y), z\mapsfrom x$ in Lemma \ref{lem-22}}\\
+      &\text{substituting $x\mapsfrom y, y\mapsfrom z\cdot(y\rdv y), z\mapsfrom x$}\\
+      &\text{in Lemma \ref{lem-22}}\\
     (y\cdot z(y\rdv y))\rdv x &= ((x\rdv(y\rdv y))\ldv z)\cdot ((z\ldv z)\ldv y)\text{ by (\ref{line-36})}
       \label{line-37} \tag{IV}\\
     (x\rdv x)\cdot ((y\ldv y)\ldv(((z\rdv (x\rdv x))\ldv y)\cdot x)) &= ((z\rdv (x\rdv x))\ldv y)\cdot ((y\ldv y)\ldv x)\\
-      &\text{substituting $z\mapsfrom (z\rdv(x\rdv x))\ldv y$ in Lemma \ref{lem-25}}\\
+      &\text{substituting $z\mapsfrom (z\rdv(x\rdv x))\ldv y$}\\
+      &\text{in Lemma \ref{lem-25}}\\
     (x\rdv x)\cdot ((y\ldv y)\ldv(((z\rdv (x\rdv x))\ldv y)\cdot x)) &= (x\cdot y(x\rdv x))\rdv z\text{ by (\ref{line-37})}\\
     (x\rdv x)\cdot ((y\ldv y)\ldv ((x\cdot y)\rdv z)) &= (x\cdot y(x\rdv x))\rdv z\text{ by Lemma \ref{lem-22}}\\
     (x\rdv x)\cdot ((y\ldv z)\ldv x) &= (x\cdot y(x\rdv x))\rdv z\text{ by Lemma \ref{lem-32}}\\
@@ -2291,6 +2294,7 @@ In what follows let $(Q, \cdot)$ be a para-FG quasigroup and define
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Solvability for loops}
+\addcontentsline{lot}{chapter}{\thechapter\;~Solvability for loops}
 
 \section{Introduction}
 
@@ -2812,6 +2816,7 @@ Theorem \ref{right-aut} does not directly extend to arbitrary loops. The followi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Cosets in Moufang loops}
+\addcontentsline{lot}{chapter}{\thechapter\;~Cosets in Moufang loops}
 
 \section{Introduction}
 
@@ -3391,6 +3396,7 @@ Thus $\stb_G(x)$ is isomorphic to some subloop of $\inn_L(Q)$ and in particular
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Universally and semi-universally flexible loops}
+\addcontentsline{lot}{chapter}{\thechapter\;~Universally and semi-universally flexible loops}
 
 \section{Introduction}
 
@@ -3587,6 +3593,7 @@ In particular, this loop is universally flexible and does not have the AAIP and 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Future directions of research}
+\addcontentsline{lof}{chapter}{\thechapter\;~Future directions of research}
 
 \section{Power graphs}
 
