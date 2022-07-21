@@ -66,7 +66,7 @@
 \contentsline {section}{\numberline {7.5}Cosets in Moufang loops}{92}{section.7.5}%
 \contentsline {section}{\numberline {7.6}SUF loops}{92}{section.7.6}%
 \contentsline {chapter}{Appendix}{97}{appendix*.2}%
-\contentsline {chapter}{A Automated proofs}{97}{appendix*.2}%
+\contentsline {chapter}{Appendix A Automated proofs}{97}{appendix*.2}%
 \contentsline {section}{A.1 Notation}{97}{section*.3}%
 \contentsline {section}{A.2 Para-F}{97}{section*.3}%
 \contentsline {subsection}{A.2.1}{97}{section*.4}%
