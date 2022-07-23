@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.7.5)  20 JUL 2022 20:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.7.5)  23 JUL 2022 12:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1282,27 +1282,22 @@ Chapter 7.
 l.3682 \section{SUF loops}
                           ] (./topics-Mloops.bbl [92] [93
 
-] [94]
-Underfull \hbox (badness 10000) in paragraph at lines 153--156
-[]\OT1/ptm/m/n/12 W. McCune.  Prover9 and mace4, 2005--2010.
- []
-
-[95]) [96]
+] [94] [95]) [96]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 3705.
+(hyperref)                be the same. Added a new anchor on input line 3708.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 3723.
+(hyperref)                be the same. Added a new anchor on input line 3726.
 
 LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 3
-728.
+731.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3728.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 3731.
 
  [97
 
@@ -1310,28 +1305,28 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 [100] [101] [102] [103] [104] [105] [106]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3970.
+(hyperref)                removing `math shift' on input line 3973.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3970.
+(hyperref)                removing `math shift' on input line 3973.
 
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 3973.
+(hyperref)                be the same. Added a new anchor on input line 3976.
 
 [107] [108] [109] [110] [111] [112] [113] [114] [115] (./topics-Mloops.aux)
 Package rerunfilecheck Info: File `topics-Mloops.out' has not changed.
-(rerunfilecheck)             Checksum: A248FC820E624067D59A275DC414C73E;12534.
+(rerunfilecheck)             Checksum: E0749B49CDDC8EAEF7B71E2DB6B08D81;12639.
  ) 
 Here is how much of TeX's memory you used:
- 31789 strings out of 478287
- 621407 string characters out of 5849290
- 1165239 words of memory out of 5000000
- 48600 multiletter control sequences out of 15000+600000
+ 31790 strings out of 478287
+ 621419 string characters out of 5849290
+ 1165240 words of memory out of 5000000
+ 48601 multiletter control sequences out of 15000+600000
  495513 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,80p,418b,2325s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,14n,80p,418b,2323s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1349,10 +1344,10 @@ ive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on topics-Mloops.pdf (123 pages, 460737 bytes).
+Output written on topics-Mloops.pdf (123 pages, 460216 bytes).
 PDF statistics:
- 2543 PDF objects out of 2984 (max. 8388607)
- 1979 compressed objects within 20 object streams
+ 2547 PDF objects out of 2984 (max. 8388607)
+ 1983 compressed objects within 20 object streams
  884 named destinations out of 1000 (max. 500000)
- 613 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 621 words of extra memory for PDF output out of 10000 (max. 10000000)
 
