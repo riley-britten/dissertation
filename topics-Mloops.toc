@@ -65,7 +65,7 @@
 \contentsline {section}{\numberline {7.4}Solvability for loops}{91}{section.7.4}%
 \contentsline {section}{\numberline {7.5}Cosets in Moufang loops}{92}{section.7.5}%
 \contentsline {section}{\numberline {7.6}SUF loops}{92}{section.7.6}%
-\contentsline {chapter}{Bibliography}{96}{chapter*.1}%
+\contentsline {chapter}{Bibliography}{93}{section.7.6}%
 \contentsline {chapter}{Appendix}{97}{appendix*.2}%
 \vspace {-12pt}
 \contentsline {chapter}{Appendix A Automated proofs}{97}{appendix*.2}%

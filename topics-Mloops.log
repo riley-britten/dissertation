@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.7.5)  23 JUL 2022 12:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.7.5)  26 JUL 2022 19:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**topics-Mloops
+**topics-Mloops.tex
 (./topics-Mloops.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21>
@@ -1212,12 +1212,6 @@ able.4.3}) has been already used, duplicate ignored
 l.2818 \chapter
                {Cosets in Moufang loops}]
 Chapter 5.
-
-Overfull \hbox (11.00098pt too wide) in paragraph at lines 2843--2848
-\OT1/ptm/m/n/12 When this approach does not prove fruit-ful we will try other a
-pproaches to prov-ing Lagrange's
- []
-
 [69
 
 ] [70] [71pdfTeX warning (ext4): destination with the same identifier (name{tab
@@ -1317,16 +1311,16 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 
 [107] [108] [109] [110] [111] [112] [113] [114] [115] (./topics-Mloops.aux)
 Package rerunfilecheck Info: File `topics-Mloops.out' has not changed.
-(rerunfilecheck)             Checksum: E0749B49CDDC8EAEF7B71E2DB6B08D81;12639.
+(rerunfilecheck)             Checksum: 97B6EF2210C5D4CADF3B19FA0068BF2F;12640.
  ) 
 Here is how much of TeX's memory you used:
- 31790 strings out of 478287
- 621419 string characters out of 5849290
+ 31789 strings out of 478287
+ 621407 string characters out of 5849290
  1165240 words of memory out of 5000000
- 48601 multiletter control sequences out of 15000+600000
+ 48600 multiletter control sequences out of 15000+600000
  495513 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,14n,80p,418b,2323s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,14n,80p,422b,2323s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1344,7 +1338,7 @@ ive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on topics-Mloops.pdf (123 pages, 460216 bytes).
+Output written on topics-Mloops.pdf (123 pages, 460208 bytes).
 PDF statistics:
  2547 PDF objects out of 2984 (max. 8388607)
  1983 compressed objects within 20 object streams
